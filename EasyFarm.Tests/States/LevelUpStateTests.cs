@@ -5,6 +5,7 @@ using EasyFarm.Tests.TestTypes;
 using EasyFarm.Tests.TestTypes.Mocks;
 using MemoryAPI;
 using System;
+using System.Collections.Generic;
 using Xunit;
 using static EasyFarm.States.SetSearchNpcState;
 
@@ -103,7 +104,7 @@ namespace EasyFarm.Tests.States
         [Fact]
         public void LevelChangeStateDoesTriggerWhenChangingJobs()
         {
-            // Fixture setup            
+            // Fixture setup
             _context.Player.JobLevel = 37;
             _levelChangeState.Check(_context);
             // Excercise system
@@ -113,6 +114,83 @@ namespace EasyFarm.Tests.States
             Assert.True(result);
             // Teardown	
         }
+
+        [Fact]
+        public void DetermineOptimalGearForJobAndLevelReturnsCorrectDictionaryWithValidLevelAndJob()
+        {
+            // Fixture setup
+            _context.Player.JobLevel = 33;
+            _context.Player.Job = Job.WhiteMage;
+
+            Dictionary<string, string> expected =  new Dictionary<string, string> {
+                    {"Main", "Spiked Club +1" },
+                    {"Sub", "Lizard Strap +1" },
+                    {"Ammo", "Morion Tathlum" },
+                    {"Head", "Trump Crown" },
+                    {"Neck", "Holy Phial" },
+                    {"Body", "Seer's Tunic +1" },
+                    {"Hands", "Savage gauntlets" },
+                    {"Legs", "Seer's Slacks +1" },
+                    {"Feet", "Seer's Pumps +1" },
+                    {"Back", "Talisman Cape" },
+                    {"Waist", "Mohbwa Sash +1" },
+                    {"Ear1", "Reraise Earring" },
+                    {"Ear2", "Magician's Earring" },
+                    {"Ring1", "Saintly Ring +1" },
+                    {"Ring2", "Saintly Ring +1" },
+                  };
+
+            // Excercise system
+            var result = LevelChangeState.DetermineOptimalGearForMainJobAndLevel(_context);
+
+            // Verify outcome
+            Assert.Equal(expected.Count, result.Count);
+            foreach (KeyValuePair<string, string> equip in expected)
+            {
+                Assert.Equal(expected[equip.Key], result[equip.Key]);
+            }
+        }
+
+        [Fact]
+        public void DetermineOptimalGearForJobAndLevelReturnsBlankDictionaryWithoutErrorIfNoMatchingEquipsForLevel()
+        {
+            // Fixture setup
+            _context.Player.JobLevel = 1;
+            _context.Player.Job = Job.WhiteMage;
+
+            Dictionary<string, string> expected = new Dictionary<string, string>();
+
+            // Excercise system
+            var result = LevelChangeState.DetermineOptimalGearForMainJobAndLevel(_context);
+
+            // Verify outcome
+            Assert.Equal(expected.Count, result.Count);
+            foreach (KeyValuePair<string, string> equip in expected)
+            {
+                Assert.Equal(expected[equip.Key], result[equip.Key]);
+            }
+        }
+
+        [Fact]
+        public void DetermineOptimalGearForJobAndLevelReturnsBlankDictionaryWithoutErrorIfNoMatchingEquipsForJob()
+        {
+            // Fixture setup
+            _context.Player.JobLevel = 1;
+            _context.Player.Job = Job.PuppetMaster;
+
+            Dictionary<string, string> expected = new Dictionary<string, string>();
+
+            // Excercise system
+            var result = LevelChangeState.DetermineOptimalGearForMainJobAndLevel(_context);
+
+            // Verify outcome
+            Assert.Equal(expected.Count, result.Count);
+            foreach (KeyValuePair<string, string> equip in expected)
+            {
+                Assert.Equal(expected[equip.Key], result[equip.Key]);
+            }
+        }
+
 
         [Fact]
         public void CanGetItemObjectFromEquipmentId()

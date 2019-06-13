@@ -30,5 +30,7 @@ namespace EasyFarm.Tests.Context
         public int MppCurrent { get; set; }
         public int JobLevel { get; set; }
         public int SubJobLevel { get; set; }
+        public Job Job { get; set; }
+        public Job SubJob { get; set; }
     }
 }

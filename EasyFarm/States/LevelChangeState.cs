@@ -13,6 +13,7 @@ namespace EasyFarm.States
     public class LevelChangeState : BaseState
     {
         private int _last_level = 0;
+        private static int attemptToBuyFromAH = 1;
 
         public override bool Check(IGameContext context)
         {
@@ -33,18 +34,41 @@ namespace EasyFarm.States
 
         private static void EquipOptimalGear(IGameContext context)
         {
+
             // Determine Optimal Gear from json or something
-            int level;
-            List<InventoryItem> head;
-            Dictionary<int, Dictionary<string, string>> Equips;
-            DetermineOptimalGearForMainJobAndLevel(context, out level, out head, out Equips);
+            Dictionary<string, string> optimalEquipment;
+
+            optimalEquipment = DetermineOptimalGearForMainJobAndLevel(context);
+            if(optimalEquipment.Count == 0)
+            {
+                return;
+            }
+
             // Figure out what gear is not already equiped
-            // Buy the gear from AH if flag is set to buy new gear
-            // Equip the Optimal gear
+            List<InventoryItem> currentEquipment = context.Memory.EliteApi.Player.Equipment;
+            Dictionary<string, string> neededEquipment = GetOptimalGearNotAlreadyEquipped(context, optimalEquipment, currentEquipment);
 
-            //PrintCurrentEquipmentList(context, head);
+            
+            // loop through all needed items to buy & or equip them depending on config flag
+            foreach (KeyValuePair<string, string> equip in neededEquipment.AsEnumerable())
+            {
+                var slot = equip.Key;
+                var name = equip.Value;
+                // Buy the gear from AH if flag is set to buy new gear
+                if (attemptToBuyFromAH == 1)
+                {
+                    BuyItemFromAuctionHouseUsingAuctioneerAddOn(context, name);
+                }
+                EquipItemToSlot(context, slot, name);
+            }
+            //PrintCurrentEquipmentList(context, currentEquipment);
+        }
 
-            foreach (KeyValuePair<string, string> equip in Equips[level].AsEnumerable())
+        private static Dictionary<string, string> GetOptimalGearNotAlreadyEquipped(IGameContext context, Dictionary<string, string> Equips, List<InventoryItem> currentEquipment)
+        {
+            Dictionary<string, string> neededEquipment = new Dictionary<string, string>();
+
+            foreach (KeyValuePair<string, string> equip in Equips.AsEnumerable())
             {
                 // Go through each piece of armor in the array and check if that item is already equip. if it isn't buy it and equip it
                 var slot = equip.Key;
@@ -56,7 +80,7 @@ namespace EasyFarm.States
 
                 string currentlyEquipItemName;
                 //// 
-                int equipmentId = head[slotId].Id;
+                int equipmentId = currentEquipment[slotId].Id;
                 if (equipmentId == 0)
                 {
                     currentlyEquipItemName = "";
@@ -76,38 +100,18 @@ namespace EasyFarm.States
                 }
                 if (currentlyEquipItemName.ToLower() != name.ToLower())
                 {
-                    //Console.WriteLine("Need to equip:'" + name + "' in slot:" + slot);
-                    BuyItemFromAuctionHouseAndEquipIt(context, slot, name);
-
-                    //}
-                    //else
-                    //{
-                    //    context.Memory.Executor.SendCommand("/s I already have: " + name + " Equiped");
-                    //}
+                    neededEquipment.Add(slot, name);
                 }
+
             }
-
-            PrintCurrentEquipmentList(context, head);
-
-            //var npc2 = context.Memory.UnitService.GetUnitByName("Rashid");
-            //var goal2 = npc.Position;
-
-            //LogViewModel.Write("Want to meet " + npc2.Name + " at " + npc2.Position.ToString());
-            //context.API.Navigator.GotoWaypoint(
-            //    goal2,
-            //    context.Config.IsObjectAvoidanceEnabled,
-            //    _shouldKeepRunningToNextWaypoint);
-            //context.API.Navigator.Reset();
-
-            // buy things from auction house using auctioneer
+            return neededEquipment;
         }
 
-        private static void DetermineOptimalGearForMainJobAndLevel(IGameContext context, out int level, out List<InventoryItem> head, out Dictionary<int, Dictionary<string, string>> Equips)
+        public static Dictionary<string, string> DetermineOptimalGearForMainJobAndLevel(IGameContext context)
         {
-            string job = context.Memory.EliteApi.Player.Job.ToString();
+            string job = context.Player.Job.ToString();
+            int level = context.Player.JobLevel;
 
-            level = context.Memory.EliteApi.Player.JobLevel;
-            head = context.Memory.EliteApi.Player.Equipment;
             var dancerEquips = new Dictionary<int, Dictionary<string, string>>()
             {
                 {1 , new Dictionary<string, string> {
@@ -145,11 +149,7 @@ namespace EasyFarm.States
                     }
                 }
             };
-            Equips = new Dictionary<int, Dictionary<string, string>>();
-            if (job == "Dancer")
-            {
-                Equips = dancerEquips;
-            }
+            Dictionary<int, Dictionary<string, string>> Equips = new Dictionary<int, Dictionary<string, string>>();
 
             switch (job)
             {
@@ -160,20 +160,34 @@ namespace EasyFarm.States
                     Equips = whiteMageEquips;
                     break;
                 default:
-                    Equips = whiteMageEquips;
+                    Equips = new Dictionary<int, Dictionary<string, string>>();
                     break;
             }
+
+            Dictionary<string, string> optimal_equipment = new Dictionary<string, string>();
+
+            try
+            {
+                optimal_equipment = Equips[level];
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("No valid level yet!");
+            }
+            return optimal_equipment;
         }
 
 
-        private static void BuyItemFromAuctionHouseAndEquipIt(IGameContext context, string slot, string name)
+        private static void EquipItemToSlot(IGameContext context, string slot, string name)
         {
-            context.Memory.Executor.SendCommand("/s hi I need to buy:" + name + " For my: " + slot);
-            Thread.Sleep(1000);
-            context.Memory.Executor.SendCommand("/buy " + '"' + name + '"' + " single 100");
             Thread.Sleep(1000);
             context.Memory.Executor.SendCommand("/equip " + slot + " " + '"' + name + '"');
+        }
+
+        private static void BuyItemFromAuctionHouseUsingAuctioneerAddOn(IGameContext context, string name)
+        {
             Thread.Sleep(1000);
+            context.Memory.Executor.SendCommand("/buy " + '"' + name + '"' + " single 100");
         }
 
         private static void PrintCurrentEquipmentList(IGameContext context, List<InventoryItem> head)
