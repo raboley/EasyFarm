@@ -24,6 +24,8 @@ using EasyFarm.Context;
 using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
 using MemoryAPI;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using static EliteMMO.API.EliteAPI;
 
 namespace EasyFarm.States
@@ -35,11 +37,16 @@ namespace EasyFarm.States
         public override bool Check(IGameContext context)
         {
             // None of this is ready, so don't ever run it currently.
-            return false;
+            return true;
         }
 
         public override void Run(IGameContext context)
         {
+
+            string json = JsonConvert.SerializeObject(context);
+            JToken jt = JToken.Parse(json);
+            string formattedJson = jt.ToString();
+            System.IO.File.WriteAllText(@"D:\context.txt", json);
             //    // Currently fighting, do not change target. 
             //    if (!context.Target.IsValid)
             //    {
@@ -106,7 +113,7 @@ namespace EasyFarm.States
             //    context.Config.IsObjectAvoidanceEnabled,
             //    _shouldKeepRunningToNextWaypoint);
 
-            context.API.Navigator.Reset();
+            //context.API.Navigator.Reset();
 
 
             //var npc2 = context.Memory.UnitService.GetUnitByName("Rashid");
