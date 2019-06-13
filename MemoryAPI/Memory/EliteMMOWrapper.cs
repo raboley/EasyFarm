@@ -48,6 +48,7 @@ namespace MemoryAPI.Memory
             Windower = new WindowerTools(eliteApi);
             Chat = new ChatTools(eliteApi);
             Resource = new ResourcesTools(eliteApi);
+            
 
             for (byte i = 0; i < 16; i++)
             {
@@ -441,6 +442,25 @@ namespace MemoryAPI.Memory
             public Job Job => (Job)_api.Player.MainJob;
 
             public Job SubJob => (Job)_api.Player.SubJob;
+
+            public int JobLevel => (int)_api.Player.MainJobLevel;
+
+            public int SubJobLevel => (int)_api.Player.SubJobLevel;
+
+            public List<EliteMMO.API.EliteAPI.InventoryItem> Equipment {
+                get
+                {
+                    List<EliteMMO.API.EliteAPI.InventoryItem> equips = new List<EliteMMO.API.EliteAPI.InventoryItem>();
+                    //return equips;
+                    for (int i = 0; i < 17; i++)
+                    {
+                        equips.Add((EliteMMO.API.EliteAPI.InventoryItem)_api.Inventory.GetEquippedItem(i));
+                        
+                    }
+                    return equips;
+                }
+            }
+
         }
 
         public class TargetTools : ITargetTools

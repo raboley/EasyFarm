@@ -22,6 +22,7 @@ using EasyFarm.Infrastructure;
 using EasyFarm.Tests.TestTypes.Mocks;
 using EasyFarm.UserSettings;
 using MemoryAPI;
+using static EliteMMO.API.EliteAPI;
 
 namespace EasyFarm.Tests.TestTypes
 {
@@ -78,5 +79,13 @@ namespace EasyFarm.Tests.TestTypes
 
             return unit;
         }
+
+        //protected static IItem GetItem()
+        //{
+        //    var item = new MockItem
+        //    {
+
+        //    }
+        //}
     }
 }

@@ -59,6 +59,8 @@ namespace EasyFarm.States
             AddState(new HealingState() {Priority = 2});
             AddState(new EndState() {Priority = 3});
             AddState(new StartEngineState() {Priority = Constants.MaxPriority});
+            AddState(new SetSearchNpcState() { Priority = 3 });
+            AddState(new LevelChangeState() { Priority = 3 });
 
             _states.ForEach(x => x.Enabled = true);
         }

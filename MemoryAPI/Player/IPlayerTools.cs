@@ -16,6 +16,7 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using MemoryAPI.Navigation;
+using System.Collections.Generic;
 
 namespace MemoryAPI
 {
@@ -38,5 +39,8 @@ namespace MemoryAPI
         Zone Zone { get; }
         Job Job { get; }
         Job SubJob { get; }
+        int JobLevel { get; }
+        int SubJobLevel { get; }
+        List<EliteMMO.API.EliteAPI.InventoryItem> Equipment { get; }
     }
 }
