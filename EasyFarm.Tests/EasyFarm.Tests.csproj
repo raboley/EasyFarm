@@ -55,6 +55,9 @@
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Ploeh.AutoFixture, Version=3.50.2.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoFixture.3.50.2\lib\net40\Ploeh.AutoFixture.dll</HintPath>
       <Private>True</Private>
@@ -88,7 +91,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\EquipmentTests.cs" />
     <Compile Include="Classes\EventsTests.cs" />
+    <Compile Include="Services\OptimalEquipmentSetServiceTests.cs" />
     <Compile Include="States\LevelUpStateTests.cs" />
     <Compile Include="States\WeaponSkillStateTests.cs" />
     <Compile Include="TestTypes\OtherTestEvent.cs" />
@@ -135,6 +140,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Services\DancerOptimalEquipment.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EasyFarm\EasyFarm.csproj">
