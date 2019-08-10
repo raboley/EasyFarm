@@ -104,6 +104,15 @@ namespace EasyFarm.ViewModels
             }
         }
 
+        public bool DumpItemsInBastok
+        {
+            get { return Config.Instance.EnableDumpItemsAtBastok; }
+            set
+            {
+                Set(ref Config.Instance.EnableDumpItemsAtBastok, value);
+            }
+        }
+
         public bool EnableTabTargeting
         {
             get { return Config.Instance.EnableTabTargeting; }

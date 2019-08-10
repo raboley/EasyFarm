@@ -65,6 +65,32 @@ namespace EasyFarm.States
             return newPosition;
         }
 
+        public Position GetNextPositionPath(Position playerPosition)
+        {
+            _positions = Waypoints.ToList();
+
+
+
+            var distance = Distance(playerPosition, _positions[_position]);
+
+            if (distance > 15)
+            {
+                var closest = _positions.OrderBy(x => Distance(playerPosition, x)).FirstOrDefault();
+                _position = _positions.IndexOf(closest);
+            }
+
+            var newPosition = _positions[_position];
+            
+            _position++;
+
+            if (_position >= _positions.Count)
+            {
+                return null;
+            }
+
+            return newPosition;
+        }
+
         private double Distance(Position one, Position other)
         {
             return Math.Sqrt(Math.Pow(one.X - other.X, 2) + Math.Pow(one.Z - other.Z, 2));

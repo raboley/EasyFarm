@@ -61,6 +61,7 @@ namespace EasyFarm.States
             AddState(new StartEngineState() {Priority = Constants.MaxPriority});
             AddState(new SetSearchNpcState() { Priority = 3 });
             AddState(new LevelChangeState() { Priority = 3 });
+            AddState(new DumpTreasureState() { Priority = 0 });
 
             _states.ForEach(x => x.Enabled = true);
         }

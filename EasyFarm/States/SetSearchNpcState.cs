@@ -37,7 +37,7 @@ namespace EasyFarm.States
         public override bool Check(IGameContext context)
         {
             // None of this is ready, so don't ever run it currently.
-            return true;
+            return false;
         }
 
         public override void Run(IGameContext context)

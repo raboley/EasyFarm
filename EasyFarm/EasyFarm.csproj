@@ -224,6 +224,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Classes\NullUnit.cs" />
+    <Compile Include="States\DumpTreasureState.cs" />
     <Compile Include="States\LevelChangeState.cs" />
     <Compile Include="States\SetSearchNpcState.cs" />
     <Compile Include="States\StateHistory.cs" />

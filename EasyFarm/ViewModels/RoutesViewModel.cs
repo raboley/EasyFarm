@@ -149,7 +149,7 @@ namespace EasyFarm.ViewModels
         /// <summary>
         ///     Loads the route data.
         /// </summary>
-        private void Load()
+        public void Load()
         {
             var route = _settings.TryLoad<Route>();
 

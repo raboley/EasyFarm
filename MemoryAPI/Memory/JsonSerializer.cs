@@ -15,33 +15,9 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
-using MemoryAPI.Navigation;
-using System.Collections.Generic;
-
-namespace MemoryAPI
+namespace MemoryAPI.Memory
 {
-    public interface IPlayerTools
+    internal class JsonSerializer
     {
-        float CastPercentEx { get; }
-        int HPPCurrent { get; }
-        int ID { get; }
-        int MPCurrent { get; }
-        int MPPCurrent { get; }
-        string Name { get; }
-        Position Position { get; }
-        float PosX { get; }
-        float PosY { get; }
-        float PosZ { get; }
-        Structures.PlayerStats Stats { get; }
-        Status Status { get; }
-        StatusEffect[] StatusEffects { get; }
-        int TPCurrent { get; }
-        Zone Zone { get; }
-        Job Job { get; }
-        Job SubJob { get; }
-        int JobLevel { get; }
-        int SubJobLevel { get; }
-        List<EliteMMO.API.EliteAPI.InventoryItem> Equipment { get; }
-        int MeritPoints { get; }
     }
 }
