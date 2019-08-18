@@ -17,13 +17,18 @@
 // ///////////////////////////////////////////////////////////////////
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using EliteMMO.API;
 using MemoryAPI.Chat;
+using MemoryAPI.Dialog;
+using MemoryAPI.Menu;
 using MemoryAPI.Navigation;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
+
 
 namespace MemoryAPI.Memory
 {
@@ -48,6 +53,9 @@ namespace MemoryAPI.Memory
             Windower = new WindowerTools(eliteApi);
             Chat = new ChatTools(eliteApi);
             Resource = new ResourcesTools(eliteApi);
+            //Dialog = new DialogTools(eliteApi);
+            Menu = new MenuTools(eliteApi);
+            
 
             for (byte i = 0; i < 16; i++)
             {
@@ -60,7 +68,7 @@ namespace MemoryAPI.Memory
             private const double TooCloseDistance = 1.5;
             private readonly EliteAPI _api;
 
-            public double DistanceTolerance { get; set; } = 3;
+            public double DistanceTolerance { get; set; } = 1;
 
             public NavigationTools(EliteAPI api)
             {
@@ -123,6 +131,9 @@ namespace MemoryAPI.Memory
                     _api.ThirdParty.KeyDown(Keys.NUMPAD8);
                     if (useObjectAvoidance) AvoidObstacles();
                     Thread.Sleep(100);
+
+                    var player = _api.Entity.GetLocalPlayer();
+                    Debug.Write($"Player is at X:{player.X} Y:{player.Y} Z:{player.Z} H:{player.H}" + Environment.NewLine);
                 }
             }
 
@@ -131,7 +142,7 @@ namespace MemoryAPI.Memory
                 _api.ThirdParty.KeyDown(Keys.NUMPAD8);
             }
 
-            private void KeepOneYalmBack(Position position)
+            public void KeepOneYalmBack(Position position)
             {
                 if (DistanceTo(position) > TooCloseDistance) return;
 
@@ -163,9 +174,22 @@ namespace MemoryAPI.Memory
             {
                 if (IsStuck())
                 {
+                    RecordTravelBlock();
                     if (IsEngaged()) Disengage();
                     WiggleCharacter(attempts: 3);
                 }
+            }
+
+            private void RecordTravelBlock()
+            {
+                
+                ////open file stream
+                //using (StreamWriter file = File.CreateText(@"D:\path.txt"))
+                //{
+                //    JsonSerializer serializer = new JsonSerializer();
+                //    //serialize object directly into file stream
+                //    serializer.Serialize(file, _data);
+                //}
             }
 
             /// <summary>
@@ -441,6 +465,27 @@ namespace MemoryAPI.Memory
             public Job Job => (Job)_api.Player.MainJob;
 
             public Job SubJob => (Job)_api.Player.SubJob;
+
+            public int JobLevel => (int)_api.Player.MainJobLevel;
+
+            public int SubJobLevel => (int)_api.Player.SubJobLevel;
+
+            public List<EliteMMO.API.EliteAPI.InventoryItem> Equipment {
+                get
+                {
+                    List<EliteMMO.API.EliteAPI.InventoryItem> equips = new List<EliteMMO.API.EliteAPI.InventoryItem>();
+                    //return equips;
+                    for (int i = 0; i < 17; i++)
+                    {
+                        equips.Add((EliteMMO.API.EliteAPI.InventoryItem)_api.Inventory.GetEquippedItem(i));
+                        
+                    }
+                    return equips;
+                }
+            }
+
+            public int MeritPoints => (int)_api.Player.MeritPoints;
+
         }
 
         public class TargetTools : ITargetTools
@@ -523,6 +568,47 @@ namespace MemoryAPI.Memory
                     ChatEntries.Enqueue(chatEntry);
                 }
             }
+        }
+
+        //public class DialogTools : IDialogTools
+        //{
+
+        //    private readonly EliteAPI _api;
+
+        //    public DialogTools(EliteAPI api)
+        //    {
+        //        _api = api;
+        //    }
+
+        //    public int DialogId { get; }
+        //    public ushort DialogIndex { get; }
+        //    public int DialogOptionCount { get; }
+
+        //    public DialogInfo GetDialog();
+        //    public string GetDialogText();
+        //}
+
+        public class MenuTools : IMenuTools
+        {
+            private readonly EliteAPI _api;
+
+            public MenuTools(EliteAPI api)
+            {
+                _api = api;
+            }
+
+            public bool IsMenuOpen { get; }
+            public int MenuItemCount { get; }
+            public int MenuIndex { get; set; }
+            public string MenuName { get; }
+            public string HelpName { get; }
+            public string HelpDescription { get; }
+
+            public int GetMenuIndex() => _api.Menu.MenuIndex;
+            public void SetIndex(int index) => _api.Menu.MenuIndex = index;
+
+            public string GetMenuName() => _api.Menu.MenuName;
+
         }
     }
 }

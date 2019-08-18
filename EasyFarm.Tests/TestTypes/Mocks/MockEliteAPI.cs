@@ -254,6 +254,12 @@ namespace EasyFarm.Tests.TestTypes.Mocks
         public Zone Zone { get; set; }
         public Job Job { get; set; }
         public Job SubJob { get; set; }
+
+        public int JobLevel { get; set; }
+
+        public int SubJobLevel { get; set; }
+
+        public List<EliteAPI.InventoryItem> Equipment { get; set; }
     }
 
     public class MockWindowerTools : IWindowerTools

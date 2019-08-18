@@ -202,6 +202,11 @@ namespace EasyFarm.UserSettings
         public bool IsObjectAvoidanceEnabled = false;
 
         /// <summary>
+        /// Should the player warp to bastok and dump items/spend merit points when full?
+        /// </summary>
+        public bool EnableDumpItemsAtBastok = false;
+
+        /// <summary>
         /// The distance with which to follow a player.
         /// </summary>
         public double FollowDistance = 5.0;

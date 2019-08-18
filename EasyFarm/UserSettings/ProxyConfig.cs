@@ -169,6 +169,11 @@ namespace EasyFarm.UserSettings
             get => Config.Instance.IsObjectAvoidanceEnabled;
             set => Config.Instance.IsObjectAvoidanceEnabled = value;
         }
+        public bool EnableDumpItemsAtBastok
+        {
+            get => Config.Instance.EnableDumpItemsAtBastok;
+            set => Config.Instance.EnableDumpItemsAtBastok = value;
+        }
         public double FollowDistance
         {
             get => Config.Instance.FollowDistance;

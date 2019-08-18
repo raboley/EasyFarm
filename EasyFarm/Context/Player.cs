@@ -67,5 +67,23 @@ namespace EasyFarm.Context
             get => _memoryAPI.Player.MPPCurrent;
             set => throw new NotImplementedException();
         }
+
+        public int JobLevel
+        {
+            get => _memoryAPI.Player.JobLevel;
+            set => throw new NotImplementedException();
+        }
+
+        public Job Job
+        {
+            get => _memoryAPI.Player.Job;
+            set => throw new NotImplementedException();
+        }
+
+        public Job SubJob
+        {
+            get => _memoryAPI.Player.SubJob;
+            set => throw new NotImplementedException();
+        }
     }
 }
