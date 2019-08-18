@@ -40,6 +40,7 @@ namespace EasyFarm.Tests.TestTypes.Mocks
             PartyMember = mockEliteAPI.PartyMember.ToDictionary(x => x.Key, x => (IPartyMemberTools) x.Value);
             Target = mockEliteAPI.Target;
             Timer = mockEliteAPI.Timer;
+            
         }
 
         public INavigatorTools Navigator { get; set; }

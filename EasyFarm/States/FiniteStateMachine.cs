@@ -59,7 +59,7 @@ namespace EasyFarm.States
             AddState(new HealingState() {Priority = 2});
             AddState(new EndState() {Priority = 3});
             AddState(new StartEngineState() {Priority = Constants.MaxPriority});
-            AddState(new DumpTreasureState() { Priority = 0 });
+            AddState(new DumpTreasureState() { Priority = 2 });
 
             _states.ForEach(x => x.Enabled = true);
         }

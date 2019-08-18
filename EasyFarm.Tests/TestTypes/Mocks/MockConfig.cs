@@ -55,6 +55,8 @@ namespace EasyFarm.Tests.TestTypes.Mocks
         public double FollowDistance { get; set; }
         public string FollowedPlayer { get; set; }
         public Route Route { get; set; } = new Route();
+        public bool EnableDumpItemsAtBastok { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public bool ShouldDumpItemsNowButtonPressed { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
         public MockConfig()
         {

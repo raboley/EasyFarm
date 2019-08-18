@@ -28,10 +28,12 @@ namespace EasyFarm.ViewModels
         public SettingsViewModel()
         {
             RestoreDefaultsCommand = new RelayCommand(RestoreDefaults);
+            DumpItemsInBastokCommand = new RelayCommand(StartDumpItemsInBastokState);
             ViewName = "Settings";
         }
 
         public ICommand RestoreDefaultsCommand { get; set; }
+        public ICommand DumpItemsInBastokCommand { get; set; }
 
         public bool ShouldEngage
         {
@@ -50,8 +52,8 @@ namespace EasyFarm.ViewModels
             get { return Config.Instance.DetectionDistance; }
             set
             {
-                Set(ref Config.Instance.DetectionDistance, (int) value);
-                AppServices.InformUser("Detection Distance Set: {0}.", (int) value);
+                Set(ref Config.Instance.DetectionDistance, (int)value);
+                AppServices.InformUser("Detection Distance Set: {0}.", (int)value);
             }
         }
 
@@ -80,8 +82,8 @@ namespace EasyFarm.ViewModels
             get { return Config.Instance.WanderDistance; }
             set
             {
-                Set(ref Config.Instance.WanderDistance, (int) value);
-                AppServices.InformUser("Wander Distance Set: {0}.", (int) value);
+                Set(ref Config.Instance.WanderDistance, (int)value);
+                AppServices.InformUser("Wander Distance Set: {0}.", (int)value);
             }
         }
 
@@ -140,6 +142,15 @@ namespace EasyFarm.ViewModels
             }
         }
 
+        public int TimeToDumpInMinutes
+        {
+            get { return Config.Instance.TimeToDumpInMinutes; }
+            set
+            {
+                Set(ref Config.Instance.TimeToDumpInMinutes, value);
+            }
+        }
+
         private void RestoreDefaults()
         {
             DetectionDistance = Constants.DetectionDistance;
@@ -153,7 +164,25 @@ namespace EasyFarm.ViewModels
             ShouldEngage = true;
             HomePointOnDeath = false;
             TrustPartySize = Constants.TrustPartySize;
+            ShouldDumpItemsNowButtonPressed = false;
+            DumpItemsInBastok = false;
+            TimeToDumpInMinutes = 10;
             AppServices.InformUser("Defaults have been restored.");
-        }        
+        }
+
+
+        public bool ShouldDumpItemsNowButtonPressed
+        {
+            get { return Config.Instance.ShouldDumpItemsNowButtonPressed; }
+            set
+            {
+                Set(ref Config.Instance.ShouldDumpItemsNowButtonPressed, value);
+            }
+        }
+
+        private void StartDumpItemsInBastokState()
+        {
+            ShouldDumpItemsNowButtonPressed = true;
+        }
     }
 }

@@ -16,6 +16,7 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using MemoryAPI.Chat;
+using MemoryAPI.Menu;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
 
@@ -32,5 +33,6 @@ namespace MemoryAPI
         IWindowerTools Windower { get; set; }
         IChatTools Chat { get; set; }
         IResourcesTools Resource { get; set; }
+        IMenuTools Menu { get; set; }
     }
 }

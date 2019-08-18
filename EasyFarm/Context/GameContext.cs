@@ -22,6 +22,7 @@ using EasyFarm.Classes;
 using EasyFarm.States;
 using EasyFarm.UserSettings;
 using MemoryAPI;
+using MemoryAPI.Menu;
 
 namespace EasyFarm.Context
 {
@@ -34,11 +35,14 @@ namespace EasyFarm.Context
             Config = new ProxyConfig();
             Memory = new StateMemory(api);
             Target = new NullUnit();
+            Menu = new Menu(api);
+            
         }
 
         public IConfig Config { get; set; }
         public IPlayer Player { get; set; }
         public IUnit Target { get; set; }
+        public IMenuTools Menu { get; private set; }
         public Boolean IsFighting { get; set; }
         public Zone Zone { get;set; }
 

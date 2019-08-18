@@ -9,6 +9,7 @@ using MemoryAPI.Navigation;
 using MemoryAPI.Windower;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -32,34 +33,70 @@ namespace EasyFarm.States
         //}
 
         //private DateTime? _lastTargetCheck;
-        private SettingsManager _settings;
+        
 
         public override bool Check(IGameContext context)
         {
+            // dump items button was pressed
+            if (context.Config.ShouldDumpItemsNowButtonPressed == true)
+            {
+                context.Config.ShouldDumpItemsNowButtonPressed = false;
+                return true;
+            }
+            
+            LogViewModel.Write(context.Memory.EliteApi.Menu.HelpName);
+            
             // return if
             bool dumpItems = context.Config.EnableDumpItemsAtBastok;
             if (dumpItems == true)
             {
-
             // inventory is full
-            // merit points are full
-                int meritPoints = context.API.Player.MeritPoints;
-                if ( meritPoints >= 50)
+            //// merit points are full
+            //    int meritPoints = context.API.Player.MeritPoints;
+            //    if ( meritPoints >= 50)
+            //    {
+            //        return true;
+            //    }
+            //    // signet wore off
+            //    // rhapsody points are full
+            //    // unity points are full
+
+                // every hour
+                string minutes = DateTime.Now.ToString("mm");
+                if (minutes == context.Config.TimeToDumpInMinutes.ToString())
                 {
                     return true;
                 }
-            // signet wore off
-            // rhapsody points are full
-            // unity points are full
-
-            // every hour
-            //string minutes = DateTime.Now.ToString("mm");
-            //if (minutes == "00")
-            //{
-            //    return true;
-            //}
             }
-            
+
+            //Debug.Write($"The menu help name is: {context.Memory.EliteApi.Menu.HelpName} and index is: {context.Memory.EliteApi.Menu.MenuIndex}" + Environment.NewLine);
+            //TimeWaiter.Pause(1000);
+
+            // debug
+            //context.API.Navigator.DistanceTolerance = 3;
+            IMemoryAPI fface = context.API;
+            ConvertSparksToGil(context, fface);
+            //// go to goldsmith door
+            //TravelPath(context, routePathRoot + "_homepoint4_to_goldsmith_door.ewl");
+
+            //// open door
+            //OpenGoldsmithDoor(context, fface);
+
+            //// go to ephemeral moogle
+            //TravelPath(context, routePathRoot + "_goldsmith_door_to_ephemeral_moogle.ewl");
+
+            //// go to merchent
+            //TravelPath(context, routePathRoot + "_ephemeral_moogle_to_teerth.ewl");
+
+            //// go to door
+            //TravelPath(context, routePathRoot + "_teerth_to_goldsmith_door.ewl");
+
+            //// open door
+            //OpenGoldsmithDoor(context, fface);
+
+            //// go to crystal
+            //TravelPath(context, routePathRoot + "_goldsmith_doort_to_homepoint4.ewl");
+
             return false;
         }
 
@@ -84,7 +121,7 @@ namespace EasyFarm.States
 
             //// walk to hard mobs zone
             TravelPath(context, routePathRoot + "_boyda_to_jp_route.ewl");
-
+            
             // start bot
             LoadRoute("C:\\Users\\Russell\\Desktop\\Release\\boyda_route_jp.ewl");
         }
@@ -94,7 +131,7 @@ namespace EasyFarm.States
             // summon trusts
             SummonTrust(fface, "'Zeid II'");
             SummonTrust(fface, "'Adelheid'");
-            SummonTrust(fface, "'Apururu (UC)'");
+            SummonTrust(fface, "'Mihli Aliapoh'");
             SummonTrust(fface, "'Valaineral'");
             SummonTrust(fface, "'Joachim'");
 
@@ -132,6 +169,12 @@ namespace EasyFarm.States
 
             // go to signet guy
             TravelPath(context, routePathRoot + "_mjol_door_to_rabid_wolf.ewl");
+            IUnit rabidWolfIM = new NullUnit
+            {
+                Id = 52
+            };
+            TimeWaiter.Pause(100);
+            context.API.Navigator.GotoNPC(rabidWolfIM.Id, context.Config.IsObjectAvoidanceEnabled);
 
             // get signet
             GetSignetFromRabidWolf(context, fface);
@@ -160,7 +203,14 @@ namespace EasyFarm.States
 
             // go to isakoth
             TravelPath(context, routePathRoot + "_homepoint1_to_isakoth.ewl");
-            MoveForwardForSeconds(context, 5);
+            IUnit Isakoth = new NullUnit
+            {
+                Id = 177
+            };
+            TimeWaiter.Pause(100);
+            context.API.Navigator.GotoNPC(Isakoth.Id, context.Config.IsObjectAvoidanceEnabled);
+
+            //MoveForwardForSeconds(context, 5);
 
             //// buy all acheron shields
             BuyAllAcheronShields(fface);
@@ -261,9 +311,22 @@ namespace EasyFarm.States
 
         private void WarpHome(IMemoryAPI fface, IGameContext context)
         {
+            Position zero = new Position { H = 0, X = 0, Y = 0, Z = 0 };
+            context.API.Navigator.Reset();
+            // waiting for the zoning to start
+            while (DistanceTo(fface, zero) != 0)
+            {
             // use warp ring
-            fface.Windower.SendString("/item 'Warp Ring' <me>");
-            WaitForZone(fface, context);
+                fface.Windower.SendString("/item 'Warp Ring' <me>");
+                TimeWaiter.Pause(15000);
+            }
+            // waiting for zoning to end
+            while (DistanceTo(fface, zero) == 0)
+            {
+                TimeWaiter.Pause(100);
+            }
+            // just because we got a pos, doesn't mean things are loaded.
+            TimeWaiter.Pause(10000);
         }
 
         private static void SummonTrust(IMemoryAPI fface, string trust)
@@ -403,7 +466,7 @@ namespace EasyFarm.States
 
             while (shouldKeepRunningToNextWaypoint)
             {
-                context.API.Navigator.DistanceTolerance = 1; // maybe lower this so that the mjol section doesn't suck so bad.
+                //context.API.Navigator.DistanceTolerance = 1; // maybe lower this so that the mjol section doesn't suck so bad.
 
                 var nextPosition = context.Config.Route.GetNextPositionPath(context.API.Player.Position);
                 if (nextPosition == null)
@@ -444,6 +507,11 @@ namespace EasyFarm.States
             TimeWaiter.Pause(500);
             context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
             TimeWaiter.Pause(1000);
+            context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
+            // if I don't have enough unity points there is another prompt to go through
+            TimeWaiter.Pause(1000);
+            context.API.Windower.SendKeyPress(EliteMMO.API.Keys.LEFT);
+            TimeWaiter.Pause(100);
             context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
         }
 
@@ -497,11 +565,15 @@ namespace EasyFarm.States
 
         private static void BuyAllAcheronShields(IMemoryAPI fface)
         {
+
+            fface.Windower.SendString("/addon unload sparks");
+            TimeWaiter.Pause(1000);
+            fface.Windower.SendString("/addon load sparks");
+
             for (int i = 25 - 1; i >= 0; i--)
             {
                 fface.Windower.SendString("/sparks buy Acheron Shield");
                 TimeWaiter.Pause(1000);
-
             }
         }
 

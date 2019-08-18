@@ -68,7 +68,7 @@ namespace MemoryAPI.Memory
             private const double TooCloseDistance = 1.5;
             private readonly EliteAPI _api;
 
-            public double DistanceTolerance { get; set; } = 1;
+            public double DistanceTolerance { get; set; } = 3;
 
             public NavigationTools(EliteAPI api)
             {
@@ -103,9 +103,17 @@ namespace MemoryAPI.Memory
 
             public void GotoNPC(int id, bool useObjectAvoidance)
             {
-                MoveForwardTowardsPosition(() => GetEntityPosition(id), useObjectAvoidance);
-                KeepOneYalmBack(GetEntityPosition(id));
-                FaceHeading(GetEntityPosition(id));
+                Position destination = GetEntityPosition(id);
+
+                bool shouldKeepRunning = true;
+                if ((DistanceTo(destination) < DistanceTolerance))
+                {
+                    shouldKeepRunning = false;
+                }
+
+                GotoWaypoint(destination, useObjectAvoidance, shouldKeepRunning);
+                KeepOneYalmBack(destination);
+                FaceHeading(destination);
                 Reset();
             }
 
@@ -120,7 +128,8 @@ namespace MemoryAPI.Memory
                 Func<Position> targetPosition,
                 bool useObjectAvoidance)
             {
-                if (!(DistanceTo(targetPosition()) > DistanceTolerance)) return;
+                double distanceToDestination = DistanceTo(targetPosition());
+                if (!(distanceToDestination > DistanceTolerance)) return;
 
                 DateTime duration = DateTime.Now.AddSeconds(5);
 
@@ -200,11 +209,11 @@ namespace MemoryAPI.Memory
             /// Author: dlsmd
             /// http://www.elitemmonetwork.com/forums/viewtopic.php?p=4627#p4627
             /// </remarks>
-            private bool IsStuck()
+            public bool IsStuck()
             {
                 var firstX = _api.Player.X;
                 var firstZ = _api.Player.Z;
-                Thread.Sleep(TimeSpan.FromSeconds(0.5));
+                Thread.Sleep(TimeSpan.FromSeconds(2));
                 var dchange = Math.Pow(firstX - _api.Player.X, 2) + Math.Pow(firstZ - _api.Player.Z, 2);
                 return Math.Abs(dchange) < 1;
             }
@@ -597,17 +606,25 @@ namespace MemoryAPI.Memory
                 _api = api;
             }
 
-            public bool IsMenuOpen { get; }
-            public int MenuItemCount { get; }
-            public int MenuIndex { get; set; }
-            public string MenuName { get; }
-            public string HelpName { get; }
-            public string HelpDescription { get; }
+            public int HPPCurrent => (int)_api.Player.HPP;
 
-            public int GetMenuIndex() => _api.Menu.MenuIndex;
-            public void SetIndex(int index) => _api.Menu.MenuIndex = index;
+            public bool IsMenuOpen => (bool)_api.Menu.IsMenuOpen;
+            public int MenuItemCount => (int)_api.Menu.MenuItemCount;
+            public int MenuIndex
+            {
+                get
+                {
+                    return (int)_api.Menu.MenuIndex;
+                }
+                set
+                {
+                    _api.Menu.MenuIndex = value;
+                }
+            }
 
-            public string GetMenuName() => _api.Menu.MenuName;
+            public string MenuName => (string)_api.Menu.MenuName;
+            public string HelpName => (string)_api.Menu.HelpName;
+            public string HelpDescription => (string)_api.Menu.HelpDescription;
 
         }
     }

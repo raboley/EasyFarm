@@ -206,6 +206,10 @@ namespace EasyFarm.UserSettings
         /// </summary>
         public bool EnableDumpItemsAtBastok = false;
 
+        public bool ShouldDumpItemsNowButtonPressed = false;
+
+        public int TimeToDumpInMinutes = 10;
+
         /// <summary>
         /// The distance with which to follow a player.
         /// </summary>

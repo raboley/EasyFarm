@@ -20,8 +20,11 @@ namespace MemoryAPI.Menu
 {
     public interface IMenuTools
     {
-        int GetMenuIndex();
-        void SetIndex(int index);
-        string GetMenuName();
+        bool IsMenuOpen { get; }
+        int MenuItemCount { get; }
+        int MenuIndex { get; set; }
+        string MenuName { get; }
+        string HelpName { get; }
+        string HelpDescription { get; }
     }
 }
