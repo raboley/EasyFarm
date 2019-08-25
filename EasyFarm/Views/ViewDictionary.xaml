@@ -35,4 +35,7 @@
     <DataTemplate DataType="{x:Type viewModels:MainViewModel}">
         <views:MainView />
     </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModels:DebugViewModel}">
+        <views:DebugView />
+    </DataTemplate>
 </ResourceDictionary>

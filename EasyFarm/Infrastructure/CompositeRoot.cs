@@ -55,6 +55,7 @@ namespace EasyFarm.Infrastructure
             SelectAbilityRequestHandler selectAbilityRequestHandler = new SelectAbilityRequestHandler(metroWindow);
             BattlesViewModel battlesViewModel = new BattlesViewModel();
             FollowViewModel followViewModel = new FollowViewModel();
+            DebugViewModel debugViewModel = new DebugViewModel();
             IgnoredViewModel ignoredViewModel = new IgnoredViewModel();
             LogViewModel logViewModel = new LogViewModel();            
             SelectProcessViewModel selectProcessViewModel = new SelectProcessViewModel(new SelectProcessDialog());
@@ -72,6 +73,7 @@ namespace EasyFarm.Infrastructure
                 followViewModel,
                 logViewModel,
                 settingsViewModel,
+                debugViewModel,
             });
             MainViewModel mainViewModel = new MainViewModel(tabViewModels);            
             MasterViewModel masterViewModel = new MasterViewModel(mainViewModel, EventMessenger);
@@ -86,6 +88,7 @@ namespace EasyFarm.Infrastructure
             if (requestedType == typeof(UpdateEliteAPI)) return updateEliteAPI;
             if (requestedType == typeof(BattlesViewModel)) return battlesViewModel;
             if (requestedType == typeof(FollowViewModel)) return followViewModel;
+            if (requestedType == typeof(DebugViewModel)) return debugViewModel;
             if (requestedType == typeof(IgnoredViewModel)) return ignoredViewModel;
             if (requestedType == typeof(LogViewModel)) return logViewModel;
             if (requestedType == typeof(TabViewModels)) return tabViewModels;

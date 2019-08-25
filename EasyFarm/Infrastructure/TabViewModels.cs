@@ -46,7 +46,8 @@ namespace EasyFarm.Infrastructure
             { typeof(RoutesViewModel), 4 },
             { typeof(FollowViewModel), 5 },
             { typeof(LogViewModel), 6 },
-            { typeof(SettingsViewModel), 7 }
+            { typeof(SettingsViewModel), 7 },
+            { typeof(DebugViewModel), 8 }
         };
     }
 }

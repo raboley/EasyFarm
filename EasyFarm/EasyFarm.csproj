@@ -271,6 +271,7 @@
     </Compile>
     <Compile Include="UserSettings\ProxyConfig.cs" />
     <Compile Include="ViewModels\BattlesViewModel.cs" />
+    <Compile Include="ViewModels\DebugViewModel.cs" />
     <Compile Include="ViewModels\FollowViewModel.cs" />
     <Compile Include="Classes\ISystemTray.cs" />
     <Compile Include="Classes\LinqExtensions.cs" />
@@ -308,6 +309,9 @@
     <Compile Include="ViewModels\IgnoredViewModel.cs" />
     <Compile Include="ViewModels\LogViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\DebugView.xaml.cs">
+      <DependentUpon>DebugView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FollowView.xaml.cs">
       <DependentUpon>FollowView.xaml</DependentUpon>
     </Compile>
@@ -394,6 +398,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\AbilityView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DebugView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
