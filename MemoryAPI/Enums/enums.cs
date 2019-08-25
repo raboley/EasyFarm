@@ -17,6 +17,26 @@
 // ///////////////////////////////////////////////////////////////////
 namespace MemoryAPI
 {
+
+    /// <summary>
+    /// Equipment slot ids for equiped weapons and armor referenced by the api
+    /// </summary>
+    public enum InventoryContainer : int
+    {
+        ItemsBag = 0,
+        MogSafe = 1,
+        // ?MogSafe2 = 2,
+        // ?Storage = 3,
+        // ?MogSatchel = 4,
+        // ??? = 5,
+        MogSack = 6,
+        MogCase = 7,
+        MogWardrobe = 8,
+        // ??? = 9,
+        MogWardrobe2 = 10,
+
+    }
+
     /// <summary>
     /// Equipment slot ids for equiped weapons and armor referenced by the api
     /// </summary>

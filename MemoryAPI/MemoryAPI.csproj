@@ -62,6 +62,7 @@
     <Compile Include="IMemoryAPI.cs" />
     <Compile Include="Memory\EliteApiExtensions.cs" />
     <Compile Include="Memory\EliteMMOWrapper.cs" />
+    <Compile Include="Inventory\IInventoryTools.cs" />
     <Compile Include="Memory\JsonSerializer.cs" />
     <Compile Include="Memory\MemoryWrapper.cs" />
     <Compile Include="Memory\PollingProcessor.cs" />

@@ -15,24 +15,21 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
-using System.Collections.Generic;
-using EasyFarm.Classes;
 
-namespace EasyFarm.Tests.TestTypes.Mocks
+namespace MemoryAPI.Inventory
 {
-    public class MockUnitService : IUnitService
+    public interface IInventoryTools
     {
-        public bool HasAggro { get; }
-        public ICollection<IUnit> MobArray { get; } = new List<IUnit>();
+        string SelectedItemName { get; }
+        uint SelectedItemId { get; }
+        uint SelectedItemIndex { get; }
+        uint ShopItemCount { get; }
+        uint ShopItemCountMax { get; set; }
 
-        public IUnit GetClosestUnitByPartialName(string name)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IUnit GetUnitByName(string name)
-        {
-            throw new System.NotImplementedException();
-        }
+        int GetContainerCount(int containerId);
+        EliteMMO.API.EliteAPI.InventoryItem GetContainerItem(int containerId, int itemIndex);
+        int GetContainerMaxCount(int containerId);
+        EliteMMO.API.EliteAPI.InventoryItem GetEquippedItem(int slotId);
+        bool SetBazaarPrice(int price);
     }
 }

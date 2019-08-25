@@ -16,6 +16,8 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using MemoryAPI.Chat;
+using MemoryAPI.Dialog;
+using MemoryAPI.Inventory;
 using MemoryAPI.Menu;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
@@ -34,5 +36,8 @@ namespace MemoryAPI
         IChatTools Chat { get; set; }
         IResourcesTools Resource { get; set; }
         IMenuTools Menu { get; set; }
+        IDialogTools Dialog { get; set; }
+        IInventoryTools Inventory { get; set; }
+        string ConfigFilePath { get; set; }
     }
 }

@@ -18,6 +18,7 @@
 using System.Collections.Generic;
 using MemoryAPI.Chat;
 using MemoryAPI.Dialog;
+using MemoryAPI.Inventory;
 using MemoryAPI.Menu;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
@@ -52,5 +53,9 @@ namespace MemoryAPI.Memory
         public IDialogTools Dialog { get; set; }
 
         public IMenuTools Menu { get; set; }
+        
+        public IInventoryTools Inventory { get; set; }
+        public string ConfigFilePath { get; set; }
+
     }
 }

@@ -20,7 +20,11 @@ namespace MemoryAPI.Dialog
 {
     public interface IDialogTools
     {
-        void GetDialog();
+        int DialogId { get; }
+        int DialogIndex { get; }
+        int DialogOptionCount { get; }
+
+        EliteMMO.API.EliteAPI.DialogInfo GetDialog();
         string GetDialogText();
     }
 }

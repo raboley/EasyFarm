@@ -178,6 +178,12 @@
     <Compile Include="Classes\AppServices.cs" />
     <Compile Include="Classes\BattleList.cs" />
     <Compile Include="Classes\BattleLists.cs" />
+    <Compile Include="Classes\Dialog.cs" />
+    <Compile Include="Classes\IDialog.cs" />
+    <Compile Include="Classes\IInventory.cs" />
+    <Compile Include="Classes\IMenu.cs" />
+    <Compile Include="Classes\INavigator.cs" />
+    <Compile Include="Classes\Inventory.cs" />
     <Compile Include="Classes\IUnit.cs" />
     <Compile Include="Classes\IUnitFilters.cs" />
     <Compile Include="Classes\IUnitService.cs" />

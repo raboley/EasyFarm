@@ -24,11 +24,12 @@ using System.Threading;
 using EliteMMO.API;
 using MemoryAPI.Chat;
 using MemoryAPI.Dialog;
+using MemoryAPI.Inventory;
 using MemoryAPI.Menu;
 using MemoryAPI.Navigation;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
-
+using static EliteMMO.API.EliteAPI;
 
 namespace MemoryAPI.Memory
 {
@@ -39,6 +40,8 @@ namespace MemoryAPI.Memory
             ThirdPerson = 0,
             FirstPerson
         }
+
+        public string ConfigFilePath { get; set; }
 
         public EliteMmoWrapper(int pid)
         {
@@ -53,8 +56,9 @@ namespace MemoryAPI.Memory
             Windower = new WindowerTools(eliteApi);
             Chat = new ChatTools(eliteApi);
             Resource = new ResourcesTools(eliteApi);
-            //Dialog = new DialogTools(eliteApi);
+            Dialog = new DialogTools(eliteApi);
             Menu = new MenuTools(eliteApi);
+            Inventory = new InventoryTools(eliteApi);
             
 
             for (byte i = 0; i < 16; i++)
@@ -406,7 +410,7 @@ namespace MemoryAPI.Memory
             {
                 _api = api;
             }
-
+            
             public float CastPercentEx => (_api.CastBar.Percent * 100);
 
             public int HPPCurrent => (int)_api.Player.HPP;
@@ -468,6 +472,8 @@ namespace MemoryAPI.Memory
             }
 
             public int TPCurrent => (int)_api.Player.TP;
+
+            public int Homepoint => (int)_api.Player.Homepoint;
 
             public Zone Zone => (Zone)_api.Player.ZoneId;
 
@@ -625,6 +631,86 @@ namespace MemoryAPI.Memory
             public string MenuName => (string)_api.Menu.MenuName;
             public string HelpName => (string)_api.Menu.HelpName;
             public string HelpDescription => (string)_api.Menu.HelpDescription;
+
+        }
+
+        public class DialogTools : IDialogTools
+        {
+            private readonly EliteAPI _api;
+
+            public DialogTools(EliteAPI api)
+            {
+                _api = api;
+            }
+
+            public DialogInfo GetDialog()
+            {
+                return _api.Dialog.GetDialog();
+            }
+
+            public string GetDialogText()
+            {
+                return _api.Dialog.GetDialogText();
+            }
+
+            
+
+            public int DialogId => (int)_api.Dialog.DialogId;
+            public int DialogIndex => (int)_api.Dialog.DialogIndex;
+            public int DialogOptionCount => (int)_api.Dialog.DialogOptionCount;
+
+        }
+
+        public class InventoryTools : IInventoryTools
+        {
+            private readonly EliteAPI _api;
+
+            public InventoryTools(EliteAPI api)
+            {
+                _api = api;
+                
+            }
+
+            public string SelectedItemName => (string)_api.Inventory.SelectedItemName;
+            public uint SelectedItemId => _api.Inventory.SelectedItemId;
+            public uint SelectedItemIndex => _api.Inventory.SelectedItemIndex;
+            public uint ShopItemCount => _api.Inventory.ShopItemCount;
+            public uint ShopItemCountMax
+            {
+                get
+                {
+                    return _api.Inventory.ShopItemCountMax;
+                }
+                set
+                {
+                    _api.Inventory.ShopItemCountMax = value;
+                }
+            }
+
+            public int GetContainerCount(int containerId)
+            {
+                return _api.Inventory.GetContainerCount(containerId);
+            }
+
+            public InventoryItem GetContainerItem(int containerId, int itemIndex)
+            {
+                return _api.Inventory.GetContainerItem(containerId, itemIndex);
+            }
+
+            public int GetContainerMaxCount(int containerId)
+            {
+                return _api.Inventory.GetContainerMaxCount(containerId);
+            }
+
+            public InventoryItem GetEquippedItem(int slotId)
+            {
+                return _api.Inventory.GetEquippedItem(slotId);
+            }
+
+            public bool SetBazaarPrice(int price)
+            {
+                return _api.Inventory.SetBazaarPrice(price);
+            }
 
         }
     }

@@ -27,6 +27,7 @@ namespace EasyFarm.Context
     public interface IGameContext
     {
         IConfig Config { get; set; }
+        IDialog Dialog { get; set; }
         IPlayer Player { get; set; }
         IUnit Target { get; set; }
         Boolean IsFighting { get; set; }
@@ -34,5 +35,8 @@ namespace EasyFarm.Context
         IList<IUnit> Units { get; set; }
         IMemoryAPI API { get; set; }
         StateMemory Memory { get; set; }
+        IMenu Menu { get; set; }
+        IInventory Inventory { get; set; }
+        INavigator Navigator { get; set; }
     }
 }

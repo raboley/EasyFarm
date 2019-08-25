@@ -37,6 +37,10 @@ namespace EasyFarm.Tests.Context
         public StateMemory Memory { get; set; }
 
         public MockEliteAPI MockAPI { get; set; }
+        public IDialog Dialog { get; set; }
+        public IMenu Menu { get; set; }
+        public IInventory Inventory { get; set; }
+        public INavigator Navigator { get; set; }
 
         public TestContext()
         {

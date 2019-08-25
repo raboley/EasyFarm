@@ -31,6 +31,8 @@ namespace EasyFarm.Classes
         /// </summary>
         ICollection<IUnit> MobArray { get; }
 
+        IUnit GetClosestUnitByPartialName(string name);
+
         /// <summary>
         /// Retrieves a unit from the unit array by name.
         /// </summary>

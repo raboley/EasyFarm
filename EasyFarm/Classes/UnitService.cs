@@ -94,5 +94,13 @@ namespace EasyFarm.Classes
         {
             return Units.FirstOrDefault(x => x.Name == name);
         }
+
+        public IUnit GetClosestUnitByPartialName(string name)
+        {
+            List<IUnit> matchingUnits = Units.Where(x => (x.Name != null && x.Name != ""))
+                .Where(x => x.Name.ToLower().Contains(name.ToLower())).ToList();
+            return matchingUnits.OrderByDescending(x => x.Distance).FirstOrDefault();
+
+        }
     }
 }

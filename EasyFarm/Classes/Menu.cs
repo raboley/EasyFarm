@@ -1,4 +1,5 @@
-﻿using EliteMMO.API;
+﻿using EasyFarm.Context;
+using EliteMMO.API;
 using MemoryAPI;
 using MemoryAPI.Menu;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EasyFarm.Classes
 {
-    class Menu : IMenuTools
+    class Menu : IMenu
     {
 
         private readonly IMemoryAPI _api;
@@ -19,18 +20,18 @@ namespace EasyFarm.Classes
             _api = api;
         }
 
-        public bool IsMenuOpen { get; }
-        public int MenuItemCount { get; }
-        public int MenuIndex { get; set; }
-        public string MenuName { get; }
-        public string HelpName { get; }
-        public string HelpDescription { get; }
-
-        public int GetMenuIndex() => _api.Menu.MenuIndex;
-        public void SetIndex(int index) => _api.Menu.MenuIndex = index;
-
-        public string GetMenuName() => _api.Menu.MenuName;
-
-        
+        public void ExitMenus(IGameContext context)
+        {
+            while (_api.Menu.IsMenuOpen == true)
+            {
+                context.API.Windower.SendKeyPress(Keys.ESCAPE);
+                TimeWaiter.Pause(100);
+            }
+            //for (int i = 0; i < 7; i++)
+            //{
+            //    TimeWaiter.Pause(500);
+            //    context.API.Windower.SendKeyPress(Keys.ESCAPE);
+            //}
+        }
     }
 }

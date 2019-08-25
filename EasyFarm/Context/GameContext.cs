@@ -33,18 +33,24 @@ namespace EasyFarm.Context
             API = api;
             Player = new Player(api);
             Config = new ProxyConfig();
+            Dialog = new Dialog(api);
             Memory = new StateMemory(api);
             Target = new NullUnit();
             Menu = new Menu(api);
-            
+            Navigator = new Navigator(api);
+            Inventory = new Inventory(api);
+
         }
 
         public IConfig Config { get; set; }
+        public IDialog Dialog { get; set; }
         public IPlayer Player { get; set; }
         public IUnit Target { get; set; }
-        public IMenuTools Menu { get; private set; }
+        public INavigator Navigator { get; set; }
+        public IMenu Menu { get; set; }
         public Boolean IsFighting { get; set; }
-        public Zone Zone { get;set; }
+        public Zone Zone { get; set; }
+        public IInventory Inventory { get; set; }
 
         public IList<IUnit> Units
         {
@@ -58,5 +64,6 @@ namespace EasyFarm.Context
         */
         public IMemoryAPI API { get; set; }
         public StateMemory Memory { get; set; }
+        
     }
 }
