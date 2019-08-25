@@ -193,6 +193,8 @@ namespace EasyFarm.ViewModels
             try
             {
                 _settingsManager.TrySave(Config.Instance);
+                Config.Instance.FileName = _settingsManager.FilePath;
+
                 AppServices.InformUser("Settings have been saved.");
                 LogViewModel.Write("Settings saved");
             }
@@ -212,7 +214,6 @@ namespace EasyFarm.ViewModels
             {
                 // Load the settings.
                 var settings = _settingsManager.TryLoad<Config>();
-
                 // Did we fail to load the settings?
                 if (settings == null)
                 {
@@ -222,6 +223,7 @@ namespace EasyFarm.ViewModels
 
                 // Inform the user of our success.
                 Config.Instance = settings;
+                Config.Instance.FileName = _settingsManager.FilePath;
                 AppServices.SendConfigLoaded();
                 AppServices.InformUser("Settings have been loaded.");
                 LogViewModel.Write("Settings loaded");

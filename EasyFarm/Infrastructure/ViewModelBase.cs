@@ -79,7 +79,9 @@ namespace EasyFarm.Infrastructure
             var fileName = $"{characterName}.eup";
             if (String.IsNullOrWhiteSpace(fileName)) return;
             if (!File.Exists(fileName)) return;
+
             var config = persister.Deserialize<Config>(fileName);
+            config.FileName = fileName;
             Config.Instance = config;
             AppServices.SendConfigLoaded();
         }

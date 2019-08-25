@@ -27,6 +27,7 @@
     </i:Interaction.Triggers>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="50" />
             <RowDefinition Height="*" />
             <RowDefinition Height="30" />
@@ -49,9 +50,19 @@
                         Value="Black" />
             </Style>
         </Grid.Resources>
+        <Menu Grid.Row="0" Background="White" Grid.ColumnSpan="2">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" />
+                <MenuItem Header="_Open" Command="{Binding LoadCommand}" />
+                <MenuItem Header="_Save" />
+                <MenuItem Header="_Save As" Command="{Binding SaveCommand}"/>
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+        </Menu>
         <Frame Grid.ColumnSpan="2"
-               Background="Black" />
-        <Menu Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0"
+               Background="Black" Grid.Row="1" />
+        <Menu Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0"
               VerticalAlignment="Center">
             <Button
                 Margin="0,5"
@@ -76,11 +87,11 @@
         </Menu>
 
         <ContentControl Content="{Binding ViewModel}"
-                        Grid.Row="1"
+                        Grid.Row="2"
                         Grid.ColumnSpan="2" 
                         Grid.Column="0" />
 
-        <StatusBar Grid.Row="2"
+        <StatusBar Grid.Row="3"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
                    Background="Black"

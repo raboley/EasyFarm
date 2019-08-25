@@ -33,6 +33,8 @@ namespace EasyFarm.UserSettings
     {
         private static Lazy<Config> _lazy = new Lazy<Config>(() => new Config());
 
+        public string FileName;
+
         /// <summary>
         ///     Used to filter out aggroed mobs.
         /// </summary>
