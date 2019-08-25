@@ -356,7 +356,7 @@ namespace EasyFarm.States
 
                 Classes.Player.SetTarget(fface, unitToTradeTo);
                 fface.Windower.SendString($"/tradeall *{item}");
-                TimeWaiter.Pause(2000);
+                TimeWaiter.Pause(5000);
                 int afterCount = context.Inventory.GetCountOfItemsInContainer(item);
 
                 if (beforeCount == afterCount)

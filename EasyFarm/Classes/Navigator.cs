@@ -88,7 +88,7 @@ namespace EasyFarm.Classes
                 TimeWaiter.Pause(100);
             }
             // just because we got a pos, doesn't mean things are loaded.
-            TimeWaiter.Pause(2000);
+            TimeWaiter.Pause(5000);
         }
 
         public double DistanceTo(IMemoryAPI fface, Position position)
