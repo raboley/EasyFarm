@@ -29,5 +29,6 @@ namespace EasyFarm.Context
         int MppCurrent { get; set; }
         int JobLevel { get; set; }
         Job Job { get; set; }
+        Zone Homepoint { get; set; }
     }
 }

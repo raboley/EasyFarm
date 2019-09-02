@@ -15,6 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+using EasyFarm.Classes;
+using EasyFarm.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,5 +43,28 @@ namespace EasyFarm.Views
         {
             InitializeComponent();
         }
+
+
+        public object ObjectToVisualize
+        {
+            get { return (object)GetValue(ObjectToVisualizeProperty); }
+            set { SetValue(ObjectToVisualizeProperty, value); }
+        }
+        public static readonly DependencyProperty ObjectToVisualizeProperty =
+            DependencyProperty.Register("ObjectToVisualize", typeof(object), typeof(DebugView), new PropertyMetadata(null, OnObjectChanged));
+
+        private static void OnObjectChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            TreeNode tree = TreeNode.CreateTree(e.NewValue);
+            (d as DebugView).TreeNodes = new List<TreeNode>() { tree };
+        }
+
+        public List<TreeNode> TreeNodes
+        {
+            get { return (List<TreeNode>)GetValue(TreeNodesProperty); }
+            set { SetValue(TreeNodesProperty, value); }
+        }
+        public static readonly DependencyProperty TreeNodesProperty =
+            DependencyProperty.Register("TreeNodes", typeof(List<TreeNode>), typeof(DebugView), new PropertyMetadata(null));
     }
 }

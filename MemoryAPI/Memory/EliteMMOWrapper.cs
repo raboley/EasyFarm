@@ -500,7 +500,7 @@ namespace MemoryAPI.Memory
             }
 
             public int MeritPoints => (int)_api.Player.MeritPoints;
-
+            public Zone HomePoint => (Zone) _api.Player.Homepoint;
         }
 
         public class TargetTools : ITargetTools

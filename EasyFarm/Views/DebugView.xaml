@@ -3,23 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" d:DesignWidth="330.12" d:DesignHeight="85.835" >
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <Label Grid.Row="0" Grid.Column="0" Margin="5">Name</Label>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding Name}" />
-        <Label Grid.Row="1" Grid.Column="0" Margin="5">Distance</Label>
-        <Slider Grid.Row="1" Grid.Column="1"                
-                Minimum="1" Maximum="25" 
-                TickFrequency="1" IsSnapToTickEnabled="True" 
-                Margin="5" Value="{Binding Distance}" />
-    </Grid>
+             xmlns:local="clr-namespace:EasyFarm.Classes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             x:Name="ObjectInTreeViewControl">
+    <TreeView ItemsSource="{Binding TreeNodes, ElementName=ObjectInTreeViewControl}">
+        <TreeView.Resources>
+            
+            <HierarchicalDataTemplate DataType="{x:Type local:TreeNode}" ItemsSource="{Binding Path=Children}">
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Path=Name}"/>
+                            <TextBlock Text=" : "/>
+                            <TextBlock Text="{Binding Path=Value}"/>
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+            </HierarchicalDataTemplate>
+        </TreeView.Resources>
+    </TreeView>
 </UserControl>

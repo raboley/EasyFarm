@@ -80,6 +80,12 @@ namespace EasyFarm.Context
             set => throw new NotImplementedException();
         }
 
+        public Zone Homepoint
+        {
+            get => _memoryAPI.Player.HomePoint;
+            set => throw new NotImplementedException();
+        }
+
         public Job SubJob
         {
             get => _memoryAPI.Player.SubJob;

@@ -43,5 +43,6 @@ namespace MemoryAPI
         int SubJobLevel { get; }
         List<EliteMMO.API.EliteAPI.InventoryItem> Equipment { get; }
         int MeritPoints { get; }
+        Zone HomePoint { get; }
     }
 }

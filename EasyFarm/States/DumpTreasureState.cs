@@ -25,20 +25,8 @@ namespace EasyFarm.States
 {
     class DumpTreasureState : BaseState
     {
-        private const string routePathRoot = "D:\\Users\\Russell\\Source\\Repos\\EasyFarm\\EasyFarm\\bin\\Debug\\";
-        public const int homepointDelayConstant = 1000;
-        //private const double TooCloseDistance = 1.5;
-        //private IWindowerTools windower;
-        //private IMemoryAPI fface;
-
-        //public DumpTreasureState(IGameContext context)
-        //{
-        //    fface = context.API;
-        //    windower = context.API.Windower;
-        //}
-
-        //private DateTime? _lastTargetCheck;
-        
+        private const string RoutePathRoot = "D:\\Users\\Russell\\Source\\Repos\\EasyFarm\\EasyFarm\\bin\\Debug\\";
+     
 
         public override bool Check(IGameContext context)
         {
@@ -55,7 +43,6 @@ namespace EasyFarm.States
             bool dumpItems = context.Config.EnableDumpItemsAtBastok;
             if (dumpItems == true)
             {
-
                 // inventory is full
                 if (context.Inventory.InventoryIsFull(0))
                 {
@@ -63,9 +50,9 @@ namespace EasyFarm.States
                 }
 
                 // you died, gotta restart
-                if (context.Memory.EliteApi.Player.Zone == Zone.Bastok_Markets)
+                if (context.Memory.EliteApi.Player.Zone == context.Player.Homepoint)
                 {
-                    //return true;
+                    return true;
                 }
                 //// merit points are full
                 //    int meritPoints = context.API.Player.MeritPoints;
@@ -85,7 +72,7 @@ namespace EasyFarm.States
                 //}
             }
                        
-             return false;
+            return false;
         }
         // TODO Fix the exit menus for dialog
         public override void Run(IGameContext context)
@@ -98,10 +85,10 @@ namespace EasyFarm.States
             //SpendMeritPoints(context, fface);
             //ExitMogHouseGoToCrystal(context, fface);
             //HomePointWarpPortJuenoMogHouse(context, fface);
-            context.Navigator.TravelPath(context, routePathRoot + "_port_jeuno_moghouse_to_shemo.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_port_jeuno_moghouse_to_shemo.ewl");
             StoreSealsAndCretsAtShemo(context, fface);
 
-            context.Navigator.TravelPath(context, routePathRoot + "_shemo_to_port_jueno_moghouse_homepoint.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_shemo_to_port_jueno_moghouse_homepoint.ewl");
             WarpToGoldsmith(context, fface);
             
             StoreCrystalsAndSellItemsToGoldsmith(context, fface);
@@ -113,7 +100,7 @@ namespace EasyFarm.States
             SummonTrustsAndGoInvis(fface);
 
             //// walk to hard mobs zone
-            context.Navigator.TravelPath(context, routePathRoot + "_boyda_to_jp_route.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_boyda_to_jp_route.ewl");
 
             // start bot
             context.Navigator.LoadRoute("C:\\Users\\Russell\\Desktop\\Release\\boyda_route_jp.ewl");
@@ -123,7 +110,7 @@ namespace EasyFarm.States
         private void SpendMeritPoints(IGameContext context, IMemoryAPI fface)
         {
             // go to mog house
-            string homepoint3ToMogHouse = routePathRoot + "_homepoint3_to_moghouse.ewl";
+            string homepoint3ToMogHouse = RoutePathRoot + "_homepoint3_to_moghouse.ewl";
             context.Navigator.TravelPath(context, homepoint3ToMogHouse);
 
             for (int i = 0; i < 10; i++)
@@ -179,8 +166,7 @@ namespace EasyFarm.States
             context.Navigator.WaitForZone(fface, context);
 
             // go to warp crystal 
-            string MogHouseTohomepoint3 = routePathRoot + "_moghouse_to_homepoint3.ewl";
-            context.Navigator.TravelPath(context, MogHouseTohomepoint3);
+            context.Navigator.TravelPath(context, RoutePathRoot + "_moghouse_to_homepoint3.ewl");
         }
 
         private static void ExitMogHouse(IGameContext context)
@@ -207,13 +193,14 @@ namespace EasyFarm.States
 
         private static void StoreSealsAndCretsAtShemo(IGameContext context, IMemoryAPI fface)
         {
-            // # TODO Figure this out, he says stuff and asks you to press enter so this might be complicated.
             IUnit shemo = context.Memory.UnitService.GetClosestUnitByPartialName("shemo");
             context.Memory.EliteApi.Navigator.GotoNPC(shemo.Id, context.Config.IsObjectAvoidanceEnabled);
 
             TradeAllItemsToTalkers(context, fface, "seal", shemo);
             TradeAllItemsToTalkers(context, fface, "crest", shemo);
             context.Dialog.ExitDialog(context);
+            
+            // extra escape for good measure
             context.Memory.EliteApi.Windower.SendKeyPress(EliteMMO.API.Keys.ESCAPE);
         }
 
@@ -239,6 +226,7 @@ namespace EasyFarm.States
                 int afterCount = context.Inventory.GetCountOfItemsInContainer(item);
                 if (beforeCount == afterCount)
                 {
+                    // if the count of items attempting to be traded doesn't change then
                     // container may be full of that particular set of items
                     // ie the moogle has the max capacity of 5k of a type of crystal
                     break;
@@ -293,13 +281,13 @@ namespace EasyFarm.States
         {
 
             // go to goldsmith door
-            context.Navigator.TravelPath(context, routePathRoot + "_homepoint4_to_goldsmith_door.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_homepoint4_to_goldsmith_door.ewl");
 
             // open door
             OpenGoldsmithDoor(context, fface);
 
             // go to ephemeral moogle
-            context.Navigator.TravelPath(context, routePathRoot + "_goldsmith_door_to_ephemeral_moogle.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_goldsmith_door_to_ephemeral_moogle.ewl");
 
             // drop off crystals
             StoreCrystalsAtMoogle(context, fface);
@@ -309,7 +297,7 @@ namespace EasyFarm.States
             StoreGoodsAndDropTrash(fface);
 
             // go to merchent
-            context.Navigator.TravelPath(context, routePathRoot + "_ephemeral_moogle_to_teerth.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_ephemeral_moogle_to_teerth.ewl");
 
             // sell all things
             IUnit teerth = new NullUnit
@@ -356,7 +344,7 @@ namespace EasyFarm.States
 
                 Classes.Player.SetTarget(fface, unitToTradeTo);
                 fface.Windower.SendString($"/tradeall *{item}");
-                TimeWaiter.Pause(5000);
+                TimeWaiter.Pause(10000);
                 int afterCount = context.Inventory.GetCountOfItemsInContainer(item);
 
                 if (beforeCount == afterCount)
@@ -396,13 +384,13 @@ namespace EasyFarm.States
         private void TravelToHomepointOne(IGameContext context, IMemoryAPI fface)
         {
             // go to door
-            context.Navigator.TravelPath(context, routePathRoot + "_teerth_to_goldsmith_door.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_teerth_to_goldsmith_door.ewl");
 
             // open door
             OpenGoldsmithDoor(context, fface);
 
             // go to crystal
-            context.Navigator.TravelPath(context, routePathRoot + "_goldsmith_doort_to_homepoint4.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_goldsmith_doort_to_homepoint4.ewl");
 
             // warp to markets entrance
             WarpToEntrance(context, fface);
@@ -448,7 +436,7 @@ namespace EasyFarm.States
 
 
             // go to isakoth
-            context.Navigator.TravelPath(context, routePathRoot + "_homepoint1_to_isakoth.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_homepoint1_to_isakoth.ewl");
             IUnit Isakoth = new NullUnit
             {
                 Id = 177
@@ -465,13 +453,13 @@ namespace EasyFarm.States
             BuyAllAcheronShields(context, fface);
 
             // go to merchant door
-            context.Navigator.TravelPath(context, routePathRoot + "_isakoth_to_mjol_door.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_isakoth_to_mjol_door.ewl");
 
             // open door
             OpenMjollsGoodsDoor(context, fface);
 
             // go to merchant
-            context.Navigator.TravelPath(context, routePathRoot + "_mjol_door_to_olwyn.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_mjol_door_to_olwyn.ewl");
 
             // sell all things
             IUnit olwyn = new NullUnit
@@ -518,13 +506,13 @@ namespace EasyFarm.States
         {
 
             // go to merchant door
-            context.Navigator.TravelPath(context, routePathRoot + "_olwyn_to_mjol_door.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_olwyn_to_mjol_door.ewl");
 
             // open door
             OpenMjollsGoodsDoor(context, fface);
 
             // go to signet guy
-            context.Navigator.TravelPath(context, routePathRoot + "_mjol_door_to_rabid_wolf.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_mjol_door_to_rabid_wolf.ewl");
             IUnit rabidWolfIM = new NullUnit
             {
                 Id = 52
@@ -552,7 +540,7 @@ namespace EasyFarm.States
         {
 
             // go to warp guy
-            context.Navigator.TravelPath(context, routePathRoot + "_rabid_wolf_to_igsli.ewl");
+            context.Navigator.TravelPath(context, RoutePathRoot + "_rabid_wolf_to_igsli.ewl");
 
             // buy all gobbie keys
             IUnit igsli = new NullUnit
@@ -563,6 +551,7 @@ namespace EasyFarm.States
 
             // warp to boyda
             WarpToBoyahdaTree(context, fface, igsli);
+            TimeWaiter.Pause(5000);
             context.Navigator.WaitForZone(fface, context);
         }
 

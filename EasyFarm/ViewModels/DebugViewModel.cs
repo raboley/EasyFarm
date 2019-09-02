@@ -19,6 +19,9 @@ using EasyFarm.Classes;
 
 using EasyFarm.Infrastructure;
 using EasyFarm.UserSettings;
+using System.Collections;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
 
 namespace EasyFarm.ViewModels
 {
@@ -27,6 +30,11 @@ namespace EasyFarm.ViewModels
         public DebugViewModel()
         {
             ViewName = "Debug";
+        }
+
+        public Config ObjectToVisualize
+        {
+            get { return Config.Instance; }
         }
 
         public string Name
@@ -45,7 +53,7 @@ namespace EasyFarm.ViewModels
             set
             {
                 Set(ref Config.Instance.FollowDistance, value);
-                AppServices.InformUser(string.Format("Follow Distance: {0}.", value));
+                AppServices.InformUser($"Follow Distance: {value}.");
             }
         }
     }
