@@ -58,6 +58,12 @@ namespace EasyFarm.Classes
             TimeWaiter.Pause(1000);
         }
 
+        public void GoToNpc(IGameContext context, IMemoryAPI fface, string npcName)
+        {
+            IUnit npc = context.Memory.UnitService.GetClosestUnitByPartialName(npcName);
+            context.Memory.EliteApi.Navigator.GotoNPC(npc.Id, context.Config.IsObjectAvoidanceEnabled);
+        }
+        
         public static void FaceUnit(IGameContext context, IMemoryAPI fface, IUnit unit)
         {
             var player = fface.Player.Position;

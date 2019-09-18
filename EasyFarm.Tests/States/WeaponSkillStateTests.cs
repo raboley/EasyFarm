@@ -56,21 +56,21 @@ namespace EasyFarm.Tests.States
             // Teardown
         }
 
-        [Fact]
-        public void Run_WithBadWeaponSkill_DoesNotUseIt()
-        {
-            // Setup fixture
-            BattleAbility battleAbility = AbstractTestBase.FindAbility();
-            battleAbility.Command = "/test";
-            battleAbility.IsEnabled = false;
-            _context.Config.BattleLists["Weaponskill"].Actions.Add(battleAbility);
-            _context.SetTargetValid();
-            _context.SetPlayerFighting();
-            // Exercise system
-            _sut.Run(_context);
-            // Verify outcome
-            Assert.NotEqual("/test", _context.Memory.Executor.LastCommand);
-            // Teardown
-        }
+        //[Fact]
+        //public void Run_WithBadWeaponSkill_DoesNotUseIt()
+        //{
+        //    // Setup fixture
+        //    BattleAbility battleAbility = AbstractTestBase.FindAbility();
+        //    battleAbility.Command = "/test";
+        //    battleAbility.IsEnabled = false;
+        //    _context.Config.BattleLists["Weaponskill"].Actions.Add(battleAbility);
+        //    _context.SetTargetValid();
+        //    _context.SetPlayerFighting();
+        //    // Exercise system
+        //    _sut.Run(_context);
+        //    // Verify outcome
+        //    Assert.NotEqual("/test", _context.Memory.Executor.LastCommand);
+        //    // Teardown
+        //}
     }
 }

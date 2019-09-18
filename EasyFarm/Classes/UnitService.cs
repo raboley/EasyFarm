@@ -99,7 +99,8 @@ namespace EasyFarm.Classes
         {
             List<IUnit> matchingUnits = Units.Where(x => (x.Name != null && x.Name != ""))
                 .Where(x => x.Name.ToLower().Contains(name.ToLower())).ToList();
-            return matchingUnits.OrderByDescending(x => x.Distance).FirstOrDefault();
+            IUnit unit = matchingUnits.OrderBy(x => x.Distance).FirstOrDefault();
+            return unit;
 
         }
     }

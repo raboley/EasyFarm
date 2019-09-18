@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Windows;
 using EasyFarm.Classes;
 using EasyFarm.Handlers;
+using EasyFarm.Mapping;
 using EasyFarm.Persistence;
 using EasyFarm.ViewModels;
 using EasyFarm.Views;
@@ -57,7 +58,8 @@ namespace EasyFarm.Infrastructure
             FollowViewModel followViewModel = new FollowViewModel();
             DebugViewModel debugViewModel = new DebugViewModel();
             IgnoredViewModel ignoredViewModel = new IgnoredViewModel();
-            LogViewModel logViewModel = new LogViewModel();            
+            LogViewModel logViewModel = new LogViewModel();
+            ZoneMapViewModel zoneMapViewModel = new ZoneMapViewModel();
             SelectProcessViewModel selectProcessViewModel = new SelectProcessViewModel(new SelectProcessDialog());
             RestingViewModel restingViewModel = new RestingViewModel();
             RoutesViewModel routesViewModel = new RoutesViewModel();
@@ -73,6 +75,7 @@ namespace EasyFarm.Infrastructure
                 followViewModel,
                 logViewModel,
                 settingsViewModel,
+                zoneMapViewModel,
                 debugViewModel,
             });
             MainViewModel mainViewModel = new MainViewModel(tabViewModels);            
@@ -89,6 +92,7 @@ namespace EasyFarm.Infrastructure
             if (requestedType == typeof(BattlesViewModel)) return battlesViewModel;
             if (requestedType == typeof(FollowViewModel)) return followViewModel;
             if (requestedType == typeof(DebugViewModel)) return debugViewModel;
+            if (requestedType == typeof(ZoneMapViewModel)) return zoneMapViewModel;
             if (requestedType == typeof(IgnoredViewModel)) return ignoredViewModel;
             if (requestedType == typeof(LogViewModel)) return logViewModel;
             if (requestedType == typeof(TabViewModels)) return tabViewModels;

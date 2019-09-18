@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:viewModels="clr-namespace:EasyFarm.ViewModels"
-                    xmlns:views="clr-namespace:EasyFarm.Views">
+                    xmlns:views="clr-namespace:EasyFarm.Views"
+                    xmlns:mapping="clr-namespace:EasyFarm.Mapping">
     <DataTemplate DataType="{x:Type viewModels:BattlesViewModel}">
         <views:BattlesView />
     </DataTemplate>
@@ -31,6 +32,9 @@
     </DataTemplate>
     <DataTemplate DataType="{x:Type viewModels:TargetingViewModel}">
         <views:TargetingView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type mapping:ZoneMapViewModel}">
+        <mapping:ZoneMapView />
     </DataTemplate>
     <DataTemplate DataType="{x:Type viewModels:MainViewModel}">
         <views:MainView />

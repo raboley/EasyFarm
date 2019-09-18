@@ -58,5 +58,6 @@ namespace EasyFarm.Tests.TestTypes.Mocks
         public IMenuTools Menu { get; set; }
         public IDialogTools Dialog { get; set; }
         public IInventoryTools Inventory { get; set; }
+        public string ConfigFilePath { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     }
 }

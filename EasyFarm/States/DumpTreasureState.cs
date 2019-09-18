@@ -30,6 +30,9 @@ namespace EasyFarm.States
 
         public override bool Check(IGameContext context)
         {
+            
+            //OpenDoor(context, context.API);
+
             // dump items button was pressed
             if (context.Config.ShouldDumpItemsNowButtonPressed == true)
             {
@@ -50,7 +53,9 @@ namespace EasyFarm.States
                 }
 
                 // you died, gotta restart
-                if (context.Memory.EliteApi.Player.Zone == context.Player.Homepoint)
+                // TODO: Figure out how to convert hte homepoint uint to a zoneId?
+                bool died = context.Memory.EliteApi.Player.Zone == context.Player.Homepoint;
+                if (died)
                 {
                     return true;
                 }
@@ -74,7 +79,7 @@ namespace EasyFarm.States
                        
             return false;
         }
-        // TODO Fix the exit menus for dialog
+
         public override void Run(IGameContext context)
         {
             IMemoryAPI fface = context.API;
@@ -202,6 +207,7 @@ namespace EasyFarm.States
             
             // extra escape for good measure
             context.Memory.EliteApi.Windower.SendKeyPress(EliteMMO.API.Keys.ESCAPE);
+            context.Memory.EliteApi.Windower.SendKeyPress(EliteMMO.API.Keys.ESCAPE);
         }
 
         private static void TradeAllItemsToTalkers(IGameContext context, IMemoryAPI fface, string item, IUnit unitToTradeTo)
@@ -238,43 +244,6 @@ namespace EasyFarm.States
         private void WarpToGoldsmith(IGameContext context, IMemoryAPI fface)
         {
             context.Navigator.HomePointWarpAddon(context, fface, "Bastok Markets 4");
-
-            //HomepointWarpFromFavorites(context, fface, "Bastok Markets #4.");
-
-
-            //IUnit homePointOne = new NullUnit
-            //{
-            //    Id = 86
-            //};
-            //context.Target = homePointOne;
-            ////Classes.Player.SetTarget(fface, context.Target);
-            //context.Navigator.InteractWithUnit(context, fface, homePointOne);
-
-            //// Not working since api returns hidden options with no way to determine what the correct option is for home point warp.
-            ////List<string> HomePointWarpBastokMarketsGoldsmith = new List<string>() { "Travel to another home point.", "Bastok.", "Bastok Markets.", "Bastok Markets #4.", "Yes, please." };
-            ////ChooseDialogOptions(context, HomePointWarpBastokMarketsGoldsmith);
-
-            ////TimeWaiter.Pause(3000);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
-            //TimeWaiter.Pause(3000);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
-            //TimeWaiter.Pause(1000);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.DOWN);
-            //TimeWaiter.Pause(1000);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
-            //TimeWaiter.Pause(1000);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.DOWN);
-            //TimeWaiter.Pause(1000);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.DOWN);
-            //TimeWaiter.Pause(1000);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
-            //TimeWaiter.Pause(1000);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.UP);
-            //TimeWaiter.Pause(1000);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
-
-            //context.Navigator.WaitForZone(fface, context);
-
         }
 
         private void StoreCrystalsAndSellItemsToGoldsmith(IGameContext context, IMemoryAPI fface)
@@ -284,7 +253,7 @@ namespace EasyFarm.States
             context.Navigator.TravelPath(context, RoutePathRoot + "_homepoint4_to_goldsmith_door.ewl");
 
             // open door
-            OpenGoldsmithDoor(context, fface);
+            OpenDoor(context, fface);
 
             // go to ephemeral moogle
             context.Navigator.TravelPath(context, RoutePathRoot + "_goldsmith_door_to_ephemeral_moogle.ewl");
@@ -300,33 +269,19 @@ namespace EasyFarm.States
             context.Navigator.TravelPath(context, RoutePathRoot + "_ephemeral_moogle_to_teerth.ewl");
 
             // sell all things
-            IUnit teerth = new NullUnit
-            {
-                Id = 12
-            };
+            IUnit teerth = context.Memory.UnitService.GetClosestUnitByPartialName("teerth");
             SellAllJunk(context, fface, teerth);
         }
 
-        private static void OpenGoldsmithDoor(IGameContext context, IMemoryAPI fface)
+        private static void OpenDoor(IGameContext context, IMemoryAPI fface)
         {
-            IUnit goldsmithDoor = new NullUnit
-            {
-                Id = 72
-            };
-            OpenDoor(context, fface, goldsmithDoor);
-        }
-
-        private static void OpenDoor(IGameContext context, IMemoryAPI fface, IUnit door)
-        {
+            IUnit door = context.Memory.UnitService.GetClosestUnitByPartialName("Door");
             context.Navigator.InteractWithUnit(context, fface, door);
         }
 
         private static void StoreCrystalsAtMoogle(IGameContext context, IMemoryAPI fface)
         {
-            IUnit ephemeralMoogle = new NullUnit
-            {
-                Id = 393
-            };
+            IUnit ephemeralMoogle = context.Memory.UnitService.GetClosestUnitByPartialName("moogle");
             TradeAllItems(context, fface, "crystal", ephemeralMoogle);
             TradeAllItems(context, fface, "cluster", ephemeralMoogle);
 
@@ -387,7 +342,7 @@ namespace EasyFarm.States
             context.Navigator.TravelPath(context, RoutePathRoot + "_teerth_to_goldsmith_door.ewl");
 
             // open door
-            OpenGoldsmithDoor(context, fface);
+            OpenDoor(context, fface);
 
             // go to crystal
             context.Navigator.TravelPath(context, RoutePathRoot + "_goldsmith_doort_to_homepoint4.ewl");
@@ -400,34 +355,6 @@ namespace EasyFarm.States
         private void WarpToEntrance(IGameContext context, IMemoryAPI fface)
         {
             context.Navigator.HomePointWarpAddon(context, fface, "Bastok Markets 1");
-
-            //IUnit homePointFour = new NullUnit
-            //{
-            //    Id = 87
-            //};
-            //context.Target = homePointFour;
-            //context.Navigator.InteractWithUnit(context, fface, homePointFour);
-
-            //// Not working since api returns hidden options with no way to determine what the correct option is for home point warp.
-            ////List<string> HomePointWarpBastokMarketsGoldsmith = new List<string>() { "Travel to another home point.", "Bastok.", "Bastok Markets.", "Home Point #1 (E).", "Yes, please." };
-            ////ChooseDialogOptions(context, HomePointWarpBastokMarketsGoldsmith);
-
-            ////TimeWaiter.Pause(homepointDelayConstant);
-            ////context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
-            //TimeWaiter.Pause(3000);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
-            //TimeWaiter.Pause(homepointDelayConstant);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.DOWN);
-            //TimeWaiter.Pause(homepointDelayConstant);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
-            //TimeWaiter.Pause(homepointDelayConstant);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.DOWN);
-            //TimeWaiter.Pause(homepointDelayConstant);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
-            //TimeWaiter.Pause(homepointDelayConstant);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.UP);
-            //TimeWaiter.Pause(homepointDelayConstant);
-            //context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
         }
 
         private void ConvertSparksToGil(IGameContext context, IMemoryAPI fface)
@@ -437,17 +364,17 @@ namespace EasyFarm.States
 
             // go to isakoth
             context.Navigator.TravelPath(context, RoutePathRoot + "_homepoint1_to_isakoth.ewl");
-            IUnit Isakoth = new NullUnit
-            {
-                Id = 177
-            };
+
+            IUnit Isakoth = context.Memory.UnitService.GetClosestUnitByPartialName("Isakoth");
             TimeWaiter.Pause(100);
             context.API.Navigator.GotoNPC(Isakoth.Id, context.Config.IsObjectAvoidanceEnabled);
 
             // trying to make sure he is loaded so that you can actually exchange sparks.
             TimeWaiter.Pause(2000);
-            context.Navigator.InteractWithUnit(context, fface, Isakoth);
-            context.Dialog.ExitDialog(context);
+
+            context.Navigator.GoToNpc(context, fface, "Isakoth");
+
+            TimeWaiter.Pause(2000);
 
             //// buy all acheron shields
             BuyAllAcheronShields(context, fface);
@@ -456,7 +383,7 @@ namespace EasyFarm.States
             context.Navigator.TravelPath(context, RoutePathRoot + "_isakoth_to_mjol_door.ewl");
 
             // open door
-            OpenMjollsGoodsDoor(context, fface);
+            OpenDoor(context, fface);
 
             // go to merchant
             context.Navigator.TravelPath(context, RoutePathRoot + "_mjol_door_to_olwyn.ewl");
@@ -492,16 +419,7 @@ namespace EasyFarm.States
                 }
             }
         }
-
-        private static void OpenMjollsGoodsDoor(IGameContext context, IMemoryAPI fface)
-        {
-            IUnit goldsmithDoor = new NullUnit
-            {
-                Id = 82
-            };
-            OpenDoor(context, fface, goldsmithDoor);
-        }
-
+        
         private void GetSignet(IGameContext context, IMemoryAPI fface)
         {
 
@@ -509,16 +427,13 @@ namespace EasyFarm.States
             context.Navigator.TravelPath(context, RoutePathRoot + "_olwyn_to_mjol_door.ewl");
 
             // open door
-            OpenMjollsGoodsDoor(context, fface);
+            OpenDoor(context, fface);
 
             // go to signet guy
             context.Navigator.TravelPath(context, RoutePathRoot + "_mjol_door_to_rabid_wolf.ewl");
-            IUnit rabidWolfIM = new NullUnit
-            {
-                Id = 52
-            };
+
+            // would break sometimes when traveling and getting signet in too rapid succession 
             TimeWaiter.Pause(100);
-            //context.API.Navigator.GotoNPC(rabidWolfIM.Id, context.Config.IsObjectAvoidanceEnabled);
 
             // get signet
             GetSignetFromRabidWolf(context, fface);
@@ -526,10 +441,8 @@ namespace EasyFarm.States
 
         private static void GetSignetFromRabidWolf(IGameContext context, IMemoryAPI fface)
         {
-            IUnit rabidWolfIM = new NullUnit
-            {
-                Id = 52
-            };
+
+            IUnit rabidWolfIM = context.Memory.UnitService.GetClosestUnitByPartialName("wolf");
             context.Navigator.InteractWithUnit(context, fface, rabidWolfIM);
             TimeWaiter.Pause(2000);
             context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
@@ -543,15 +456,13 @@ namespace EasyFarm.States
             context.Navigator.TravelPath(context, RoutePathRoot + "_rabid_wolf_to_igsli.ewl");
 
             // buy all gobbie keys
-            IUnit igsli = new NullUnit
-            {
-                Id = 185
-            };
+
+            IUnit igsli = context.Memory.UnitService.GetClosestUnitByPartialName("igsli");
             BuyAllGobbieKeys(context, fface, igsli);
 
             // warp to boyda
             WarpToBoyahdaTree(context, fface, igsli);
-            TimeWaiter.Pause(5000);
+            TimeWaiter.Pause(10000);
             context.Navigator.WaitForZone(fface, context);
         }
 

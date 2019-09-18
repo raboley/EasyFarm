@@ -192,16 +192,16 @@ namespace EasyFarm.Tests.States
         }
 
 
-        [Fact]
-        public void CanGetItemObjectFromEquipmentId()
-        {
-            string expectedName = "Bronze Knife +1";
-            int id = 16491;
+        //[Fact]
+        //public void CanGetItemObjectFromEquipmentId()
+        //{
+        //    string expectedName = "Bronze Knife +1";
+        //    int id = 16491;
 
-            var item = _context.Memory.EliteApi.Resource.GetItem(id);
-            string actualName = item.Name.ToString();
+        //    var item = _context.Memory.EliteApi.Resource.GetItem(id);
+        //    string actualName = item.Name.ToString();
 
-            Assert.Equal(expectedName, actualName);
-        }
+        //    Assert.Equal(expectedName, actualName);
+        //}
     }
 }

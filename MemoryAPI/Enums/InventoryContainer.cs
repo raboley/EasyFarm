@@ -15,23 +15,37 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
-using EasyFarm.Context;
-using MemoryAPI;
-
-namespace EasyFarm.Tests.Context
+namespace MemoryAPI
 {
-    public class MockPlayer : IPlayer
+
+    /// <summary>
+    /// Equipment slot ids for equiped weapons and armor referenced by the api
+    /// </summary>
+    public enum InventoryContainer : int
     {
-        public Status Status { get; set; }
-        public int HppCurrent { get; set; }
-        public bool HasAggro { get; set; }
-        public Zone Zone { get; set; }
-        public int Str { get; set; }
-        public int MppCurrent { get; set; }
-        public int JobLevel { get; set; }
-        public int SubJobLevel { get; set; }
-        public Job Job { get; set; }
-        public Job SubJob { get; set; }
-        public Zone Homepoint { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        ItemsBag = 0,
+        MogSafe = 1,
+        // ?MogSafe2 = 2,
+        // ?Storage = 3,
+        // ?MogSatchel = 4,
+        // ??? = 5,
+        MogSack = 6,
+        MogCase = 7,
+        MogWardrobe = 8,
+        // ??? = 9,
+        MogWardrobe2 = 10,
+
     }
+
+    // @ public enum Status : byte
+
+    // @ public enum StatusEffect : short
+
+    // @ public enum Zone : short 
+
+    // @ public enum SpellList : short
+
+    // @ public enum AbilityList : byte
+
+    // @ public enum NPCType
 }

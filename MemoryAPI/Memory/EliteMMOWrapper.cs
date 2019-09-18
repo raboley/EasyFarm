@@ -109,11 +109,7 @@ namespace MemoryAPI.Memory
             {
                 Position destination = GetEntityPosition(id);
 
-                bool shouldKeepRunning = true;
-                if ((DistanceTo(destination) < DistanceTolerance))
-                {
-                    shouldKeepRunning = false;
-                }
+                bool shouldKeepRunning = !(DistanceTo(destination) < DistanceTolerance);
 
                 GotoWaypoint(destination, useObjectAvoidance, shouldKeepRunning);
                 KeepOneYalmBack(destination);
@@ -500,7 +496,15 @@ namespace MemoryAPI.Memory
             }
 
             public int MeritPoints => (int)_api.Player.MeritPoints;
-            public Zone HomePoint => (Zone) _api.Player.Homepoint;
+            public Zone HomePoint
+            {
+                get
+                {
+                    int zoneId = (int)_api.Player.Homepoint;
+                    Zone zone = (Zone)zoneId;
+                    return  zone;
+                }
+            }
         }
 
         public class TargetTools : ITargetTools

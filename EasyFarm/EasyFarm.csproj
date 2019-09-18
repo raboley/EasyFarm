@@ -185,14 +185,20 @@
     <Compile Include="Classes\IMenu.cs" />
     <Compile Include="Classes\INavigator.cs" />
     <Compile Include="Classes\Inventory.cs" />
+    <Compile Include="Mapping\GraphConverter.cs" />
+    <Compile Include="Mapping\ISpot.cs" />
     <Compile Include="Classes\IUnit.cs" />
     <Compile Include="Classes\IUnitFilters.cs" />
     <Compile Include="Classes\IUnitService.cs" />
     <Compile Include="Classes\EventMessenger.cs" />
+    <Compile Include="Mapping\IZoneMap.cs" />
     <Compile Include="Classes\Menu.cs" />
     <Compile Include="Classes\Navigator.cs" />
     <Compile Include="Classes\Result.cs" />
+    <Compile Include="Mapping\Spot.cs" />
+    <Compile Include="Mapping\SpotFactory.cs" />
     <Compile Include="Classes\TargetPriority.cs" />
+    <Compile Include="Mapping\ZoneMap.cs" />
     <Compile Include="Context\GameContext.cs" />
     <Compile Include="Context\IGameContext.cs" />
     <Compile Include="Context\IPlayer.cs" />
@@ -200,15 +206,17 @@
     <Compile Include="Handlers\SelectAbilityRequestHandler.cs" />
     <Compile Include="Handlers\SelectCharacter.cs" />
     <Compile Include="Handlers\SelectCharacterResult.cs" />
-    <Compile Include="Handlers\BaseCommand.cs" />
+    <Compile Include="Handlers\EventHandlerBase.cs" />
     <Compile Include="Infrastructure\CompositeRoot.cs" />
     <Compile Include="Handlers\LoadedEvent.cs" />
     <Compile Include="Infrastructure\TabViewModels.cs" />
-    <Compile Include="Handlers\UpdateAPI.cs" />
+    <Compile Include="Handlers\UpdateEliteAPI.cs" />
+    <Compile Include="Mapping\ZoneMapFactory.cs" />
     <Compile Include="Parsing\AbilityMapper.cs" />
     <Compile Include="Parsing\ItemMapper.cs" />
     <Compile Include="Parsing\Resource.cs" />
     <Compile Include="Parsing\ResourceMapper.cs" />
+    <Compile Include="Parsing\Resources.cs" />
     <Compile Include="Parsing\SpellMapper.cs" />
     <Compile Include="Persistence\Persister.cs" />
     <Compile Include="Persistence\JsonPersister.cs" />
@@ -271,6 +279,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="UserSettings\ProxyConfig.cs" />
+    <Compile Include="Mapping\ZoneMapViewModel.cs" />
     <Compile Include="ViewModels\BattlesViewModel.cs" />
     <Compile Include="ViewModels\DebugViewModel.cs" />
     <Compile Include="ViewModels\FollowViewModel.cs" />
@@ -310,6 +319,9 @@
     <Compile Include="ViewModels\IgnoredViewModel.cs" />
     <Compile Include="ViewModels\LogViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Mapping\ZoneMapView.xaml.cs">
+      <DependentUpon>ZoneMapView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DebugView.xaml.cs">
       <DependentUpon>DebugView.xaml</DependentUpon>
     </Compile>
@@ -400,6 +412,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\AbilityView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Mapping\ZoneMapView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -505,6 +521,7 @@
       <Name>MemoryAPI</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(ProjectDir)\Dependencies\*.*" "$(TargetDir)"</PostBuildEvent>

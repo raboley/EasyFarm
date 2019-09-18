@@ -15,23 +15,17 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
-using EasyFarm.Context;
-using MemoryAPI;
 
-namespace EasyFarm.Tests.Context
+namespace EasyFarm.Mapping
 {
-    public class MockPlayer : IPlayer
+    /// <summary>
+    ///     Interaction logic for ZoneMapView.xaml
+    /// </summary>
+    public partial class ZoneMapView
     {
-        public Status Status { get; set; }
-        public int HppCurrent { get; set; }
-        public bool HasAggro { get; set; }
-        public Zone Zone { get; set; }
-        public int Str { get; set; }
-        public int MppCurrent { get; set; }
-        public int JobLevel { get; set; }
-        public int SubJobLevel { get; set; }
-        public Job Job { get; set; }
-        public Job SubJob { get; set; }
-        public Zone Homepoint { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public ZoneMapView()
+        {
+            InitializeComponent();
+        }
     }
 }

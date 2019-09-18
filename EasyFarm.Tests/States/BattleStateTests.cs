@@ -115,18 +115,18 @@ namespace EasyFarm.Tests.States
             // Teardown
         }
 
-        [Fact]
-        public void WithInvalidActionWillNotSendCommand()
-        {
-            // Fixture setup
-            BattleAbility ability = FindAbility();
-            ability.IsEnabled = false;
-            context.Config.BattleLists["Battle"].Actions.Add(ability);
-            // Exercise system
-            sut.Run(context);
-            // Verify outcome
-            Assert.Null(context.MockAPI.Windower.LastCommand);
-        }
+        //[Fact]
+        //public void WithInvalidActionWillNotSendCommand()
+        //{
+        //    // Fixture setup
+        //    BattleAbility ability = FindAbility();
+        //    ability.IsEnabled = false;
+        //    context.Config.BattleLists["Battle"].Actions.Add(ability);
+        //    // Exercise system
+        //    sut.Run(context);
+        //    // Verify outcome
+        //    Assert.Null(context.MockAPI.Windower.LastCommand);
+        //}
 
         [Fact]
         public void WithHealingPlayerWillStandUp()

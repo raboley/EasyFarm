@@ -18,6 +18,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using EasyFarm.Mapping;
 using EasyFarm.ViewModels;
 
 namespace EasyFarm.Infrastructure
@@ -47,7 +48,8 @@ namespace EasyFarm.Infrastructure
             { typeof(FollowViewModel), 5 },
             { typeof(LogViewModel), 6 },
             { typeof(SettingsViewModel), 7 },
-            { typeof(DebugViewModel), 8 }
+            { typeof(ZoneMapViewModel), 8 },
+            { typeof(DebugViewModel), 9 }
         };
     }
 }

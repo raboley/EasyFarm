@@ -14,5 +14,6 @@ namespace EasyFarm.Classes
         void TravelPath(IGameContext context, string routePath);
         void WaitForZone(IMemoryAPI fface, IGameContext context);
         void WarpHome(IMemoryAPI fface, IGameContext context);
+        void GoToNpc(IGameContext context, IMemoryAPI fface, string npcName);
     }
 }

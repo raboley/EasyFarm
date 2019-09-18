@@ -55,9 +55,17 @@
   <ItemGroup>
     <Compile Include="Chat\IChatTools.cs" />
     <Compile Include="Dialog\IDialogTools.cs" />
-    <Compile Include="Enums\enums.cs" />
+    <Compile Include="Enums\AbilityList.cs" />
+    <Compile Include="Enums\InventoryContainer.cs" />
+    <Compile Include="Enums\EquipSlots.cs" />
+    <Compile Include="Enums\Job.cs" />
     <Compile Include="Enums\NPCType.cs" />
+    <Compile Include="Enums\SpellList.cs" />
+    <Compile Include="Enums\Status.cs" />
+    <Compile Include="Enums\StatusEffect.cs" />
     <Compile Include="Enums\Structures.cs" />
+    <Compile Include="Enums\WeaponSkillList.cs" />
+    <Compile Include="Enums\Zone.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="IMemoryAPI.cs" />
     <Compile Include="Memory\EliteApiExtensions.cs" />

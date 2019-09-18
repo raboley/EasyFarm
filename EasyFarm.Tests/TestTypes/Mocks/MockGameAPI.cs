@@ -108,5 +108,7 @@ namespace EasyFarm.Tests.TestTypes.Mocks
             get { return _instance.Inventory; }
             set { _instance.Inventory = value; }
         }
+
+        public string ConfigFilePath { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     }
 }
