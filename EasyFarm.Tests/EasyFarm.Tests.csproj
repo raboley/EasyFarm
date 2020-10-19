@@ -65,6 +65,9 @@
     <Reference Include="System.Activities" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -94,6 +97,9 @@
     <Compile Include="Classes\SpotFactoryTests.cs" />
     <Compile Include="Classes\SpotTests.cs" />
     <Compile Include="Classes\ZoneMapFactoryTests.cs" />
+    <Compile Include="Pathfinding\GridTests.cs" />
+    <Compile Include="Pathfinding\MappingConversionsTests.cs" />
+    <Compile Include="Pathfinding\NodeTests.cs" />
     <Compile Include="States\LevelUpStateTests.cs" />
     <Compile Include="States\WeaponSkillStateTests.cs" />
     <Compile Include="TestTypes\Mocks\MockChatTools.cs" />
@@ -166,6 +172,7 @@
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.2.0.0\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\dotnet\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

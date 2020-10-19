@@ -142,6 +142,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -218,6 +221,10 @@
     <Compile Include="Parsing\ResourceMapper.cs" />
     <Compile Include="Parsing\Resources.cs" />
     <Compile Include="Parsing\SpellMapper.cs" />
+    <Compile Include="Pathfinding\Grid.cs" />
+    <Compile Include="Pathfinding\Heap.cs" />
+    <Compile Include="Pathfinding\MappingConversion.cs" />
+    <Compile Include="Pathfinding\Node.cs" />
     <Compile Include="Persistence\Persister.cs" />
     <Compile Include="Persistence\JsonPersister.cs" />
     <Compile Include="Classes\PlayerMonitor.cs" />
