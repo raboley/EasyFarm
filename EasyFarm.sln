@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryAPI", "MemoryAPI\Memo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyFarm.Tests", "EasyFarm.Tests\EasyFarm.Tests.csproj", "{43285FC5-222E-4828-B8F2-396FF628553D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pathfinder", "Pathfinder", "{A5A38ECA-1012-4BF7-8D9A-03DC0EA388AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathfinder.Tests", "pathfinder\Pathfinder.Tests\Pathfinder.Tests.csproj", "{47C87744-7402-4986-A734-46CD097BAD69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathfinder", "pathfinder\Pathfinder\Pathfinder.csproj", "{2370A192-7761-4E9C-8245-86895DF0E125}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,11 +33,23 @@ Global
 		{43285FC5-222E-4828-B8F2-396FF628553D}.Debug|Any CPU.Build.0 = Debug|x86
 		{43285FC5-222E-4828-B8F2-396FF628553D}.Release|Any CPU.ActiveCfg = Debug|x86
 		{43285FC5-222E-4828-B8F2-396FF628553D}.Release|Any CPU.Build.0 = Debug|x86
+		{47C87744-7402-4986-A734-46CD097BAD69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47C87744-7402-4986-A734-46CD097BAD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47C87744-7402-4986-A734-46CD097BAD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47C87744-7402-4986-A734-46CD097BAD69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2370A192-7761-4E9C-8245-86895DF0E125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2370A192-7761-4E9C-8245-86895DF0E125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2370A192-7761-4E9C-8245-86895DF0E125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2370A192-7761-4E9C-8245-86895DF0E125}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5146C00-826C-4313-BE02-4EB611F5907F}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{47C87744-7402-4986-A734-46CD097BAD69} = {A5A38ECA-1012-4BF7-8D9A-03DC0EA388AF}
+		{2370A192-7761-4E9C-8245-86895DF0E125} = {A5A38ECA-1012-4BF7-8D9A-03DC0EA388AF}
 	EndGlobalSection
 EndGlobal
