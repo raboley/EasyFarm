@@ -47,7 +47,7 @@ namespace EasyFarm.States
             if (dumpItems == true)
             {
                 // inventory is full
-                if (context.Inventory.InventoryIsFull(0))
+                if (context.Inventory.InventoryIsFull(0)) 
                 {
                     return true;
                 }

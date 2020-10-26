@@ -36,6 +36,8 @@ namespace EasyFarm.Classes
 
         public bool HasUpdate()
         {
+            return false;
+
             var filePath = Path.Combine(Environment.CurrentDirectory, "EliteAPI.dll");
             FileVersionInfo fileInfo = GetFileInfo(filePath);
 
