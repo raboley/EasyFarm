@@ -43,10 +43,10 @@ namespace EasyFarm.States
             _context = new GameContext(fface);
 
             //Create the states
-            AddState(new DeadState() {Priority = 7});
-            AddState(new ZoneState() {Priority = 7});
-            AddState(new SetTargetState() {Priority = 7});
-            AddState(new SetFightingState() {Priority = 7});
+            AddState(new DeadState() {Priority = 10});
+            AddState(new ZoneState() {Priority = 10});
+            AddState(new SetTargetState() {Priority = 10});
+            AddState(new SetFightingState() {Priority = 10});
             AddState(new FollowState() {Priority = 5});
             AddState(new RestState() {Priority = 2});
             AddState(new SummonTrustsState() {Priority = 6});
@@ -61,6 +61,12 @@ namespace EasyFarm.States
             AddState(new StartEngineState() {Priority = Constants.MaxPriority});
             AddState(new DumpTreasureState() { Priority = 2 });
             AddState(new MapState() {Priority = 5});
+            // Needs Signet
+            AddState(new NeedSignet() { Priority = 9 });
+            // Inventory Is Full
+            // Have some ingredients to craft
+            // Hungry
+            // Trying to Level Up
 
             _states.ForEach(x => x.Enabled = true);
         }

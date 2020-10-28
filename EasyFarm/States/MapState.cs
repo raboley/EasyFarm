@@ -29,6 +29,7 @@ using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
+using EasyFarm.Views;
 using MahApps.Metro.Controls;
 using MemoryAPI;
 using Pathfinder;
@@ -52,7 +53,7 @@ namespace EasyFarm.States
         { 
            LogViewModel.Write("Entered Mapping state");
            IMemoryAPI fface = context.API;
-           context.Memory.EliteApi.Navigator.DistanceTolerance = 1;
+           context.Memory.EliteApi.Navigator.DistanceTolerance = 3;
             var gridFactory = new GridFactory();
            var persister = new FilePersister();
            var mapsDirectory = GetMapsDirectory();
@@ -67,8 +68,11 @@ namespace EasyFarm.States
            string mapName = context.Player.Zone.ToString();
            var zoneGrid = gridFactory.LoadGridOrCreateNew(mapName);
            var pathfinder = new Pathfinding {Grid = zoneGrid};
-           
-           AddNpcsToGrid(context, zoneGrid);
+
+
+           var test = zoneGrid.NpcList.Find(n => n.Name.Contains("I.M."));
+
+            AddNpcsToGrid(context, zoneGrid);
            AddInanimateObjectsToGrid(context, zoneGrid);
 
            List<Vector3> walkedNodes = new List<Vector3>();
@@ -77,14 +81,50 @@ namespace EasyFarm.States
            // for (int i = 0; i < 1000; i++)aaaaaa
            {
                var player = context.API.Player;
-                var myPosition = RoundPositionToVector3(player.Position); 
-               // var path = pathfinder.FindWaypoints(myPosition, pathfinder.Grid.UnknownNodes[0].WorldPosition);
-               // var obsWaypoints = ConvertVectorArrayToObservableCollectionPosition(path);
-               // context.Config.Route.Waypoints = obsWaypoints;
+               var myPosition = RoundPositionToVector3(player.Position); 
+               
+               // Go get signet
+               if (context.Player.CurrentGoal == "Signet")
+               {
+                   // Find Signet Guy
+                   if (zoneGrid.NpcList.Count == 0)
+                   {
+                       LogViewModel.Write("I need signet, but don't know where any NPCs are in this zone");
+                       break;
+                   }
 
-               // Actually walking
-               // Navigator.StartRoute(context);
-               //
+                   var signetPerson = zoneGrid.NpcList.Find(n => n.Name.Contains("I.M."));
+
+                   if (signetPerson == null)
+                   {
+                       LogViewModel.Write("I need signet, but can't find the signet person in this zone");
+                       break;
+                   }
+
+                   LogViewModel.Write("Found signet person:" + signetPerson.Name + " At position: " + signetPerson.Position + " Headed there now");
+                   // Set route to the path to the signet guy
+                   var path = pathfinder.FindWaypoints(myPosition, signetPerson.Position);
+                   var obsWaypoints = ConvertVectorArrayToObservableCollectionPosition(path);
+                   context.Config.Route.Waypoints = obsWaypoints;
+
+                    //// Actually walking
+                    Navigator.StartRoute(context);
+
+                    // Got to the signet person
+                    LogViewModel.Write("Made it to signet person!");
+                    Config.Instance.Route.Reset();
+                    context.API.Navigator.Reset();
+
+                   // Get signet
+
+
+                   // Got Signet, reset goal
+                   context.Player.CurrentGoal = "Aimless";
+
+               }
+                   
+
+               
 
 
 
