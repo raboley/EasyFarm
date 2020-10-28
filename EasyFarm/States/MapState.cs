@@ -18,6 +18,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Windows.Documents;
@@ -27,9 +29,12 @@ using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
+using MahApps.Metro.Controls;
 using MemoryAPI;
 using Pathfinder;
+using Navigator = EasyFarm.Classes.Navigator;
 using Player = EasyFarm.Classes.Player;
+using Position = MemoryAPI.Navigation.Position;
 
 namespace EasyFarm.States
 {
@@ -46,20 +51,41 @@ namespace EasyFarm.States
         public override void Run(IGameContext context)
         { 
            LogViewModel.Write("Entered Mapping state");
-           var gridFactory = new GridFactory();
+           IMemoryAPI fface = context.API;
+           context.Memory.EliteApi.Navigator.DistanceTolerance = 1;
+            var gridFactory = new GridFactory();
            var persister = new FilePersister();
+           var mapsDirectory = GetMapsDirectory();
+
+
+           persister.DefaultExtension = "json";
+           persister.FilePath = mapsDirectory;
            gridFactory.Persister = persister;
+
+           gridFactory.DefaultGridSize = new Vector2(600f, 600f);
 
            string mapName = context.Player.Zone.ToString();
            var zoneGrid = gridFactory.LoadGridOrCreateNew(mapName);
+           var pathfinder = new Pathfinding {Grid = zoneGrid};
+           
+           AddNpcsToGrid(context, zoneGrid);
+           AddInanimateObjectsToGrid(context, zoneGrid);
+
            List<Vector3> walkedNodes = new List<Vector3>();
 
             while (zoneGrid.MapName == context.Player.Zone.ToString())
-           // for (int i = 0; i < 1000; i++)
+           // for (int i = 0; i < 1000; i++)aaaaaa
            {
-
                var player = context.API.Player;
-               var myPosition = RoundPlayerPositionToGridPosition(player);
+                var myPosition = RoundPositionToVector3(player.Position); 
+               // var path = pathfinder.FindWaypoints(myPosition, pathfinder.Grid.UnknownNodes[0].WorldPosition);
+               // var obsWaypoints = ConvertVectorArrayToObservableCollectionPosition(path);
+               // context.Config.Route.Waypoints = obsWaypoints;
+
+               // Actually walking
+               // Navigator.StartRoute(context);
+               //
+
 
 
                if (!walkedNodes.Contains(myPosition))
@@ -69,8 +95,19 @@ namespace EasyFarm.States
                    LogViewModel.Write("in map: " + zoneGrid.MapName + " Adding position: " + myPosition);
                }
            }
+            
+            var lastPositionBeforeZone = RoundPositionToVector3(context.API.Player.Position);
+            if (lastPositionBeforeZone != Vector3.Zero)
+            {
+                while (context.API.Player.Zone == Zone.Unknown)
+                {
+                    TimeWaiter.Pause(100);
+                }
+                zoneGrid.AddZoneBoundary(context.Player.Zone.ToString(), lastPositionBeforeZone);
+            }
 
-           // // Map the NPCs
+
+            // // Map the NPCs
            // foreach (var unit in context.Units)
            // {
            //     Vector3 position = new Vector3(unit.PosX, unit.PosY, unit.PosZ);
@@ -91,8 +128,10 @@ namespace EasyFarm.States
 
 
            
-
+           
            gridFactory.Persister.Save(zoneGrid);
+
+           // write zones
 
            // Discover all undiscovered nodes.
 
@@ -100,13 +139,62 @@ namespace EasyFarm.States
 
         }
 
-        private static Vector3 RoundPlayerPositionToGridPosition(IPlayerTools player)
+        private static string GetMapsDirectory()
+        {
+            string repoRoot = Directory.GetCurrentDirectory();
+            for (int i = 0; i < 3; i++)
+            {
+                repoRoot = Directory.GetParent(repoRoot).FullName;
+            }
+
+            repoRoot = Path.Combine(repoRoot, "Maps");
+            Directory.CreateDirectory(repoRoot);
+            return repoRoot;
+        }
+
+        private static void AddInanimateObjectsToGrid(IGameContext context, Grid zoneGrid)
+        {
+            foreach (var unit in context.Memory.UnitService.InanimateObjectsUnits)
+            {
+                Vector3 pos = RoundPositionToVector3(unit.Position);
+                var thing = new NPC(unit.Name, pos);
+                zoneGrid.AddInanimateObject(thing);
+            }
+        }
+
+        private static void AddNpcsToGrid(IGameContext context, Grid zoneGrid)
+        {
+            foreach (var unit in context.Memory.UnitService.NpcUnits)
+            {
+                Vector3 pos = RoundPositionToVector3(unit.Position);
+                var npc = new NPC(unit.Name, pos);
+                zoneGrid.AddNpc(npc);
+            }
+        }
+
+        private ObservableCollection<MemoryAPI.Navigation.Position> ConvertVectorArrayToObservableCollectionPosition(Vector3[] path)
+        {
+            var waypoints = new ObservableCollection<MemoryAPI.Navigation.Position>();
+            for (int i = 0; i < path.Length; i++)
+            {
+                var pos = new MemoryAPI.Navigation.Position();
+                pos.X = path[i].X;
+                pos.Y = path[i].Y;
+                pos.Z = path[i].Z;
+
+                waypoints.Add(pos);
+            }
+
+            return waypoints;
+        }
+
+        public static Vector3 RoundPositionToVector3(Position position)
         {
             Vector3 gridPosition = new Vector3
             {
-                X = GridMath.ConvertFromFloatToInt(player.PosX),
+                X = GridMath.ConvertFromFloatToInt(position.X),
                 Y = 0,
-                Z = GridMath.ConvertFromFloatToInt(player.PosZ)
+                Z = GridMath.ConvertFromFloatToInt(position.Z)
             };
             return gridPosition;
         }
