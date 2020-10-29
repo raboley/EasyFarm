@@ -17,9 +17,11 @@
 // ///////////////////////////////////////////////////////////////////
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Threading;
 using EliteMMO.API;
 using MemoryAPI.Chat;
@@ -29,7 +31,9 @@ using MemoryAPI.Menu;
 using MemoryAPI.Navigation;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
+using Pathfinder;
 using static EliteMMO.API.EliteAPI;
+
 
 namespace MemoryAPI.Memory
 {
@@ -71,6 +75,7 @@ namespace MemoryAPI.Memory
         {
             private const double TooCloseDistance = 1.5;
             private readonly EliteAPI _api;
+            public Pathfinding Pathfinder { get; set; }
 
             public double DistanceTolerance { get; set; } = 3;
 
@@ -181,25 +186,49 @@ namespace MemoryAPI.Memory
             /// </summary>
             private void AvoidObstacles()
             {
-                if (IsStuck())
-                {
-                    RecordTravelBlock();
-                    if (IsEngaged()) Disengage();
-                    WiggleCharacter(attempts: 3);
-                }
+                // if (IsStuck())
+                // {
+                    
+                //     if (IsEngaged())
+                //     {
+                //         Disengage();
+                //         WiggleCharacter(attempts: 3);
+                //     }
+                //     else
+                //     {
+                //         RecordTravelBlock();
+                //         // RequestNewPath();
+                //     }
+
+                // }
             }
 
-            private void RecordTravelBlock()
-            {
+
+            // private void RecordTravelBlock()
+            // {
+            //     // Get the vector3 right in front of me
+            //     Vector3 positionInFrontOfMe = GetPositionInFrontOfMe();
                 
-                ////open file stream
-                //using (StreamWriter file = File.CreateText(@"D:\path.txt"))
-                //{
-                //    JsonSerializer serializer = new JsonSerializer();
-                //    //serialize object directly into file stream
-                //    serializer.Serialize(file, _data);
-                //}
-            }
+
+            //     // Add it to blocked paths for grid
+            //     Pathfinder.Grid.AddUnWalkableNode(positionInFrontOfMe);
+
+            // }
+
+            // private Vector3 GetPositionInFrontOfMe()
+            // {
+            //     return RoundPlayerPositionToGridPosition(_api.Player);
+            // }
+            // public static Vector3 RoundPlayerPositionToGridPosition(EliteAPI.PlayerTools player)
+            // {
+            //     Vector3 gridPosition = new Vector3
+            //     {
+            //         X = GridMath.ConvertFromFloatToInt(player.X),
+            //         Y = 0,
+            //         Z = GridMath.ConvertFromFloatToInt(player.Z)
+            //     };
+            //     return gridPosition;
+            // }
 
             /// <summary>
             /// Determines if the player has become stuck.
@@ -718,4 +747,12 @@ namespace MemoryAPI.Memory
 
         }
     }
+}
+
+public struct WorldPoint
+{
+    public float X { get; set; }
+    public float Y { get; set; }
+    public float Z { get; set; }
+
 }

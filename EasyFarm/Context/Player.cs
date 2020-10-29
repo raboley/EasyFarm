@@ -86,6 +86,8 @@ namespace EasyFarm.Context
             set => throw new NotImplementedException();
         }
 
+        public string CurrentGoal { get; set; }
+
         public Job SubJob
         {
             get => _memoryAPI.Player.SubJob;
