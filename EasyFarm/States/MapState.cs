@@ -78,7 +78,7 @@ namespace EasyFarm.States
            List<Vector3> walkedNodes = new List<Vector3>();
 
             while (zoneGrid.MapName == context.Player.Zone.ToString())
-           // for (int i = 0; i < 1000; i++)aaaaaa
+           // for (int i = 0; i < 1000; i++)
            {
                var player = context.API.Player;
                var myPosition = RoundPositionToVector3(player.Position); 
@@ -130,7 +130,9 @@ namespace EasyFarm.States
 
                if (!walkedNodes.Contains(myPosition))
                {
-                   walkedNodes.Add(myPosition);
+
+
+                    walkedNodes.Add(myPosition);
                    zoneGrid.AddKnownNode(myPosition);
                    LogViewModel.Write("in map: " + zoneGrid.MapName + " Adding position: " + myPosition);
                }
@@ -178,6 +180,8 @@ namespace EasyFarm.States
            // Console.WriteLine(zoneGrid.Print());
 
         }
+
+
 
         private static string GetMapsDirectory()
         {

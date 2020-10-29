@@ -32,7 +32,9 @@ namespace EasyFarm.States
     {
         public override bool Check(IGameContext context)
         {
-            // if player has has signet
+            if (HasSignet(context.API.Player))
+                return false;
+
             // or if they have the goal of getting signet
             if (context.Player.CurrentGoal == "Signet")
                 return false;
@@ -53,6 +55,19 @@ namespace EasyFarm.States
             // Get Signet
 
             // Set goal to not signet
+        }
+
+        private static bool HasSignet(IPlayerTools player)
+        {
+            bool hasSignet = false;
+            if (player.StatusEffects != null)
+            {
+                var signet = player.StatusEffects.ToList().Find(n => n == StatusEffect.Signet);
+                if (signet != null)
+                    hasSignet = true;
+            }
+
+            return hasSignet;
         }
     }
 }
