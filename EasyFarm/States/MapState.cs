@@ -76,8 +76,6 @@ namespace EasyFarm.States
             
             var mapNpcPersister = WatchNpcsInZone(mapName, zone);
 
-            
-
             ///// Setup the ALL person watcher
             // var allNpcPersister = new Pathfinder.Persistence.FilePersister();
             // allNpcPersister.FilePath = GetAndCreateDirectorFromRoot("NPCs");
