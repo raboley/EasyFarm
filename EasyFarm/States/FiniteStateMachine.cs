@@ -62,7 +62,7 @@ namespace EasyFarm.States
             AddState(new DumpTreasureState() { Priority = 2 });
             AddState(new MapState() {Priority = 5});
             // Needs Signet
-            AddState(new NeedSignet() { Priority = 9 });
+            // AddState(new NeedSignet() { Priority = 9 });
             // Inventory Is Full
             // Have some ingredients to craft
             // Hungry

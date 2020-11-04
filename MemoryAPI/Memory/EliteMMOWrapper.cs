@@ -32,6 +32,7 @@ using MemoryAPI.Navigation;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
 using Pathfinder;
+using Pathfinder.Pathing;
 using static EliteMMO.API.EliteAPI;
 
 
@@ -75,7 +76,6 @@ namespace MemoryAPI.Memory
         {
             private const double TooCloseDistance = 1.5;
             private readonly EliteAPI _api;
-            public Pathfinding Pathfinder { get; set; }
 
             public double DistanceTolerance { get; set; } = 3;
 

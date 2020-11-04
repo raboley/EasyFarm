@@ -33,5 +33,6 @@ namespace EasyFarm.Tests.Context
         public Job Job { get; set; }
         public Job SubJob { get; set; }
         public Zone Homepoint { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public string CurrentGoal { get; set; }
     }
 }
