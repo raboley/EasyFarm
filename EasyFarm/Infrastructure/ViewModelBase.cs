@@ -68,6 +68,9 @@ namespace EasyFarm.Infrastructure
             PathRecorder = new PathRecorder(FFACE);
 
             AbilityService = new AbilityService(FFACE);
+            
+            // Track the NPCs
+            NpcMonitor = new NpcMonitor(FFACE);
 
             AutoLoadSettings();
         }

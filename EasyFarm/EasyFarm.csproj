@@ -187,8 +187,11 @@
     <Compile Include="Classes\IDialog.cs" />
     <Compile Include="Classes\IInventory.cs" />
     <Compile Include="Classes\IMenu.cs" />
+    <Compile Include="Classes\IMonitor.cs" />
     <Compile Include="Classes\INavigator.cs" />
     <Compile Include="Classes\Inventory.cs" />
+    <Compile Include="Infrastructure\NPCMonitor.cs" />
+    <Compile Include="Infrastructure\NpcPersister.cs" />
     <Compile Include="Mapping\GraphConverter.cs" />
     <Compile Include="Mapping\ISpot.cs" />
     <Compile Include="Classes\IUnit.cs" />
