@@ -435,7 +435,8 @@ namespace MemoryAPI.Memory
             {
                 _api = api;
             }
-            
+
+            public Nations Nation => (Nations)_api.Player.Nation;
             public float CastPercentEx => (_api.CastBar.Percent * 100);
 
             public int HPPCurrent => (int)_api.Player.HPP;

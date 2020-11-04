@@ -90,8 +90,41 @@ namespace EasyFarm.States
             // var allPeopleWatcher = new CollectionWatcher<Person>(zone.Npcs, allPersonActor);
 
             // On Change Save the zone's NPCs to a file for that zone's NPCs
+            
+            /*
+             *
+             *
+             * result = Unit
+             * logging point
+ ClaimedId = {int} 0
+ Distance = {double} 3.56211256980896
+ HasAggroed = {bool} false
+ HppCurrent = {short} 100
+ Id = {int} 619
+ IsActive = {bool} true
+ IsClaimed = {bool} false
+ IsDead = {bool} false
+ IsPet = {bool} false
+ IsRendered = {bool} true
+ IsValid = {bool} false
+ MyClaim = {bool} false
+ Name = {string} "Logging Point"
+ NpcType = {NpcType} NPC
+ PartyClaim = {bool} false
+ PosX = {float} 302.062012
+ PosY = {float} -49.9350014
+ PosZ = {float} 197.003006
+ Position = {Position} X: 302.062Z: 197.003
+ Status = {Status} Standing
+ YDifference = {double} 0.14312362670898438
+             */
+            
             LogViewModel.Write("Adding NPCs to Zone");
-            AddNpcsToGrid(context, zone);
+            while (zoneMap.MapName == context.Player.Zone.ToString())
+            {
+                AddNpcsToGrid(context, zone);
+                
+            }
             LogViewModel.Write("Done!");
 
             // Also Save to the ALL NPC file
