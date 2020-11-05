@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Numerics;
+using System.Windows;
 using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.Parsing;
@@ -112,6 +113,10 @@ namespace EasyFarm.Infrastructure
             units.AddRange(_context.Memory.UnitService.NpcUnits);
             foreach (var unit in units)
             {
+                // Skip treasure caskets since they are randomly generated and will clog state.
+                if (unit.Name == "Treasure Casket")
+                    continue;
+                
                 Vector3 pos = RoundPositionToVector3(unit.Position);
                 var npc = new Person(unit.Id, unit.Name, pos);
                 peopleOverseer.PeopleManager.AddPerson(npc);
