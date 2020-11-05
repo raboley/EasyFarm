@@ -58,26 +58,6 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
-            LogViewModel.Write("Entered Mapping state");
-
-            // Make a Zone
-            var persister = NewZoneMapPersister();
-
-            var zoneMapFactory = new ZoneMapFactory();
-            zoneMapFactory.Persister = persister;
-            zoneMapFactory.DefaultGridSize = new Vector2(600f, 600f);
-
-            string mapName = context.Player.Zone.ToString();
-            var zoneMap = zoneMapFactory.LoadGridOrCreateNew(mapName);
-
-            var zone = new Pathfinder.Map.Zone(mapName);
-            zone.Map = zoneMap;
-
-            
-            var mapNpcPersister = WatchNpcsInZone(mapName, zone);
-
-            
-
             ///// Setup the ALL person watcher
             // var allNpcPersister = new Pathfinder.Persistence.FilePersister();
             // allNpcPersister.FilePath = GetAndCreateDirectorFromRoot("NPCs");
@@ -119,50 +99,12 @@ namespace EasyFarm.States
  YDifference = {double} 0.14312362670898438
              */
             
-            LogViewModel.Write("Adding NPCs to Zone");
-            while (zoneMap.MapName == context.Player.Zone.ToString())
-            {
-                AddNpcsToGrid(context, zone);
-                
-            }
-            LogViewModel.Write("Done!");
+          
 
             // Also Save to the ALL NPC file
         }
 
-        private static FilePersister WatchNpcsInZone(string mapName, Pathfinder.Map.Zone zone)
-        {
-            var mapNpcPersister = WatchAndPersistNpcs(mapName, zone);
-            var allNpcPersister = WatchAndPersistNpcs("all", zone);
-
-            return mapNpcPersister;
-        }
-
-        private static FilePersister WatchAndPersistNpcs(string fileName, Pathfinder.Map.Zone zone)
-        {
-            // Setup the PersonActor to save to file
-            var npcPersister = new Pathfinder.Persistence.FilePersister();
-            npcPersister.FilePath = GetAndCreateDirectorFromRoot("NPCs");
-            npcPersister.FileName = fileName;
-
-            zone.LoadNpcsOrCreateNew(npcPersister);
-            
-            var personActor = new PersonActor();
-            personActor.Persister = npcPersister;
-
-            //Watch the NPC collection of the Zone
-            var peopleWatcher = new CollectionWatcher<Person>(zone.Npcs, personActor);
-            return npcPersister;
-        }
-
-        private static FilePersister NewZoneMapPersister()
-        {
-            var persister = new FilePersister();
-            var mapsDirectory = GetMapsDirectory();
-            persister.DefaultExtension = "json";
-            persister.FilePath = mapsDirectory;
-            return persister;
-        }
+        
 
         // public override void Run(IGameContext context)
         // {
@@ -288,81 +230,6 @@ namespace EasyFarm.States
         // }
 
 
-        private static string GetMapsDirectory()
-        {
-            var repoRoot = GetRepoRoot();
-
-            repoRoot = Path.Combine(repoRoot, "Maps");
-            Directory.CreateDirectory(repoRoot);
-            return repoRoot;
-        }
-
-        private static string GetAndCreateDirectorFromRoot(string directory)
-        {
-            var repoRoot = GetRepoRoot();
-
-            repoRoot = Path.Combine(repoRoot, directory);
-            Directory.CreateDirectory(repoRoot);
-            return repoRoot; 
-        }
-
-        private static string GetRepoRoot()
-        {
-            string repoRoot = Directory.GetCurrentDirectory();
-            for (int i = 0; i < 3; i++)
-            {
-                repoRoot = Directory.GetParent(repoRoot).FullName;
-            }
-
-            return repoRoot;
-        }
-
-        private static void AddInanimateObjectsToGrid(IGameContext context, Pathfinder.Map.Zone zone)
-        {
-            foreach (var unit in context.Memory.UnitService.InanimateObjectsUnits)
-            {
-                Vector3 pos = RoundPositionToVector3(unit.Position);
-                var thing = new Person(unit.Id, unit.Name, pos);
-                zone.AddInanimateObject(thing);
-            }
-        }
-
-        private static void AddNpcsToGrid(IGameContext context, Pathfinder.Map.Zone zone)
-        {
-            foreach (var unit in context.Memory.UnitService.NpcUnits)
-            {
-                Vector3 pos = RoundPositionToVector3(unit.Position);
-                var npc = new Person(unit.Id, unit.Name, pos);
-                zone.AddNpc(npc);
-            }
-        }
-
-        private ObservableCollection<MemoryAPI.Navigation.Position> ConvertVectorArrayToObservableCollectionPosition(
-            Vector3[] path)
-        {
-            var waypoints = new ObservableCollection<MemoryAPI.Navigation.Position>();
-            for (int i = 0; i < path.Length; i++)
-            {
-                var pos = new MemoryAPI.Navigation.Position();
-                pos.X = path[i].X;
-                pos.Y = path[i].Y;
-                pos.Z = path[i].Z;
-
-                waypoints.Add(pos);
-            }
-
-            return waypoints;
-        }
-
-        public static Vector3 RoundPositionToVector3(Position position)
-        {
-            Vector3 gridPosition = new Vector3
-            {
-                X = GridMath.ConvertFromFloatToInt(position.X),
-                Y = 0,
-                Z = GridMath.ConvertFromFloatToInt(position.Z)
-            };
-            return gridPosition;
-        }
+ 
     }
 }

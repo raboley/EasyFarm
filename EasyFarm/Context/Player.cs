@@ -93,5 +93,11 @@ namespace EasyFarm.Context
             get => _memoryAPI.Player.SubJob;
             set => throw new NotImplementedException();
         }
+
+        public string Nation
+        {
+            get => _memoryAPI.Player.Nation.ToString();
+            set => throw new NotImplementedException();
+        }
     }
 }

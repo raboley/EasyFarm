@@ -31,5 +31,6 @@ namespace EasyFarm.Context
         Job Job { get; set; }
         Zone Homepoint { get; set; }
         string CurrentGoal { get; set; }
+        string Nation { get; set; }
     }
 }

@@ -17,6 +17,7 @@
 // ///////////////////////////////////////////////////////////////////
 using MemoryAPI.Navigation;
 using System.Collections.Generic;
+using EliteMMO.API;
 
 namespace MemoryAPI
 {
@@ -44,5 +45,6 @@ namespace MemoryAPI
         List<EliteMMO.API.EliteAPI.InventoryItem> Equipment { get; }
         int MeritPoints { get; }
         Zone HomePoint { get; }
+        Nations Nation { get; }
     }
 }

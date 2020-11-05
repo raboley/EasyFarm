@@ -22,7 +22,7 @@ using MemoryAPI;
 
 namespace EasyFarm.Classes
 {
-    public class PlayerMonitor
+    public class PlayerMonitor : IMonitor
     {
         private CancellationTokenSource _tokenSource;
         private readonly PlayerMovementTracker _movementTracker;
@@ -43,7 +43,7 @@ namespace EasyFarm.Classes
             _tokenSource.Cancel();
         }
 
-        private void Monitor()
+        public void Monitor()
         {
             while (true)
             {

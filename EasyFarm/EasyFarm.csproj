@@ -142,6 +142,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Pathfinder\packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll</HintPath>
     </Reference>
@@ -186,8 +187,11 @@
     <Compile Include="Classes\IDialog.cs" />
     <Compile Include="Classes\IInventory.cs" />
     <Compile Include="Classes\IMenu.cs" />
+    <Compile Include="Classes\IMonitor.cs" />
     <Compile Include="Classes\INavigator.cs" />
     <Compile Include="Classes\Inventory.cs" />
+    <Compile Include="Infrastructure\NPCMonitor.cs" />
+    <Compile Include="Infrastructure\NpcPersister.cs" />
     <Compile Include="Mapping\GraphConverter.cs" />
     <Compile Include="Mapping\ISpot.cs" />
     <Compile Include="Classes\IUnit.cs" />
@@ -221,6 +225,10 @@
     <Compile Include="Parsing\ResourceMapper.cs" />
     <Compile Include="Parsing\Resources.cs" />
     <Compile Include="Parsing\SpellMapper.cs" />
+    <Compile Include="Pathfinding\Grid.cs" />
+    <Compile Include="Pathfinding\Heap.cs" />
+    <Compile Include="Pathfinding\MappingConversion.cs" />
+    <Compile Include="Pathfinding\Node.cs" />
     <Compile Include="Persistence\Persister.cs" />
     <Compile Include="Persistence\JsonPersister.cs" />
     <Compile Include="Classes\PlayerMonitor.cs" />
