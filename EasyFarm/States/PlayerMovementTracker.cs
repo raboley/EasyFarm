@@ -63,9 +63,6 @@ namespace EasyFarm.States
                 if (_context.Zone.Map.UnknownNodes.Contains(node))
                     _context.Zone.Map.AddKnownNode(node.WorldPosition);
             }
-
-            // Check against unknown nodes
-            // use known nodes to add if there is a match.
         }
 
         private Position TrackPlayerPosition()
