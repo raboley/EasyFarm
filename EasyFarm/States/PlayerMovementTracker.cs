@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using EasyFarm.Context;
@@ -49,7 +50,8 @@ namespace EasyFarm.States
             string mapName = _context.Player.Zone.ToString();
             if (mapName == "Unknown")
                 return;
-            
+
+            _context.ZoneMapFactory.Persister = NewZoneMapPersister();
             _context.Zone.Map = _context.ZoneMapFactory.LoadGridOrCreateNew(mapName);
             var collectionWatcher = new CollectionWatcher<Node>(_context.Zone.Map.UnknownNodes, new PersisterActor {Persister = _context.ZoneMapFactory.Persister});
             
@@ -80,6 +82,45 @@ namespace EasyFarm.States
             var changeInX = _positionHistory.Average(positon => positon.X) - _fface.Player.PosX;
             var changeInZ = _positionHistory.Average(position => position.Z) - _fface.Player.PosZ;
             return Math.Abs(changeInX) + Math.Abs(changeInZ) > 0;
+        }
+        
+        
+        public static FilePersister NewZoneMapPersister()
+        {
+            var persister = new FilePersister();
+            var mapsDirectory = GetMapsDirectory();
+            persister.DefaultExtension = "json";
+            persister.FilePath = mapsDirectory;
+            return persister;
+        }
+
+        public static string GetMapsDirectory()
+        {
+            var repoRoot = GetRepoRoot();
+
+            repoRoot = Path.Combine(repoRoot, "Maps");
+            Directory.CreateDirectory(repoRoot);
+            return repoRoot;
+        }
+
+        public static string GetAndCreateDirectorFromRoot(string directory)
+        {
+            var repoRoot = GetRepoRoot();
+
+            repoRoot = Path.Combine(repoRoot, directory);
+            Directory.CreateDirectory(repoRoot);
+            return repoRoot;
+        }
+
+        public static string GetRepoRoot()
+        {
+            string repoRoot = Directory.GetCurrentDirectory();
+            for (int i = 0; i < 3; i++)
+            {
+                repoRoot = Directory.GetParent(repoRoot).FullName;
+            }
+
+            return repoRoot;
         }
     }
 }

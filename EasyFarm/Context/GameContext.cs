@@ -43,9 +43,14 @@ namespace EasyFarm.Context
             Navigator = new Navigator(api);
             Inventory = new Inventory(api);
 
-            ZoneMapFactory = new ZoneMapFactory {Persister = new FilePersister()};
+            ZoneMapFactory = new ZoneMapFactory
+            {
+                Persister = new FilePersister()
+            };
             Zone = new Pathfinder.Map.Zone("unknown");
         }
+        
+        
 
         public ZoneMapFactory ZoneMapFactory { get; set; }
         public IConfig Config { get; set; }

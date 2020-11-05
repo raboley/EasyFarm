@@ -64,43 +64,7 @@ namespace EasyFarm.Infrastructure
         //     return npcPersister;
         // }
 
-        private static FilePersister NewZoneMapPersister()
-        {
-            var persister = new FilePersister();
-            var mapsDirectory = GetMapsDirectory();
-            persister.DefaultExtension = "json";
-            persister.FilePath = mapsDirectory;
-            return persister;
-        }
-
-        private static string GetMapsDirectory()
-        {
-            var repoRoot = GetRepoRoot();
-
-            repoRoot = Path.Combine(repoRoot, "Maps");
-            Directory.CreateDirectory(repoRoot);
-            return repoRoot;
-        }
-
-        private static string GetAndCreateDirectorFromRoot(string directory)
-        {
-            var repoRoot = GetRepoRoot();
-
-            repoRoot = Path.Combine(repoRoot, directory);
-            Directory.CreateDirectory(repoRoot);
-            return repoRoot;
-        }
-
-        private static string GetRepoRoot()
-        {
-            string repoRoot = Directory.GetCurrentDirectory();
-            for (int i = 0; i < 3; i++)
-            {
-                repoRoot = Directory.GetParent(repoRoot).FullName;
-            }
-
-            return repoRoot;
-        }
+        
 
         private void AddNpcsToGrid(PeopleOverseer peopleOverseer)
         {
