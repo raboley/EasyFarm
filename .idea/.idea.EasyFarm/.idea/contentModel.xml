@@ -431,6 +431,7 @@
       <e p="People" t="Include">
         <e p="IEntity.cs" t="Include" />
         <e p="PeopleManager.cs" t="Include" />
+        <e p="PeopleOverseer.cs" t="Include" />
         <e p="Person.cs" t="Include" />
       </e>
       <e p="Persistence" t="Include">
