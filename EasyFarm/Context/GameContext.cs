@@ -23,6 +23,9 @@ using EasyFarm.States;
 using EasyFarm.UserSettings;
 using MemoryAPI;
 using MemoryAPI.Menu;
+using Pathfinder.Map;
+using Pathfinder.Persistence;
+using Zone = MemoryAPI.Zone;
 
 namespace EasyFarm.Context
 {
@@ -40,8 +43,11 @@ namespace EasyFarm.Context
             Navigator = new Navigator(api);
             Inventory = new Inventory(api);
 
+            ZoneMapFactory = new ZoneMapFactory {Persister = new FilePersister()};
+            Zone = new Pathfinder.Map.Zone("unknown");
         }
 
+        public ZoneMapFactory ZoneMapFactory { get; set; }
         public IConfig Config { get; set; }
         public IDialog Dialog { get; set; }
         public IPlayer Player { get; set; }
@@ -49,7 +55,7 @@ namespace EasyFarm.Context
         public INavigator Navigator { get; set; }
         public IMenu Menu { get; set; }
         public Boolean IsFighting { get; set; }
-        public Zone Zone { get; set; }
+        public Pathfinder.Map.Zone Zone { get; set; }
         public IInventory Inventory { get; set; }
 
         public IList<IUnit> Units

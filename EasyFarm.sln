@@ -14,6 +14,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathfinder.Tests", "pathfinder\Pathfinder.Tests\Pathfinder.Tests.csproj", "{47C87744-7402-4986-A734-46CD097BAD69}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathfinder", "pathfinder\Pathfinder\Pathfinder.csproj", "{2370A192-7761-4E9C-8245-86895DF0E125}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathfinder", "..\Pathfinder\Pathfinder\Pathfinder.csproj", "{8AE72A1D-6503-4464-873D-C30A67D99C8A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathfinder", "..\Pathfinder\Pathfinder\Pathfinder.csproj", "{8AE72A1D-6503-4464-873D-C30A67D99C8A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathfinder", "..\Pathfinder\Pathfinder\Pathfinder.csproj", "{8AE72A1D-6503-4464-873D-C30A67D99C8A}"

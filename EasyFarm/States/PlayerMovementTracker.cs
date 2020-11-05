@@ -15,12 +15,20 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using EasyFarm.Classes;
+using System.Numerics;
+using EasyFarm.Context;
+using EasyFarm.ViewModels;
 using MemoryAPI;
 using MemoryAPI.Navigation;
+using Pathfinder;
+using Pathfinder.Map;
+using Pathfinder.People;
+using Pathfinder.Persistence;
+using Player = EasyFarm.Classes.Player;
 
 namespace EasyFarm.States
 {
@@ -28,18 +36,43 @@ namespace EasyFarm.States
     {
         private readonly IMemoryAPI _fface;
         private readonly Queue<Position> _positionHistory = new Queue<Position>();
+        private GameContext _context;
 
         public PlayerMovementTracker(IMemoryAPI fface)
         {
             _fface = fface;
+            _context = new GameContext(fface);
         }
 
         public void RunComponent()
+        {
+            string mapName = _context.Player.Zone.ToString();
+            if (mapName == "Unknown")
+                return;
+            
+            _context.Zone.Map = _context.ZoneMapFactory.LoadGridOrCreateNew(mapName);
+            var collectionWatcher = new CollectionWatcher<Node>(_context.Zone.Map.UnknownNodes, new PersisterActor {Persister = _context.ZoneMapFactory.Persister});
+            
+            LogViewModel.Write("Starting To record Player position in zone:" + mapName);
+            while (mapName == _context.Player.Zone.ToString())
+            {
+                var position = TrackPlayerPosition();
+                var node = _context.Zone.Map.GetNodeFromWorldPoint(new Vector3(position.X, position.Y, position.X));
+                if (_context.Zone.Map.UnknownNodes.Contains(node))
+                    _context.Zone.Map.AddKnownNode(node.WorldPosition);
+            }
+
+            // Check against unknown nodes
+            // use known nodes to add if there is a match.
+        }
+
+        private Position TrackPlayerPosition()
         {
             var position = _fface.Player.Position;
             _positionHistory.Enqueue(Helpers.ToPosition(position.X, position.Y, position.Z, position.H));
             if (_positionHistory.Count >= 15) _positionHistory.Dequeue();
             Player.Instance.IsMoving = IsMoving();
+            return position;
         }
 
         public bool IsMoving()

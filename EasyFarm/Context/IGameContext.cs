@@ -21,6 +21,7 @@ using EasyFarm.Classes;
 using EasyFarm.States;
 using EasyFarm.UserSettings;
 using MemoryAPI;
+using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.Context
 {
