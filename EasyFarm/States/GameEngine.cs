@@ -16,6 +16,7 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using EasyFarm.Classes;
+using EasyFarm.Infrastructure;
 using EasyFarm.UserSettings;
 using MemoryAPI;
 
@@ -44,11 +45,14 @@ namespace EasyFarm.States
         /// </summary>
         public bool IsWorking;
 
+        private NpcMonitor _npcMonitor;
+
         public GameEngine(IMemoryAPI fface)
         {
             _fface = fface;
             _stateMachine = new FiniteStateMachine(fface);
             _playerMonitor = new PlayerMonitor(fface);
+            _npcMonitor = new NpcMonitor(fface);
         }
 
         /// <summary>
@@ -64,6 +68,7 @@ namespace EasyFarm.States
                 IsWorking = true;
                 _stateMachine.Start();
                 _playerMonitor.Start();
+                _npcMonitor.Start();
                 return true;
             }
 
@@ -79,6 +84,7 @@ namespace EasyFarm.States
             IsWorking = false;
             _stateMachine.Stop();
             _playerMonitor.Stop();
+            _npcMonitor.Stop();
         }
     }
 }

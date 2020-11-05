@@ -1,8 +1,13 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
+using System.Net;
 using System.Numerics;
+using EasyFarm.Classes;
 using EasyFarm.Context;
+using EasyFarm.Parsing;
+using EasyFarm.States;
 using EasyFarm.ViewModels;
 using MemoryAPI;
 using MemoryAPI.Navigation;
@@ -10,6 +15,7 @@ using Pathfinder;
 using Pathfinder.Map;
 using Pathfinder.People;
 using Pathfinder.Persistence;
+using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.Infrastructure
 {
@@ -27,6 +33,10 @@ namespace EasyFarm.Infrastructure
         public void RunComponent()
         {
             string mapName = _context.Player.Zone.ToString();
+
+            if (mapName == "Unknown")
+                return;
+            
             LogViewModel.Write("Starting To record NPCs in zone:" + mapName);
             var peopleOverseer = new PeopleOverseer(mapName);
             while (mapName == _context.Player.Zone.ToString())
@@ -93,7 +103,14 @@ namespace EasyFarm.Infrastructure
 
         private void AddNpcsToGrid(PeopleOverseer peopleOverseer)
         {
-            foreach (var unit in _context.Memory.UnitService.NpcUnits)
+            if (_context.Memory.UnitService.NpcUnits.Count == 0)
+            {
+                return;
+            }
+
+            var units = new List<IUnit>(); //_context.Memory.UnitService.NpcUnits.ToList();
+            units.AddRange(_context.Memory.UnitService.NpcUnits);
+            foreach (var unit in units)
             {
                 Vector3 pos = RoundPositionToVector3(unit.Position);
                 var npc = new Person(unit.Id, unit.Name, pos);

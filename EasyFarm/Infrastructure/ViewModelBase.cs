@@ -50,6 +50,8 @@ namespace EasyFarm.Infrastructure
 
         public static AbilityService AbilityService { get; set; } = new AbilityService(null);
 
+        public static NpcMonitor NpcMonitor { get; set; }
+
         /// <summary>
         /// Set up session from given EliteApi session.
         /// </summary>

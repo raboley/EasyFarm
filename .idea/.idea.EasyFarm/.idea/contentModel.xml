@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_EasyFarm.652119488.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeFlat">
+    <e p="C:\Users\Russell\AppData\local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Russell\AppData\local\JetBrains\Rider2020.2\resharper-host\local\Transient\Rider\v202\SolutionCaches\_EasyFarm.662483375.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Russell\Source\Repos\raboley\EasyFarm" t="IncludeFlat">
       <e p="EasyFarm" t="IncludeRecursive">
         <e p="app.config" t="Include" />
         <e p="App.xaml" t="Include" />
@@ -100,7 +100,35 @@
           <e p="ZoneMapViewModel.cs" t="Include" />
         </e>
         <e p="NLog.config" t="Include" />
-        <e p="obj" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="x86" t="Include">
+            <e p="Debug" t="Include">
+              <e p="App.g.cs" t="Include" />
+              <e p="EasyFarm_Content.g.cs" t="Include" />
+              <e p="GeneratedInternalTypeHelper.g.cs" t="Include" />
+              <e p="Mapping" t="Include">
+                <e p="ZoneMapView.g.cs" t="Include" />
+              </e>
+              <e p="Views" t="Include">
+                <e p="AbilityView.g.cs" t="Include" />
+                <e p="BattlesView.g.cs" t="Include" />
+                <e p="DebugView.g.cs" t="Include" />
+                <e p="FollowView.g.cs" t="Include" />
+                <e p="IgnoredView.g.cs" t="Include" />
+                <e p="LogView.g.cs" t="Include" />
+                <e p="MainView.g.cs" t="Include" />
+                <e p="MasterView.g.cs" t="Include" />
+                <e p="RestingView.g.cs" t="Include" />
+                <e p="RoutesView.g.cs" t="Include" />
+                <e p="SelectActionDialog.g.cs" t="Include" />
+                <e p="SelectProcessDialog.g.cs" t="Include" />
+                <e p="SettingsView.g.cs" t="Include" />
+                <e p="TargetingView.g.cs" t="Include" />
+                <e p="TargetsView.g.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="packages.config" t="Include" />
         <e p="Parsing" t="Include">
           <e p="Ability.cs" t="Include" />
@@ -389,44 +417,21 @@
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive">
-        <e p="xunit.runner.visualstudio.2.4.1/build/_common/xunit.abstractions.dll" t="Include" />
-        <e p="xunit.runner.visualstudio.2.4.1/build/_common/xunit.runner.reporters.net452.dll" t="Include" />
-        <e p="xunit.runner.visualstudio.2.4.1/build/_common/xunit.runner.utility.net452.dll" t="Include" />
-        <e p="xunit.runner.visualstudio.2.4.1/build/_common/xunit.runner.visualstudio.testadapter.dll" t="Include" />
+        <e p="xunit.runner.visualstudio.2.4.1\build\_common\xunit.abstractions.dll" t="Include" />
+        <e p="xunit.runner.visualstudio.2.4.1\build\_common\xunit.runner.reporters.net452.dll" t="Include" />
+        <e p="xunit.runner.visualstudio.2.4.1\build\_common\xunit.runner.utility.net452.dll" t="Include" />
+        <e p="xunit.runner.visualstudio.2.4.1\build\_common\xunit.runner.visualstudio.testadapter.dll" t="Include" />
       </e>
       <e p="Pathfinder" t="Include">
         <e p="Pathfinder" t="IncludeRecursive">
-          <e p="bin" t="ExcludeRecursive" />
-          <e p="Grid.cs" t="Include" />
-          <e p="Heap.cs" t="Include" />
-          <e p="MappingConversion.cs" t="Include" />
-          <e p="Node.cs" t="Include" />
-          <e p="obj" t="ExcludeRecursive">
-            <e p="Debug" t="Include">
-              <e p="netcoreapp2.2" t="Include">
-                <e p="Pathfinder.AssemblyInfo.cs" t="Include" />
-              </e>
-            </e>
-          </e>
-          <e p="pathfinder.csproj" t="IncludeRecursive" />
+          <e p="Pathfinder.csproj" t="IncludeRecursive" />
         </e>
         <e p="Pathfinder.Tests" t="IncludeRecursive">
-          <e p="bin" t="ExcludeRecursive" />
-          <e p="GridTests.cs" t="Include" />
-          <e p="MappingConversionsTests.cs" t="Include" />
-          <e p="NodeTests.cs" t="Include" />
-          <e p="obj" t="ExcludeRecursive">
-            <e p="Debug" t="Include">
-              <e p="netcoreapp2.2" t="Include">
-                <e p="Pathfinder.Tests.AssemblyInfo.cs" t="Include" />
-              </e>
-            </e>
-          </e>
           <e p="Pathfinder.Tests.csproj" t="IncludeRecursive" />
         </e>
       </e>
     </e>
-    <e p="$PROJECT_DIR$/../Pathfinder/Pathfinder" t="IncludeRecursive">
+    <e p="C:\Users\Russell\Source\Repos\raboley\Pathfinder\Pathfinder" t="IncludeRecursive">
       <e p="bin" t="ExcludeRecursive" />
       <e p="ExampleWorld.cs" t="Include" />
       <e p="Map" t="Include">
@@ -439,7 +444,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages.config" t="Include" />
-      <e p="pathfinder.csproj" t="IncludeRecursive" />
+      <e p="Pathfinder.csproj" t="IncludeRecursive" />
       <e p="Pathing" t="Include">
         <e p="PathfinderMath.cs" t="Include" />
         <e p="Pathfinding.cs" t="Include" />

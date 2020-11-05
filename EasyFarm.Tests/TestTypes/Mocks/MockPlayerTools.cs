@@ -35,5 +35,6 @@ namespace EasyFarm.Tests.TestTypes.Mocks
         public int MeritPoints => throw new System.NotImplementedException();
 
         public Zone HomePoint => throw new System.NotImplementedException();
+        public Nations Nation { get; }
     }
 }
