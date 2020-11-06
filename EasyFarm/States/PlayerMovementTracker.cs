@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using Castle.Core.Internal;
 using EasyFarm.Context;
 using EasyFarm.ViewModels;
 using MemoryAPI;
@@ -47,15 +48,17 @@ namespace EasyFarm.States
 
         public void RunComponent()
         {
-            string mapName = _context.Player.Zone.ToString();
-            if (mapName == "Unknown")
+            // string mapName = _context.Player.Zone.ToString();
+            string mapName = _fface.Player.Zone.ToString();
+            if (mapName == "Unknown" || mapName.IsNullOrEmpty())
                 return;
 
             _context.ZoneMapFactory.Persister = NewZoneMapPersister();
             _context.Zone.Map = _context.ZoneMapFactory.LoadGridOrCreateNew(mapName);
-            var collectionWatcher = new CollectionWatcher<Node>(_context.Zone.Map.UnknownNodes, new PersisterActor {Persister = _context.ZoneMapFactory.Persister});
+            _context.Zone.Name = mapName;
+            var collectionWatcher = new CollectionWatcher<Node>(_context.Zone.Map.UnknownNodes, new KnownNodeActor(_context.ZoneMapFactory.Persister, _context.Zone.Map));
             
-            LogViewModel.Write("Starting To record Player position in zone:" + mapName);
+            // LogViewModel.Write("Starting To record Player position in zone:" + mapName);
             while (mapName == _context.Player.Zone.ToString())
             {
                 var position = TrackPlayerPosition();
