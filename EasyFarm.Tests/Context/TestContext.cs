@@ -22,6 +22,8 @@ using EasyFarm.States;
 using EasyFarm.Tests.TestTypes.Mocks;
 using EasyFarm.UserSettings;
 using MemoryAPI;
+using Zone = Pathfinder.Map.Zone;
+
 
 namespace EasyFarm.Tests.Context
 {

@@ -43,29 +43,33 @@ namespace EasyFarm.States
         public PlayerMovementTracker(IMemoryAPI fface)
         {
             _fface = fface;
-            _context = new GameContext(fface);
+            // _context = new GameContext(fface);
         }
 
         public void RunComponent()
         {
-            // string mapName = _context.Player.Zone.ToString();
-            string mapName = _fface.Player.Zone.ToString();
-            if (mapName == "Unknown" || mapName.IsNullOrEmpty())
-                return;
-
-            _context.ZoneMapFactory.Persister = NewZoneMapPersister();
-            _context.Zone.Map = _context.ZoneMapFactory.LoadGridOrCreateNew(mapName);
-            _context.Zone.Name = mapName;
-            var collectionWatcher = new CollectionWatcher<Node>(_context.Zone.Map.UnknownNodes, new KnownNodeActor(_context.ZoneMapFactory.Persister, _context.Zone.Map));
-            
-            // LogViewModel.Write("Starting To record Player position in zone:" + mapName);
-            while (mapName == _context.Player.Zone.ToString())
-            {
-                var position = TrackPlayerPosition();
-                var node = _context.Zone.Map.GetNodeFromWorldPoint(new Vector3(position.X, position.Y, position.X));
-                if (_context.Zone.Map.UnknownNodes.Contains(node))
-                    _context.Zone.Map.AddKnownNode(node.WorldPosition);
-            }
+            // // string mapName = _context.Player.Zone.ToString();
+            // string mapName = _fface.Player.Zone.ToString();
+            // if (mapName == "Unknown" || mapName.IsNullOrEmpty())
+            //     return;
+            //
+            // _context.ZoneMapFactory.Persister = NewZoneMapPersister();
+            // _context.Zone.Map = _context.ZoneMapFactory.LoadGridOrCreateNew(mapName);
+            // _context.Zone.Name = mapName;
+            // var collectionWatcher = new CollectionWatcher<Node>(_context.Zone.Map.UnknownNodes, new KnownNodeActor(_context.ZoneMapFactory.Persister, _context.Zone.Map));
+            //
+            // // LogViewModel.Write("Starting To record Player position in zone:" + mapName);
+            // while (mapName == _context.Player.Zone.ToString())
+            // {
+            TrackPlayerPosition();
+            //     var node = _context.Zone.Map.GetNodeFromWorldPoint(new Vector3(position.X, position.Y, position.X));
+            //     if (_context.Zone.Map.UnknownNodes.Contains(node))
+            //     {
+            //         _context.Zone.Map.AddKnownNode(node.WorldPosition);
+            //         // TODO do this async or something? It takes a long time.
+            //         _context.ZoneMapFactory.Persister.Save(_context.Zone.Map);
+            //     }
+            // }
         }
 
         private Position TrackPlayerPosition()
@@ -85,42 +89,6 @@ namespace EasyFarm.States
         }
         
         
-        public static FilePersister NewZoneMapPersister()
-        {
-            var persister = new FilePersister();
-            var mapsDirectory = GetMapsDirectory();
-            persister.DefaultExtension = "json";
-            persister.FilePath = mapsDirectory;
-            return persister;
-        }
-
-        public static string GetMapsDirectory()
-        {
-            var repoRoot = GetRepoRoot();
-
-            repoRoot = Path.Combine(repoRoot, "Maps");
-            Directory.CreateDirectory(repoRoot);
-            return repoRoot;
-        }
-
-        public static string GetAndCreateDirectorFromRoot(string directory)
-        {
-            var repoRoot = GetRepoRoot();
-
-            repoRoot = Path.Combine(repoRoot, directory);
-            Directory.CreateDirectory(repoRoot);
-            return repoRoot;
-        }
-
-        public static string GetRepoRoot()
-        {
-            string repoRoot = Directory.GetCurrentDirectory();
-            for (int i = 0; i < 3; i++)
-            {
-                repoRoot = Directory.GetParent(repoRoot).FullName;
-            }
-
-            return repoRoot;
-        }
+       
     }
 }

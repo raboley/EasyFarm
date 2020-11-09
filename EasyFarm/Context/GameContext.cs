@@ -25,7 +25,6 @@ using MemoryAPI;
 using MemoryAPI.Menu;
 using Pathfinder.Map;
 using Pathfinder.Persistence;
-using Zone = MemoryAPI.Zone;
 
 namespace EasyFarm.Context
 {

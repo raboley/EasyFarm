@@ -71,8 +71,8 @@ namespace EasyFarm.Infrastructure
 
             AbilityService = new AbilityService(FFACE);
             
-            // Track the NPCs
-            NpcMonitor = new NpcMonitor(FFACE);
+            // // Track the NPCs
+            // NpcMonitor = new NpcMonitor(FFACE);
 
             AutoLoadSettings();
         }

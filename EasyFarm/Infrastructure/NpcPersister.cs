@@ -25,10 +25,11 @@ namespace EasyFarm.Infrastructure
         private IMemoryAPI _fface;
         private IGameContext _context;
 
-        public NpcPersister(IMemoryAPI fface)
+
+        public NpcPersister(IMemoryAPI fface, GameContext gameContext)
         {
             _fface = fface;
-            _context = new GameContext(fface);
+            _context = gameContext;
         }
 
         public void RunComponent()

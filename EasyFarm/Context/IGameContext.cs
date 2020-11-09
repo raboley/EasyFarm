@@ -21,6 +21,7 @@ using EasyFarm.Classes;
 using EasyFarm.States;
 using EasyFarm.UserSettings;
 using MemoryAPI;
+using Pathfinder.Map;
 using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.Context
@@ -39,5 +40,6 @@ namespace EasyFarm.Context
         IMenu Menu { get; set; }
         IInventory Inventory { get; set; }
         INavigator Navigator { get; set; }
+        ZoneMapFactory ZoneMapFactory { get; set; }
     }
 }

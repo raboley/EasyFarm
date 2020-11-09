@@ -157,6 +157,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Pathfinder\Pathfinder\Pathfinder.csproj">
+      <Project>{8ae72a1d-6503-4464-873d-c30a67d99c8a}</Project>
+      <Name>Pathfinder</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EasyFarm\EasyFarm.csproj">
       <Project>{14508978-627b-46ae-9779-1f6b4fb0611e}</Project>
       <Name>EasyFarm</Name>

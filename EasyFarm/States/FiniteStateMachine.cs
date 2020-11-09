@@ -37,30 +37,29 @@ namespace EasyFarm.States
         private CancellationTokenSource _cancellation = new CancellationTokenSource();
         private readonly GameContext _context;
 
-        public FiniteStateMachine(IMemoryAPI fface)
+        public FiniteStateMachine(IMemoryAPI fface, GameContext gameContext)
         {
             _fface = fface;
-            _context = new GameContext(fface);
-
+            _context = gameContext;
             //Create the states
             AddState(new DeadState() {Priority = 10});
             AddState(new ZoneState() {Priority = 10});
-            AddState(new SetTargetState() {Priority = 10});
-            AddState(new SetFightingState() {Priority = 10});
+            // AddState(new SetTargetState() {Priority = 10});
+            // AddState(new SetFightingState() {Priority = 10});
             AddState(new FollowState() {Priority = 5});
             AddState(new RestState() {Priority = 2});
             AddState(new SummonTrustsState() {Priority = 6});
-            AddState(new ApproachState() {Priority = 0});
-            AddState(new BattleState() {Priority = 3});
-            AddState(new WeaponskillState() {Priority = 2});
-            AddState(new PullState() {Priority = 4});
+            // AddState(new ApproachState() {Priority = 0});
+            // AddState(new BattleState() {Priority = 3});
+            // AddState(new WeaponskillState() {Priority = 2});
+            // AddState(new PullState() {Priority = 4});
             AddState(new StartState() {Priority = 5});
             AddState(new TravelState() {Priority = 1});
             AddState(new HealingState() {Priority = 2});
             AddState(new EndState() {Priority = 3});
             AddState(new StartEngineState() {Priority = Constants.MaxPriority});
-            AddState(new DumpTreasureState() { Priority = 2 });
-            AddState(new MapState() {Priority = 5});
+            // AddState(new DumpTreasureState() { Priority = 2 });
+            // AddState(new MapState() {Priority = 5});
             // Needs Signet
             // AddState(new NeedSignet() { Priority = 9 });
             // Inventory Is Full

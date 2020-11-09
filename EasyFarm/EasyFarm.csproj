@@ -219,6 +219,8 @@
     <Compile Include="Infrastructure\TabViewModels.cs" />
     <Compile Include="Handlers\UpdateEliteAPI.cs" />
     <Compile Include="Mapping\ZoneMapFactory.cs" />
+    <Compile Include="Monitors\ZoneMapMonitor.cs" />
+    <Compile Include="Monitors\ZoneMapPersister.cs" />
     <Compile Include="Parsing\AbilityMapper.cs" />
     <Compile Include="Parsing\ItemMapper.cs" />
     <Compile Include="Parsing\Resource.cs" />
@@ -538,7 +540,6 @@
       <Name>MemoryAPI</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(ProjectDir)\Dependencies\*.*" "$(TargetDir)"</PostBuildEvent>
