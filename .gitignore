@@ -2,7 +2,7 @@
 # EasyFarm Specific
 #################
 Maps/
-
+.idea/*
 
 #################
 ## Eclipse
