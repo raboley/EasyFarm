@@ -1,5 +1,6 @@
 ﻿using MemoryAPI;
 using MemoryAPI.Navigation;
+using Pathfinder.Map;
 
 namespace EasyFarm.Tests.TestTypes.Mocks
 {
@@ -12,7 +13,7 @@ namespace EasyFarm.Tests.TestTypes.Mocks
         {
         }
 
-        public void GotoWaypoint(Position position, bool useObjectAvoidance, bool keepRunning)
+        public bool GotoWaypoint(Position position, bool useObjectAvoidance, bool keepRunning, ZoneMap zoneMap)
         {
             throw new System.NotImplementedException();
         }

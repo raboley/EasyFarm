@@ -32,6 +32,7 @@ using MemoryAPI.Navigation;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
 using Pathfinder;
+using Pathfinder.Map;
 using Pathfinder.Pathing;
 using static EliteMMO.API.EliteAPI;
 
@@ -103,11 +104,17 @@ namespace MemoryAPI.Memory
                     Math.Pow(position.Z - player.Z, 2));
             }
 
-            public void GotoWaypoint(Position position, bool useObjectAvoidance, bool keepRunning)
+            public bool GotoWaypoint(Position position, bool useObjectAvoidance, bool keepRunning, ZoneMap zoneMap)
             {
-                if (!(DistanceTo(position) > DistanceTolerance)) return;
-                MoveForwardTowardsPosition(() => position, useObjectAvoidance);
+                if (!(DistanceTo(position) > DistanceTolerance)) return false;
+                bool stop = MoveForwardTowardsPosition(() => position, useObjectAvoidance, zoneMap);
+                if (stop)
+                {
+                    Reset();
+                    return true;
+                }
                 if (!keepRunning) Reset();
+                return false;
             }
 
             public void GotoNPC(int id, bool useObjectAvoidance)
@@ -116,7 +123,7 @@ namespace MemoryAPI.Memory
 
                 bool shouldKeepRunning = !(DistanceTo(destination) < DistanceTolerance);
 
-                GotoWaypoint(destination, useObjectAvoidance, shouldKeepRunning);
+                GotoWaypoint(destination, useObjectAvoidance, shouldKeepRunning, null);
                 KeepOneYalmBack(destination);
                 FaceHeading(destination);
                 Reset();
@@ -129,26 +136,31 @@ namespace MemoryAPI.Memory
                 return position;
             }            
 
-            private void MoveForwardTowardsPosition(
-                Func<Position> targetPosition,
-                bool useObjectAvoidance)
+            private bool MoveForwardTowardsPosition(Func<Position> targetPosition,
+                bool useObjectAvoidance, ZoneMap zoneMap)
             {
                 double distanceToDestination = DistanceTo(targetPosition());
-                if (!(distanceToDestination > DistanceTolerance)) return;
+                if (!(distanceToDestination > DistanceTolerance)) return false;
 
-                DateTime duration = DateTime.Now.AddSeconds(5);
+                DateTime duration = DateTime.Now.AddSeconds(2);
 
                 while (DistanceTo(targetPosition()) > DistanceTolerance && DateTime.Now < duration)
                 {
                     SetViewMode(ViewMode.FirstPerson);
                     FaceHeading(targetPosition());
                     _api.ThirdParty.KeyDown(Keys.NUMPAD8);
-                    if (useObjectAvoidance) AvoidObstacles();
+                    if (useObjectAvoidance)
+                    {
+                        bool needNewPath = AvoidObstacles(targetPosition(), zoneMap);
+                        return needNewPath;
+                    }
                     Thread.Sleep(100);
 
                     var player = _api.Entity.GetLocalPlayer();
-                    Debug.Write($"Player is at X:{player.X} Y:{player.Y} Z:{player.Z} H:{player.H}" + Environment.NewLine);
+                    // Debug.Write($"Player is at X:{player.X} Y:{player.Y} Z:{player.Z} H:{player.H}" + Environment.NewLine);
                 }
+
+                return false;
             }
 
             private void KeepRunningWithKeyboard()
@@ -184,51 +196,81 @@ namespace MemoryAPI.Memory
             /// <summary>
             /// Attempts to get a stuck player moving again.
             /// </summary>
-            private void AvoidObstacles()
+            /// <param name="targetPosition"></param>
+            /// <param name="zoneMap"></param>
+            private bool AvoidObstacles(Position targetPosition, ZoneMap zoneMap)
             {
-                // if (IsStuck())
-                // {
+                if (IsStuck())
+                {
+                    var player = _api.Entity.GetLocalPlayer();
+                    Debug.Write($"Player is stuck at X:{player.X} Y:{player.Y} Z:{player.Z} H:{player.H}" + Environment.NewLine); 
                     
-                //     if (IsEngaged())
-                //     {
-                //         Disengage();
-                //         WiggleCharacter(attempts: 3);
-                //     }
-                //     else
-                //     {
-                //         RecordTravelBlock();
-                //         // RequestNewPath();
-                //     }
+                    if (IsEngaged())
+                    {
+                        Disengage();
+                        WiggleCharacter(attempts: 3);
+                    }
+                    else
+                    {
+                        RecordTravelBlock(targetPosition, zoneMap);
+                        var turnRight = new Position();
+                        turnRight.X = targetPosition.X + 1;
+                        turnRight.Z = targetPosition.Z;
+                        FaceHeading(turnRight);
+                        return true;
+                        // RequestNewPath();
+                    }
 
-                // }
+                }
+
+                return false;
             }
 
 
-            // private void RecordTravelBlock()
-            // {
-            //     // Get the vector3 right in front of me
-            //     Vector3 positionInFrontOfMe = GetPositionInFrontOfMe();
+            private void RecordTravelBlock(Position targetPosition, ZoneMap zoneMap)
+            {
+                // Get the vector3 right in front of me
+                Vector3 positionInFrontOfMe = GetPositionInFrontOfMe(targetPosition);
                 
 
-            //     // Add it to blocked paths for grid
-            //     Pathfinder.Grid.AddUnWalkableNode(positionInFrontOfMe);
+                // Add it to blocked paths for grid
+                Debug.Write($"Adding unWalkable node at: X:{positionInFrontOfMe.X} Y:{positionInFrontOfMe.Y} Z:{positionInFrontOfMe.Z}" + Environment.NewLine);  
+                zoneMap.AddUnWalkableNode(positionInFrontOfMe);
+            }
 
-            // }
+            private Vector3 GetPositionInFrontOfMe(Position targetPosition)
+            {
+                var currentPosition = RoundPlayerPositionToGridPosition(_api.Player);
+                int x = GetNewXorY(currentPosition.X, targetPosition.X);
+                int y = GetNewXorY(currentPosition.Z, targetPosition.Z);
+                
+                var blockedPosition = new Vector3(x, 0, y);
+                return blockedPosition;
+            }
+            
+            private int GetNewXorY(float current, float target)
+            {
+                int currentInt = GridMath.ConvertFromFloatToInt(current);
+                int targetInt = GridMath.ConvertFromFloatToInt(target);
 
-            // private Vector3 GetPositionInFrontOfMe()
-            // {
-            //     return RoundPlayerPositionToGridPosition(_api.Player);
-            // }
-            // public static Vector3 RoundPlayerPositionToGridPosition(EliteAPI.PlayerTools player)
-            // {
-            //     Vector3 gridPosition = new Vector3
-            //     {
-            //         X = GridMath.ConvertFromFloatToInt(player.X),
-            //         Y = 0,
-            //         Z = GridMath.ConvertFromFloatToInt(player.Z)
-            //     };
-            //     return gridPosition;
-            // }
+                if (currentInt > targetInt)
+                    return currentInt - 1;
+
+                if (currentInt < targetInt)
+                    return currentInt + 1;
+
+                return currentInt;
+            }
+            public static Vector3 RoundPlayerPositionToGridPosition(EliteAPI.PlayerTools player)
+            {
+                Vector3 gridPosition = new Vector3
+                {
+                    X = GridMath.ConvertFromFloatToInt(player.X),
+                    Y = 0,
+                    Z = GridMath.ConvertFromFloatToInt(player.Z)
+                };
+                return gridPosition;
+            }
 
             /// <summary>
             /// Determines if the player has become stuck.

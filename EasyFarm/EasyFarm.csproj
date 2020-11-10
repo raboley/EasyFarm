@@ -190,6 +190,7 @@
     <Compile Include="Classes\IMonitor.cs" />
     <Compile Include="Classes\INavigator.cs" />
     <Compile Include="Classes\Inventory.cs" />
+    <Compile Include="ConvertPosition.cs" />
     <Compile Include="Infrastructure\NPCMonitor.cs" />
     <Compile Include="Infrastructure\NpcPersister.cs" />
     <Compile Include="Mapping\GraphConverter.cs" />

@@ -45,11 +45,60 @@ namespace EasyFarm.States
         public override void Run(IGameContext context)
         {
 
-            context.Player.CurrentGoal = "Signet";
+            // context.Player.CurrentGoal = "Signet";
             LogViewModel.Write("I don't have signet, Setting my goal to go get Signet");
             
             // Go to Signet NPC
+            // Find Signet Guy
+            if (context.Npcs == null)
+            {
+                return;
+            }
+            if (context.Npcs.Count == 0)
+            {
+                LogViewModel.Write("I need signet, but don't know where any NPCs are in this zone");
+                return;
+            }
+            
+            var signetPerson = context.Npcs.FirstOrDefault(n => n.Name.Contains("I.M."));
+            if (signetPerson == null)
+            {
+                LogViewModel.Write("I need signet, but can't find the signet person in this zone");
+                return;
+            }
+            
+            LogViewModel.Write("Found signet person:" + signetPerson.Name + " At position: " +
+                               signetPerson.Position + " Headed there now");
+            // Set route to the path to the signet guy
+            var player = context.API.Player;
+            var myPosition = ConvertPosition.RoundPositionToVector3(player.Position);
 
+            if (context.Zone.Map == null)
+            {
+                LogViewModel.Write("Finding path, but zone map is null");
+                return;
+            }
+            
+            var path = Pathfinder.Pathing.Pathfinding.FindWaypoints(context.Zone.Map, myPosition, signetPerson.Position);
+            if (path.Length > 0)
+            {
+                var obsWaypoints = ConvertPosition.ConvertVectorArrayToObservableCollectionPosition(path);
+                context.Config.Route.Waypoints = obsWaypoints;
+            
+                //// Actually walking
+                Navigator.StartRoute(context);
+            }
+            
+            // Got to the signet person
+            LogViewModel.Write("Made it to signet person!");
+            Config.Instance.Route.Reset();
+            context.API.Navigator.Reset();
+            
+            // Get signet
+            
+            
+            // Got Signet, reset goal
+            // context.Player.CurrentGoal = "Aimless";
 
 
             // Get Signet
@@ -62,9 +111,8 @@ namespace EasyFarm.States
             bool hasSignet = false;
             if (player.StatusEffects != null)
             {
-                var signet = player.StatusEffects.ToList().Find(n => n == StatusEffect.Signet);
-                if (signet != null)
-                    hasSignet = true;
+                hasSignet = player.StatusEffects.ToList().Contains(StatusEffect.Signet);
+                return hasSignet;
             }
 
             return hasSignet;

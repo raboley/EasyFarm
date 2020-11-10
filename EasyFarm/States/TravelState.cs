@@ -54,7 +54,7 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
-            context.API.Navigator.DistanceTolerance = 1;
+            context.API.Navigator.DistanceTolerance = 3;
 
             var nextPosition = context.Config.Route.GetNextPosition(context.API.Player.Position);
             var shouldKeepRunningToNextWaypoint = context.Config.Route.Waypoints.Count != 1;
@@ -62,7 +62,7 @@ namespace EasyFarm.States
             context.API.Navigator.GotoWaypoint(
                 nextPosition,
                 context.Config.IsObjectAvoidanceEnabled,
-                shouldKeepRunningToNextWaypoint);
+                shouldKeepRunningToNextWaypoint, context.Zone.Map);
         }
 
         public override void Exit(IGameContext context)

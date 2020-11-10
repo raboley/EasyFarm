@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EasyFarm.ViewModels;
 
 namespace EasyFarm.Classes
 {
@@ -27,6 +28,7 @@ namespace EasyFarm.Classes
         {
             if (IsStuck())
             {
+                LogViewModel.Write("I am stuck at!" + _memory.Player.Position);
                 //RecordTravelBlock();
                 //if (IsEngaged()) Disengage();
                 //WiggleCharacter(attempts: 3);
@@ -159,8 +161,9 @@ namespace EasyFarm.Classes
         public static void StartRoute(IGameContext context)
         {
             var shouldKeepRunningToNextWaypoint = context.Config.Route.Waypoints.Count != 1;
+            var getNewRoute = false;
 
-            while (shouldKeepRunningToNextWaypoint)
+            while (shouldKeepRunningToNextWaypoint && getNewRoute == false)
             {
                 //context.API.Navigator.DistanceTolerance = 1; // maybe lower this so that the mjol section doesn't suck so bad.
 
@@ -172,10 +175,10 @@ namespace EasyFarm.Classes
                 else
                 {
 
-                    context.API.Navigator.GotoWaypoint(
+                    getNewRoute = context.API.Navigator.GotoWaypoint(
                         nextPosition,
                         context.Config.IsObjectAvoidanceEnabled,
-                        shouldKeepRunningToNextWaypoint);
+                        shouldKeepRunningToNextWaypoint, context.Zone.Map);
                 }
             }
         }

@@ -17,11 +17,13 @@
 // ///////////////////////////////////////////////////////////////////
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using EasyFarm.Classes;
 using EasyFarm.States;
 using EasyFarm.UserSettings;
 using MemoryAPI;
 using Pathfinder.Map;
+using Pathfinder.People;
 using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.Context
@@ -41,5 +43,6 @@ namespace EasyFarm.Context
         IInventory Inventory { get; set; }
         INavigator Navigator { get; set; }
         ZoneMapFactory ZoneMapFactory { get; set; }
+        ObservableCollection<Person> Npcs { get; set; }
     }
 }

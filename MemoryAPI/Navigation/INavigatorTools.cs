@@ -16,6 +16,7 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using MemoryAPI.Navigation;
+using Pathfinder.Map;
 
 namespace MemoryAPI
 {
@@ -23,7 +24,7 @@ namespace MemoryAPI
     {
         double DistanceTolerance { get; set; }
         void FaceHeading(Position position);
-        void GotoWaypoint(Position position, bool useObjectAvoidance, bool keepRunning);
+        bool GotoWaypoint(Position position, bool useObjectAvoidance, bool keepRunning, ZoneMap zoneMap);
         void GotoNPC(int ID, bool useObjectAvoidance);
         void Reset();
     }

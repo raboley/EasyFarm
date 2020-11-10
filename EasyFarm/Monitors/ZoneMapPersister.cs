@@ -30,9 +30,12 @@ namespace EasyFarm.Monitors
                 return;
             
             _context.ZoneMapFactory.Persister = NewZoneMapPersister();
+            LogViewModel.Write("Mapper thread loading up grid for: " + mapName);
             _context.Zone.Map = _context.ZoneMapFactory.LoadGridOrCreateNew(mapName);
             _context.Zone.Name = mapName;
 
+            
+            LogViewModel.Write("Mapper grid loaded!");
             while (mapName == _context.Player.Zone.ToString())
             {
                 var node = _context.Zone.Map.GetNodeFromWorldPoint(new Vector3(_context.API.Player.PosX, _context.API.Player.PosY, _context.API.Player.PosZ));
@@ -43,7 +46,7 @@ namespace EasyFarm.Monitors
                 }   
             }
             
-            var lastPositionBeforeZone = RoundPositionToVector3(_context.API.Player.Position);
+            var lastPositionBeforeZone = ConvertPosition.RoundPositionToVector3(_context.API.Player.Position);
             if (lastPositionBeforeZone != Vector3.Zero)
             {
                 while (_context.API.Player.Zone == Zone.Unknown)
@@ -57,7 +60,7 @@ namespace EasyFarm.Monitors
                 }
                 
 
-                _context.Zone.AddBoundary(mapName,lastPositionBeforeZone,_context.Player.Zone.ToString(), RoundPositionToVector3(_context.API.Player.Position));
+                _context.Zone.AddBoundary(mapName,lastPositionBeforeZone,_context.Player.Zone.ToString(), ConvertPosition.RoundPositionToVector3(_context.API.Player.Position));
             }
 
             _context.ZoneMapFactory.Persister.Save(_context.Zone.Map);
@@ -65,14 +68,7 @@ namespace EasyFarm.Monitors
         }
         private bool IsZoning(IGameContext context) => context.Player.Str == 0;
 
-        private Vector3 RoundPositionToVector3(Position playerPosition)
-        {
-            var x = GridMath.ConvertFromFloatToInt(playerPosition.X);
-            var z = GridMath.ConvertFromFloatToInt(playerPosition.Z);
-            
-           return new Vector3(x, 0, z); 
-           // return new Vector3(playerPosition.X, playerPosition.Y, playerPosition.Z); 
-        }
+
 
 
         public static FilePersister NewZoneMapPersister()

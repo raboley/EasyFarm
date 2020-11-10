@@ -17,6 +17,7 @@
 // ///////////////////////////////////////////////////////////////////
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using EasyFarm.Classes;
 using EasyFarm.States;
@@ -24,6 +25,7 @@ using EasyFarm.UserSettings;
 using MemoryAPI;
 using MemoryAPI.Menu;
 using Pathfinder.Map;
+using Pathfinder.People;
 using Pathfinder.Persistence;
 
 namespace EasyFarm.Context
@@ -52,6 +54,7 @@ namespace EasyFarm.Context
         
 
         public ZoneMapFactory ZoneMapFactory { get; set; }
+        public ObservableCollection<Person> Npcs { get; set; }
         public IConfig Config { get; set; }
         public IDialog Dialog { get; set; }
         public IPlayer Player { get; set; }
