@@ -55,6 +55,7 @@
           <e p="IPlayer.cs" t="Include" />
           <e p="Player.cs" t="Include" />
         </e>
+        <e p="ConvertPosition.cs" t="Include" />
         <e p="Dependencies" t="Include">
           <e p="EliteAPI.dll" t="Include" />
           <e p="EliteMMO.API.dll" t="Include" />
@@ -428,7 +429,7 @@
       </e>
       <e p="Pathfinder" t="Include">
         <e p="Pathfinder" t="IncludeRecursive">
-          <e p="pathfinder.csproj" t="IncludeRecursive" />
+          <e p="Pathfinder.csproj" t="IncludeRecursive" />
         </e>
         <e p="Pathfinder.Tests" t="IncludeRecursive">
           <e p="Pathfinder.Tests.csproj" t="IncludeRecursive" />
@@ -449,7 +450,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages.config" t="Include" />
-      <e p="pathfinder.csproj" t="IncludeRecursive" />
+      <e p="Pathfinder.csproj" t="IncludeRecursive" />
       <e p="Pathing" t="Include">
         <e p="PathfinderMath.cs" t="Include" />
         <e p="Pathfinding.cs" t="Include" />

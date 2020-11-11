@@ -142,7 +142,7 @@ namespace MemoryAPI.Memory
                 double distanceToDestination = DistanceTo(targetPosition());
                 if (!(distanceToDestination > DistanceTolerance)) return false;
 
-                DateTime duration = DateTime.Now.AddSeconds(2);
+                DateTime duration = DateTime.Now.AddSeconds(0.5);
 
                 while (DistanceTo(targetPosition()) > DistanceTolerance && DateTime.Now < duration)
                 {
@@ -216,7 +216,7 @@ namespace MemoryAPI.Memory
                         var turnRight = new Position();
                         turnRight.X = targetPosition.X + 1;
                         turnRight.Z = targetPosition.Z;
-                        FaceHeading(turnRight);
+                        // FaceHeading(turnRight);
                         return true;
                         // RequestNewPath();
                     }
@@ -231,11 +231,25 @@ namespace MemoryAPI.Memory
             {
                 // Get the vector3 right in front of me
                 Vector3 positionInFrontOfMe = GetPositionInFrontOfMe(targetPosition);
+                Vector3 targetPositionVector3 = GetVectorFromPosition(targetPosition);
                 
 
                 // Add it to blocked paths for grid
                 Debug.Write($"Adding unWalkable node at: X:{positionInFrontOfMe.X} Y:{positionInFrontOfMe.Y} Z:{positionInFrontOfMe.Z}" + Environment.NewLine);  
                 zoneMap.AddUnWalkableNode(positionInFrontOfMe);
+                Debug.Write($"Adding unWalkable node at target position: X:{positionInFrontOfMe.X} Y:{positionInFrontOfMe.Y} Z:{positionInFrontOfMe.Z}" + Environment.NewLine);  
+                zoneMap.AddUnWalkableNode(targetPositionVector3);
+            }
+
+            private Vector3 GetVectorFromPosition(Position position)
+            {
+                Vector3 gridPosition = new Vector3
+                {
+                    X = GridMath.ConvertFromFloatToInt(position.X),
+                    Y = 0,
+                    Z = GridMath.ConvertFromFloatToInt(position.Z)
+                };
+                return gridPosition;
             }
 
             private Vector3 GetPositionInFrontOfMe(Position targetPosition)
