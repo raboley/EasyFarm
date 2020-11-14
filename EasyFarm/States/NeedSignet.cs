@@ -20,8 +20,10 @@ using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
+using EliteMMO.API;
 using MemoryAPI;
 using Player = EasyFarm.Classes.Player;
+using StatusEffect = MemoryAPI.StatusEffect;
 
 namespace EasyFarm.States
 {
@@ -59,7 +61,12 @@ namespace EasyFarm.States
                 LogViewModel.Write("I need signet, but don't know where any NPCs are in this zone");
                 return;
             }
-            
+
+            // while (true)
+            // {
+            //     context.API.Windower.SendKeyPress(Keys.NUMPAD2);
+            // }
+            //
             var signetPerson = context.Npcs.FirstOrDefault(n => n.Name.Contains("I.M."));
             if (signetPerson == null)
             {
@@ -69,6 +76,8 @@ namespace EasyFarm.States
             
             LogViewModel.Write("Found signet person:" + signetPerson.Name + " At position: " +
                                signetPerson.Position + " Headed there now");
+            
+            
             // Set route to the path to the signet guy
             var player = context.API.Player;
             var myPosition = ConvertPosition.RoundPositionToVector3(player.Position);

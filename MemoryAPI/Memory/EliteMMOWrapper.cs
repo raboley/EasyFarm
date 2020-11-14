@@ -142,21 +142,31 @@ namespace MemoryAPI.Memory
                 double distanceToDestination = DistanceTo(targetPosition());
                 if (!(distanceToDestination > DistanceTolerance)) return false;
 
-                DateTime duration = DateTime.Now.AddSeconds(0.5);
+                DateTime duration = DateTime.Now.AddSeconds(0.01);
 
-                while (DistanceTo(targetPosition()) > DistanceTolerance && DateTime.Now < duration)
+                Debug.Write("Headed to Position: " + targetPosition());
+                Stopwatch sw = new Stopwatch();
+                while (DistanceTo(targetPosition()) > DistanceTolerance )
                 {
+                   sw.Start();
+                    Debug.Write("Walking!");
                     SetViewMode(ViewMode.FirstPerson);
                     FaceHeading(targetPosition());
                     _api.ThirdParty.KeyDown(Keys.NUMPAD8);
                     if (useObjectAvoidance)
                     {
                         bool needNewPath = AvoidObstacles(targetPosition(), zoneMap);
-                        return needNewPath;
+                        if (needNewPath)
+                        {
+                            Debug.Write("Player Needs new Path");
+                            return true;
+                        }
                     }
-                    Thread.Sleep(100);
+                    sw.Stop();
+                    Debug.Write("time to walk: " + sw.ElapsedMilliseconds);
+                    // Thread.Sleep(100);
 
-                    var player = _api.Entity.GetLocalPlayer();
+                    // var player = _api.Entity.GetLocalPlayer();
                     // Debug.Write($"Player is at X:{player.X} Y:{player.Y} Z:{player.Z} H:{player.H}" + Environment.NewLine);
                 }
 
@@ -200,7 +210,7 @@ namespace MemoryAPI.Memory
             /// <param name="zoneMap"></param>
             private bool AvoidObstacles(Position targetPosition, ZoneMap zoneMap)
             {
-                if (IsStuck())
+                if (IsStuck)
                 {
                     var player = _api.Entity.GetLocalPlayer();
                     Debug.Write($"Player is stuck at X:{player.X} Y:{player.Y} Z:{player.Z} H:{player.H}" + Environment.NewLine); 
@@ -294,13 +304,18 @@ namespace MemoryAPI.Memory
             /// Author: dlsmd
             /// http://www.elitemmonetwork.com/forums/viewtopic.php?p=4627#p4627
             /// </remarks>
-            public bool IsStuck()
+
+            public bool IsStuck
             {
-                var firstX = _api.Player.X;
-                var firstZ = _api.Player.Z;
-                Thread.Sleep(TimeSpan.FromSeconds(2));
-                var dchange = Math.Pow(firstX - _api.Player.X, 2) + Math.Pow(firstZ - _api.Player.Z, 2);
-                return Math.Abs(dchange) < 1;
+                get
+                {
+                    var firstX = _api.Player.X;
+                    var firstZ = _api.Player.Z;
+                    Thread.Sleep(TimeSpan.FromSeconds(2));
+                    var dchange = Math.Pow(firstX - _api.Player.X, 2) + Math.Pow(firstZ - _api.Player.Z, 2);
+                    return Math.Abs(dchange) < 1;
+                }
+                set => throw new NotImplementedException();
             }
 
             /// <summary>
@@ -333,7 +348,7 @@ namespace MemoryAPI.Memory
             {
                 int count = 0;
                 float dir = -45;
-                while (IsStuck() && attempts-- > 0)
+                while (IsStuck && attempts-- > 0)
                 {
                     _api.Entity.GetLocalPlayer().H = _api.Player.H + (float)(Math.PI / 180 * dir);
                     _api.ThirdParty.KeyDown(Keys.NUMPAD8);

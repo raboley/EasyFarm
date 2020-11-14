@@ -427,14 +427,6 @@
         <e p="xunit.runner.visualstudio.2.4.1\build\_common\xunit.runner.utility.net452.dll" t="Include" />
         <e p="xunit.runner.visualstudio.2.4.1\build\_common\xunit.runner.visualstudio.testadapter.dll" t="Include" />
       </e>
-      <e p="Pathfinder" t="Include">
-        <e p="Pathfinder" t="IncludeRecursive">
-          <e p="Pathfinder.csproj" t="IncludeRecursive" />
-        </e>
-        <e p="Pathfinder.Tests" t="IncludeRecursive">
-          <e p="Pathfinder.Tests.csproj" t="IncludeRecursive" />
-        </e>
-      </e>
     </e>
     <e p="C:\Users\Russell\source\repos\raboley\Pathfinder\Pathfinder" t="IncludeRecursive">
       <e p="bin" t="ExcludeRecursive" />
