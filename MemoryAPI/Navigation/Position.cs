@@ -16,11 +16,24 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System;
+using System.Numerics;
 
 namespace MemoryAPI.Navigation
 {
     public class Position
     {
+        public Position(Vector3 position)
+        {
+            X = position.X;
+            Y = position.Y;
+            Z = position.Z;
+        }
+
+        public Position()
+        {
+            
+        }
+
         public float H { get; set; }
 
         public float X { get; set; }
@@ -28,6 +41,17 @@ namespace MemoryAPI.Navigation
         public float Y { get; set; }
 
         public float Z { get; set; }
+
+        public Vector3 ToVector3()
+        {
+            return new Vector3(X, Y, Z);
+            
+        }
+        
+        public Vector3 To2DVector3()
+        {
+            return new Vector3(X, 0, Z);
+        }
 
         public override string ToString()
         {

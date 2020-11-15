@@ -16,12 +16,15 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.States;
 using EasyFarm.Tests.TestTypes.Mocks;
 using EasyFarm.UserSettings;
 using MemoryAPI;
+using Pathfinder.Map;
+using Pathfinder.People;
 using Zone = Pathfinder.Map.Zone;
 
 
@@ -43,6 +46,8 @@ namespace EasyFarm.Tests.Context
         public IMenu Menu { get; set; }
         public IInventory Inventory { get; set; }
         public INavigator Navigator { get; set; }
+        public ZoneMapFactory ZoneMapFactory { get; set; }
+        public ObservableCollection<Person> Npcs { get; set; }
 
         public TestContext()
         {

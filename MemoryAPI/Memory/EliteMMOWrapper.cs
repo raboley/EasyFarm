@@ -195,7 +195,7 @@ namespace MemoryAPI.Memory
                 _api.ThirdParty.KeyUp(Keys.NUMPAD2);
             }
 
-            private void SetViewMode(ViewMode viewMode)
+            public void SetViewMode(ViewMode viewMode)
             {
                 if ((ViewMode)_api.Player.ViewMode != viewMode)
                 {
@@ -665,6 +665,16 @@ namespace MemoryAPI.Memory
             public void SendKeyPress(Keys key)
             {
                 _api.ThirdParty.KeyPress(key);
+            }
+
+            public void SendKeyDown(Keys key)
+            {
+                _api.ThirdParty.KeyDown(key);
+            }
+
+            public void SendKeyUp(Keys key)
+            {
+                _api.ThirdParty.KeyUp(key);
             }
         }
 

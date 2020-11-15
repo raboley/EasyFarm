@@ -61,6 +61,9 @@
           <e p="EliteMMO.API.dll" t="Include" />
         </e>
         <e p="EasyFarm.csproj" t="IncludeRecursive" />
+        <e p="FFXI" t="Include">
+          <e p="Mover.cs" t="Include" />
+        </e>
         <e p="Handlers" t="Include">
           <e p="EventHandlerBase.cs" t="Include" />
           <e p="LoadedEvent.cs" t="Include" />
@@ -201,6 +204,7 @@
           <e p="StateMemory.cs" t="Include" />
           <e p="StateStatus.cs" t="Include" />
           <e p="SummonTrustsState.cs" t="Include" />
+          <e p="TestMoveState.cs" t="Include" />
           <e p="TravelState.cs" t="Include" />
           <e p="TypeCache.cs" t="Include" />
           <e p="WeaponskillState.cs" t="Include" />
@@ -469,12 +473,16 @@
       </e>
       <e p="Properties" t="Include">
         <e p="Annotations.cs" t="Include" />
+        <e p="Annotations1.cs" t="Include" />
         <e p="AssemblyInfo.cs" t="Include" />
         <e p="Resources.Designer.cs" t="Include" />
         <e p="Resources.resx" t="Include" />
       </e>
       <e p="Travel" t="Include">
+        <e p="IWalker.cs" t="Include" />
         <e p="Traveler.cs" t="Include" />
+        <e p="Walker.cs" t="Include" />
+        <e p="Zoner.cs" t="Include" />
       </e>
       <e p="Watchers" t="Include">
         <e p="CollectionWatcher.cs" t="Include" />

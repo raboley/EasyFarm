@@ -15,6 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+
+using MemoryAPI.Memory;
 using MemoryAPI.Navigation;
 using Pathfinder.Map;
 
@@ -27,5 +29,6 @@ namespace MemoryAPI
         bool GotoWaypoint(Position position, bool useObjectAvoidance, bool keepRunning, ZoneMap zoneMap);
         void GotoNPC(int ID, bool useObjectAvoidance);
         void Reset();
+        void SetViewMode(EliteMmoWrapper.ViewMode viewMode);
     }
 }
