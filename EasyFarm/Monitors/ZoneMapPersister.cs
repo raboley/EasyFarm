@@ -38,7 +38,9 @@ namespace EasyFarm.Monitors
             LogViewModel.Write("Mapper grid loaded!");
             while (mapName == _context.Player.Zone.ToString())
             {
-                var node = _context.Zone.Map.GetNodeFromWorldPoint(new Vector3(_context.API.Player.PosX, _context.API.Player.PosY, _context.API.Player.PosZ));
+                var pos = GridMath.RoundVector3(new Vector3(_context.API.Player.PosX, _context.API.Player.PosY,
+                    _context.API.Player.PosZ));
+                var node = _context.Zone.Map.GetNodeFromWorldPoint(pos);
                 if (_context.Zone.Map.UnknownNodes.Contains(node))
                 {
                     _context.Zone.Map.AddKnownNode(node.WorldPosition);
@@ -75,7 +77,6 @@ namespace EasyFarm.Monitors
         {
             var persister = new FilePersister();
             var mapsDirectory = GetMapsDirectory();
-            persister.DefaultExtension = "json";
             persister.FilePath = mapsDirectory;
             return persister;
         }

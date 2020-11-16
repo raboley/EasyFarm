@@ -28,6 +28,8 @@ namespace EasyFarm.ffxi
             get => _context.API.Player.Position;
         }
 
+        public Queue<Vector3> PositionHistory { get; }
+
         public void WalkToPosition(Vector3 targetPosition)
         {
             var distance = Pathfinder.GridMath.GetDistancePos(CurrentPosition, targetPosition);
@@ -139,7 +141,6 @@ namespace EasyFarm.ffxi
 
         public event EventHandler<Vector3> IsStuck;
         public event PropertyChangedEventHandler PropertyChanged;
-        public readonly Queue<Vector3> PositionHistory = new Queue<Vector3>();
         private Vector3 _currentPosition;
         private IGameContext _context;
     }
