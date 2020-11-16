@@ -31,19 +31,66 @@ namespace EasyFarm.ffxi
         public void WalkToPosition(Vector3 targetPosition)
         {
             var distance = Pathfinder.GridMath.GetDistancePos(CurrentPosition, targetPosition);
+            int stuckCounter = 0;
+            
             RunForwardWithKeypad();
-            while (distance > DistanceTolerance)
+            
+            DateTime duration = DateTime.Now.AddSeconds(5);
+            while (distance > DistanceTolerance && DateTime.Now < duration)
             {
-                distance = Pathfinder.GridMath.GetDistancePos(CurrentPosition, targetPosition);
+                int newDistance = Pathfinder.GridMath.GetDistancePos(CurrentPosition, targetPosition);
+                if (newDistance >= distance)
+                {
+                   // Might be stuck 
+                   Debug.WriteLine("Might be stuck #" + stuckCounter);
+                   stuckCounter++;
+                   Thread.Sleep(100);
+                }
+                else
+                {
+                    stuckCounter = 0;
+                }
+
+                if (stuckCounter >= 20)
+                {
+                    var unWalkablePosition = GetPositionInFrontOfMe(targetPosition); 
+                    OnWalkerIsStuck(unWalkablePosition);
+                    OnWalkerIsStuck(targetPosition);
+                    Debug.WriteLine("Adding an unWalkable Position at:" + unWalkablePosition + " and: " + targetPosition);
+                   return;
+                }
+                
+                distance = newDistance; 
+                
                 Debug.WriteLine("at: " + PlayerPosition + " or (" + CurrentPosition + ") Headed to: " + targetPosition);
                 Debug.WriteLine("Distance is: " + distance);
                 LookAtTargetPosition(targetPosition);
-                // Thread.Sleep(100);
             }
             _context.API.Navigator.Reset();
         }
         
+        private Vector3 GetPositionInFrontOfMe(Vector3 targetPosition)
+        {
+            int x = GetNewXorY(CurrentPosition.X, targetPosition.X);
+            int y = GetNewXorY(CurrentPosition.Z, targetPosition.Z);
+                
+            var blockedPosition = new Vector3(x, 0, y);
+            return blockedPosition;
+        }
         
+        private int GetNewXorY(float current, float target)
+        {
+            int currentInt = GridMath.ConvertFromFloatToInt(current);
+            int targetInt = GridMath.ConvertFromFloatToInt(target);
+
+            if (currentInt > targetInt)
+                return currentInt - 1;
+
+            if (currentInt < targetInt)
+                return currentInt + 1;
+
+            return currentInt;
+        }
 
         private void RunForwardWithKeypad()
         {
@@ -62,9 +109,9 @@ namespace EasyFarm.ffxi
             _context.API.Navigator.FaceHeading(new Position(targetPosition));
         }
 
-        public void OnWalkerIsStuck(Vector3 currentPosition)
+        public virtual void OnWalkerIsStuck(Vector3 currentPosition)
         {
-            throw new NotImplementedException();
+            IsStuck?.Invoke(this, currentPosition);
         }
 
         

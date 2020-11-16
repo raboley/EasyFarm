@@ -39,7 +39,7 @@ namespace EasyFarm.States
                 return;
             }
             
-            traveler.GoToPosition(signetNpc.Position);
+            traveler.PathfindAndWalkToFarAwayWorldMapPosition(signetNpc.Position);
 
         }
     }
