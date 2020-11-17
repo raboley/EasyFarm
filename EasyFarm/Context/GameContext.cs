@@ -55,6 +55,7 @@ namespace EasyFarm.Context
 
         public ZoneMapFactory ZoneMapFactory { get; set; }
         public ObservableCollection<Person> Npcs { get; set; }
+        public ObservableCollection<Person> Mobs { get; set; }
         public IConfig Config { get; set; }
         public IDialog Dialog { get; set; }
         public IPlayer Player { get; set; }

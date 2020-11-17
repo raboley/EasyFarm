@@ -1,32 +1,21 @@
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
-using System.Net;
 using System.Numerics;
-using System.Windows;
 using EasyFarm.Classes;
 using EasyFarm.Context;
-using EasyFarm.Parsing;
-using EasyFarm.States;
 using EasyFarm.ViewModels;
 using MemoryAPI;
-using MemoryAPI.Navigation;
-using Pathfinder;
-using Pathfinder.Map;
 using Pathfinder.People;
-using Pathfinder.Persistence;
 using Zone = Pathfinder.Map.Zone;
 
-namespace EasyFarm.Infrastructure
+namespace EasyFarm.Monitors
 {
-    public class NpcPersister
+    public class MobPersister
     {
         private IMemoryAPI _fface;
         private IGameContext _context;
 
 
-        public NpcPersister(IMemoryAPI fface, GameContext gameContext)
+        public MobPersister(IMemoryAPI fface, GameContext gameContext)
         {
             _fface = fface;
             _context = gameContext;
@@ -39,15 +28,15 @@ namespace EasyFarm.Infrastructure
             if (mapName == "Unknown")
                 return;
             
-            LogViewModel.Write("Starting To record NPCs in zone:" + mapName);
-            var peopleOverseer = new PeopleOverseer(mapName);
-            _context.Npcs = peopleOverseer.PeopleManager.People;
+            LogViewModel.Write("Starting To record Mobs in zone:" + mapName);
+            var peopleOverseer = new PeopleOverseer(mapName, "Mobs");
+            _context.Mobs = peopleOverseer.PeopleManager.People;
             
             while (mapName == _context.Player.Zone.ToString())
             {
-                AddNpcsToGrid(peopleOverseer);
+                AddMobsToGrid(peopleOverseer);
             }
-            LogViewModel.Write("Changing Zone!");
+            LogViewModel.Write("Changing Zone! (Mob)");
         }
 
         // private static FilePersister WatchAndPersistNpcs(string fileName)
@@ -69,21 +58,17 @@ namespace EasyFarm.Infrastructure
 
         
 
-        private void AddNpcsToGrid(PeopleOverseer peopleOverseer)
+        private void AddMobsToGrid(PeopleOverseer peopleOverseer)
         {
-            if (_context.Memory.UnitService.NpcUnits.Count == 0)
+            if (_context.Memory.UnitService.MobArray.Count == 0)
             {
                 return;
             }
 
             var units = new List<IUnit>(); //_context.Memory.UnitService.NpcUnits.ToList();
-            units.AddRange(_context.Memory.UnitService.NpcUnits);
+            units.AddRange(_context.Memory.UnitService.MobArray);
             foreach (var unit in units)
             {
-                // Skip treasure caskets since they are randomly generated and will clog state.
-                if (unit.Name == "Treasure Casket")
-                    continue;
-                
                 Vector3 pos = ConvertPosition.RoundPositionToVector3(unit.Position);
                 var npc = new Person(unit.Id, unit.Name, pos);
                 peopleOverseer.PeopleManager.AddPerson(npc);

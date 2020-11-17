@@ -49,6 +49,7 @@ namespace EasyFarm.States
         public bool IsWorking;
 
         private NpcMonitor _npcMonitor;
+        private MobMonitor _mobMonitor;
 
         public GameEngine(IMemoryAPI fface)
         {
@@ -58,6 +59,7 @@ namespace EasyFarm.States
             _stateMachine = new FiniteStateMachine(fface, context);
             _playerMonitor = new PlayerMonitor(fface);
             _npcMonitor = new NpcMonitor(fface, context);
+            _mobMonitor = new MobMonitor(fface, context);
             _zoneMapMonitor = new ZoneMapMonitor(fface, context);
         }
 
@@ -75,6 +77,7 @@ namespace EasyFarm.States
                 _stateMachine.Start();
                 _playerMonitor.Start();
                 _npcMonitor.Start();
+                _mobMonitor.Start();
                 _zoneMapMonitor.Start();
                 return true;
             }
@@ -92,6 +95,7 @@ namespace EasyFarm.States
             _stateMachine.Stop();
             _playerMonitor.Stop();
             _npcMonitor.Stop();
+            _mobMonitor.Stop();
             _zoneMapMonitor.Stop();
         }
     }

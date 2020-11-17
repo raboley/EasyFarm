@@ -1,27 +1,17 @@
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
-using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
 using EasyFarm.Classes;
 using EasyFarm.Context;
-using EasyFarm.ViewModels;
 using MemoryAPI;
-using MemoryAPI.Navigation;
-using Pathfinder;
-using Pathfinder.Map;
-using Pathfinder.People;
-using Pathfinder.Persistence;
 
-namespace EasyFarm.Infrastructure
+namespace EasyFarm.Monitors
 {
-    public class NpcMonitor : IMonitor
+    public class MobMonitor : IMonitor
     {
-        private NpcPersister _npcPersister;
-        public NpcMonitor(IMemoryAPI fface, GameContext gameContext)
+        private MobPersister _mobPersister ;
+        public MobMonitor(IMemoryAPI fface, GameContext gameContext)
         {
-            _npcPersister = new NpcPersister(fface, gameContext);
+            _mobPersister = new MobPersister(fface, gameContext);
         }
         private CancellationTokenSource _tokenSource;
         
@@ -45,7 +35,7 @@ namespace EasyFarm.Infrastructure
                     _tokenSource.Token.ThrowIfCancellationRequested();
                 }
 
-                _npcPersister.RunComponent();
+                _mobPersister.RunComponent();
 
                 TimeWaiter.Pause(100);
             }

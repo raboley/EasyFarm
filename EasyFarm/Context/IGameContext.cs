@@ -44,5 +44,6 @@ namespace EasyFarm.Context
         INavigator Navigator { get; set; }
         ZoneMapFactory ZoneMapFactory { get; set; }
         ObservableCollection<Person> Npcs { get; set; }
+        ObservableCollection<Person> Mobs { get; set; }
     }
 }

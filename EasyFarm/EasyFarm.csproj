@@ -192,8 +192,6 @@
     <Compile Include="Classes\Inventory.cs" />
     <Compile Include="ConvertPosition.cs" />
     <Compile Include="ffxi\Mover.cs" />
-    <Compile Include="Infrastructure\NPCMonitor.cs" />
-    <Compile Include="Infrastructure\NpcPersister.cs" />
     <Compile Include="Mapping\GraphConverter.cs" />
     <Compile Include="Mapping\ISpot.cs" />
     <Compile Include="Classes\IUnit.cs" />
@@ -221,6 +219,10 @@
     <Compile Include="Infrastructure\TabViewModels.cs" />
     <Compile Include="Handlers\UpdateEliteAPI.cs" />
     <Compile Include="Mapping\ZoneMapFactory.cs" />
+    <Compile Include="Monitors\MobMonitor.cs" />
+    <Compile Include="Monitors\MobPersister.cs" />
+    <Compile Include="Monitors\NPCMonitor.cs" />
+    <Compile Include="Monitors\NpcPersister.cs" />
     <Compile Include="Monitors\ZoneMapMonitor.cs" />
     <Compile Include="Monitors\ZoneMapPersister.cs" />
     <Compile Include="Parsing\AbilityMapper.cs" />

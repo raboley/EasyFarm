@@ -79,8 +79,6 @@
           <e p="Events.cs" t="Include" />
           <e p="InverseBooleanConverter.cs" t="Include" />
           <e p="IViewModel.cs" t="Include" />
-          <e p="NPCMonitor.cs" t="Include" />
-          <e p="NpcPersister.cs" t="Include" />
           <e p="TabViewModels.cs" t="Include" />
           <e p="ViewModelBase.cs" t="Include" />
         </e>
@@ -104,6 +102,10 @@
           <e p="ZoneMapViewModel.cs" t="Include" />
         </e>
         <e p="Monitors" t="Include">
+          <e p="MobMonitor.cs" t="Include" />
+          <e p="MobPersister.cs" t="Include" />
+          <e p="NPCMonitor.cs" t="Include" />
+          <e p="NpcPersister.cs" t="Include" />
           <e p="ZoneMapMonitor.cs" t="Include" />
           <e p="ZoneMapPersister.cs" t="Include" />
         </e>
