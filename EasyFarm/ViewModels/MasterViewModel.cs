@@ -22,7 +22,6 @@ using EasyFarm.Persistence;
 using EasyFarm.UserSettings;
 using GalaSoft.MvvmLight.Command;
 using System;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using EasyFarm.Handlers;
 using Application = System.Windows.Application;

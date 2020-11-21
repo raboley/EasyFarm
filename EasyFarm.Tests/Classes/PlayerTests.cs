@@ -19,9 +19,7 @@ using EasyFarm.Classes;
 using EasyFarm.Tests.TestTypes.Mocks;
 using EasyFarm.UserSettings;
 using MemoryAPI;
-using System.Collections.Generic;
 using Xunit;
-using static EliteMMO.API.EliteAPI;
 
 namespace EasyFarm.Tests.Classes
 {

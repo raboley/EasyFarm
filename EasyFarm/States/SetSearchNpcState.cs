@@ -15,18 +15,10 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using EasyFarm.Classes;
+
 using EasyFarm.Context;
-using EasyFarm.UserSettings;
-using EasyFarm.ViewModels;
-using MemoryAPI;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using static EliteMMO.API.EliteAPI;
 
 namespace EasyFarm.States
 {

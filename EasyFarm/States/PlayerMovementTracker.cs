@@ -18,18 +18,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Numerics;
-using Castle.Core.Internal;
 using EasyFarm.Context;
-using EasyFarm.ViewModels;
 using MemoryAPI;
 using MemoryAPI.Navigation;
-using Pathfinder;
-using Pathfinder.Map;
-using Pathfinder.People;
-using Pathfinder.Persistence;
 using Player = EasyFarm.Classes.Player;
 
 namespace EasyFarm.States

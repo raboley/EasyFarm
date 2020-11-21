@@ -6,11 +6,7 @@ using EasyFarm.UserSettings;
 using MemoryAPI;
 using MemoryAPI.Navigation;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EasyFarm.ViewModels;
 
 namespace EasyFarm.Classes

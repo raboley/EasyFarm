@@ -16,33 +16,7 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
-using System.Numerics;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Forms.VisualStyles;
-using System.Windows.Media.Media3D;
-using EasyFarm.Classes;
 using EasyFarm.Context;
-using EasyFarm.Parsing;
-using EasyFarm.UserSettings;
-using EasyFarm.ViewModels;
-using EasyFarm.Views;
-using MahApps.Metro.Controls;
-using MemoryAPI;
-using Pathfinder;
-using Pathfinder.Map;
-using Pathfinder.Pathing;
-using Pathfinder.People;
-using Pathfinder.Persistence;
-using Navigator = EasyFarm.Classes.Navigator;
-using Player = EasyFarm.Classes.Player;
-using Position = MemoryAPI.Navigation.Position;
-using Zone = MemoryAPI.Zone;
 
 namespace EasyFarm.States
 {

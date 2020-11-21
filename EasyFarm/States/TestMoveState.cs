@@ -1,10 +1,7 @@
 using System.Diagnostics;
-using System.Numerics;
 using EasyFarm.Context;
 using EasyFarm.ffxi;
-using MemoryAPI.Navigation;
 using Pathfinder;
-using Pathfinder.Map;
 using Pathfinder.Travel;
 
 namespace EasyFarm.States

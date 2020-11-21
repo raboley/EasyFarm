@@ -20,9 +20,7 @@ using System.Collections.Generic;
 using EasyFarm.Classes;
 using EasyFarm.Infrastructure;
 using EasyFarm.Tests.TestTypes.Mocks;
-using EasyFarm.UserSettings;
 using MemoryAPI;
-using static EliteMMO.API.EliteAPI;
 
 namespace EasyFarm.Tests.TestTypes
 {

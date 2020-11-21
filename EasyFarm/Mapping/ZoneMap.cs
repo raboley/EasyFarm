@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using EasyFarm.Classes;
 
 namespace EasyFarm.Mapping
 {

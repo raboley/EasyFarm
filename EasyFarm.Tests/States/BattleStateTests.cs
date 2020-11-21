@@ -16,7 +16,6 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using EasyFarm.Classes;
-using EasyFarm.Parsing;
 using EasyFarm.States;
 using EasyFarm.Tests.Context;
 using EasyFarm.Tests.TestTypes;

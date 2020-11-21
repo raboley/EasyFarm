@@ -1,8 +1,4 @@
 ﻿using EasyFarm.Tests.TestTypes.Mocks;
-using EasyFarm.UserSettings;
-using MemoryAPI;
-using Xunit;
-using EasyFarm.Classes;
 
 namespace EasyFarm.Tests.Classes
 {

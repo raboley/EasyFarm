@@ -1,16 +1,12 @@
 using System.Collections.Generic;
-using System.Numerics;
 using System.Threading;
-using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.ffxi;
-using EasyFarm.Parsing;
 using EasyFarm.ViewModels;
 using MemoryAPI;
 using Pathfinder;
 using Pathfinder.People;
 using Pathfinder.Travel;
-using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.Monitors
 {

@@ -1,7 +1,6 @@
 using System.Threading;
 using EasyFarm.Context;
 using EasyFarm.ViewModels;
-using Pathfinder.Travel;
 
 namespace EasyFarm.States
 {

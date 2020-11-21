@@ -18,7 +18,6 @@
 using System;
 using System.IO;
 using EasyFarm.Logging;
-using EasyFarm.UserSettings;
 using Microsoft.Win32;
 
 namespace EasyFarm.Persistence

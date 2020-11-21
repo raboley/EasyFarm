@@ -17,7 +17,6 @@
 // ///////////////////////////////////////////////////////////////////
 using EasyFarm.Classes;
 using EasyFarm.Context;
-using EasyFarm.Infrastructure;
 using EasyFarm.Monitors;
 using EasyFarm.UserSettings;
 using MemoryAPI;

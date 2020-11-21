@@ -19,13 +19,9 @@ using System.Linq;
 using System.Threading;
 using EasyFarm.Classes;
 using EasyFarm.Context;
-using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
-using EliteMMO.API;
 using MemoryAPI;
-using Pathfinder;
 using Pathfinder.People;
-using Player = EasyFarm.Classes.Player;
 using StatusEffect = MemoryAPI.StatusEffect;
 
 namespace EasyFarm.States

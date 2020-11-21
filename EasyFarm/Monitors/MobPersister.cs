@@ -5,7 +5,6 @@ using EasyFarm.Context;
 using EasyFarm.ViewModels;
 using MemoryAPI;
 using Pathfinder.People;
-using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.Monitors
 {

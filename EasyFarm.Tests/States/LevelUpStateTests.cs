@@ -1,13 +1,10 @@
-﻿using EasyFarm.Classes;
-using EasyFarm.States;
+﻿using EasyFarm.States;
 using EasyFarm.Tests.Context;
-using EasyFarm.Tests.TestTypes;
 using EasyFarm.Tests.TestTypes.Mocks;
 using MemoryAPI;
 using System;
 using System.Collections.Generic;
 using Xunit;
-using static EasyFarm.States.SetSearchNpcState;
 
 namespace EasyFarm.Tests.States
 {

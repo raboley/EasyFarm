@@ -17,8 +17,6 @@
 // ///////////////////////////////////////////////////////////////////
 
 using System.Collections.ObjectModel;
-using System.Linq;
-using EasyFarm.Classes;
 using EasyFarm.Infrastructure;
 using MemoryAPI.Navigation;
 

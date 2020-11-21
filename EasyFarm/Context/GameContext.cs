@@ -23,7 +23,6 @@ using EasyFarm.Classes;
 using EasyFarm.States;
 using EasyFarm.UserSettings;
 using MemoryAPI;
-using MemoryAPI.Menu;
 using Pathfinder.Map;
 using Pathfinder.People;
 using Pathfinder.Persistence;

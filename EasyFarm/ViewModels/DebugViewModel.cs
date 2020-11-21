@@ -19,9 +19,6 @@ using EasyFarm.Classes;
 
 using EasyFarm.Infrastructure;
 using EasyFarm.UserSettings;
-using System.Collections;
-using System.Collections.Generic;
-using System.Web.Script.Serialization;
 
 namespace EasyFarm.ViewModels
 {

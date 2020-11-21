@@ -1,24 +1,8 @@
 ﻿using EasyFarm.Classes;
 using EasyFarm.Context;
-
-using EasyFarm.Infrastructure;
-using EasyFarm.Logging;
-using EasyFarm.Parsing;
-using EasyFarm.Persistence;
-using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
 using MemoryAPI;
-using MemoryAPI.Navigation;
-using MemoryAPI.Windower;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static EliteMMO.API.EliteAPI;
-using static MemoryAPI.Memory.EliteMmoWrapper;
 
 
 namespace EasyFarm.States

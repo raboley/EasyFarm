@@ -17,9 +17,7 @@
 // ///////////////////////////////////////////////////////////////////
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Threading;
@@ -33,7 +31,6 @@ using MemoryAPI.Resources;
 using MemoryAPI.Windower;
 using Pathfinder;
 using Pathfinder.Map;
-using Pathfinder.Pathing;
 using static EliteMMO.API.EliteAPI;
 
 

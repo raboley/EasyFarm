@@ -6,7 +6,6 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using EasyFarm.Context;
-using EasyFarm.Pathfinding;
 using EliteMMO.API;
 using MemoryAPI.Memory;
 using MemoryAPI.Navigation;

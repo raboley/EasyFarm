@@ -1,11 +1,7 @@
 ﻿using EasyFarm.Context;
 using EasyFarm.ViewModels;
 using MemoryAPI;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EasyFarm.Classes
 {
