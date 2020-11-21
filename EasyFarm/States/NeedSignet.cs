@@ -63,6 +63,13 @@ namespace EasyFarm.States
                 context.Traveler.GoToZone(signetNpcZone);
             }
 
+            while (context.Traveler.Zoning)
+            {
+               Thread.Sleep(100); 
+            }
+
+            signetNpc = context.Traveler.SearchForClosestSignetNpc("Bastok");
+
             if (signetNpc.MapName != context.Traveler.CurrentZone.Name)
                 return;
             
