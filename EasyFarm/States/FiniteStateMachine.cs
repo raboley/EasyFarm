@@ -61,7 +61,7 @@ namespace EasyFarm.States
             // AddState(new DumpTreasureState() { Priority = 2 });
             // AddState(new MapState() {Priority = 5});
             // Needs Signet
-            // AddState(new NeedSignet() { Priority = 9 });
+            AddState(new NeedSignet() { Priority = 9 });
             
             // AddState(new TestMoveState() { Priority = 10 });
             
@@ -72,6 +72,7 @@ namespace EasyFarm.States
 
             _states.ForEach(x => x.Enabled = true);
         }
+
 
         private void AddState(IState component)
         {
@@ -84,7 +85,6 @@ namespace EasyFarm.States
             ReEnableStartState();
             RunFiniteStateMainWithThread();
         }
-
         private void ReEnableStartState()
         {
             var startEngineState = _states.FirstOrDefault(x => x.GetType() == typeof(StartEngineState));

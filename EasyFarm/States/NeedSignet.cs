@@ -16,12 +16,14 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System.Linq;
+using System.Threading;
 using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
 using EliteMMO.API;
 using MemoryAPI;
+using Pathfinder;
 using Player = EasyFarm.Classes.Player;
 using StatusEffect = MemoryAPI.StatusEffect;
 
@@ -47,72 +49,88 @@ namespace EasyFarm.States
         public override void Run(IGameContext context)
         {
 
+            const string signetNpcZone = "Bastok_Markets";
             // context.Player.CurrentGoal = "Signet";
             LogViewModel.Write("I don't have signet, Setting my goal to go get Signet");
+            while (context.Traveler == null)
+            {
+               Thread.Sleep(100); 
+            }
+
+            var signetNpc = context.Traveler.SearchForClosestSignetNpc("Bastok");
+            while (signetNpc == null && context.API.Player.Zone.ToString() != signetNpcZone)
+            {
+                context.Traveler.GoToZone(signetNpcZone);
+            }
+
+            if (signetNpc.MapName != context.Traveler.CurrentZone.Name)
+                return;
+            
+            context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(signetNpc.Position);
             
             // Go to Signet NPC
             // Find Signet Guy
-            if (context.Npcs == null)
-            {
-                return;
-            }
-            if (context.Npcs.Count == 0)
-            {
-                LogViewModel.Write("I need signet, but don't know where any NPCs are in this zone");
-                return;
-            }
-
-            // while (true)
+            // if (context.Npcs == null)
             // {
-            //     context.API.Windower.SendKeyPress(Keys.NUMPAD2);
+            //     return;
+            // }
+            // if (context.Npcs.Count == 0)
+            // {
+            //     LogViewModel.Write("I need signet, but don't know where any NPCs are in this zone");
+            //     return;
+            // }
+
+            // // while (true)
+            // // {
+            // //     context.API.Windower.SendKeyPress(Keys.NUMPAD2);
+            // // }
+            // //
+            // var signetPerson = context.Npcs.FirstOrDefault(n => n.Name.Contains("I.M."));
+            // if (signetPerson == null)
+            // {
+            //     LogViewModel.Write("I need signet, but can't find the signet person in this zone");
+            //     return;
             // }
             //
-            var signetPerson = context.Npcs.FirstOrDefault(n => n.Name.Contains("I.M."));
-            if (signetPerson == null)
-            {
-                LogViewModel.Write("I need signet, but can't find the signet person in this zone");
-                return;
-            }
-            
-            LogViewModel.Write("Found signet person:" + signetPerson.Name + " At position: " +
-                               signetPerson.Position + " Headed there now");
-            
-            
-            // Set route to the path to the signet guy
-            var player = context.API.Player;
-            var myPosition = ConvertPosition.RoundPositionToVector3(player.Position);
-
-            if (context.Zone.Map == null)
-            {
-                LogViewModel.Write("Finding path, but zone map is null");
-                return;
-            }
-            
-            var path = Pathfinder.Pathing.Pathfinding.FindWaypoints(context.Zone.Map, myPosition, signetPerson.Position);
-            if (path.Length > 0)
-            {
-                var obsWaypoints = ConvertPosition.ConvertVectorArrayToObservableCollectionPosition(path);
-                context.Config.Route.Waypoints = obsWaypoints;
-            
-                //// Actually walking
-                Navigator.StartRoute(context);
-            }
-            
-            // Got to the signet person
-            LogViewModel.Write("Made it to signet person!");
-            Config.Instance.Route.Reset();
-            context.API.Navigator.Reset();
-            
-            // Get signet
-            
-            
-            // Got Signet, reset goal
-            // context.Player.CurrentGoal = "Aimless";
-
-
-            // Get Signet
-
-            // Set goal to not signet
+            // LogViewModel.Write("Found signet person:" + signetPerson.Name + " At position: " +
+            //                    signetPerson.Position + " Headed there now");
+            //
+            //
+            // // Set route to the path to the signet guy
+            // var player = context.API.Player;
+            // var myPosition = ConvertPosition.RoundPositionToVector3(player.Position);
+            //
+            // if (context.Zone.Map == null)
+            // {
+            //     LogViewModel.Write("Finding path, but zone map is null");
+            //     return;
+            // }
+            //
+            // var path = Pathfinder.Pathing.Pathfinding.FindWaypoints(context.Zone.Map, myPosition, signetPerson.Position);
+            // if (path.Length > 0)
+            // {
+            //     var obsWaypoints = ConvertPosition.ConvertVectorArrayToObservableCollectionPosition(path);
+            //     context.Config.Route.Waypoints = obsWaypoints;
+            //
+            //     //// Actually walking
+            //     Navigator.StartRoute(context);
+            // }
+            //
+            // // Got to the signet person
+            // LogViewModel.Write("Made it to signet person!");
+            // Config.Instance.Route.Reset();
+            // context.API.Navigator.Reset();
+            //
+            // // Get signet
+            //
+            //
+            // // Got Signet, reset goal
+            // // context.Player.CurrentGoal = "Aimless";
+            //
+            //
+            // // Get Signet
+            //
+            // // Set goal to not signet
         }
 
         private static bool HasSignet(IPlayerTools player)

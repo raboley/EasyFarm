@@ -50,6 +50,7 @@ namespace EasyFarm.States
 
         private NpcMonitor _npcMonitor;
         private MobMonitor _mobMonitor;
+        private TravelerMonitor _travelerMonitor;
 
         public GameEngine(IMemoryAPI fface)
         {
@@ -60,6 +61,7 @@ namespace EasyFarm.States
             _playerMonitor = new PlayerMonitor(fface);
             _npcMonitor = new NpcMonitor(fface, context);
             _mobMonitor = new MobMonitor(fface, context);
+            _travelerMonitor = new TravelerMonitor(fface, context);
             _zoneMapMonitor = new ZoneMapMonitor(fface, context);
         }
 
@@ -78,6 +80,7 @@ namespace EasyFarm.States
                 _playerMonitor.Start();
                 _npcMonitor.Start();
                 _mobMonitor.Start();
+                _travelerMonitor.Start();
                 _zoneMapMonitor.Start();
                 return true;
             }
@@ -96,6 +99,7 @@ namespace EasyFarm.States
             _playerMonitor.Stop();
             _npcMonitor.Stop();
             _mobMonitor.Stop();
+            _travelerMonitor.Stop();
             _zoneMapMonitor.Stop();
         }
     }

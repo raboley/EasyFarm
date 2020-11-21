@@ -24,6 +24,7 @@ using EasyFarm.UserSettings;
 using MemoryAPI;
 using Pathfinder.Map;
 using Pathfinder.People;
+using Pathfinder.Travel;
 using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.Context
@@ -45,5 +46,6 @@ namespace EasyFarm.Context
         ZoneMapFactory ZoneMapFactory { get; set; }
         ObservableCollection<Person> Npcs { get; set; }
         ObservableCollection<Person> Mobs { get; set; }
+        Traveler Traveler { get; set; }
     }
 }

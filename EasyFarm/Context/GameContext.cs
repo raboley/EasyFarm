@@ -27,6 +27,7 @@ using MemoryAPI.Menu;
 using Pathfinder.Map;
 using Pathfinder.People;
 using Pathfinder.Persistence;
+using Pathfinder.Travel;
 
 namespace EasyFarm.Context
 {
@@ -50,9 +51,6 @@ namespace EasyFarm.Context
             };
             Zone = new Pathfinder.Map.Zone("unknown");
         }
-        
-        
-
         public ZoneMapFactory ZoneMapFactory { get; set; }
         public ObservableCollection<Person> Npcs { get; set; }
         public ObservableCollection<Person> Mobs { get; set; }
@@ -78,6 +76,6 @@ namespace EasyFarm.Context
         */
         public IMemoryAPI API { get; set; }
         public StateMemory Memory { get; set; }
-        
+        public Traveler Traveler { get; set; }
     }
 }

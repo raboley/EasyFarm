@@ -30,6 +30,10 @@ namespace EasyFarm.States
                 return;
             world.Npcs.AddRange(context.Npcs);
             
+            if (context.Mobs == null) 
+                return;
+            world.Mobs.AddRange(context.Mobs);
+            
             var traveler = new Traveler(context.Zone.Name, world, mover);
 
             var signetNpc = traveler.SearchForClosestSignetNpc("Bastok");

@@ -63,6 +63,7 @@
         <e p="EasyFarm.csproj" t="IncludeRecursive" />
         <e p="FFXI" t="Include">
           <e p="Mover.cs" t="Include" />
+          <e p="MoverSetup.cs" t="Include" />
         </e>
         <e p="Handlers" t="Include">
           <e p="EventHandlerBase.cs" t="Include" />
@@ -106,6 +107,8 @@
           <e p="MobPersister.cs" t="Include" />
           <e p="NPCMonitor.cs" t="Include" />
           <e p="NpcPersister.cs" t="Include" />
+          <e p="TravelerMonitor.cs" t="Include" />
+          <e p="TravelerSetup.cs" t="Include" />
           <e p="ZoneMapMonitor.cs" t="Include" />
           <e p="ZoneMapPersister.cs" t="Include" />
         </e>
