@@ -190,6 +190,7 @@
           <e p="FiniteStateMachine.cs" t="Include" />
           <e p="FollowState.cs" t="Include" />
           <e p="GameEngine.cs" t="Include" />
+          <e p="GoFight.cs" t="Include" />
           <e p="HealingState.cs" t="Include" />
           <e p="IState.cs" t="Include" />
           <e p="LevelChangeState.cs" t="Include" />

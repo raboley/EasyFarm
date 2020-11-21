@@ -146,7 +146,7 @@ namespace MemoryAPI.Memory
 
                 Debug.Write("Headed to Position: " + targetPosition());
                 Stopwatch sw = new Stopwatch();
-                while (DistanceTo(targetPosition()) > DistanceTolerance )
+                while (DistanceTo(targetPosition()) > DistanceTolerance && DateTime.Now < duration)
                 {
                    sw.Start();
                     Debug.Write("Walking!");

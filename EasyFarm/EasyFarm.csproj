@@ -261,6 +261,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Classes\NullUnit.cs" />
+    <Compile Include="States\GoFight.cs" />
     <Compile Include="States\NeedSignet.cs" />
     <Compile Include="States\MapState.cs" />
     <Compile Include="States\DumpTreasureState.cs" />

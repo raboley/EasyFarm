@@ -42,17 +42,20 @@ namespace EasyFarm.States
             _fface = fface;
             _context = gameContext;
             //Create the states
+            
+            // Fighting States
+            AddState(new SetTargetState() {Priority = 10});
+            AddState(new SetFightingState() {Priority = 10});
+            AddState(new ApproachState() {Priority = 0});
+            AddState(new BattleState() {Priority = 3});
+            AddState(new WeaponskillState() {Priority = 2});
+            AddState(new PullState() {Priority = 4});
+            
             AddState(new DeadState() {Priority = 10});
             AddState(new ZoneState() {Priority = 10});
-            // AddState(new SetTargetState() {Priority = 10});
-            // AddState(new SetFightingState() {Priority = 10});
             AddState(new FollowState() {Priority = 5});
             AddState(new RestState() {Priority = 2});
             AddState(new SummonTrustsState() {Priority = 6});
-            // AddState(new ApproachState() {Priority = 0});
-            // AddState(new BattleState() {Priority = 3});
-            // AddState(new WeaponskillState() {Priority = 2});
-            // AddState(new PullState() {Priority = 4});
             AddState(new StartState() {Priority = 5});
             AddState(new TravelState() {Priority = 1});
             AddState(new HealingState() {Priority = 2});
@@ -62,6 +65,7 @@ namespace EasyFarm.States
             // AddState(new MapState() {Priority = 5});
             // Needs Signet
             AddState(new NeedSignet() { Priority = 9 });
+            AddState( new GoFight() {Priority = 8});
             
             // AddState(new TestMoveState() { Priority = 10 });
             
