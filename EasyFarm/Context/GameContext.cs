@@ -76,5 +76,6 @@ namespace EasyFarm.Context
         public IMemoryAPI API { get; set; }
         public StateMemory Memory { get; set; }
         public Traveler Traveler { get; set; }
+        public PeopleOverseer NpcOverseer { get; set; }
     }
 }

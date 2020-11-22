@@ -60,6 +60,7 @@ namespace EasyFarm.Monitors
 
             LogViewModel.Write("Setting up Traveler for Zone: " + mapName);
             _context.Traveler = new Traveler(_context.Zone.Name, world, mover);
+            LogViewModel.Write("Traveler Setup for Zone: " + mapName);
 
             while (true)
             {

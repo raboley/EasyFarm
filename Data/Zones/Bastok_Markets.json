@@ -1,0 +1,131 @@
+{
+  'Name': 'Bastok_Markets',
+  'Boundaries': [
+    {
+      'ToZone': 'Gustaberg_South',
+      'FromZone': 'Bastok_Markets',
+      'FromPosition': {
+        'X': -365.0,
+        'Y': 0.0,
+        'Z': -185.0
+      },
+      'ToPosition': {
+        'X': 258.0,
+        'Y': 0.0,
+        'Z': -183.0
+      }
+    },
+    {
+      'ToZone': 'Gustaberg_South',
+      'FromZone': 'Bastok_Markets',
+      'FromPosition': {
+        'X': -366.0,
+        'Y': 0.0,
+        'Z': -184.0
+      },
+      'ToPosition': {
+        'X': 259.0,
+        'Y': 0.0,
+        'Z': -183.0
+      }
+    },
+    {
+      'ToZone': 'Gustaberg_South',
+      'FromZone': 'Bastok_Markets',
+      'FromPosition': {
+        'X': -363.0,
+        'Y': 0.0,
+        'Z': -187.0
+      },
+      'ToPosition': {
+        'X': 259.0,
+        'Y': 0.0,
+        'Z': -183.0
+      }
+    },
+    {
+      'ToZone': 'Gustaberg_South',
+      'FromZone': 'Bastok_Markets',
+      'FromPosition': {
+        'X': 258.0,
+        'Y': 0.0,
+        'Z': -183.0
+      },
+      'ToPosition': {
+        'X': 258.0,
+        'Y': 0.0,
+        'Z': -183.0
+      }
+    },
+    {
+      'ToZone': 'Gustaberg_South',
+      'FromZone': 'Bastok_Markets',
+      'FromPosition': {
+        'X': 258.0,
+        'Y': 0.0,
+        'Z': -183.0
+      },
+      'ToPosition': {
+        'X': 258.0,
+        'Y': 0.0,
+        'Z': -183.0
+      }
+    },
+    {
+      'ToZone': 'Gustaberg_South',
+      'FromZone': 'Bastok_Markets',
+      'FromPosition': {
+        'X': -364.0,
+        'Y': 0.0,
+        'Z': -186.0
+      },
+      'ToPosition': {
+        'X': 260.0,
+        'Y': 0.0,
+        'Z': -183.0
+      }
+    },
+    {
+      'ToZone': 'Gustaberg_South',
+      'FromZone': 'Bastok_Markets',
+      'FromPosition': {
+        'X': -365.0,
+        'Y': 0.0,
+        'Z': -185.0
+      },
+      'ToPosition': {
+        'X': 261.0,
+        'Y': 0.0,
+        'Z': -183.0
+      }
+    },
+    {
+      'ToZone': 'Gustaberg_South',
+      'FromZone': 'Bastok_Markets',
+      'FromPosition': {
+        'X': -365.0,
+        'Y': 0.0,
+        'Z': -185.0
+      },
+      'ToPosition': {
+        'X': 259.0,
+        'Y': 0.0,
+        'Z': -183.0
+      }
+    },
+    {
+      'ToZone': 'Gustaberg_South',
+      'FromZone': 'Bastok_Markets',
+      'FromPosition': {
+        'X': -366.0,
+        'Y': 0.0,
+        'Z': -184.0
+      },
+      'ToPosition': {
+        'X': 259.0,
+        'Y': 0.0,
+        'Z': -183.0
+      }
+    }
+  ]
+}

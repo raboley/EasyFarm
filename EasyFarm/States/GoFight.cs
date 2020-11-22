@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using EasyFarm.Context;
 using EasyFarm.ViewModels;
@@ -6,11 +7,12 @@ namespace EasyFarm.States
 {
     public class GoFight : BaseState
     {
-        private string _fightZone = "Gustaberg_South";
 
         public override bool Check(IGameContext context)
         {
-            if (context.Zone.Name != _fightZone)
+            string fightZone = GetFightZoneByNation(context);
+            
+            if (context.Zone.Name != fightZone)
                 return true;
 
             return false;
@@ -18,13 +20,28 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
-            LogViewModel.Write("Going to go Fight at: " + _fightZone );
+            string fightZone = GetFightZoneByNation(context);
+            
+            LogViewModel.Write("Going to go Fight at: " + fightZone );
             while (context.Traveler == null)
             {
                 Thread.Sleep(100); 
             }
             
-            context.Traveler.GoToZone(_fightZone);
+            context.Traveler.GoToZone(fightZone);
+        }
+
+        private string GetFightZoneByNation(IGameContext context)
+        {
+            var nation = context.API.Player.Nation.ToString();
+            if (nation == "Bastok")
+                return "Gustaberg_South";
+            if (nation == "SandOria")
+                return "Ronfaure_East";
+            // if (nation == "Windurst")
+            //     return "T.K.";
+
+            throw new Exception("Don't know the NPC pattern for nation: " + nation);
         }
     }
 }

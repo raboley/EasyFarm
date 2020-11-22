@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Numerics;
+using System.Windows.Controls.Primitives;
 using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.ViewModels;
@@ -29,6 +30,7 @@ namespace EasyFarm.Monitors
             
             LogViewModel.Write("Starting To record NPCs in zone:" + mapName);
             var peopleOverseer = new PeopleOverseer(mapName);
+            _context.NpcOverseer = peopleOverseer;
             _context.Npcs = peopleOverseer.PeopleManager.People;
             
             while (mapName == _context.Player.Zone.ToString())
@@ -55,7 +57,6 @@ namespace EasyFarm.Monitors
         //     return npcPersister;
         // }
 
-        
 
         private void AddNpcsToGrid(PeopleOverseer peopleOverseer)
         {
@@ -77,9 +78,5 @@ namespace EasyFarm.Monitors
                 peopleOverseer.PeopleManager.AddPerson(npc);
             }
         }
-
-
-
-
     }
 }

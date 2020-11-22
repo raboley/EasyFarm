@@ -25,6 +25,7 @@ using EasyFarm.Context;
 using EasyFarm.Logging;
 using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
+using EliteMMO.API;
 using MemoryAPI;
 
 namespace EasyFarm.States
@@ -51,6 +52,10 @@ namespace EasyFarm.States
             AddState(new WeaponskillState() {Priority = 2});
             AddState(new PullState() {Priority = 4});
             
+            
+            AddState( new GoFight() {Priority = 8});
+            AddState( new WalkStraight() {Priority = 2});
+            
             AddState(new DeadState() {Priority = 10});
             AddState(new ZoneState() {Priority = 10});
             AddState(new FollowState() {Priority = 5});
@@ -65,7 +70,6 @@ namespace EasyFarm.States
             // AddState(new MapState() {Priority = 5});
             // Needs Signet
             AddState(new NeedSignet() { Priority = 9 });
-            AddState( new GoFight() {Priority = 8});
             
             // AddState(new TestMoveState() { Priority = 10 });
             
@@ -175,6 +179,25 @@ namespace EasyFarm.States
             }
 
             // ReSharper disable once FunctionNeverReturns
+        }
+    }
+
+    public class WalkStraight : BaseState
+    {
+        public override bool Check(IGameContext context)
+        {
+            return true;
+        }
+
+        public override void Run(IGameContext context)
+        {
+            DateTime duration = DateTime.Now.AddSeconds(5);
+
+            while (DateTime.Now < duration)
+            {
+                context.API.Windower.SendKeyDown(Keys.NUMPAD8);
+            }
+            context.API.Windower.SendKeyUp(Keys.NUMPAD8);
         }
     }
 }

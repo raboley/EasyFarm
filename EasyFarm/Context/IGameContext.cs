@@ -47,5 +47,6 @@ namespace EasyFarm.Context
         ObservableCollection<Person> Npcs { get; set; }
         ObservableCollection<Person> Mobs { get; set; }
         Traveler Traveler { get; set; }
+        PeopleOverseer NpcOverseer { get; set; }
     }
 }

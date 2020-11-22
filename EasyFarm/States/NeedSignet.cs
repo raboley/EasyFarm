@@ -15,8 +15,12 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.ViewModels;
@@ -45,40 +49,68 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
-
-            const string signetNpcZone = "Bastok_Markets";
+            if (context.Traveler.Zoning == true)
+                return;
             // context.Player.CurrentGoal = "Signet";
             LogViewModel.Write("I don't have signet, Setting my goal to go get Signet");
             while (context.Traveler == null)
             {
-               Thread.Sleep(100); 
+                Thread.Sleep(100);
             }
 
-            var signetNpc = context.Traveler.SearchForClosestSignetNpc("Bastok");
-            while (signetNpc == null && context.API.Player.Zone.ToString() != signetNpcZone)
+            var nation = context.Player.Nation.ToString();
+            var signetNpc = SearchWorldForSignetPerson(context);
+            if (signetNpc == null)
             {
-                context.Traveler.GoToZone(signetNpcZone);
+                Debug.WriteLine("Can't Find signet NPC in all known Zones for nation: " + nation);
+                return;
+            }
+
+            while (context.API.Player.Zone.ToString() != signetNpc.MapName)
+            {
+                context.Traveler.GoToZone(signetNpc.MapName);
             }
 
             while (context.Traveler.Zoning)
             {
-               Thread.Sleep(100); 
+                Thread.Sleep(100);
             }
-
-            signetNpc = context.Traveler.SearchForClosestSignetNpc("Bastok");
 
             if (signetNpc.MapName != context.Traveler.CurrentZone.Name)
                 return;
-            
+
             context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(signetNpc.Position);
 
             IMemoryAPI fface = context.API;
             AskForSignet(context, fface, signetNpc);
-            
         }
+
+        private static Person SearchWorldForSignetPerson(IGameContext context)
+        {
+            Person signetNpc;
+            string nationString = context.API.Player.Nation.ToString();
+            signetNpc = context.Traveler.SearchForClosestSignetNpc(nationString);
+
+            // signet NPC is in this zone
+            if (signetNpc != null)
+                return signetNpc;
+
+            while (context.NpcOverseer == null)
+            {
+                Debug.Write(
+                    "SearchWorldForSignetPerson is Waiting for NpcOverseer to be non null so it can use it to search all NPCs");
+                Thread.Sleep(200);
+            }
+
+            List<Person> allPeople = context.NpcOverseer.GetAllPeople();
+            string npcpattern = context.Traveler.GetSignetNpcPatternByNation(nationString);
+            signetNpc = allPeople.Find(p => p.Name.Contains(npcpattern));
+
+            return signetNpc;
+        }
+
         private static void AskForSignet(IGameContext context, IMemoryAPI fface, Person signetNpc)
         {
-
             IUnit signetUnit = context.Memory.UnitService.GetClosestUnitByPartialName(signetNpc.Name);
             context.Navigator.InteractWithUnit(context, fface, signetUnit);
             TimeWaiter.Pause(2000);

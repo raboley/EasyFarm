@@ -1,0 +1,47 @@
+{
+  'Name': 'Ronfaure_East',
+  'Boundaries': [
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 82.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': 111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 82.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': 110.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 213.0,
+        'Y': 0.0,
+        'Z': 148.0
+      },
+      'ToPosition': {
+        'X': 45.0,
+        'Y': 0.0,
+        'Z': -34.0
+      }
+    }
+  ]
+}
