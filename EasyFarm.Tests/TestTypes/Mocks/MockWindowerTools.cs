@@ -44,5 +44,15 @@ namespace EasyFarm.Tests.TestTypes.Mocks
             LastKeyPress = key;
             KeyPresses.Add(key);
         }
+
+        public void SendKeyDown(Keys key)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void SendKeyUp(Keys key)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

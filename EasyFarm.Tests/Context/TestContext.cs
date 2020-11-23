@@ -25,6 +25,7 @@ using EasyFarm.UserSettings;
 using MemoryAPI;
 using Pathfinder.Map;
 using Pathfinder.People;
+using Pathfinder.Travel;
 using Zone = Pathfinder.Map.Zone;
 
 
@@ -48,6 +49,9 @@ namespace EasyFarm.Tests.Context
         public INavigator Navigator { get; set; }
         public ZoneMapFactory ZoneMapFactory { get; set; }
         public ObservableCollection<Person> Npcs { get; set; }
+        public ObservableCollection<Person> Mobs { get; set; }
+        public Traveler Traveler { get; set; }
+        public PeopleOverseer NpcOverseer { get; set; }
 
         public TestContext()
         {

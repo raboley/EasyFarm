@@ -16,50 +16,50 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 
+using System;
+using EasyFarm.Classes;
 using EasyFarm.Context;
+using MemoryAPI;
 
 namespace EasyFarm.States
 {
     public class ZoneState : BaseState
     {
-        // public Action ZoningAction { get; set; } = () => TimeWaiter.Pause(500);
-        //
-        // private bool IsZoning(IGameContext context) => context.Player.Str == 0;
+        public Action ZoningAction { get; set; } = () => TimeWaiter.Pause(500);
+        
+        private bool IsZoning(IGameContext context) => context.Player.Str == 0;
 
-        // public override void Enter(IGameContext context)
-        // {
-        //     if (context.Zone.Name == Zone.Unknown.ToString())
-        //     {
-        //         context.Zone = context.Player.Zone;
-        //     }
-        // }
-        //
-        // public override bool Check(IGameContext context)
-        // {
-        //     var zone = context.Player.Zone;
-        //     return ZoneChanged(zone, context.Zone) || IsZoning(context);
-        // }
-        //
-        // private bool ZoneChanged(Zone currentZone, Zone lastZone)
-        // {
-        //     return lastZone != currentZone;
-        // }
-
+        public override void Enter(IGameContext context)
+        {
+            if (context.Zone.Name == Zone.Unknown.ToString())
+            {
+                // context.Zone = context.Player.Zone;
+            }
+        }
+        
         public override bool Check(IGameContext context)
         {
-            return false;
+            var zone = context.Player.Zone;
+            return ZoneChanged(zone.ToString(), context.Zone.Name) || IsZoning(context);
         }
+        
+        private bool ZoneChanged(string currentZone, string lastZone)
+        {
+            return lastZone != currentZone;
+        }
+
+
 
         public override void Run(IGameContext context)
         {
-            // // Set new currentZone.
+            // Set new currentZone.
             // context.Zone = context.Player.Zone;
-            //
-            // // Stop program from running to next waypoint.
-            // context.API.Navigator.Reset();
-            //
-            // // Wait until we are done zoning.
-            // while (IsZoning(context)) ZoningAction()ZoningAction;
+            
+            // Stop program from running to next waypoint.
+            context.API.Navigator.Reset();
+            
+            // Wait until we are done zoning.
+            while (IsZoning(context)) ZoningAction();
         }
     }
 }

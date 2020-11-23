@@ -17,6 +17,7 @@
 // ///////////////////////////////////////////////////////////////////
 using System;
 using EasyFarm.Context;
+using EasyFarm.Parsing;
 using EasyFarm.States;
 using EasyFarm.Tests.Context;
 using MemoryAPI;
@@ -26,21 +27,23 @@ namespace EasyFarm.Tests.States
 {
     public class ZoneStateTests
     {
-        private readonly Zone StartingZone = Zone.Konschtat_Highlands;
-        private readonly Zone NewZone = Zone.Valkurm_Dunes;
+        private readonly Zone startingZoneName = Zone.Konschtat_Highlands;
+        private readonly Zone newZoneName = Zone.Valkurm_Dunes;
+        private readonly Pathfinder.Map.Zone StartingZone = new Pathfinder.Map.Zone(MemoryAPI.Zone.Konschtat_Highlands.ToString());
+        private readonly Pathfinder.Map.Zone NewZone = new Pathfinder.Map.Zone(Zone.Valkurm_Dunes.ToString());
 
-        private readonly ZoneState sut = new ZoneState();
+        private readonly ZoneState _zoneState = new ZoneState();
         private readonly TestContext context = new TestContext();
 
         [Fact]
         public void CheckIsTrueWhenZoneChanges()
         {
             // Fixture setup
-            context.Player.Zone = StartingZone;
+            context.Player.Zone = startingZoneName;
             context.Zone = NewZone;
             context.Player.Str = 100;
             // Exercise system
-            bool result = sut.Check(context);
+            bool result = _zoneState.Check(context);
             // Verify outcome
             Assert.True(result);
             // Teardown
@@ -52,7 +55,7 @@ namespace EasyFarm.Tests.States
             // Fixture setup
             context.Player.Str = 0;
             // Exercise system
-            bool result = sut.Check(context);
+            bool result = _zoneState.Check(context);
             // Verify outcome
             Assert.True(result);
             // Teardown
@@ -62,11 +65,11 @@ namespace EasyFarm.Tests.States
         public void CheckIsFalseWhenNotZoning()
         {
             // Fixture setup
-            context.Player.Zone = StartingZone;
+            context.Player.Zone = startingZoneName;
             context.Player.Str = 100;
             context.Zone = StartingZone;
             // Exercise system
-            bool result = sut.Check(context);
+            bool result = _zoneState.Check(context);
             // Verify outcome
             Assert.False(result);
             // Teardown
@@ -76,10 +79,10 @@ namespace EasyFarm.Tests.States
         public void RunOnZoningSetsZoneToNewZone()
         {
             // Fixture setup
-            context.Player.Zone = NewZone;
+            context.Player.Zone = newZoneName;
             context.Player.Str = 100;
             // Exercise system
-            sut.Run(context);
+            _zoneState.Run(context);
             // Verify outcome
             Assert.Equal(NewZone, context.Zone);
             // Teardown
@@ -89,10 +92,10 @@ namespace EasyFarm.Tests.States
         public void RunOnZoningStopsPlayerFromRunning()
         {
             // Fixture setup
-            sut.ZoningAction = ForceMoveToNextZone(context);
-            context.Player.Zone = NewZone;
+            _zoneState.ZoningAction = ForceMoveToNextZone(context);
+            context.Player.Zone = newZoneName;
             // Exercise system
-            sut.Run(context);
+            _zoneState.Run(context);
             // Verify outcome
             Assert.False(context.MockAPI.Navigator.IsRunning);
             // Teardown
@@ -104,10 +107,10 @@ namespace EasyFarm.Tests.States
             // Fixture setup
             context.Zone = StartingZone;
             context.Player.Str = 0;
-            context.Player.Zone = NewZone;
-            sut.ZoningAction = ForceMoveToNextZone(context);
+            context.Player.Zone = newZoneName;
+            _zoneState.ZoningAction = ForceMoveToNextZone(context);
             // Exercise system
-            sut.Run(context);
+            _zoneState.Run(context);
             // Verify outcome
             Assert.Equal(100, context.Player.Str);
             // Teardown

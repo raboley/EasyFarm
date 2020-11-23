@@ -40,7 +40,8 @@ namespace EasyFarm.ffxi
             while (distance > DistanceTolerance && DateTime.Now < duration)
             {
                 int newDistance = Pathfinder.GridMath.GetDistancePos(CurrentPosition, targetPosition);
-                if (newDistance >= distance)
+                int difference = newDistance - distance;
+                if (difference >= -1 && difference <= 1)
                 {
                    // Might be stuck 
                    Debug.WriteLine("Might be stuck #" + stuckCounter);
@@ -57,7 +58,7 @@ namespace EasyFarm.ffxi
                     var unWalkablePosition = GetPositionInFrontOfMe(targetPosition); 
                     BackupWhenStuck(targetPosition);
                     OnWalkerIsStuck(unWalkablePosition);
-                    OnWalkerIsStuck(targetPosition);
+                    // OnWalkerIsStuck(targetPosition);
                     Debug.WriteLine("Adding an unWalkable Position at:" + unWalkablePosition + " and: " + targetPosition);
                    return;
                 }

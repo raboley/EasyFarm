@@ -54,10 +54,10 @@ namespace EasyFarm.States
             
             
             AddState( new GoFight() {Priority = 8});
-            AddState( new WalkStraight() {Priority = 2});
+            AddState( new WalkStraight() {Priority = 0});
             
-            AddState(new DeadState() {Priority = 10});
-            AddState(new ZoneState() {Priority = 10});
+            AddState(new DeadState() {Priority = 11});
+            AddState(new ZoneState() {Priority = 11});
             AddState(new FollowState() {Priority = 5});
             AddState(new RestState() {Priority = 2});
             AddState(new SummonTrustsState() {Priority = 6});
@@ -191,7 +191,7 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
-            DateTime duration = DateTime.Now.AddSeconds(5);
+            DateTime duration = DateTime.Now.AddSeconds(3);
 
             while (DateTime.Now < duration)
             {

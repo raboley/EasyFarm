@@ -1,4 +1,5 @@
 ﻿using MemoryAPI;
+using MemoryAPI.Memory;
 using MemoryAPI.Navigation;
 using Pathfinder.Map;
 
@@ -26,6 +27,11 @@ namespace EasyFarm.Tests.TestTypes.Mocks
         public void Reset()
         {
             IsRunning = false;
+        }
+
+        public void SetViewMode(EliteMmoWrapper.ViewMode viewMode)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
