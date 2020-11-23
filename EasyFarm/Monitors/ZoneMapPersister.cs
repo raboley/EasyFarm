@@ -14,6 +14,7 @@ namespace EasyFarm.Monitors
     {
         private IMemoryAPI _fface;
         private IGameContext _context;
+
         public ZoneMapPersister(IMemoryAPI fface, IGameContext context)
         {
             _fface = fface;
@@ -26,12 +27,13 @@ namespace EasyFarm.Monitors
             // string mapName = _fface.Player.Zone.ToString();
             if (mapName == "Unknown" || mapName.IsNullOrEmpty())
                 return;
-            
+
             // Load up the Zone
             var zonePersister = NewZonePersister();
             zonePersister.MapName = mapName;
 
 
+            _context.ZoneMapFactory.DefaultGridSize = new Vector2(1001f, 1001f);
             if (zonePersister.Exists())
             {
                 _context.Zone = zonePersister.Load<Pathfinder.Map.Zone>();
@@ -39,14 +41,14 @@ namespace EasyFarm.Monitors
             }
             else
             {
-                _context.Zone = new Pathfinder.Map.Zone(mapName);
+                new Pathfinder.Map.Zone(mapName);
             }
-            
+
             _context.ZoneMapFactory.Persister = NewZoneMapPersister();
             LogViewModel.Write("Mapper thread loading up grid for: " + mapName);
             _context.Zone.Map = _context.ZoneMapFactory.LoadGridOrCreateNew(mapName);
 
-            
+
             LogViewModel.Write("Mapper grid loaded!");
             while (mapName == _context.Player.Zone.ToString())
             {
@@ -57,9 +59,9 @@ namespace EasyFarm.Monitors
                 {
                     _context.Zone.Map.AddKnownNode(node.WorldPosition);
                     LogViewModel.Write("in map: " + _context.Zone.Name + " Adding position: " + node.WorldPosition);
-                }   
+                }
             }
-            
+
             var lastPositionBeforeZone = ConvertPosition.RoundPositionToVector3(_context.API.Player.Position);
             if (lastPositionBeforeZone != Vector3.Zero)
             {
@@ -72,18 +74,18 @@ namespace EasyFarm.Monitors
                 {
                     TimeWaiter.Pause(100);
                 }
-                
 
-                _context.Zone.AddBoundary(mapName,lastPositionBeforeZone,_context.Player.Zone.ToString(), ConvertPosition.RoundPositionToVector3(_context.API.Player.Position));
+
+                _context.Zone.AddBoundary(mapName, lastPositionBeforeZone, _context.Player.Zone.ToString(),
+                    ConvertPosition.RoundPositionToVector3(_context.API.Player.Position));
             }
 
             zonePersister.Save(_context.Zone);
             _context.ZoneMapFactory.Persister.Save(_context.Zone.Map);
             LogViewModel.Write("Saved map: " + mapName);
         }
+
         private bool IsZoning(IGameContext context) => context.Player.Str == 0;
-
-
 
 
         public static FilePersister NewZoneMapPersister()
@@ -101,14 +103,14 @@ namespace EasyFarm.Monitors
             persister.FilePath = mapsDirectory;
             return persister;
         }
-        
+
         public static string GetDataDirectoryFor(string dir)
         {
             var repoRoot = GetRepoRoot();
 
             repoRoot = Path.Combine(repoRoot, "Data");
             Directory.CreateDirectory(repoRoot);
-            
+
             repoRoot = Path.Combine(repoRoot, dir);
             Directory.CreateDirectory(repoRoot);
             return repoRoot;

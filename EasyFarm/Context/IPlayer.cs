@@ -15,6 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+
+using System;
 using MemoryAPI;
 
 namespace EasyFarm.Context
@@ -32,5 +34,6 @@ namespace EasyFarm.Context
         Zone Homepoint { get; set; }
         string CurrentGoal { get; set; }
         string Nation { get; set; }
+        Boolean IsDead { get; }
     }
 }

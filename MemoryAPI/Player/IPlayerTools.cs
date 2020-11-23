@@ -15,6 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+
+using System.Collections.Concurrent;
 using MemoryAPI.Navigation;
 using System.Collections.Generic;
 using EliteMMO.API;
@@ -46,5 +48,7 @@ namespace MemoryAPI
         int MeritPoints { get; }
         Zone HomePoint { get; }
         Nations Nation { get; }
+        ConcurrentQueue<Position> PositionHistory { get; set; }
+        bool IsMoving();
     }
 }

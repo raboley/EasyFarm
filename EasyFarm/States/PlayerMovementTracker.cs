@@ -29,13 +29,11 @@ namespace EasyFarm.States
     public class PlayerMovementTracker
     {
         private readonly IMemoryAPI _fface;
-        private readonly Queue<Position> _positionHistory = new Queue<Position>();
-        private GameContext _context;
+        // private readonly Queue<Position> _positionHistory = new Queue<Position>();
 
         public PlayerMovementTracker(IMemoryAPI fface)
         {
             _fface = fface;
-            // _context = new GameContext(fface);
         }
 
         public void RunComponent()
@@ -64,23 +62,14 @@ namespace EasyFarm.States
             // }
         }
 
-        private Position TrackPlayerPosition()
+        private void TrackPlayerPosition()
         {
+            Position unUsedValue;  
+            
             var position = _fface.Player.Position;
-            _positionHistory.Enqueue(Helpers.ToPosition(position.X, position.Y, position.Z, position.H));
-            if (_positionHistory.Count >= 15) _positionHistory.Dequeue();
-            Player.Instance.IsMoving = IsMoving();
-            return position;
+            _fface.Player.PositionHistory.Enqueue(Helpers.ToPosition(position.X, position.Y, position.Z, position.H)); 
+            if (_fface.Player.PositionHistory.Count >= 15) _fface.Player.PositionHistory.TryDequeue(out unUsedValue);
+            
         }
-
-        public bool IsMoving()
-        {
-            var changeInX = _positionHistory.Average(positon => positon.X) - _fface.Player.PosX;
-            var changeInZ = _positionHistory.Average(position => position.Z) - _fface.Player.PosZ;
-            return Math.Abs(changeInX) + Math.Abs(changeInZ) > 0;
-        }
-        
-        
-       
     }
 }

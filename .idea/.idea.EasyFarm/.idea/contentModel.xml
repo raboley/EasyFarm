@@ -54,6 +54,7 @@
           <e p="IGameContext.cs" t="Include" />
           <e p="IPlayer.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="WoodChopper.cs" t="Include" />
         </e>
         <e p="ConvertPosition.cs" t="Include" />
         <e p="Dependencies" t="Include">
@@ -190,6 +191,7 @@
           <e p="FiniteStateMachine.cs" t="Include" />
           <e p="FollowState.cs" t="Include" />
           <e p="GameEngine.cs" t="Include" />
+          <e p="GoChopWood.cs" t="Include" />
           <e p="GoFight.cs" t="Include" />
           <e p="HealingState.cs" t="Include" />
           <e p="IState.cs" t="Include" />

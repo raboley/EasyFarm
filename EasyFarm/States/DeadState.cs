@@ -26,8 +26,7 @@ namespace EasyFarm.States
     {
         public override bool Check(IGameContext context)
         {
-            var status = context.Player.Status;
-            return status == Status.Dead1 || status == Status.Dead2;
+            return context.Player.IsDead;
         }
 
         public override void Run(IGameContext context)

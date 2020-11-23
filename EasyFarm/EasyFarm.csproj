@@ -190,6 +190,7 @@
     <Compile Include="Classes\IMonitor.cs" />
     <Compile Include="Classes\INavigator.cs" />
     <Compile Include="Classes\Inventory.cs" />
+    <Compile Include="Context\WoodChopper.cs" />
     <Compile Include="ConvertPosition.cs" />
     <Compile Include="ffxi\Mover.cs" />
     <Compile Include="ffxi\MoverSetup.cs" />
@@ -261,6 +262,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Classes\NullUnit.cs" />
+    <Compile Include="States\GoChopWood.cs" />
     <Compile Include="States\GoFight.cs" />
     <Compile Include="States\NeedSignet.cs" />
     <Compile Include="States\MapState.cs" />

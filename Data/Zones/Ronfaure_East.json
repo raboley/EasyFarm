@@ -5,37 +5,107 @@
       'ToZone': 'Southern_San_dOria',
       'FromZone': 'Ronfaure_East',
       'FromPosition': {
-        'X': 82.0,
+        'X': 464.0,
         'Y': 0.0,
-        'Z': 278.0
+        'Z': -295.0
       },
       'ToPosition': {
-        'X': 111.0,
+        'X': 45.0,
         'Y': 0.0,
-        'Z': -54.0
+        'Z': -34.0
       }
     },
     {
       'ToZone': 'Southern_San_dOria',
       'FromZone': 'Ronfaure_East',
       'FromPosition': {
-        'X': 82.0,
+        'X': 399.0,
         'Y': 0.0,
-        'Z': 278.0
+        'Z': -192.0
       },
       'ToPosition': {
-        'X': 110.0,
+        'X': 45.0,
         'Y': 0.0,
-        'Z': -54.0
+        'Z': -34.0
       }
     },
     {
       'ToZone': 'Southern_San_dOria',
       'FromZone': 'Ronfaure_East',
       'FromPosition': {
-        'X': 213.0,
+        'X': 79.0,
         'Y': 0.0,
-        'Z': 148.0
+        'Z': 275.0
+      },
+      'ToPosition': {
+        'X': 109.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 83.0,
+        'Y': 0.0,
+        'Z': 279.0
+      },
+      'ToPosition': {
+        'X': 112.0,
+        'Y': 0.0,
+        'Z': -53.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 452.0,
+        'Y': 0.0,
+        'Z': -278.0
+      },
+      'ToPosition': {
+        'X': 45.0,
+        'Y': 0.0,
+        'Z': -34.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 382.0,
+        'Y': 0.0,
+        'Z': -188.0
+      },
+      'ToPosition': {
+        'X': 45.0,
+        'Y': 0.0,
+        'Z': -34.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 449.0,
+        'Y': 0.0,
+        'Z': -270.0
+      },
+      'ToPosition': {
+        'X': 45.0,
+        'Y': 0.0,
+        'Z': -34.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 463.0,
+        'Y': 0.0,
+        'Z': -298.0
       },
       'ToPosition': {
         'X': 45.0,

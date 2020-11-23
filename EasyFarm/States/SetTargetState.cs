@@ -30,6 +30,10 @@ namespace EasyFarm.States
 
         public override bool Check(IGameContext context)
         {
+            if (new RestState().Check(context)) return false;
+            
+            if (context.Player.IsDead) return false;
+            
             // Currently fighting, do not change target. 
             if (!context.Target.IsValid)
             {

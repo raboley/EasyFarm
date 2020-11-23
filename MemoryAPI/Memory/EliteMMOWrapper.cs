@@ -16,6 +16,7 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -505,6 +506,17 @@ namespace MemoryAPI.Memory
             }
 
             public Nations Nation => (Nations)_api.Player.Nation;
+            public ConcurrentQueue<Position> PositionHistory { get; set; } = new ConcurrentQueue<Position>();
+            public bool IsMoving()
+            {
+                var myPosHistory = PositionHistory.ToList();
+                
+                var changeInX = myPosHistory.Average(positon => positon.X) - PosX;
+                var changeInZ = myPosHistory.Average(position => position.Z) - PosZ;
+                var dist = Math.Abs(changeInX) + Math.Abs(changeInZ) > 0.5;
+                return dist;
+            } 
+            
             public float CastPercentEx => (_api.CastBar.Percent * 100);
 
             public int HPPCurrent => (int)_api.Player.HPP;

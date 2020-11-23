@@ -53,8 +53,8 @@ namespace EasyFarm.States
             AddState(new PullState() {Priority = 4});
             
             
-            AddState( new GoFight() {Priority = 8});
-            AddState( new WalkStraight() {Priority = 0});
+            // AddState( new GoFight() {Priority = 8});
+            // AddState( new WalkStraight() {Priority = 0});
             
             AddState(new DeadState() {Priority = 11});
             AddState(new ZoneState() {Priority = 11});
@@ -70,6 +70,8 @@ namespace EasyFarm.States
             // AddState(new MapState() {Priority = 5});
             // Needs Signet
             AddState(new NeedSignet() { Priority = 9 });
+            AddState(new GoChopWood() { Priority = 8 });
+            
             
             // AddState(new TestMoveState() { Priority = 10 });
             

@@ -77,5 +77,6 @@ namespace EasyFarm.Context
         public StateMemory Memory { get; set; }
         public Traveler Traveler { get; set; }
         public PeopleOverseer NpcOverseer { get; set; }
+        public WoodChopper WoodChopper { get; set; } = new WoodChopper();
     }
 }

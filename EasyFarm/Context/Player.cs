@@ -99,5 +99,7 @@ namespace EasyFarm.Context
             get => _memoryAPI.Player.Nation.ToString();
             set => throw new NotImplementedException();
         }
+
+        public Boolean IsDead => Status == Status.Dead1 || Status == Status.Dead2;
     }
 }

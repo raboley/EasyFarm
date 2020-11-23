@@ -39,12 +39,16 @@ namespace EasyFarm.ffxi
             DateTime duration = DateTime.Now.AddSeconds(5);
             while (distance > DistanceTolerance && DateTime.Now < duration)
             {
+                // Maybe use the position history to figure out is stuck.
+                
                 int newDistance = Pathfinder.GridMath.GetDistancePos(CurrentPosition, targetPosition);
                 int difference = newDistance - distance;
-                if (difference >= -1 && difference <= 1)
+                
+                // if (difference >= -1 && difference <= 1)
+                if (!_context.API.Player.IsMoving())
                 {
                    // Might be stuck 
-                   Debug.WriteLine("Might be stuck #" + stuckCounter);
+                   Debug.WriteLine("Might be stuck #" + stuckCounter + " difference is: " + difference);
                    stuckCounter++;
                    Thread.Sleep(100);
                 }
@@ -71,7 +75,6 @@ namespace EasyFarm.ffxi
             }
             _context.API.Navigator.Reset();
         }
-        
         private Vector3 GetPositionInFrontOfMe(Vector3 targetPosition)
         {
             int x = GetNewXorY(CurrentPosition.X, targetPosition.X);

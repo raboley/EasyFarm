@@ -20,6 +20,7 @@ using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.UserSettings;
 using MemoryAPI;
+using Pathfinder;
 using Player = EasyFarm.Classes.Player;
 
 namespace EasyFarm.States
@@ -35,6 +36,8 @@ namespace EasyFarm.States
 
             // Make sure we don't need trusts
             if (new SummonTrustsState().Check(context)) return false;
+
+            if (context.Player.IsDead) return false;
 
             // Target dead or null.
             if (!context.Target.IsValid) return false;
@@ -60,9 +63,10 @@ namespace EasyFarm.States
             // Has the user decided that we should approach targets?
             if (context.Config.IsApproachEnabled)
             {
+                context.Traveler.GoToPosition(GridMath.RoundVector3( context.Target.Position.To2DVector3()));
                 // Move to target if out of melee range. 
-                context.API.Navigator.DistanceTolerance = context.Config.MeleeDistance;
-                context.API.Navigator.GotoNPC(context.Target.Id, context.Config.IsObjectAvoidanceEnabled);
+                // context.API.Navigator.DistanceTolerance = context.Config.MeleeDistance;
+                // context.API.Navigator.GotoNPC(context.Target.Id, context.Config.IsObjectAvoidanceEnabled);
             }
 
             // Face mob. 
