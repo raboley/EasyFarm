@@ -49,7 +49,8 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
-            if (context.Traveler.Zoning == true)
+            
+            if (context.Traveler?.Zoning == true)
                 return;
             // context.Player.CurrentGoal = "Signet";
             LogViewModel.Write("I don't have signet, Setting my goal to go get Signet");

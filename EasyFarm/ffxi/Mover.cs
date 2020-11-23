@@ -55,6 +55,7 @@ namespace EasyFarm.ffxi
                 if (stuckCounter >= 20)
                 {
                     var unWalkablePosition = GetPositionInFrontOfMe(targetPosition); 
+                    BackupWhenStuck(targetPosition);
                     OnWalkerIsStuck(unWalkablePosition);
                     OnWalkerIsStuck(targetPosition);
                     Debug.WriteLine("Adding an unWalkable Position at:" + unWalkablePosition + " and: " + targetPosition);
@@ -89,6 +90,51 @@ namespace EasyFarm.ffxi
 
             if (currentInt < targetInt)
                 return currentInt + 1;
+
+            return currentInt;
+        }
+
+        public void BackupWhenStuck(Vector3 targetPosition)
+        {
+            TurnAround(targetPosition);
+            RunForwardForSeconds(3);
+        }
+
+        public void RunForwardForSeconds(int seconds)
+        {
+            DateTime duration = DateTime.Now.AddSeconds(seconds);
+            RunForwardWithKeypad();
+            while (DateTime.Now < duration)
+            {
+             Thread.Sleep(100);   
+            }
+            _context.API.Navigator.Reset();
+        }
+        
+        public void TurnAround(Vector3 targetPosition)
+        {
+            var positionBehindMe = GetPositionBehindMe(targetPosition);
+            LookAtTargetPosition(positionBehindMe);
+        }
+        
+        private Vector3 GetPositionBehindMe(Vector3 targetPosition)
+        {
+            int x = GetNewXorYBehind(CurrentPosition.X, targetPosition.X);
+            int y = GetNewXorYBehind(CurrentPosition.Z, targetPosition.Z);
+                
+            var blockedPosition = new Vector3(x, 0, y);
+            return blockedPosition;
+        }
+        private int GetNewXorYBehind(float current, float target)
+        {
+            int currentInt = GridMath.ConvertFromFloatToInt(current);
+            int targetInt = GridMath.ConvertFromFloatToInt(target);
+
+            if (currentInt > targetInt)
+                return currentInt + 1;
+
+            if (currentInt < targetInt)
+                return currentInt - 1;
 
             return currentInt;
         }

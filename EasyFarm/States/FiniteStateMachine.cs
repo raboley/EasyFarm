@@ -47,7 +47,7 @@ namespace EasyFarm.States
             // Fighting States
             AddState(new SetTargetState() {Priority = 10});
             AddState(new SetFightingState() {Priority = 10});
-            AddState(new ApproachState() {Priority = 0});
+            AddState(new ApproachState() {Priority = 1});
             AddState(new BattleState() {Priority = 3});
             AddState(new WeaponskillState() {Priority = 2});
             AddState(new PullState() {Priority = 4});
