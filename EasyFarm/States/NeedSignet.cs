@@ -117,6 +117,7 @@ namespace EasyFarm.States
             TimeWaiter.Pause(2000);
             context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
             TimeWaiter.Pause(5000);
+            context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
         }
 
         private static bool HasSignet(IPlayerTools player)

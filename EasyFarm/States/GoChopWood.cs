@@ -5,12 +5,15 @@ using EasyFarm.ViewModels;
 using Pathfinder;
 using Pathfinder.Map;
 using Pathfinder.People;
+using Pathfinder.Travel;
 using Player = EasyFarm.Classes.Player;
 
 namespace EasyFarm.States
 {
     public class GoChopWood : BaseState
     {
+        private static string _chopWoodZone= "Ronfaure_East";
+
         public override bool Check(IGameContext context)
         {
             if (context.Traveler == null) return false;
@@ -30,6 +33,14 @@ namespace EasyFarm.States
         {
             GoToChopWoodZone(context);
 
+            if (context.API.Player.Zone.ToString() != _chopWoodZone)
+                return;
+
+            if (context.Traveler.Zoning)
+                return;
+
+            if (context.Traveler.CurrentZone.Map.MapName != _chopWoodZone)
+                return;
 
             // Add logging points to queue if empty
             if (context.WoodChopper.LoggingPoints.Count == 0)
@@ -84,15 +95,13 @@ namespace EasyFarm.States
 
         private static void GoToChopWoodZone(IGameContext context)
         {
-            string chopWoodZone = "Ronfaure_East";
-
-            LogViewModel.Write("Going to go Chop Wood in: " + chopWoodZone);
+            LogViewModel.Write("Going to go Chop Wood in: " + _chopWoodZone);
             while (context.Traveler == null)
             {
                 Thread.Sleep(100);
             }
 
-            context.Traveler.GoToZone(chopWoodZone);
+            context.Traveler.GoToZone(_chopWoodZone);
         }
     }
 }
