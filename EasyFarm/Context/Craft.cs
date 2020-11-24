@@ -49,6 +49,50 @@ namespace EasyFarm.Context
             _context = context;
         }
 
+        public bool HaveAllMaterialsToCraft(CraftingRecipe recipe)
+        {
+            if (!HasCrystal(recipe))
+                return false;
+            
+            // have all items
+            if (!HasAllItems(recipe))
+                return false;
+
+            return true;
+        }
+
+        private bool HasAllItems(CraftingRecipe recipe)
+        {
+            var itemsInInventory = _context.Inventory.GetInventoryItemsFromContainer();
+            for (int i = 0; i < recipe.RequiredItems.Count; i++)
+            {
+                var recipeItem = recipe.RequiredItems[i];
+
+                var item = _context.Inventory.GetMatchingItemsFromContainer(recipeItem.Name);
+                if (item.Count == 0)
+                    return false;
+                var itemId = item[0].ItemID;
+                
+                var inventoryItem = itemsInInventory.FirstOrDefault(x => x.Id == itemId);
+                if (inventoryItem == null)
+                    return false;
+                
+                if (inventoryItem.Count < recipe.RequiredItems[i].Count)
+                    return false;
+            }
+
+            return true;
+        }
+
+        private bool HasCrystal(CraftingRecipe recipe)
+        {
+            var crystals = _context.Inventory.GetMatchingItemsFromContainer(recipe.Crystal);
+            if (crystals.Count == 0)
+                return false;
+
+            return true;
+        }
+
         public void AttemptToCraft(CraftingRecipe recipe)
         {
             ResetMenu();

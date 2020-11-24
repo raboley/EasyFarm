@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Threading;
+using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.ViewModels;
 using Pathfinder;
@@ -12,25 +13,32 @@ namespace EasyFarm.States
 {
     public class GoChopWood : BaseState
     {
-        private static string _chopWoodZone= "Ronfaure_East";
+        private static string _chopWoodZone = "Ronfaure_East";
 
         public override bool Check(IGameContext context)
         {
             if (context.Traveler == null) return false;
-            
+
             if (new RestState().Check(context)) return false;
-            
+
             if (context.Player.IsDead) return false;
 
             if (context.Player.HasAggro) return false;
 
+            // TODO: Remove this when I have a wandering mob killing state up.
+            return true;
+            
             if (context.Inventory.HaveItemInInventoryContainer("Hatchet")) return true;
+
+            if (context.Player.CurrentGoal == "Chop Wood")
+                context.Player.CurrentGoal = "Aimless";
 
             return false;
         }
 
         public override void Run(IGameContext context)
         {
+            context.Player.CurrentGoal = "Chop Wood";
             GoToChopWoodZone(context);
 
             if (context.API.Player.Zone.ToString() != _chopWoodZone)
@@ -45,6 +53,17 @@ namespace EasyFarm.States
             // Add logging points to queue if empty
             if (context.WoodChopper.LoggingPoints.Count == 0)
             {
+                // First add things close by
+                var closeLoggingPoints =
+                    context.Memory.UnitService.NpcUnits.ToList().FindAll(x => x.Name == "Logging Point");
+
+                foreach (var loggingPoint in closeLoggingPoints)
+                {
+                    var tree = new Person(loggingPoint.Id, loggingPoint.Name, GridMath.RoundVector3(loggingPoint.Position.To2DVector3()));
+                    context.WoodChopper.LoggingPoints.Enqueue(tree);
+                }
+                
+                // Then all the ones that have ever been known
                 var loggingPoints = context.Npcs.ToList().FindAll(x => x.Name == "Logging Point");
                 foreach (var loggingPoint in loggingPoints)
                 {
@@ -53,17 +72,26 @@ namespace EasyFarm.States
             }
 
             // go to next logging point
-            var closeByLoggingPoint = context.Memory.UnitService.NpcUnits.ToList()
-                .FirstOrDefault(x => x.Name == "Logging Point");
-            
+
+            // TODO: Remove the if statement once I have a state for roaming around trying to make money.
+            IUnit closeByLoggingPoint = null;
+            if (HasHatchet(context))
+                closeByLoggingPoint = context.Memory.UnitService.NpcUnits.ToList()
+                    .FirstOrDefault(x => x.Name == "Logging Point");
+
+
             if (closeByLoggingPoint != null)
-                context.WoodChopper.NextPoint = new Person(closeByLoggingPoint.Id, closeByLoggingPoint.Name, GridMath.RoundVector3(closeByLoggingPoint.Position.To2DVector3()));
-            
-            if (context.WoodChopper.NextPoint == null) 
+                context.WoodChopper.NextPoint = new Person(closeByLoggingPoint.Id, closeByLoggingPoint.Name,
+                    GridMath.RoundVector3(closeByLoggingPoint.Position.To2DVector3()));
+
+            if (context.WoodChopper.NextPoint == null)
                 context.WoodChopper.NextPoint = context.WoodChopper.LoggingPoints.Dequeue();
-            
-            
+
+
             context.Traveler.GoToPosition(context.WoodChopper.NextPoint.Position);
+            
+            // TODO: Make traveler stop path finding when someone has aggro.
+            // context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(context.WoodChopper.NextPoint.Position);
             // Chop wood
 
             var distanceToLoggingPoint = GridMath.GetDistancePos(context.Traveler.Walker.CurrentPosition,
@@ -71,15 +99,27 @@ namespace EasyFarm.States
 
             if (distanceToLoggingPoint > 1)
                 return;
-            
-            var loggingUnit = context.Memory.UnitService.NpcUnits.FirstOrDefault(x => x.Id == context.WoodChopper.NextPoint.Id);
+
+            var loggingUnit =
+                context.Memory.UnitService.NpcUnits.FirstOrDefault(x => x.Id == context.WoodChopper.NextPoint.Id);
             context.WoodChopper.NextPoint = null;
-            
+
             if (loggingUnit == null)
             {
                 return;
             }
-            
+
+            if (HasHatchet(context))
+                ChopTree(context, loggingUnit);
+        }
+
+        private bool HasHatchet(IGameContext context)
+        {
+            return context.Inventory.HaveItemInInventoryContainer("Hatchet");
+        }
+
+        private static void ChopTree(IGameContext context, IUnit loggingUnit)
+        {
             context.Target = loggingUnit;
             // Face mob. 
             context.API.Navigator.FaceHeading(context.Target.Position);
@@ -90,7 +130,7 @@ namespace EasyFarm.States
 
             LogViewModel.Write("Chopping down tree at: " + context.Target.Position);
             context.API.Windower.SendString("/item Hatchet <t>");
-            Thread.Sleep(3000);
+            Thread.Sleep(4000);
         }
 
         private static void GoToChopWoodZone(IGameContext context)

@@ -25,6 +25,7 @@ using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.ViewModels;
 using MemoryAPI;
+using Pathfinder;
 using Pathfinder.People;
 using StatusEffect = MemoryAPI.StatusEffect;
 
@@ -83,6 +84,10 @@ namespace EasyFarm.States
             context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(signetNpc.Position);
 
             IMemoryAPI fface = context.API;
+
+            if (GridMath.GetDistancePos(context.Traveler.Walker.CurrentPosition, signetNpc.Position) > 1)
+                return;
+            
             AskForSignet(context, fface, signetNpc);
         }
 

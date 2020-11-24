@@ -42,6 +42,9 @@ namespace EasyFarm.States
             // Target dead or null.
             if (!context.Target.IsValid) return false;
 
+            if (context.Traveler == null)
+                return false;
+
             // We should approach mobs that have aggroed or have been pulled. 
             if (context.Target.Status.Equals(Status.Fighting)) return true;
 

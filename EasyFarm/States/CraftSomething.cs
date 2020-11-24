@@ -6,6 +6,9 @@ namespace EasyFarm.States
     {
         public override bool Check(IGameContext context)
         {
+            if (context.Craft.HaveAllMaterialsToCraft(CraftingRecipe.StoneSoup()))
+                return true;
+            
             return false;
         }
 
