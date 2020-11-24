@@ -69,7 +69,7 @@ namespace EasyFarm.States
             // AddState(new DumpTreasureState() { Priority = 2 });
             // AddState(new MapState() {Priority = 5});
             // Needs Signet
-            AddState(new NeedSignet() { Priority = 9 });
+            AddState(new NeedSignet() { Priority = 2 });
             
             // The Finer Things
             AddState(new GoChopWood() { Priority = 8 });

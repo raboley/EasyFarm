@@ -61,6 +61,10 @@ namespace EasyFarm.ffxi
                 {
                     var unWalkablePosition = GetPositionInFrontOfMe(targetPosition); 
                     BackupWhenStuck(targetPosition);
+                    // TODO Remove for something better
+                    if (_context.Zone.Map.GetNodeFromWorldPoint(unWalkablePosition).Walkable == false)
+                        MoveToTheRight();
+                    
                     OnWalkerIsStuck(unWalkablePosition);
                     // OnWalkerIsStuck(targetPosition);
                     Debug.WriteLine("Adding an unWalkable Position at:" + unWalkablePosition + " and: " + targetPosition);
@@ -75,6 +79,15 @@ namespace EasyFarm.ffxi
             }
             _context.API.Navigator.Reset();
         }
+
+        private void MoveToTheRight()
+        {
+            _context.API.Windower.SendKeyDown(Keys.NUMPAD4);
+            Thread.Sleep(700);
+            _context.API.Windower.SendKeyUp(Keys.NUMPAD4);
+            RunForwardForSeconds(6);
+        }
+
         private Vector3 GetPositionInFrontOfMe(Vector3 targetPosition)
         {
             int x = GetNewXorY(CurrentPosition.X, targetPosition.X);

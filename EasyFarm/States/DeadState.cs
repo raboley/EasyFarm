@@ -34,6 +34,9 @@ namespace EasyFarm.States
             // Stop program from running to next waypoint.
             context.API.Navigator.Reset();
 
+            // Set traveler to dead so ZonePersister doesn't try to add a zone boundary in the middle of the zone.
+            context.Traveler.IsDead = true;
+
             if (context.Config.HomePointOnDeath) HomePointOnDeath(context);
 
             // Stop the engine from running.

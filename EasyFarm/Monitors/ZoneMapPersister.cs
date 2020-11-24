@@ -7,6 +7,7 @@ using EasyFarm.ViewModels;
 using MemoryAPI;
 using Pathfinder;
 using Pathfinder.Persistence;
+using Pathfinder.Travel;
 
 namespace EasyFarm.Monitors
 {
@@ -74,15 +75,17 @@ namespace EasyFarm.Monitors
                 {
                     TimeWaiter.Pause(100);
                 }
+                
 
-
-                _context.Zone.AddBoundary(mapName, lastPositionBeforeZone, _context.Player.Zone.ToString(),
+                if (!_context.Traveler.IsDead)
+                    _context.Zone.AddBoundary(mapName, lastPositionBeforeZone, _context.Player.Zone.ToString(),
                     ConvertPosition.RoundPositionToVector3(_context.API.Player.Position));
             }
 
             zonePersister.Save(_context.Zone);
             _context.ZoneMapFactory.Persister.Save(_context.Zone.Map);
             LogViewModel.Write("Saved map: " + mapName);
+            _context.Traveler.IsDead = false;
         }
 
         private bool IsZoning(IGameContext context) => context.Player.Str == 0;
