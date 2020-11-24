@@ -18,6 +18,7 @@
 using MemoryAPI.Chat;
 using MemoryAPI.Dialog;
 using MemoryAPI.Inventory;
+using MemoryAPI.Memory.EliteMMOWrapper;
 using MemoryAPI.Menu;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
@@ -38,6 +39,7 @@ namespace MemoryAPI
         IMenuTools Menu { get; set; }
         IDialogTools Dialog { get; set; }
         IInventoryTools Inventory { get; set; }
+        ICraftMenuTools Craft { get; set; }
         string ConfigFilePath { get; set; }
     }
 }

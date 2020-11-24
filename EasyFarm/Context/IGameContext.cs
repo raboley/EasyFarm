@@ -25,6 +25,7 @@ using MemoryAPI;
 using Pathfinder.Map;
 using Pathfinder.People;
 using Pathfinder.Travel;
+using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.Context
@@ -49,5 +50,6 @@ namespace EasyFarm.Context
         Traveler Traveler { get; set; }
         PeopleOverseer NpcOverseer { get; set; }
         WoodChopper WoodChopper { get; set; }
+        Craft Craft { get; set; }
     }
 }

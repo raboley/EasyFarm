@@ -50,6 +50,7 @@
           <e p="UnitService.cs" t="Include" />
         </e>
         <e p="Context" t="Include">
+          <e p="Craft.cs" t="Include" />
           <e p="GameContext.cs" t="Include" />
           <e p="IGameContext.cs" t="Include" />
           <e p="IPlayer.cs" t="Include" />
@@ -185,6 +186,7 @@
           <e p="ApproachState.cs" t="Include" />
           <e p="BaseState.cs" t="Include" />
           <e p="BattleState.cs" t="Include" />
+          <e p="CraftSomething.cs" t="Include" />
           <e p="DeadState.cs" t="Include" />
           <e p="DumpTreasureState.cs" t="Include" />
           <e p="EndState.cs" t="Include" />
@@ -391,7 +393,12 @@
         </e>
         <e p="Memory" t="Include">
           <e p="EliteApiExtensions.cs" t="Include" />
+          <e p="EliteMMOWrapper" t="Include">
+            <e p="CraftMenuTools.cs" t="Include" />
+            <e p="ICraftMenuTools.cs" t="Include" />
+          </e>
           <e p="EliteMMOWrapper.cs" t="Include" />
+          <e p="EliteMmoWrapper.InventoryTools.cs" t="Include" />
           <e p="JsonSerializer.cs" t="Include" />
           <e p="MemoryWrapper.cs" t="Include" />
           <e p="PollingProcessor.cs" t="Include" />

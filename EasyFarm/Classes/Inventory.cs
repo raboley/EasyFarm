@@ -8,21 +8,12 @@ namespace EasyFarm.Classes
 
     public class Inventory : IInventory
     {
-        //private static Inventory _instance = new Inventory();
         private IMemoryAPI _api;
 
         public Inventory(IMemoryAPI api)
         {
-            this._api = api;
+            _api = api;
         }
-
-        //public bool IsMoving { get; set; }
-
-        //public static Inventory Instance
-        //{
-        //    get { return _instance = _instance ?? new Inventory(); }
-        //    private set { _instance = value; }
-        //}
 
         public bool InventoryIsFull(int InventoryContainerId = 0)
         {

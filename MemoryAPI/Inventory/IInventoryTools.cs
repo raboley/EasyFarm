@@ -16,6 +16,9 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 
+using System.Collections.Generic;
+using EliteMMO.API;
+
 namespace MemoryAPI.Inventory
 {
     public interface IInventoryTools
@@ -25,11 +28,16 @@ namespace MemoryAPI.Inventory
         uint SelectedItemIndex { get; }
         uint ShopItemCount { get; }
         uint ShopItemCountMax { get; set; }
-
         int GetContainerCount(int containerId);
-        EliteMMO.API.EliteAPI.InventoryItem GetContainerItem(int containerId, int itemIndex);
+        EliteAPI.InventoryItem GetContainerItem(int containerId, int itemIndex);
         int GetContainerMaxCount(int containerId);
-        EliteMMO.API.EliteAPI.InventoryItem GetEquippedItem(int slotId);
+        EliteAPI.InventoryItem GetEquippedItem(int slotId);
         bool SetBazaarPrice(int price);
+        bool InventoryIsFull(int InventoryContainerId = 0);
+        bool HaveItemInInventoryContainer(string itemPattern, int InventoryContainerId = 0);
+        List<EliteAPI.IItem> GetMatchingItemsFromContainer(string itemPattern, int InventoryContainerId = 0);
+        List<EliteAPI.IItem> GetItemsFromContainer(int InventoryContainerId = 0);
+        List<EliteAPI.InventoryItem> GetInventoryItemsFromContainer(int InventoryContainerId = 0);
+        int GetCountOfItemsInContainer(string itemPattern, int InventoryContainerId = 0);
     }
 }

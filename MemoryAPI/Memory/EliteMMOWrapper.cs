@@ -25,7 +25,6 @@ using System.Threading;
 using EliteMMO.API;
 using MemoryAPI.Chat;
 using MemoryAPI.Dialog;
-using MemoryAPI.Inventory;
 using MemoryAPI.Menu;
 using MemoryAPI.Navigation;
 using MemoryAPI.Resources;
@@ -37,7 +36,7 @@ using static EliteMMO.API.EliteAPI;
 
 namespace MemoryAPI.Memory
 {
-    public class EliteMmoWrapper : MemoryWrapper
+    public partial class EliteMmoWrapper : MemoryWrapper
     {
         public enum ViewMode
         {
@@ -63,7 +62,7 @@ namespace MemoryAPI.Memory
             Dialog = new DialogTools(eliteApi);
             Menu = new MenuTools(eliteApi);
             Inventory = new InventoryTools(eliteApi);
-            
+            Craft = new EliteMMOWrapper.CraftMenuTools(eliteApi);
 
             for (byte i = 0; i < 16; i++)
             {
@@ -782,59 +781,6 @@ namespace MemoryAPI.Memory
             public int DialogId => (int)_api.Dialog.DialogId;
             public int DialogIndex => (int)_api.Dialog.DialogIndex;
             public int DialogOptionCount => (int)_api.Dialog.DialogOptionCount;
-
-        }
-
-        public class InventoryTools : IInventoryTools
-        {
-            private readonly EliteAPI _api;
-
-            public InventoryTools(EliteAPI api)
-            {
-                _api = api;
-                
-            }
-
-            public string SelectedItemName => (string)_api.Inventory.SelectedItemName;
-            public uint SelectedItemId => _api.Inventory.SelectedItemId;
-            public uint SelectedItemIndex => _api.Inventory.SelectedItemIndex;
-            public uint ShopItemCount => _api.Inventory.ShopItemCount;
-            public uint ShopItemCountMax
-            {
-                get
-                {
-                    return _api.Inventory.ShopItemCountMax;
-                }
-                set
-                {
-                    _api.Inventory.ShopItemCountMax = value;
-                }
-            }
-
-            public int GetContainerCount(int containerId)
-            {
-                return _api.Inventory.GetContainerCount(containerId);
-            }
-
-            public InventoryItem GetContainerItem(int containerId, int itemIndex)
-            {
-                return _api.Inventory.GetContainerItem(containerId, itemIndex);
-            }
-
-            public int GetContainerMaxCount(int containerId)
-            {
-                return _api.Inventory.GetContainerMaxCount(containerId);
-            }
-
-            public InventoryItem GetEquippedItem(int slotId)
-            {
-                return _api.Inventory.GetEquippedItem(slotId);
-            }
-
-            public bool SetBazaarPrice(int price)
-            {
-                return _api.Inventory.SetBazaarPrice(price);
-            }
 
         }
     }

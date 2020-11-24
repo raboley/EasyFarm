@@ -56,8 +56,8 @@ namespace EasyFarm.States
             // AddState( new GoFight() {Priority = 8});
             // AddState( new WalkStraight() {Priority = 0});
             
-            AddState(new DeadState() {Priority = 11});
-            AddState(new ZoneState() {Priority = 11});
+            AddState(new DeadState() {Priority = 51});
+            AddState(new ZoneState() {Priority = 51});
             AddState(new FollowState() {Priority = 5});
             AddState(new RestState() {Priority = 2});
             AddState(new SummonTrustsState() {Priority = 6});
@@ -70,7 +70,10 @@ namespace EasyFarm.States
             // AddState(new MapState() {Priority = 5});
             // Needs Signet
             AddState(new NeedSignet() { Priority = 9 });
+            
+            // The Finer Things
             AddState(new GoChopWood() { Priority = 8 });
+            AddState(new CraftSomething() {Priority = 20});
             
             
             // AddState(new TestMoveState() { Priority = 10 });

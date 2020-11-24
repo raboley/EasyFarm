@@ -74,6 +74,9 @@
     <Compile Include="Memory\EliteApiExtensions.cs" />
     <Compile Include="Memory\EliteMMOWrapper.cs" />
     <Compile Include="Inventory\IInventoryTools.cs" />
+    <Compile Include="Memory\EliteMmoWrapper.InventoryTools.cs" />
+    <Compile Include="Memory\EliteMMOWrapper\CraftMenuTools.cs" />
+    <Compile Include="Memory\EliteMMOWrapper\ICraftMenuTools.cs" />
     <Compile Include="Memory\JsonSerializer.cs" />
     <Compile Include="Memory\MemoryWrapper.cs" />
     <Compile Include="Memory\PollingProcessor.cs" />

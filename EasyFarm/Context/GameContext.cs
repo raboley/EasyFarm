@@ -49,7 +49,10 @@ namespace EasyFarm.Context
                 Persister = new FilePersister()
             };
             Zone = new Pathfinder.Map.Zone("unknown");
+            Craft = new Craft(api);
         }
+
+        public Craft Craft { get; set; }
         public ZoneMapFactory ZoneMapFactory { get; set; }
         public ObservableCollection<Person> Npcs { get; set; }
         public ObservableCollection<Person> Mobs { get; set; }
