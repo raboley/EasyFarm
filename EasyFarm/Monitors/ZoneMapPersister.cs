@@ -42,7 +42,7 @@ namespace EasyFarm.Monitors
             }
             else
             {
-                new Pathfinder.Map.Zone(mapName);
+                _context.Zone = new Pathfinder.Map.Zone(mapName);
             }
 
             _context.ZoneMapFactory.Persister = NewZoneMapPersister();

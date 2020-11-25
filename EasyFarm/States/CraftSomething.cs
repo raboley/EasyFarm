@@ -53,6 +53,7 @@ namespace EasyFarm.States
             knownRecipes.Add(CraftingRecipe.BronzeIngotFromGoblinMail());
             knownRecipes.Add(CraftingRecipe.MapleLumber());
             knownRecipes.Add(CraftingRecipe.Hatchet());
+            knownRecipes.Add(CraftingRecipe.BronzeIngotFromBeastCoin());
             return knownRecipes;
         }
     }

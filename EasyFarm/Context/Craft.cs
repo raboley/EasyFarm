@@ -10,101 +10,11 @@ using Keys = EliteMMO.API.Keys;
 
 namespace EasyFarm.Context
 {
-    public class CraftingRecipe
-    {
-        public static CraftingRecipe BronzeIngotFromGoblinMail()
-        {
-            var soup = new CraftingRecipe();
-            soup.Crystal = "Lightng. Crystal";
-            soup.RequiredItems = new List<Item>
-            {
-                new Item() {Name = "Goblin Mail", Count = 1},
-            };
-
-            return soup;
-        }
-        
-        public static CraftingRecipe BronzeIngotFromGoblinHelmet()
-        {
-            var soup = new CraftingRecipe();
-            soup.Crystal = "Lightng. Crystal";
-            soup.RequiredItems = new List<Item>
-            {
-                new Item() {Name = "Goblin Helm", Count = 1},
-            };
-
-            return soup;
-        }
-        
-        public static CraftingRecipe StoneSoup()
-        {
-            var soup = new CraftingRecipe();
-            soup.Crystal = "Fire Crystal";
-            soup.RequiredItems = new List<Item>
-            {
-                new Item() {Name = "Flint Stone", Count = 3},
-                new Item() {Name = "Distilled Water", Count = 1}
-            };
-
-            return soup;
-        }
-        public static CraftingRecipe Hatchet()
-        {
-            var soup = new CraftingRecipe();
-            soup.Crystal = "Fire Crystal";
-            soup.RequiredItems = new List<Item>
-            {
-                new Item() {Name = "Bronze Ingot", Count = 2},
-                new Item() {Name = "Maple Lumber", Count = 1}
-            };
-
-            return soup;
-        }
-        
-        public static CraftingRecipe ArrowWoodLumber()
-        {
-            var soup = new CraftingRecipe();
-            soup.Crystal = "Wind Crystal";
-            soup.RequiredItems = new List<Item>
-            {
-                new Item() {Name = "Arrowwood Log", Count = 1},
-            };
-
-            return soup;
-        }
-        
-        public static CraftingRecipe MapleLumber()
-        {
-            var soup = new CraftingRecipe();
-            soup.Crystal = "Wind Crystal";
-            soup.RequiredItems = new List<Item>
-            {
-                new Item() {Name = "Maple Log", Count = 1},
-            };
-
-            return soup;
-        }
-
-        public string Crystal { get; set; }
-        public List<Item> RequiredItems { get; set; }
-    }
-
-    public class Item
-    {
-        public string Name { get; set; }
-        public int Id { get; set; }
-        public int Index { get; set; }
-        public int Count { get; set; }
-        public int Flag { get; set; }
-        public int Price { get; set; }
-        public byte[] Extra { get; set; }
-    }
-
-    public class Craft
+    public class Craft : MenuBase
     {
         private IMemoryAPI _context;
 
-        public Craft(IMemoryAPI context)
+        public Craft(IMemoryAPI context) : base(context)
         {
             _context = context;
         }
@@ -176,28 +86,6 @@ namespace EasyFarm.Context
             ResetMenu();
         }
 
-        private void ClickCraft()
-        {
-            NavigateToTopRightCraftButton();
-            Enter();
-            Thread.Sleep(1000);
-        }
-
-        private void NavigateToTopRightCraftButton()
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                Right();
-            }
-            Up();
-        }
-
-        private void Right()
-        {
-            _context.Windower.SendKeyPress(Keys.RIGHT);
-            Thread.Sleep(100);
-        }
-
         private void AddIngredients(List<Item> recipeRequiredItems)
         {
             //Figure Out the Item Ids
@@ -220,30 +108,7 @@ namespace EasyFarm.Context
             }
         }
 
-        private void CloseMenu()
-        {
-            if (_context.Craft.IsCraftMenuOpen)
-            {
-                _context.Windower.SendKeyPress(Keys.ESCAPE);
-                Thread.Sleep(100);
-                Enter();
-            }
-                
-            
-            while (_context.Menu.IsMenuOpen)
-            {
-                _context.Windower.SendKeyPress(Keys.ESCAPE);
-                Thread.Sleep(100);
-            }
 
-            Thread.Sleep(100);
-        }
-
-        private void Enter()
-        {
-            _context.Windower.SendKeyPress(Keys.NUMPADENTER);
-            Thread.Sleep(100);
-        }
 
         private void OpenCraftingMenu()
         {
@@ -277,86 +142,6 @@ namespace EasyFarm.Context
 
 
             Select();
-        }
-
-        private void Up()
-        {
-            _context.Windower.SendKeyPress(Keys.UP);
-            Thread.Sleep(100);
-        }
-
-        private void ChooseCrystalSynthesis()
-        {
-            while (_context.Menu.MenuItemCount > 2)
-            {
-                Thread.Sleep(10);
-            }
-
-            while (_context.Menu.MenuIndex != 1)
-            {
-                Down();
-            }
-
-            Thread.Sleep(100);
-
-            Select();
-        }
-
-        private void Select()
-        {
-            _context.Windower.SendKeyPress(Keys.NUMPADENTER);
-            Thread.Sleep(100);
-        }
-
-        private void OpenSynthesisMenu()
-        {
-            RefreshMenuInCaseSomewhereWeird();
-
-            const int synthesisMenuIndex = 10;
-            const string synthesisMenuHelpName = "Synthesis";
-
-            while (_context.Menu.HelpName != synthesisMenuHelpName)
-            {
-                var startIndex = _context.Menu.MenuIndex;
-                Down();
-                while (startIndex != _context.Menu.MenuIndex)
-                {
-                    if (_context.Menu.HelpName == synthesisMenuHelpName)
-                        break;
-                    
-                    Down();
-                }
-                
-                if (_context.Menu.HelpName == synthesisMenuHelpName)
-                    break;
-
-                _context.Windower.SendKeyPress(Keys.RIGHT);
-                Thread.Sleep(100);
-            }
-
-            Select();
-        }
-
-        private void Down()
-        {
-            _context.Windower.SendKeyPress(Keys.DOWN);
-            Thread.Sleep(100);
-        }
-
-        private void RefreshMenuInCaseSomewhereWeird()
-        {
-            if (_context.Menu.IsMenuOpen)
-                _context.Windower.SendKeyPress(Keys.MINUS);
-
-            _context.Windower.SendKeyPress(Keys.MINUS);
-        }
-
-        private void ResetMenu()
-        {
-            _context.Windower.SendKeyUp(Keys.UP);
-            _context.Windower.SendKeyUp(Keys.DOWN);
-            _context.Windower.SendKeyUp(Keys.RIGHT);
-            _context.Windower.SendKeyUp(Keys.ESCAPE);
         }
     }
 }

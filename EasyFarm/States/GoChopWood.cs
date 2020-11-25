@@ -23,6 +23,8 @@ namespace EasyFarm.States
 
             if (new NeedSignet().Check(context)) return false;
             
+            if (new SellSomeJunk().Check(context)) return false;
+            
             if (context.Player.IsDead) return false;
 
             if (context.Player.HasAggro) return false;

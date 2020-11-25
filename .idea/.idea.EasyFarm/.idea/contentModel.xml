@@ -51,10 +51,15 @@
         </e>
         <e p="Context" t="Include">
           <e p="Craft.cs" t="Include" />
+          <e p="CraftingRecipe.cs" t="Include" />
           <e p="GameContext.cs" t="Include" />
           <e p="IGameContext.cs" t="Include" />
           <e p="IPlayer.cs" t="Include" />
+          <e p="IShop.cs" t="Include" />
+          <e p="Item.cs" t="Include" />
+          <e p="MenuBase.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="Shop.cs" t="Include" />
           <e p="WoodChopper.cs" t="Include" />
         </e>
         <e p="ConvertPosition.cs" t="Include" />
@@ -204,6 +209,7 @@
           <e p="PullState.cs" t="Include" />
           <e p="RestState.cs" t="Include" />
           <e p="Route.cs" t="Include" />
+          <e p="SellSomeJunk.cs" t="Include" />
           <e p="SetFightingState.cs" t="Include" />
           <e p="SetSearchNpcState.cs" t="Include" />
           <e p="SetTargetState.cs" t="Include" />

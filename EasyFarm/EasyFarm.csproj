@@ -191,6 +191,11 @@
     <Compile Include="Classes\INavigator.cs" />
     <Compile Include="Classes\Inventory.cs" />
     <Compile Include="Context\Craft.cs" />
+    <Compile Include="Context\CraftingRecipe.cs" />
+    <Compile Include="Context\IShop.cs" />
+    <Compile Include="Context\Item.cs" />
+    <Compile Include="Context\MenuBase.cs" />
+    <Compile Include="Context\Shop.cs" />
     <Compile Include="Context\WoodChopper.cs" />
     <Compile Include="ConvertPosition.cs" />
     <Compile Include="ffxi\Mover.cs" />
@@ -270,6 +275,7 @@
     <Compile Include="States\MapState.cs" />
     <Compile Include="States\DumpTreasureState.cs" />
     <Compile Include="States\LevelChangeState.cs" />
+    <Compile Include="States\SellSomeJunk.cs" />
     <Compile Include="States\SetSearchNpcState.cs" />
     <Compile Include="States\StateHistory.cs" />
     <Compile Include="States\StateLog.cs" />

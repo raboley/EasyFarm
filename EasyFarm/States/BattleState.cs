@@ -74,7 +74,7 @@ namespace EasyFarm.States
             catch (Exception e)
             {
 
-                LogViewModel.Write($"Error thrown when trying to recycle batte state: '{e}'");
+                LogViewModel.Write($"Error thrown when trying to recycle battle state: '{e}'");
             }
             
             // Cast only one action to prevent blocking curing. 

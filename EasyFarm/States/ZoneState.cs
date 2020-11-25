@@ -20,6 +20,7 @@ using System;
 using EasyFarm.Classes;
 using EasyFarm.Context;
 using MemoryAPI;
+using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.States
 {
@@ -31,16 +32,19 @@ namespace EasyFarm.States
 
         public override void Enter(IGameContext context)
         {
-            if (context.Zone.Name == Zone.Unknown.ToString())
-            {
-                // context.Zone = context.Player.Zone;
-            }
+            // if (context.Zone.Name == Zone.Unknown.ToString())
+            // {
+            //     // context.Zone = context.Player.Zone;
+            // }
         }
         
         public override bool Check(IGameContext context)
         {
+            if (context.Zone?.Map == null)
+                return false;
+            
             var zone = context.Player.Zone;
-            return ZoneChanged(zone.ToString(), context.Zone.Name) || IsZoning(context);
+            return ZoneChanged(zone.ToString(), context.Zone.Map.MapName) || IsZoning(context);
         }
         
         private bool ZoneChanged(string currentZone, string lastZone)

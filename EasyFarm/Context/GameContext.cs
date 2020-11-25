@@ -50,9 +50,11 @@ namespace EasyFarm.Context
             };
             Zone = new Pathfinder.Map.Zone("unknown");
             Craft = new Craft(api);
+            Shop = new Shop(api);
         }
 
         public Craft Craft { get; set; }
+        public IShop Shop { get; set; }
         public ZoneMapFactory ZoneMapFactory { get; set; }
         public ObservableCollection<Person> Npcs { get; set; }
         public ObservableCollection<Person> Mobs { get; set; }

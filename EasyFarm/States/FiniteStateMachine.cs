@@ -200,7 +200,7 @@ namespace EasyFarm.States
                         TimeWaiter.Pause(250);
                         // Need to fix up the battle stuff before adding this...
                         // Would be better if you didn't go through every state so mutual exclusion was required in each state...
-                        break;
+                        // break;
                     }
                 }
 
@@ -208,44 +208,6 @@ namespace EasyFarm.States
             }
 
             // ReSharper disable once FunctionNeverReturns
-        }
-    }
-
-    public class SellSomeJunk : BaseState
-    {
-        public override bool Check(IGameContext context)
-        {
-            return true;
-        }
-
-        public override void Run(IGameContext context)
-        {
-            IMemoryAPI fface = context.API;
-            IUnit npc = context.Memory.UnitService.GetClosestUnitByPartialName("Ostalie");
-            context.Navigator.InteractWithUnit(context, fface, npc);
-
-            // Choose sell
-            while (context.API.Dialog.DialogOptionCount != 2)
-                Thread.Sleep(100);
-
-            SelectSell(context);
-            Thread.Sleep(1000);
-            
-            
-
-
-            // Go through each item and sell all junk
-        }
-
-        private static void SelectSell(IGameContext context)
-        {
-            while (context.API.Dialog.DialogIndex != 2)
-            {
-                context.API.Windower.SendKeyPress(Keys.DOWN);
-                Thread.Sleep(100);
-            }
-
-            context.API.Windower.SendKeyPress(Keys.NUMPADENTER);
         }
     }
 }

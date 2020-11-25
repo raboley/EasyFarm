@@ -776,8 +776,8 @@ namespace MemoryAPI.Memory
                 return _api.Dialog.GetDialogText();
             }
 
-            
-
+            public DialogInfo DialogInfo => _api.Dialog.GetDialog();
+            public string DialogText => _api.Dialog.GetDialogText();
             public int DialogId => (int)_api.Dialog.DialogId;
             public int DialogIndex => (int)_api.Dialog.DialogIndex;
             public int DialogOptionCount => (int)_api.Dialog.DialogOptionCount;

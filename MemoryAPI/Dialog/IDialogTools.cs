@@ -16,6 +16,8 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 
+using EliteMMO.API;
+
 namespace MemoryAPI.Dialog
 {
     public interface IDialogTools
@@ -23,6 +25,8 @@ namespace MemoryAPI.Dialog
         int DialogId { get; }
         int DialogIndex { get; }
         int DialogOptionCount { get; }
+        EliteAPI.DialogInfo DialogInfo { get; }
+        string DialogText { get; }
 
         EliteMMO.API.EliteAPI.DialogInfo GetDialog();
         string GetDialogText();

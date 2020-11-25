@@ -51,5 +51,6 @@ namespace EasyFarm.Context
         PeopleOverseer NpcOverseer { get; set; }
         WoodChopper WoodChopper { get; set; }
         Craft Craft { get; set; }
+        IShop Shop { get; set; }
     }
 }
