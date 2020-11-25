@@ -76,6 +76,9 @@ namespace EasyFarm.States
             AddState(new GoChopWood() {Priority = 10});
             AddState(new CraftSomething() {Priority = 20});
 
+            // TODO: Lower priority
+            AddState(new SellSomeJunk() {Priority = 119});
+
 
             // AddState(new TestMoveState() { Priority = 10 });
 
@@ -140,6 +143,8 @@ namespace EasyFarm.States
                         Logger.Log(new LogEntry(LoggingEventType.Error, "FSM error", ex));
                         LogViewModel.Write("An error has occurred: please check easyfarm.log for more information");
                         AppServices.InformUser("An error occurred!");
+                        // I do want to write exception message for now.
+                        LogViewModel.Write(ex.Message);
                     }
                     finally
                     {
@@ -163,9 +168,9 @@ namespace EasyFarm.States
             {
                 // Sort the List, States may have updated Priorities.
                 _states.Sort();
-                
+
                 // watch for events that should break running.
-                
+
 
                 // Find a State that says it needs to run.
                 foreach (var mc in _states.Where(x => x.Enabled).ToList())
@@ -195,7 +200,7 @@ namespace EasyFarm.States
                         TimeWaiter.Pause(250);
                         // Need to fix up the battle stuff before adding this...
                         // Would be better if you didn't go through every state so mutual exclusion was required in each state...
-                        // break;
+                        break;
                     }
                 }
 
@@ -206,7 +211,7 @@ namespace EasyFarm.States
         }
     }
 
-    public class WalkStraight : BaseState
+    public class SellSomeJunk : BaseState
     {
         public override bool Check(IGameContext context)
         {
@@ -215,14 +220,32 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
-            DateTime duration = DateTime.Now.AddSeconds(3);
+            IMemoryAPI fface = context.API;
+            IUnit npc = context.Memory.UnitService.GetClosestUnitByPartialName("Ostalie");
+            context.Navigator.InteractWithUnit(context, fface, npc);
 
-            while (DateTime.Now < duration)
+            // Choose sell
+            while (context.API.Dialog.DialogOptionCount != 2)
+                Thread.Sleep(100);
+
+            SelectSell(context);
+            Thread.Sleep(1000);
+            
+            
+
+
+            // Go through each item and sell all junk
+        }
+
+        private static void SelectSell(IGameContext context)
+        {
+            while (context.API.Dialog.DialogIndex != 2)
             {
-                context.API.Windower.SendKeyDown(Keys.NUMPAD8);
+                context.API.Windower.SendKeyPress(Keys.DOWN);
+                Thread.Sleep(100);
             }
 
-            context.API.Windower.SendKeyUp(Keys.NUMPAD8);
+            context.API.Windower.SendKeyPress(Keys.NUMPADENTER);
         }
     }
 }
