@@ -21,6 +21,8 @@ namespace EasyFarm.States
 
             if (new RestState().Check(context)) return false;
 
+            if (new NeedSignet().Check(context)) return false;
+            
             if (context.Player.IsDead) return false;
 
             if (context.Player.HasAggro) return false;
@@ -76,11 +78,10 @@ namespace EasyFarm.States
             // TODO: Remove the if statement once I have a state for roaming around trying to make money.
             IUnit closeByLoggingPoint = null;
             if (HasHatchet(context))
-                closeByLoggingPoint = context.Memory.UnitService.NpcUnits.ToList()
-                    .FirstOrDefault(x => x.Name == "Logging Point");
+                closeByLoggingPoint = context.Memory.UnitService.GetClosestUnitByPartialName("Logging Point");
 
 
-            if (closeByLoggingPoint != null)
+            if (closeByLoggingPoint != null && closeByLoggingPoint.IsRendered )
                 context.WoodChopper.NextPoint = new Person(closeByLoggingPoint.Id, closeByLoggingPoint.Name,
                     GridMath.RoundVector3(closeByLoggingPoint.Position.To2DVector3()));
 
@@ -88,10 +89,10 @@ namespace EasyFarm.States
                 context.WoodChopper.NextPoint = context.WoodChopper.LoggingPoints.Dequeue();
 
 
-            context.Traveler.GoToPosition(context.WoodChopper.NextPoint.Position);
+            context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(context.WoodChopper.NextPoint.Position);
             
             // TODO: Make traveler stop path finding when someone has aggro.
-            // context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(context.WoodChopper.NextPoint.Position);
+            // context.Traveler.PathfindAndWalkTwoFarAwayWorldMapPosition(context.WoodChopper.NextPoint.Position);
             // Chop wood
 
             var distanceToLoggingPoint = GridMath.GetDistancePos(context.Traveler.Walker.CurrentPosition,
@@ -115,7 +116,13 @@ namespace EasyFarm.States
 
         private bool HasHatchet(IGameContext context)
         {
-            return context.Inventory.HaveItemInInventoryContainer("Hatchet");
+            if (context.Inventory.InventoryIsFull())
+                return false;
+
+            if (context.Inventory.HaveItemInInventoryContainer("Hatchet"))
+                return true;
+
+            return false;
         }
 
         private static void ChopTree(IGameContext context, IUnit loggingUnit)

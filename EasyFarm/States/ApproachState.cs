@@ -66,7 +66,7 @@ namespace EasyFarm.States
             // Has the user decided that we should approach targets?
             if (context.Config.IsApproachEnabled)
             {
-                context.Traveler.GoToPosition(GridMath.RoundVector3( context.Target.Position.To2DVector3()));
+                context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(GridMath.RoundVector3( context.Target.Position.To2DVector3()));
                 // Move to target if out of melee range. 
                 // context.API.Navigator.DistanceTolerance = context.Config.MeleeDistance;
                 // context.API.Navigator.GotoNPC(context.Target.Id, context.Config.IsObjectAvoidanceEnabled);

@@ -29,7 +29,7 @@ namespace EasyFarm.ffxi
 
         public Queue<Vector3> PositionHistory { get; }
 
-        public void WalkToPosition(Vector3 targetPosition)
+        public bool TryToWalkToPosition(Vector3 targetPosition)
         {
             var distance = Pathfinder.GridMath.GetDistancePos(CurrentPosition, targetPosition);
             int stuckCounter = 0;
@@ -61,14 +61,14 @@ namespace EasyFarm.ffxi
                 {
                     var unWalkablePosition = GetPositionInFrontOfMe(targetPosition); 
                     BackupWhenStuck(targetPosition);
-                    // TODO Remove for something better
-                    if (_context.Zone.Map.GetNodeFromWorldPoint(unWalkablePosition).Walkable == false)
-                        MoveToTheRight();
+                    // // TODO Remove for something better
+                    // if (_context.Zone.Map.GetNodeFromWorldPoint(unWalkablePosition).Walkable == false)
+                    //     MoveToTheRight();
                     
                     OnWalkerIsStuck(unWalkablePosition);
-                    // OnWalkerIsStuck(targetPosition);
+                    OnWalkerIsStuck(targetPosition);
                     Debug.WriteLine("Adding an unWalkable Position at:" + unWalkablePosition + " and: " + targetPosition);
-                   return;
+                   return false;
                 }
                 
                 distance = newDistance; 
@@ -78,6 +78,7 @@ namespace EasyFarm.ffxi
                 LookAtTargetPosition(targetPosition);
             }
             _context.API.Navigator.Reset();
+            return true;
         }
 
         private void MoveToTheRight()

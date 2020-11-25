@@ -50,7 +50,6 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
-            
             if (context.Traveler?.Zoning == true)
                 return;
             // context.Player.CurrentGoal = "Signet";
@@ -87,7 +86,7 @@ namespace EasyFarm.States
 
             if (GridMath.GetDistancePos(context.Traveler.Walker.CurrentPosition, signetNpc.Position) > 1)
                 return;
-            
+
             AskForSignet(context, fface, signetNpc);
         }
 
@@ -119,10 +118,24 @@ namespace EasyFarm.States
         {
             IUnit signetUnit = context.Memory.UnitService.GetClosestUnitByPartialName(signetNpc.Name);
             context.Navigator.InteractWithUnit(context, fface, signetUnit);
-            TimeWaiter.Pause(2000);
-            context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
-            TimeWaiter.Pause(5000);
-            context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
+
+            var lastThingSaid = LastThingSaid(context);
+            while (!lastThingSaid.Contains("I will bestow upon you"))
+            {
+                context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
+                TimeWaiter.Pause(1000);
+                lastThingSaid = LastThingSaid(context);
+            }
+
+            // wait for signet animation to be over
+            TimeWaiter.Pause(7000);
+        }
+
+        private static string LastThingSaid(IGameContext context)
+        {
+            var chat = context.API.Chat.ChatEntries.ToList();
+            var lastThingSaid = chat.LastOrDefault().Text;
+            return lastThingSaid;
         }
 
         private static bool HasSignet(IPlayerTools player)

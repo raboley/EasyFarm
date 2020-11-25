@@ -34,7 +34,7 @@ namespace EasyFarm.Monitors
             zonePersister.MapName = mapName;
 
 
-            _context.ZoneMapFactory.DefaultGridSize = new Vector2(1001f, 1001f);
+            _context.ZoneMapFactory.DefaultGridSize = new Vector2(2001f, 2001f);
             if (zonePersister.Exists())
             {
                 _context.Zone = zonePersister.Load<Pathfinder.Map.Zone>();

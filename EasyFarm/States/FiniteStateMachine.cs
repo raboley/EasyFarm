@@ -15,6 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,7 @@ namespace EasyFarm.States
             _fface = fface;
             _context = gameContext;
             //Create the states
-            
+
             // Fighting States
             AddState(new SetTargetState() {Priority = 10});
             AddState(new SetFightingState() {Priority = 10});
@@ -51,11 +52,11 @@ namespace EasyFarm.States
             AddState(new BattleState() {Priority = 3});
             AddState(new WeaponskillState() {Priority = 2});
             AddState(new PullState() {Priority = 4});
-            
-            
+
+
             // AddState( new GoFight() {Priority = 8});
             // AddState( new WalkStraight() {Priority = 0});
-            
+
             AddState(new DeadState() {Priority = 51});
             AddState(new ZoneState() {Priority = 51});
             AddState(new FollowState() {Priority = 5});
@@ -69,15 +70,15 @@ namespace EasyFarm.States
             // AddState(new DumpTreasureState() { Priority = 2 });
             // AddState(new MapState() {Priority = 5});
             // Needs Signet
-            AddState(new NeedSignet() { Priority = 2 });
-            
+            AddState(new NeedSignet() {Priority = 21});
+
             // The Finer Things
-            AddState(new GoChopWood() { Priority = 8 });
+            AddState(new GoChopWood() {Priority = 10});
             AddState(new CraftSomething() {Priority = 20});
-            
-            
+
+
             // AddState(new TestMoveState() { Priority = 10 });
-            
+
             // Inventory Is Full
             // Have some ingredients to craft
             // Hungry
@@ -98,6 +99,7 @@ namespace EasyFarm.States
             ReEnableStartState();
             RunFiniteStateMainWithThread();
         }
+
         private void ReEnableStartState()
         {
             var startEngineState = _states.FirstOrDefault(x => x.GetType() == typeof(StartEngineState));
@@ -161,6 +163,9 @@ namespace EasyFarm.States
             {
                 // Sort the List, States may have updated Priorities.
                 _states.Sort();
+                
+                // watch for events that should break running.
+                
 
                 // Find a State that says it needs to run.
                 foreach (var mc in _states.Where(x => x.Enabled).ToList())
@@ -172,12 +177,26 @@ namespace EasyFarm.States
                     // Run last state's exits method.
                     if (_cache[mc] != isRunnable)
                     {
-                        if (isRunnable) mc.Enter(_context);
-                        else mc.Exit(_context);
+                        if (isRunnable)
+                        {
+                            mc.Enter(_context);
+                        }
+                        else
+                        {
+                            mc.Exit(_context);
+                        }
+
                         _cache[mc] = isRunnable;
                     }
 
-                    if (isRunnable) mc.Run(_context);
+                    if (isRunnable)
+                    {
+                        mc.Run(_context);
+                        TimeWaiter.Pause(250);
+                        // Need to fix up the battle stuff before adding this...
+                        // Would be better if you didn't go through every state so mutual exclusion was required in each state...
+                        // break;
+                    }
                 }
 
                 TimeWaiter.Pause(250);
@@ -202,6 +221,7 @@ namespace EasyFarm.States
             {
                 context.API.Windower.SendKeyDown(Keys.NUMPAD8);
             }
+
             context.API.Windower.SendKeyUp(Keys.NUMPAD8);
         }
     }

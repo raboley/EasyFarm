@@ -463,6 +463,7 @@
       <e p="packages.config" t="Include" />
       <e p="Pathfinder.csproj" t="IncludeRecursive" />
       <e p="Pathing" t="Include">
+        <e p="IPathSmoother.cs" t="Include" />
         <e p="PathfinderMath.cs" t="Include" />
         <e p="Pathfinding.cs" t="Include" />
         <e p="WorldPathfinder.cs" t="Include" />
