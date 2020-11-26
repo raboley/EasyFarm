@@ -195,6 +195,7 @@
           <e p="DeadState.cs" t="Include" />
           <e p="DumpTreasureState.cs" t="Include" />
           <e p="EndState.cs" t="Include" />
+          <e p="ExploreZone.cs" t="Include" />
           <e p="FiniteStateMachine.cs" t="Include" />
           <e p="FollowState.cs" t="Include" />
           <e p="GameEngine.cs" t="Include" />

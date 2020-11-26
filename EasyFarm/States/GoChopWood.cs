@@ -13,8 +13,6 @@ namespace EasyFarm.States
 {
     public class GoChopWood : BaseState
     {
-        private static string _chopWoodZone = "Ronfaure_East";
-
         public override bool Check(IGameContext context)
         {
             if (context.Traveler == null) return false;
@@ -42,16 +40,17 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
+            context.WoodChopper.ChopWoodZone = "Ronfaure_East"; 
             context.Player.CurrentGoal = "Chop Wood";
-            GoToChopWoodZone(context);
+            context.WoodChopper.GoToChopWoodZone(context);
 
-            if (context.API.Player.Zone.ToString() != _chopWoodZone)
+            if (context.API.Player.Zone.ToString() != context.WoodChopper.ChopWoodZone)
                 return;
 
             if (context.Traveler.Zoning)
                 return;
 
-            if (context.Traveler.CurrentZone.Map.MapName != _chopWoodZone)
+            if (context.Traveler.CurrentZone.Map.MapName != context.WoodChopper.ChopWoodZone)
                 return;
 
             // Add logging points to queue if empty
@@ -112,8 +111,8 @@ namespace EasyFarm.States
                 return;
             }
 
-            if (HasHatchet(context))
-                ChopTree(context, loggingUnit);
+            if (HasHatchet(context)) 
+                WoodChopper.ChopTree(context, loggingUnit);
         }
 
         private bool HasHatchet(IGameContext context)
@@ -125,32 +124,6 @@ namespace EasyFarm.States
                 return true;
 
             return false;
-        }
-
-        private static void ChopTree(IGameContext context, IUnit loggingUnit)
-        {
-            context.Target = loggingUnit;
-            // Face mob. 
-            context.API.Navigator.FaceHeading(context.Target.Position);
-            context.API.Navigator.GotoNPC(context.Target.Id, context.Config.IsObjectAvoidanceEnabled);
-
-            // Target mob if not currently targeted. 
-            Player.SetTarget(context.API, context.Target);
-
-            LogViewModel.Write("Chopping down tree at: " + context.Target.Position);
-            context.API.Windower.SendString("/item Hatchet <t>");
-            Thread.Sleep(4000);
-        }
-
-        private static void GoToChopWoodZone(IGameContext context)
-        {
-            LogViewModel.Write("Going to go Chop Wood in: " + _chopWoodZone);
-            while (context.Traveler == null)
-            {
-                Thread.Sleep(100);
-            }
-
-            context.Traveler.GoToZone(_chopWoodZone);
         }
     }
 }

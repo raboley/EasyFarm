@@ -269,6 +269,7 @@
     </Compile>
     <Compile Include="Classes\NullUnit.cs" />
     <Compile Include="States\CraftSomething.cs" />
+    <Compile Include="States\ExploreZone.cs" />
     <Compile Include="States\GoChopWood.cs" />
     <Compile Include="States\GoFight.cs" />
     <Compile Include="States\NeedSignet.cs" />
