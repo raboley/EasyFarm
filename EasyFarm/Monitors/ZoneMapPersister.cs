@@ -1,10 +1,12 @@
 using System.IO;
+using System.Linq;
 using System.Numerics;
 using Castle.Core.Internal;
 using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.ViewModels;
 using MemoryAPI;
+using MemoryAPI.Navigation;
 using Pathfinder;
 using Pathfinder.Persistence;
 using Pathfinder.Travel;
@@ -30,21 +32,11 @@ namespace EasyFarm.Monitors
                 return;
 
             // Load up the Zone
-            var zonePersister = NewZonePersister();
-            zonePersister.MapName = mapName;
+            var zone = GetOrCreateNewZone(mapName, out var zonePersister);
 
+            _context.Zone = zone;
 
             _context.ZoneMapFactory.DefaultGridSize = new Vector2(2001f, 2001f);
-            if (zonePersister.Exists())
-            {
-                _context.Zone = zonePersister.Load<Pathfinder.Map.Zone>();
-                
-            }
-            else
-            {
-                _context.Zone = new Pathfinder.Map.Zone(mapName);
-            }
-
             _context.ZoneMapFactory.Persister = NewZoneMapPersister();
             LogViewModel.Write("Mapper thread loading up grid for: " + mapName);
             _context.Zone.Map = _context.ZoneMapFactory.LoadGridOrCreateNew(mapName);
@@ -64,6 +56,19 @@ namespace EasyFarm.Monitors
             }
 
             var lastPositionBeforeZone = ConvertPosition.RoundPositionToVector3(_context.API.Player.Position);
+
+            if (lastPositionBeforeZone == Vector3.Zero)
+            {
+                var positionHistoryList = _context.API.Player.PositionHistory.ToList();
+
+                for (int i = 0; i < positionHistoryList.Count; i++)
+                {
+                    lastPositionBeforeZone =  ConvertPosition.RoundPositionToVector3(positionHistoryList[i]);
+                    if (lastPositionBeforeZone != Vector3.Zero)
+                        break;
+                }
+            }
+
             if (lastPositionBeforeZone != Vector3.Zero)
             {
                 while (_context.API.Player.Zone == Zone.Unknown)
@@ -75,17 +80,46 @@ namespace EasyFarm.Monitors
                 {
                     TimeWaiter.Pause(100);
                 }
-                
+
 
                 if (!_context.Traveler.IsDead)
-                    _context.Zone.AddBoundary(mapName, lastPositionBeforeZone, _context.Player.Zone.ToString(),
-                    ConvertPosition.RoundPositionToVector3(_context.API.Player.Position));
+                {
+                    string newMapName = _context.API.Player.Zone.ToString();
+                    Vector3 newMapPosition = ConvertPosition.RoundPositionToVector3(_context.API.Player.Position);
+
+                    _context.Zone.AddBoundary(mapName, lastPositionBeforeZone, newMapName,
+                        newMapPosition);
+
+                    // Can't do new zone stuff because we end up in the middle of the zone.
+                    // var newZone = GetOrCreateNewZone(newMapName, out var newZonePersister);
+                    // newZone.AddBoundary(newMapName, newMapPosition, mapName, lastPositionBeforeZone);
+                    // newZonePersister.Save(newZone);
+                }
             }
 
             zonePersister.Save(_context.Zone);
             _context.ZoneMapFactory.Persister.Save(_context.Zone.Map);
             LogViewModel.Write("Saved map: " + mapName);
             _context.Traveler.IsDead = false;
+        }
+
+        private static Pathfinder.Map.Zone GetOrCreateNewZone(string mapName, out FilePersister zonePersister)
+        {
+            zonePersister = NewZonePersister();
+            zonePersister.MapName = mapName;
+
+
+            Pathfinder.Map.Zone zone;
+            if (zonePersister.Exists())
+            {
+                zone = zonePersister.Load<Pathfinder.Map.Zone>();
+            }
+            else
+            {
+                zone = new Pathfinder.Map.Zone(mapName);
+            }
+
+            return zone;
         }
 
         private bool IsZoning(IGameContext context) => context.Player.Str == 0;

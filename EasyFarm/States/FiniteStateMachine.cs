@@ -19,15 +19,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
 using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.Logging;
+using EasyFarm.Parsing;
 using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
 using EliteMMO.API;
 using MemoryAPI;
+using Pathfinder.Travel;
+using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.States
 {
@@ -44,6 +48,8 @@ namespace EasyFarm.States
             _fface = fface;
             _context = gameContext;
             //Create the states
+            
+            AddState(new ManualOverrideState() {Priority = 9999});
 
             // Fighting States
             AddState(new SetTargetState() {Priority = 10});
@@ -69,6 +75,10 @@ namespace EasyFarm.States
             AddState(new StartEngineState() {Priority = Constants.MaxPriority});
             // AddState(new DumpTreasureState() { Priority = 2 });
             // AddState(new MapState() {Priority = 5});
+
+
+            AddState(new ExploreZone() {Priority = 0});
+
             // Needs Signet
             AddState(new NeedSignet() {Priority = 21});
 
@@ -76,7 +86,6 @@ namespace EasyFarm.States
             AddState(new GoChopWood() {Priority = 10});
             AddState(new CraftSomething() {Priority = 20});
 
-            // TODO: Lower priority
             AddState(new SellSomeJunk() {Priority = 119});
 
 
@@ -208,6 +217,32 @@ namespace EasyFarm.States
             }
 
             // ReSharper disable once FunctionNeverReturns
+        }
+    }
+
+    public class ManualOverrideState : BaseState
+    {
+    }
+
+    public class ExploreZone : BaseState
+    {
+        public override bool Check(IGameContext context)
+        {
+            if (context.Traveler?.CurrentZone?.Map == null)
+                return false;
+
+            return true;
+        }
+
+        public override void Run(IGameContext context)
+        {
+            var zoneToExplore = "Ronfaure_East";
+            if (context.Traveler.CurrentZone.Map.MapName != zoneToExplore)
+                context.Traveler.GoToZone(zoneToExplore);
+            while (context.API.Player.Zone.ToString() == zoneToExplore)
+            {
+                context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(Vector3.Zero);
+            }
         }
     }
 }

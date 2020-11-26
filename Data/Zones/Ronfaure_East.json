@@ -112,6 +112,76 @@
         'Y': 0.0,
         'Z': -53.0
       }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 60.0,
+        'Y': 0.0,
+        'Z': -196.0
+      },
+      'ToPosition': {
+        'X': 84.0,
+        'Y': 0.0,
+        'Z': -205.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 60.0,
+        'Y': 0.0,
+        'Z': -194.0
+      },
+      'ToPosition': {
+        'X': 84.0,
+        'Y': 0.0,
+        'Z': -193.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 60.0,
+        'Y': 0.0,
+        'Z': -193.0
+      },
+      'ToPosition': {
+        'X': 84.0,
+        'Y': 0.0,
+        'Z': -195.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 60.0,
+        'Y': 0.0,
+        'Z': -198.0
+      },
+      'ToPosition': {
+        'X': 84.0,
+        'Y': 0.0,
+        'Z': -197.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 60.0,
+        'Y': 0.0,
+        'Z': -187.0
+      },
+      'ToPosition': {
+        'X': 84.0,
+        'Y': 0.0,
+        'Z': -198.0
+      }
     }
   ]
 }
