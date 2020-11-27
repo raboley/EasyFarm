@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -48,11 +49,11 @@ namespace EasyFarm.Monitors
                 var pos = GridMath.RoundVector3(new Vector3(_context.API.Player.PosX, _context.API.Player.PosY,
                     _context.API.Player.PosZ));
                 var node = _context.Zone.Map.GetNodeFromWorldPoint(pos);
-                if (_context.Zone.Map.UnknownNodes.Contains(node))
-                {
+                // if (_context.Zone.Map.UnknownNodes.Contains(node))
+                // {
                     _context.Zone.Map.AddKnownNode(node.WorldPosition);
-                    LogViewModel.Write("in map: " + _context.Zone.Name + " Adding position: " + node.WorldPosition);
-                }
+                    // Debug.Write("in map: " + _context.Zone.Name + " Adding position: " + node.WorldPosition);
+                // }
             }
 
             var lastPositionBeforeZone = ConvertPosition.RoundPositionToVector3(_context.API.Player.Position);

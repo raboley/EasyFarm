@@ -15,6 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ using System.Threading;
 using EliteMMO.API;
 using MemoryAPI.Chat;
 using MemoryAPI.Dialog;
+using MemoryAPI.Memory.EliteMMOWrapper;
 using MemoryAPI.Menu;
 using MemoryAPI.Navigation;
 using MemoryAPI.Resources;
@@ -32,6 +34,7 @@ using MemoryAPI.Windower;
 using Pathfinder;
 using Pathfinder.Map;
 using static EliteMMO.API.EliteAPI;
+using TradeMenuTools = MemoryAPI.Memory.EliteMMOWrapper.TradeMenuTools;
 
 
 namespace MemoryAPI.Memory
@@ -63,6 +66,7 @@ namespace MemoryAPI.Memory
             Menu = new MenuTools(eliteApi);
             Inventory = new InventoryTools(eliteApi);
             Craft = new EliteMMOWrapper.CraftMenuTools(eliteApi);
+            Trade = new TradeMenuTools(eliteApi);
 
             for (byte i = 0; i < 16; i++)
             {
@@ -85,10 +89,10 @@ namespace MemoryAPI.Memory
             public void FaceHeading(Position position)
             {
                 var player = _api.Entity.GetLocalPlayer();
-                var angle = (byte)(Math.Atan((position.Z - player.Z) / (position.X - player.X)) * -(128.0f / Math.PI));
+                var angle = (byte) (Math.Atan((position.Z - player.Z) / (position.X - player.X)) * -(128.0f / Math.PI));
                 if (player.X > position.X) angle += 128;
-                var radian = (float)angle / 255 * 2 * Math.PI;
-                _api.Entity.SetEntityHPosition(_api.Entity.LocalPlayerIndex, (float)radian);
+                var radian = (float) angle / 255 * 2 * Math.PI;
+                _api.Entity.SetEntityHPosition(_api.Entity.LocalPlayerIndex, (float) radian);
             }
 
             private double DistanceTo(Position position)
@@ -110,6 +114,7 @@ namespace MemoryAPI.Memory
                     Reset();
                     return true;
                 }
+
                 if (!keepRunning) Reset();
                 return false;
             }
@@ -131,7 +136,7 @@ namespace MemoryAPI.Memory
                 var entity = _api.GetCachedEntity(id);
                 var position = Helpers.ToPosition(entity.X, entity.Y, entity.Z, entity.H);
                 return position;
-            }            
+            }
 
             private bool MoveForwardTowardsPosition(Func<Position> targetPosition,
                 bool useObjectAvoidance, ZoneMap zoneMap)
@@ -145,7 +150,7 @@ namespace MemoryAPI.Memory
                 Stopwatch sw = new Stopwatch();
                 while (DistanceTo(targetPosition()) > DistanceTolerance && DateTime.Now < duration)
                 {
-                   sw.Start();
+                    sw.Start();
                     Debug.Write("Walking!");
                     SetViewMode(ViewMode.FirstPerson);
                     FaceHeading(targetPosition());
@@ -159,6 +164,7 @@ namespace MemoryAPI.Memory
                             return true;
                         }
                     }
+
                     sw.Stop();
                     Debug.Write("time to walk: " + sw.ElapsedMilliseconds);
                     // Thread.Sleep(100);
@@ -194,9 +200,9 @@ namespace MemoryAPI.Memory
 
             public void SetViewMode(ViewMode viewMode)
             {
-                if ((ViewMode)_api.Player.ViewMode != viewMode)
+                if ((ViewMode) _api.Player.ViewMode != viewMode)
                 {
-                    _api.Player.ViewMode = (int)viewMode;
+                    _api.Player.ViewMode = (int) viewMode;
                 }
             }
 
@@ -210,8 +216,9 @@ namespace MemoryAPI.Memory
                 if (IsStuck)
                 {
                     var player = _api.Entity.GetLocalPlayer();
-                    Debug.Write($"Player is stuck at X:{player.X} Y:{player.Y} Z:{player.Z} H:{player.H}" + Environment.NewLine); 
-                    
+                    Debug.Write($"Player is stuck at X:{player.X} Y:{player.Y} Z:{player.Z} H:{player.H}" +
+                                Environment.NewLine);
+
                     if (IsEngaged())
                     {
                         Disengage();
@@ -227,7 +234,6 @@ namespace MemoryAPI.Memory
                         return true;
                         // RequestNewPath();
                     }
-
                 }
 
                 return false;
@@ -239,12 +245,16 @@ namespace MemoryAPI.Memory
                 // Get the vector3 right in front of me
                 Vector3 positionInFrontOfMe = GetPositionInFrontOfMe(targetPosition);
                 Vector3 targetPositionVector3 = GetVectorFromPosition(targetPosition);
-                
+
 
                 // Add it to blocked paths for grid
-                Debug.Write($"Adding unWalkable node at: X:{positionInFrontOfMe.X} Y:{positionInFrontOfMe.Y} Z:{positionInFrontOfMe.Z}" + Environment.NewLine);  
+                Debug.Write(
+                    $"Adding unWalkable node at: X:{positionInFrontOfMe.X} Y:{positionInFrontOfMe.Y} Z:{positionInFrontOfMe.Z}" +
+                    Environment.NewLine);
                 zoneMap.AddUnWalkableNode(positionInFrontOfMe);
-                Debug.Write($"Adding unWalkable node at target position: X:{positionInFrontOfMe.X} Y:{positionInFrontOfMe.Y} Z:{positionInFrontOfMe.Z}" + Environment.NewLine);  
+                Debug.Write(
+                    $"Adding unWalkable node at target position: X:{positionInFrontOfMe.X} Y:{positionInFrontOfMe.Y} Z:{positionInFrontOfMe.Z}" +
+                    Environment.NewLine);
                 zoneMap.AddUnWalkableNode(targetPositionVector3);
             }
 
@@ -264,11 +274,11 @@ namespace MemoryAPI.Memory
                 var currentPosition = RoundPlayerPositionToGridPosition(_api.Player);
                 int x = GetNewXorY(currentPosition.X, targetPosition.X);
                 int y = GetNewXorY(currentPosition.Z, targetPosition.Z);
-                
+
                 var blockedPosition = new Vector3(x, 0, y);
                 return blockedPosition;
             }
-            
+
             private int GetNewXorY(float current, float target)
             {
                 int currentInt = GridMath.ConvertFromFloatToInt(current);
@@ -282,6 +292,7 @@ namespace MemoryAPI.Memory
 
                 return currentInt;
             }
+
             public static Vector3 RoundPlayerPositionToGridPosition(EliteAPI.PlayerTools player)
             {
                 Vector3 gridPosition = new Vector3
@@ -321,7 +332,7 @@ namespace MemoryAPI.Memory
             /// <returns></returns>
             private bool IsEngaged()
             {
-                return _api.Player.Status == (ulong)Status.Fighting;
+                return _api.Player.Status == (ulong) Status.Fighting;
             }
 
             /// <summary>
@@ -347,7 +358,7 @@ namespace MemoryAPI.Memory
                 float dir = -45;
                 while (IsStuck && attempts-- > 0)
                 {
-                    _api.Entity.GetLocalPlayer().H = _api.Player.H + (float)(Math.PI / 180 * dir);
+                    _api.Entity.GetLocalPlayer().H = _api.Player.H + (float) (Math.PI / 180 * dir);
                     _api.ThirdParty.KeyDown(Keys.NUMPAD8);
                     Thread.Sleep(TimeSpan.FromSeconds(2));
                     _api.ThirdParty.KeyUp(Keys.NUMPAD8);
@@ -358,6 +369,7 @@ namespace MemoryAPI.Memory
                         count = 0;
                     }
                 }
+
                 _api.ThirdParty.KeyUp(Keys.NUMPAD8);
             }
 
@@ -377,9 +389,15 @@ namespace MemoryAPI.Memory
                 _api = api;
             }
 
-            public int ClaimedID(int id) { return (int)_api.GetCachedEntity(id).ClaimID; }
+            public int ClaimedID(int id)
+            {
+                return (int) _api.GetCachedEntity(id).ClaimID;
+            }
 
-            public double Distance(int id) { return _api.GetCachedEntity(id).Distance; }
+            public double Distance(int id)
+            {
+                return _api.GetCachedEntity(id).Distance;
+            }
 
             public Position GetPosition(int id)
             {
@@ -387,11 +405,20 @@ namespace MemoryAPI.Memory
                 return Helpers.ToPosition(entity.X, entity.Y, entity.Z, entity.H);
             }
 
-            public short HPPCurrent(int id) { return _api.GetCachedEntity(id).HealthPercent; }
+            public short HPPCurrent(int id)
+            {
+                return _api.GetCachedEntity(id).HealthPercent;
+            }
 
-            public bool IsActive(int id) { return true; }
+            public bool IsActive(int id)
+            {
+                return true;
+            }
 
-            public bool IsClaimed(int id) { return _api.GetCachedEntity(id).ClaimID != 0; }
+            public bool IsClaimed(int id)
+            {
+                return _api.GetCachedEntity(id).ClaimID != 0;
+            }
 
             public int PetID(int id) => _api.GetCachedEntity(id).PetIndex;
 
@@ -407,7 +434,10 @@ namespace MemoryAPI.Memory
                 return (_api.GetCachedEntity(id).Render0000 & 0x200) == 0x200;
             }
 
-            public string Name(int id) { return _api.GetCachedEntity(id).Name; }
+            public string Name(int id)
+            {
+                return _api.GetCachedEntity(id).Name;
+            }
 
             public NpcType NPCType(int id)
             {
@@ -415,15 +445,24 @@ namespace MemoryAPI.Memory
                 return Helpers.GetNpcType(entity);
             }
 
-            public float PosX(int id) { return _api.GetCachedEntity(id).X; }
+            public float PosX(int id)
+            {
+                return _api.GetCachedEntity(id).X;
+            }
 
-            public float PosY(int id) { return _api.GetCachedEntity(id).Y; }
+            public float PosY(int id)
+            {
+                return _api.GetCachedEntity(id).Y;
+            }
 
-            public float PosZ(int id) { return _api.GetCachedEntity(id).Z; }
+            public float PosZ(int id)
+            {
+                return _api.GetCachedEntity(id).Z;
+            }
 
             public Status Status(int id)
             {
-                var status = (EntityStatus)_api.GetCachedEntity(id).Status;
+                var status = (EntityStatus) _api.GetCachedEntity(id).Status;
                 return Helpers.ToStatus(status);
             }
         }
@@ -450,23 +489,23 @@ namespace MemoryAPI.Memory
 
             public bool UnitPresent => Convert.ToBoolean(Unit.Active);
 
-            public int ServerID => (int)Unit.ID;
+            public int ServerID => (int) Unit.ID;
 
             public string Name => Unit.Name;
 
-            public int HPCurrent => (int)Unit.CurrentHP;
+            public int HPCurrent => (int) Unit.CurrentHP;
 
             public int HPPCurrent => Unit.CurrentHPP;
 
-            public int MPCurrent => (int)Unit.CurrentMP;
+            public int MPCurrent => (int) Unit.CurrentMP;
 
             public int MPPCurrent => Unit.CurrentMPP;
 
-            public int TPCurrent => (int)Unit.CurrentTP;
+            public int TPCurrent => (int) Unit.CurrentTP;
 
-            public Job Job => (Job)Unit.MainJob;
+            public Job Job => (Job) Unit.MainJob;
 
-            public Job SubJob => (Job)Unit.SubJob;
+            public Job SubJob => (Job) Unit.SubJob;
 
             public NpcType NpcType
             {
@@ -504,27 +543,28 @@ namespace MemoryAPI.Memory
                 _api = api;
             }
 
-            public Nations Nation => (Nations)_api.Player.Nation;
+            public Nations Nation => (Nations) _api.Player.Nation;
             public ConcurrentQueue<Position> PositionHistory { get; set; } = new ConcurrentQueue<Position>();
+
             public bool IsMoving()
             {
                 var myPosHistory = PositionHistory.ToList();
-                
+
                 var changeInX = myPosHistory.Average(positon => positon.X) - PosX;
                 var changeInZ = myPosHistory.Average(position => position.Z) - PosZ;
                 var dist = Math.Abs(changeInX) + Math.Abs(changeInZ) > 0.5;
                 return dist;
-            } 
-            
+            }
+
             public float CastPercentEx => (_api.CastBar.Percent * 100);
 
-            public int HPPCurrent => (int)_api.Player.HPP;
+            public int HPPCurrent => (int) _api.Player.HPP;
 
             public int ID => _api.Player.ServerId;
 
-            public int MPCurrent => (int)_api.Player.MP;
+            public int MPCurrent => (int) _api.Player.MP;
 
-            public int MPPCurrent => (int)_api.Player.MPP;
+            public int MPPCurrent => (int) _api.Player.MPP;
 
             public string Name => _api.Player.Name;
 
@@ -566,52 +606,51 @@ namespace MemoryAPI.Memory
                 }
             }
 
-            public Status Status => Helpers.ToStatus((EntityStatus)_api.Player.Status);
+            public Status Status => Helpers.ToStatus((EntityStatus) _api.Player.Status);
 
             public StatusEffect[] StatusEffects
             {
-                get
-                {
-                    return _api.Player.Buffs.Select(x => (StatusEffect)x).ToArray();
-                }
+                get { return _api.Player.Buffs.Select(x => (StatusEffect) x).ToArray(); }
             }
 
-            public int TPCurrent => (int)_api.Player.TP;
+            public int TPCurrent => (int) _api.Player.TP;
 
-            public int Homepoint => (int)_api.Player.Homepoint;
+            public int Homepoint => (int) _api.Player.Homepoint;
 
-            public Zone Zone => (Zone)_api.Player.ZoneId;
+            public Zone Zone => (Zone) _api.Player.ZoneId;
 
-            public Job Job => (Job)_api.Player.MainJob;
+            public Job Job => (Job) _api.Player.MainJob;
 
-            public Job SubJob => (Job)_api.Player.SubJob;
+            public Job SubJob => (Job) _api.Player.SubJob;
 
-            public int JobLevel => (int)_api.Player.MainJobLevel;
+            public int JobLevel => (int) _api.Player.MainJobLevel;
 
-            public int SubJobLevel => (int)_api.Player.SubJobLevel;
+            public int SubJobLevel => (int) _api.Player.SubJobLevel;
 
-            public List<EliteMMO.API.EliteAPI.InventoryItem> Equipment {
+            public List<EliteMMO.API.EliteAPI.InventoryItem> Equipment
+            {
                 get
                 {
                     List<EliteMMO.API.EliteAPI.InventoryItem> equips = new List<EliteMMO.API.EliteAPI.InventoryItem>();
                     //return equips;
                     for (int i = 0; i < 17; i++)
                     {
-                        equips.Add((EliteMMO.API.EliteAPI.InventoryItem)_api.Inventory.GetEquippedItem(i));
-                        
+                        equips.Add((EliteMMO.API.EliteAPI.InventoryItem) _api.Inventory.GetEquippedItem(i));
                     }
+
                     return equips;
                 }
             }
 
-            public int MeritPoints => (int)_api.Player.MeritPoints;
+            public int MeritPoints => (int) _api.Player.MeritPoints;
+
             public Zone HomePoint
             {
                 get
                 {
-                    int zoneId = (int)_api.Player.Homepoint;
-                    Zone zone = (Zone)zoneId;
-                    return  zone;
+                    int zoneId = (int) _api.Player.Homepoint;
+                    Zone zone = (Zone) zoneId;
+                    return zone;
                 }
             }
         }
@@ -625,7 +664,7 @@ namespace MemoryAPI.Memory
                 _api = api;
             }
 
-            public int ID => (int)_api.Target.GetTargetInfo().TargetIndex;
+            public int ID => (int) _api.Target.GetTargetInfo().TargetIndex;
 
             public bool SetNPCTarget(int index)
             {
@@ -701,10 +740,17 @@ namespace MemoryAPI.Memory
             private void QueueChatEntries()
             {
                 EliteAPI.ChatEntry chatEntry;
-                while ((chatEntry =  _api.Chat.GetNextChatLine()) != null)
+                while ((chatEntry = _api.Chat.GetNextChatLine()) != null)
                 {
                     ChatEntries.Enqueue(chatEntry);
                 }
+            }
+
+            public string LastThingSaid()
+            {
+                var chat = ChatEntries.ToList();
+                var lastThingSaid = chat.LastOrDefault()?.Text;
+                return lastThingSaid;
             }
         }
 
@@ -735,26 +781,158 @@ namespace MemoryAPI.Memory
                 _api = api;
             }
 
-            public int HPPCurrent => (int)_api.Player.HPP;
+            public int HPPCurrent => (int) _api.Player.HPP;
 
-            public bool IsMenuOpen => (bool)_api.Menu.IsMenuOpen;
-            public int MenuItemCount => (int)_api.Menu.MenuItemCount;
+            public bool IsMenuOpen => (bool) _api.Menu.IsMenuOpen;
+            public int MenuItemCount => (int) _api.Menu.MenuItemCount;
+
             public int MenuIndex
             {
-                get
-                {
-                    return (int)_api.Menu.MenuIndex;
-                }
-                set
-                {
-                    _api.Menu.MenuIndex = value;
-                }
+                get { return (int) _api.Menu.MenuIndex; }
+                set { _api.Menu.MenuIndex = value; }
             }
 
-            public string MenuName => (string)_api.Menu.MenuName;
-            public string HelpName => (string)_api.Menu.HelpName;
-            public string HelpDescription => (string)_api.Menu.HelpDescription;
+            public string MenuName => (string) _api.Menu.MenuName;
+            public string HelpName => (string) _api.Menu.HelpName;
+            public string HelpDescription => (string) _api.Menu.HelpDescription;
 
+            public void OpenTradeMenu()
+            {
+                OpenMenuByName("Trade");
+            }
+
+            protected void Enter()
+            {
+                _api.ThirdParty.KeyPress(Keys.NUMPADENTER);
+                Thread.Sleep(100);
+            }
+
+            public void Right()
+            {
+                _api.ThirdParty.KeyPress(Keys.RIGHT);
+                Thread.Sleep(100);
+            }
+
+            protected void Left()
+            {
+                _api.ThirdParty.KeyPress(Keys.LEFT);
+                Thread.Sleep(100);
+            }
+
+            protected void CloseMenu()
+            {
+                if (_api.CraftMenu.IsCraftMenuOpen || _api.TradeMenu.IsTradeMenuOpen)
+                {
+                    _api.ThirdParty.KeyPress(Keys.ESCAPE);
+                    Thread.Sleep(100);
+                    Enter();
+                }
+
+
+                while (_api.Menu.IsMenuOpen)
+                {
+                    _api.ThirdParty.KeyPress(Keys.ESCAPE);
+                    Thread.Sleep(100);
+                }
+
+                Thread.Sleep(100);
+            }
+
+            protected void Up()
+            {
+                _api.ThirdParty.KeyPress(Keys.UP);
+                Thread.Sleep(100);
+            }
+
+            protected void ChooseCrystalSynthesis()
+            {
+                while (_api.Menu.MenuItemCount > 2)
+                {
+                    Thread.Sleep(10);
+                }
+
+                while (_api.Menu.MenuIndex != 1)
+                {
+                    Down();
+                }
+
+                Thread.Sleep(100);
+
+                Select();
+            }
+
+            protected void Select()
+            {
+                _api.ThirdParty.KeyPress(Keys.NUMPADENTER);
+                Thread.Sleep(100);
+            }
+
+            public void OpenSynthesisMenu()
+            {
+                const string synthesisMenuHelpName = "Synthesis";
+                OpenMenuByName(synthesisMenuHelpName);
+            }
+
+            public void OpenMenuByName(string menuHelpName)
+            {
+                while (_api.Menu.HelpName != menuHelpName)
+                {
+                    RefreshMenuInCaseSomewhereWeird();
+                    
+                    var startIndex = _api.Menu.MenuIndex;
+                    Down();
+                    while (startIndex != _api.Menu.MenuIndex)
+                    {
+                        if (_api.Menu.HelpName == menuHelpName)
+                            break;
+
+                        Down();
+                    }
+
+                    if (_api.Menu.HelpName == menuHelpName)
+                        break;
+
+                    _api.ThirdParty.KeyPress(Keys.RIGHT);
+                    Thread.Sleep(100);
+                }
+
+                Select();
+            }
+
+            public void ClickTrade()
+            {
+                HighlightTradeAcceptButton();
+                Enter();
+                Thread.Sleep(1000);
+            }
+
+            private void HighlightTradeAcceptButton()
+            {
+                _api.Menu.MenuIndex = 9;
+                Thread.Sleep(100);
+            }
+
+            protected void Down()
+            {
+                _api.ThirdParty.KeyPress(Keys.DOWN);
+                Thread.Sleep(100);
+            }
+
+            private void RefreshMenuInCaseSomewhereWeird()
+            {
+                if (_api.Menu.IsMenuOpen)
+                    CloseMenu();
+
+                _api.ThirdParty.KeyPress(Keys.MINUS);
+            }
+
+            protected void ResetMenu()
+            {
+                _api.ThirdParty.KeyUp(Keys.UP);
+                _api.ThirdParty.KeyUp(Keys.DOWN);
+                _api.ThirdParty.KeyUp(Keys.RIGHT);
+                _api.ThirdParty.KeyUp(Keys.ESCAPE);
+            }
         }
 
         public class DialogTools : IDialogTools
@@ -778,18 +956,9 @@ namespace MemoryAPI.Memory
 
             public DialogInfo DialogInfo => _api.Dialog.GetDialog();
             public string DialogText => _api.Dialog.GetDialogText();
-            public int DialogId => (int)_api.Dialog.DialogId;
-            public int DialogIndex => (int)_api.Dialog.DialogIndex;
-            public int DialogOptionCount => (int)_api.Dialog.DialogOptionCount;
-
+            public int DialogId => (int) _api.Dialog.DialogId;
+            public int DialogIndex => (int) _api.Dialog.DialogIndex;
+            public int DialogOptionCount => (int) _api.Dialog.DialogOptionCount;
         }
     }
-}
-
-public struct WorldPoint
-{
-    public float X { get; set; }
-    public float Y { get; set; }
-    public float Z { get; set; }
-
 }

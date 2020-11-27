@@ -23,5 +23,6 @@ namespace MemoryAPI.Chat
     public interface IChatTools
     {
         Queue<EliteAPI.ChatEntry> ChatEntries { get; set; }
+        string LastThingSaid();
     }
 }

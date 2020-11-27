@@ -194,8 +194,11 @@
     <Compile Include="Context\CraftingRecipe.cs" />
     <Compile Include="Context\IShop.cs" />
     <Compile Include="Context\Item.cs" />
+    <Compile Include="Context\ITradeMenu.cs" />
     <Compile Include="Context\MenuBase.cs" />
     <Compile Include="Context\Shop.cs" />
+    <Compile Include="Context\TradeItem.cs" />
+    <Compile Include="Context\TradeMenu.cs" />
     <Compile Include="Context\WoodChopper.cs" />
     <Compile Include="ConvertPosition.cs" />
     <Compile Include="ffxi\Mover.cs" />
@@ -269,9 +272,11 @@
     </Compile>
     <Compile Include="Classes\NullUnit.cs" />
     <Compile Include="States\CraftSomething.cs" />
+    <Compile Include="States\DoQuest.cs" />
     <Compile Include="States\ExploreZone.cs" />
     <Compile Include="States\GoChopWood.cs" />
     <Compile Include="States\GoFight.cs" />
+    <Compile Include="States\HuntNotoriusMonster.cs" />
     <Compile Include="States\NeedSignet.cs" />
     <Compile Include="States\MapState.cs" />
     <Compile Include="States\DumpTreasureState.cs" />

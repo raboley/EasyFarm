@@ -15,6 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -51,6 +52,7 @@ namespace EasyFarm.Context
             Zone = new Pathfinder.Map.Zone("unknown");
             Craft = new Craft(api);
             Shop = new Shop(api);
+            // Trade = new TradeMenu(api);
         }
 
         public Craft Craft { get; set; }
@@ -67,6 +69,7 @@ namespace EasyFarm.Context
         public Boolean IsFighting { get; set; }
         public Pathfinder.Map.Zone Zone { get; set; }
         public IInventory Inventory { get; set; }
+        // public ITradeMenu Trade { get; set; }
 
         public IList<IUnit> Units
         {

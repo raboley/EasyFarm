@@ -15,6 +15,8 @@ namespace EasyFarm.Classes
             _api = api;
         }
 
+
+        
         public bool InventoryIsFull(int InventoryContainerId = 0)
         {
             if (_api.Inventory.GetContainerCount(InventoryContainerId) == _api.Inventory.GetContainerMaxCount(InventoryContainerId))
@@ -46,7 +48,7 @@ namespace EasyFarm.Classes
             return items.Where(item => item.Name[0].ToLower().Contains(itemPattern.ToLower())).ToList();
         }
 
-        private List<IItem> GetItemsFromContainer(int InventoryContainerId = 0)
+        public List<IItem> GetItemsFromContainer(int InventoryContainerId = 0)
         {
             List<IItem> items = new List<IItem>();
             var maxCount = _api.Inventory.GetContainerMaxCount(InventoryContainerId);

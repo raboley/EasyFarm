@@ -7,6 +7,7 @@ using MemoryAPI;
 using Pathfinder;
 using Pathfinder.People;
 using Pathfinder.Travel;
+using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.Monitors
 {
@@ -82,6 +83,7 @@ namespace EasyFarm.Monitors
                 while (_context.Zone?.Map?.MapName != mapName)
                     Thread.Sleep(100);
 
+                _context.Traveler.World.Zones = new List<Zone>();
                 _context.Traveler.World.Zones.Add(_context.Zone);
                 _context.Traveler.CurrentZone = _context.Zone;
                 
@@ -94,6 +96,7 @@ namespace EasyFarm.Monitors
                 while (_context.Npcs == null)
                     Thread.Sleep(100);
 
+                _context.Traveler.World.Npcs = new List<Person>();
                 _context.Traveler.World.Npcs.AddRange(_context.Npcs);
                 LogViewModel.Write("Traveler setup for Zone: " + mapName);
                 _context.Traveler.Zoning = false;

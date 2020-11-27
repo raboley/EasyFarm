@@ -40,6 +40,7 @@ namespace MemoryAPI
         IDialogTools Dialog { get; set; }
         IInventoryTools Inventory { get; set; }
         ICraftMenuTools Craft { get; set; }
+        ITradeMenuTools Trade { get; set; }
         string ConfigFilePath { get; set; }
     }
 }

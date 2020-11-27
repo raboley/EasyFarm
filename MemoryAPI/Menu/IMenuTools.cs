@@ -20,11 +20,16 @@ namespace MemoryAPI.Menu
 {
     public interface IMenuTools
     {
+        int HPPCurrent { get; }
         bool IsMenuOpen { get; }
         int MenuItemCount { get; }
         int MenuIndex { get; set; }
         string MenuName { get; }
         string HelpName { get; }
         string HelpDescription { get; }
+        void OpenTradeMenu();
+        void Right();
+        void ClickTrade();
+        void OpenSynthesisMenu();
     }
 }

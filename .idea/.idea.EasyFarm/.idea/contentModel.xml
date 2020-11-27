@@ -57,9 +57,12 @@
           <e p="IPlayer.cs" t="Include" />
           <e p="IShop.cs" t="Include" />
           <e p="Item.cs" t="Include" />
+          <e p="ITradeMenu.cs" t="Include" />
           <e p="MenuBase.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Shop.cs" t="Include" />
+          <e p="TradeItem.cs" t="Include" />
+          <e p="TradeMenu.cs" t="Include" />
           <e p="WoodChopper.cs" t="Include" />
         </e>
         <e p="ConvertPosition.cs" t="Include" />
@@ -193,6 +196,7 @@
           <e p="BattleState.cs" t="Include" />
           <e p="CraftSomething.cs" t="Include" />
           <e p="DeadState.cs" t="Include" />
+          <e p="DoQuest.cs" t="Include" />
           <e p="DumpTreasureState.cs" t="Include" />
           <e p="EndState.cs" t="Include" />
           <e p="ExploreZone.cs" t="Include" />
@@ -202,6 +206,7 @@
           <e p="GoChopWood.cs" t="Include" />
           <e p="GoFight.cs" t="Include" />
           <e p="HealingState.cs" t="Include" />
+          <e p="HuntNotoriusMonster.cs" t="Include" />
           <e p="IState.cs" t="Include" />
           <e p="LevelChangeState.cs" t="Include" />
           <e p="MapState.cs" t="Include" />
@@ -403,6 +408,9 @@
           <e p="EliteMMOWrapper" t="Include">
             <e p="CraftMenuTools.cs" t="Include" />
             <e p="ICraftMenuTools.cs" t="Include" />
+            <e p="ITradeMenuTools.cs" t="Include" />
+            <e p="TradeMenuTools.cs" t="Include" />
+            <e p="WorldPoint.cs" t="Include" />
           </e>
           <e p="EliteMMOWrapper.cs" t="Include" />
           <e p="EliteMmoWrapper.InventoryTools.cs" t="Include" />
@@ -470,6 +478,7 @@
       <e p="packages.config" t="Include" />
       <e p="Pathfinder.csproj" t="IncludeRecursive" />
       <e p="Pathing" t="Include">
+        <e p="IPathfindingStyle.cs" t="Include" />
         <e p="IPathSmoother.cs" t="Include" />
         <e p="PathfinderMath.cs" t="Include" />
         <e p="Pathfinding.cs" t="Include" />

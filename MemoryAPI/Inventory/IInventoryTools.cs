@@ -33,11 +33,14 @@ namespace MemoryAPI.Inventory
         int GetContainerMaxCount(int containerId);
         EliteAPI.InventoryItem GetEquippedItem(int slotId);
         bool SetBazaarPrice(int price);
-        bool InventoryIsFull(int InventoryContainerId = 0);
-        bool HaveItemInInventoryContainer(string itemPattern, int InventoryContainerId = 0);
-        List<EliteAPI.IItem> GetMatchingItemsFromContainer(string itemPattern, int InventoryContainerId = 0);
+        int? GetItemIdFromName(string itemPattern, int inventoryContainerId = 0);
+        EliteAPI.TradeItem GetFirstMatchingTradeItem(string itemPattern);
+        bool InventoryIsFull(int inventoryContainerId = 0);
+        bool HaveItemInInventoryContainer(string itemPattern, int inventoryContainerId = 0);
+        List<EliteAPI.IItem> GetMatchingItemsFromContainer(string itemPattern, int inventoryContainerId = 0);
         List<EliteAPI.IItem> GetItemsFromContainer(int InventoryContainerId = 0);
         List<EliteAPI.InventoryItem> GetInventoryItemsFromContainer(int InventoryContainerId = 0);
+        List<EliteAPI.InventoryItem> GetMatchingInventoryItemsFromContainer(string itemPattern, int inventoryContainerId = 0);
         int GetCountOfItemsInContainer(string itemPattern, int InventoryContainerId = 0);
     }
 }

@@ -119,24 +119,16 @@ namespace EasyFarm.States
             IUnit signetUnit = context.Memory.UnitService.GetClosestUnitByPartialName(signetNpc.Name);
             context.Navigator.InteractWithUnit(context, fface, signetUnit);
 
-            var lastThingSaid = LastThingSaid(context);
-            while (!lastThingSaid.Contains("I will bestow upon you"))
+            while (!context.API.Chat.LastThingSaid().Contains("I will bestow upon you"))
             {
                 context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
                 TimeWaiter.Pause(1000);
-                lastThingSaid = LastThingSaid(context);
             }
 
             // wait for signet animation to be over
             TimeWaiter.Pause(7000);
         }
 
-        private static string LastThingSaid(IGameContext context)
-        {
-            var chat = context.API.Chat.ChatEntries.ToList();
-            var lastThingSaid = chat.LastOrDefault().Text;
-            return lastThingSaid;
-        }
 
         private static bool HasSignet(IPlayerTools player)
         {

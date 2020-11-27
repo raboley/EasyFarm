@@ -37,13 +37,11 @@ namespace EasyFarm.Context
             for (int i = 0; i < recipe.RequiredItems.Count; i++)
             {
                 var recipeItem = recipe.RequiredItems[i];
-
-                var item = _context.Inventory.GetMatchingItemsFromContainer(recipeItem.Name);
-                if (item.Count == 0)
+                var itemId = _context.Inventory.GetItemIdFromName(recipeItem.Name);
+                if (itemId == null)
                     return false;
-                var itemId = item[0].ItemID;
                 
-                var inventoryItem = itemsInInventory.FirstOrDefault(x => x.Id == itemId);
+                var inventoryItem = itemsInInventory.FirstOrDefault(x => x.Id == (int) itemId);
                 if (inventoryItem == null)
                     return false;
                 
@@ -66,7 +64,8 @@ namespace EasyFarm.Context
         public void AttemptToCraft(CraftingRecipe recipe)
         {
             ResetMenu();
-            OpenCraftingMenu();
+            _context.Menu.OpenSynthesisMenu();
+            ChooseCrystalSynthesis();
 
             // Select Appropriate Crystal
             SelectCrystalToCraftWith(recipe.Crystal);
@@ -110,10 +109,9 @@ namespace EasyFarm.Context
 
 
 
-        private void OpenCraftingMenu()
+        public void OpenCraftingMenu()
         {
             OpenSynthesisMenu();
-            ChooseCrystalSynthesis();
         }
 
         private void SelectCrystalToCraftWith(string crystal)

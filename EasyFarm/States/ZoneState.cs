@@ -71,6 +71,8 @@ namespace EasyFarm.States
         {
             // Set new currentZone.
             // context.Zone = context.Player.Zone;
+            if (context.Zone?.Map == null)
+                return;
             var lastZone = context.Traveler.CurrentZone.Map.MapName;
 
             // Stop program from running to next waypoint.

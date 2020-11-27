@@ -56,6 +56,7 @@ namespace MemoryAPI.Memory
         public IMenuTools Menu { get; set; }
         
         public IInventoryTools Inventory { get; set; }
+        public ITradeMenuTools Trade { get; set; }
         public string ConfigFilePath { get; set; }
         public ICraftMenuTools Craft { get; set; }
 

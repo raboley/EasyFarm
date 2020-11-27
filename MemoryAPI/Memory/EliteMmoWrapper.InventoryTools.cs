@@ -58,11 +58,36 @@ namespace MemoryAPI.Memory
             {
                 return _api.Inventory.SetBazaarPrice(price);
             }
-
             
-            public bool InventoryIsFull(int InventoryContainerId = 0)
+            public int? GetItemIdFromName(string itemPattern, int inventoryContainerId = 0)
+            {
+                var item = GetMatchingItemsFromContainer(itemPattern, inventoryContainerId);
+                if (item.Count == 0)
+                    return null;
+           
+                return (int) item[0].ItemID;
+            }
+
+            public EliteAPI.TradeItem GetFirstMatchingTradeItem(string itemPattern)
+            {
+                var tradeItem = new EliteAPI.TradeItem();
+                
+                var items = GetMatchingInventoryItemsFromContainer(itemPattern);
+                if (items.Count == 0)
+                    return tradeItem;
+                
+                var item = items.FirstOrDefault();
+                tradeItem.Index = item.Index;
+                tradeItem.ItemCount = (byte) item.Count;
+                tradeItem.ItemId = item.Id;
+                tradeItem.ItemIndex = (byte) item.Index;
+
+                return tradeItem;
+            }
+            
+            public bool InventoryIsFull(int inventoryContainerId = 0)
         {
-            if (_api.Inventory.GetContainerCount(InventoryContainerId) == _api.Inventory.GetContainerMaxCount(InventoryContainerId))
+            if (_api.Inventory.GetContainerCount(inventoryContainerId) == _api.Inventory.GetContainerMaxCount(inventoryContainerId))
             {
                 return true;
             }
@@ -72,7 +97,7 @@ namespace MemoryAPI.Memory
             }
         }
 
-        public bool HaveItemInInventoryContainer(string itemPattern, int InventoryContainerId = 0)
+        public bool HaveItemInInventoryContainer(string itemPattern, int inventoryContainerId = 0)
         {
             var itemInInventory = GetMatchingItemsFromContainer(itemPattern);
             if (itemInInventory.Any())
@@ -85,7 +110,7 @@ namespace MemoryAPI.Memory
             }
         }
 
-        public List<EliteAPI.IItem> GetMatchingItemsFromContainer(string itemPattern, int InventoryContainerId = 0)
+        public List<EliteAPI.IItem> GetMatchingItemsFromContainer(string itemPattern, int inventoryContainerId = 0)
         {
             List<EliteAPI.IItem> items = GetItemsFromContainer();
             return items.Where(item => item.Name[0].ToLower().Contains(itemPattern.ToLower())).ToList();
@@ -125,7 +150,15 @@ namespace MemoryAPI.Memory
 
             return items;
         }
-
+        public List<EliteAPI.InventoryItem> GetMatchingInventoryItemsFromContainer(string itemPattern, int inventoryContainerId = 0)
+        {
+            List<EliteAPI.InventoryItem> items = GetInventoryItemsFromContainer();
+            var id = GetItemIdFromName(itemPattern, inventoryContainerId);
+            if (id == null)
+                return items;
+            
+            return items.FindAll(item => item.Id == (ushort) id) ;
+        }
         public int GetCountOfItemsInContainer(string itemPattern, int InventoryContainerId = 0)
         {
             int count = 0;

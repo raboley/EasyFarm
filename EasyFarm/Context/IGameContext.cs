@@ -52,5 +52,6 @@ namespace EasyFarm.Context
         WoodChopper WoodChopper { get; set; }
         Craft Craft { get; set; }
         IShop Shop { get; set; }
+        // ITradeMenu Trade { get; set; }
     }
 }

@@ -63,6 +63,8 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
+            // fix bug to change target on aggro from someone else
+            // fix bug where approach doesn't seem to work. it only works because we are usually going to some other place.
             // Has the user decided that we should approach targets?
             if (context.Config.IsApproachEnabled)
             {

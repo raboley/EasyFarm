@@ -48,8 +48,9 @@ namespace EasyFarm.States
             junkItems.Add("Shall Shell");
             junkItems.Add("Grass Cloth");
             junkItems.Add("Grass Thread");
-            junkItems.Add("Rabbit Hide");
+            // junkItems.Add("Rabbit Hide");
             junkItems.Add("Wild Onion");
+            junkItems.Add("Chestnut");
             junkItems.Add("handful of pugil scales");
             
             

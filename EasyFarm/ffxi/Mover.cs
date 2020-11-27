@@ -36,7 +36,7 @@ namespace EasyFarm.ffxi
             
             RunForwardWithKeypad();
             
-            DateTime duration = DateTime.Now.AddSeconds(5);
+            DateTime duration = DateTime.Now.AddSeconds(10);
             while (distance > DistanceTolerance && DateTime.Now < duration)
             {
                 // Maybe use the position history to figure out is stuck.
@@ -57,7 +57,7 @@ namespace EasyFarm.ffxi
                     stuckCounter = 0;
                 }
 
-                if (stuckCounter >= 20)
+                if (stuckCounter >= 5)
                 {
                     var unWalkablePosition = GetPositionInFrontOfMe(targetPosition); 
                     BackupWhenStuck(targetPosition);
@@ -73,8 +73,8 @@ namespace EasyFarm.ffxi
                 
                 distance = newDistance; 
                 
-                Debug.WriteLine("at: " + PlayerPosition + " or (" + CurrentPosition + ") Headed to: " + targetPosition);
-                Debug.WriteLine("Distance is: " + distance);
+                // Debug.WriteLine("at: " + PlayerPosition + " or (" + CurrentPosition + ") Headed to: " + targetPosition);
+                // Debug.WriteLine("Distance is: " + distance);
                 LookAtTargetPosition(targetPosition);
             }
             _context.API.Navigator.Reset();
@@ -115,7 +115,7 @@ namespace EasyFarm.ffxi
         public void BackupWhenStuck(Vector3 targetPosition)
         {
             TurnAround(targetPosition);
-            RunForwardForSeconds(3);
+            RunForwardForSeconds(1);
         }
 
         public void RunForwardForSeconds(int seconds)
@@ -204,6 +204,11 @@ namespace EasyFarm.ffxi
 
         public event EventHandler<Vector3> IsStuck;
         public event PropertyChangedEventHandler PropertyChanged;
+        public void TryToEscapeFromBeingInABoxOfUnWalkablePositions()
+        {
+            MoveToTheRight();
+        }
+
         private Vector3 _currentPosition;
         private IGameContext _context;
     }

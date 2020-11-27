@@ -21,7 +21,7 @@ namespace EasyFarm.Context
         {
             while (_context.Menu.IsMenuOpen != true)
                 Thread.Sleep(100);
-            
+
             while (_context.Menu.MenuIndex != _sellMenuIndex)
             {
                 Down();
@@ -74,7 +74,7 @@ namespace EasyFarm.Context
                     if (_context.Inventory.SelectedItemName.Contains(wildcardJunkItem))
                         return true;
                 }
-                    
+
                 if (_context.Inventory.SelectedItemName == junkItem)
                     return true;
             }
@@ -93,21 +93,23 @@ namespace EasyFarm.Context
         {
             while (_context.Menu.MenuItemCount != 2)
             {
-                Thread.Sleep(200);
                 Enter();
+                Thread.Sleep(1000);
             }
 
             while (_context.Menu.MenuIndex != 1)
             {
                 Up();
+                Thread.Sleep(1000);
             }
 
             Enter();
-            Thread.Sleep(200);
+            Thread.Sleep(1000);
         }
 
         private void ChooseToSellAll()
         {
+            Thread.Sleep(501);
             Left();
         }
 
