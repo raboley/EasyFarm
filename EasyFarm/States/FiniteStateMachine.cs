@@ -75,15 +75,15 @@ namespace EasyFarm.States
             // AddState(new MapState() {Priority = 5});
 
 
-            // AddState(new ExploreZone() {Priority = 0});
-            AddState(new HuntNotoriusMonster() {Priority = 10});
+            AddState(new ExploreZone() {Priority = 0});
+            // AddState(new HuntNotoriusMonster() {Priority = 10});
+            // AddState(new GoChopWood() {Priority = 10});
 
             // Needs Signet
             AddState(new NeedSignet() {Priority = 21});
 
             // The Finer Things
             // TODO: Uncomment this
-            // AddState(new GoChopWood() {Priority = 10});
             AddState(new CraftSomething() {Priority = 20});
 
             AddState(new SellSomeJunk() {Priority = 119});

@@ -91,6 +91,14 @@ namespace EasyFarm.Monitors
                     _context.Zone.AddBoundary(mapName, lastPositionBeforeZone, newMapName,
                         newMapPosition);
 
+                    // We must have explored this point because we zoned and not due to death.
+                    if (_context.Traveler.CurrentZone.NextPointToExplore != null)
+                    {
+                        _context.Traveler.CurrentZone.Explored.Add( (Vector3) _context.Traveler.CurrentZone.NextPointToExplore);
+                        _context.Traveler.CurrentZone.NextPointToExplore = null;
+                    }
+                        
+
                     // Can't do new zone stuff because we end up in the middle of the zone.
                     // var newZone = GetOrCreateNewZone(newMapName, out var newZonePersister);
                     // newZone.AddBoundary(newMapName, newMapPosition, mapName, lastPositionBeforeZone);

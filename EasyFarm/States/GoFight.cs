@@ -28,7 +28,7 @@ namespace EasyFarm.States
                 Thread.Sleep(100); 
             }
             
-            context.Traveler.GoToZone(fightZone);
+            context.Traveler.WalkToZone(fightZone);
         }
 
         private string GetFightZoneByNation(IGameContext context)

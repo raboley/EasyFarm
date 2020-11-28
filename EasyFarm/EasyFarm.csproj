@@ -287,7 +287,6 @@
     <Compile Include="States\StateHistory.cs" />
     <Compile Include="States\StateLog.cs" />
     <Compile Include="States\StateStatus.cs" />
-    <Compile Include="States\TestMoveState.cs" />
     <Compile Include="UserSettings\IConfig.cs" />
     <Compile Include="States\PlayerMovementTracker.cs" />
     <Compile Include="States\Route.cs" />

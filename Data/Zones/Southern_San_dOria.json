@@ -1,5 +1,8 @@
 {
   'Name': 'Southern_San_dOria',
+  'PointsToExplore': [],
+  'NextPointToExplore': null,
+  'Explored': [],
   'Boundaries': [
     {
       'ToZone': 'Ronfaure_East',
@@ -881,6 +884,20 @@
         'X': -124.0,
         'Y': 0.0,
         'Z': 273.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'Southern_San_dOria',
+      'FromPosition': {
+        'X': -113.0,
+        'Y': 0.0,
+        'Z': -57.0
+      },
+      'ToPosition': {
+        'X': -128.0,
+        'Y': 0.0,
+        'Z': 276.0
       }
     }
   ]

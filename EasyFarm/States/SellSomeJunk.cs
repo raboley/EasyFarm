@@ -40,14 +40,13 @@ namespace EasyFarm.States
             List<string> junkItems = new List<string>();
             junkItems.Add("Orcish Axe");
             junkItems.Add("Zinc Ore");
-            junkItems.Add("Earth Crystal");
             junkItems.Add("Fruit Seeds");
             junkItems.Add("Bind");
             junkItems.Add("Blind");
             junkItems.Add("*Fishing Rod");
             junkItems.Add("Shall Shell");
             junkItems.Add("Grass Cloth");
-            junkItems.Add("Grass Thread");
+            // junkItems.Add("Grass Thread");
             // junkItems.Add("Rabbit Hide");
             junkItems.Add("Bat Wing");
             junkItems.Add("Hare Meat");
@@ -71,7 +70,7 @@ namespace EasyFarm.States
             // Go to Zone of merchant
             while (context.API.Player.Zone.ToString() != merchant.MapName)
             {
-                context.Traveler.GoToZone(merchant.MapName);
+                context.Traveler.WalkToZone(merchant.MapName);
             }
             
             while (context.Traveler.Zoning)

@@ -74,7 +74,8 @@ namespace EasyFarm.Monitors
                     // Gotta be a better way to say only set this up again once zone changes.
                     // Maybe fire a zone change event and let everything subscribe to it?
                     _context.Traveler.IsFighting = _context.API.Player.Status.Equals(Status.Fighting);
-                    Thread.Sleep(500);
+                    _context.Traveler.MenuIsOpen = _context.API.Menu.IsMenuOpen;
+                    Thread.Sleep(100);
                 }
 
                 _context.Traveler.Zoning = true;

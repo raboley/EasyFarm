@@ -60,21 +60,21 @@ namespace EasyFarm.States
             }
 
             var nation = context.Player.Nation.ToString();
-            var signetNpc = SearchWorldForSignetPerson(context);
+            var signetNpc = SearchWorldForSignetClosestPerson(context);
             if (signetNpc == null)
             {
                 Debug.WriteLine("Can't Find signet NPC in all known Zones for nation: " + nation);
                 return;
             }
 
-            while (context.API.Player.Zone.ToString() != signetNpc.MapName)
+            if (context.API.Player.Zone.ToString() != signetNpc.MapName)
             {
-                context.Traveler.GoToZone(signetNpc.MapName);
+                context.Traveler.WalkToZone(signetNpc.MapName);
             }
 
-            while (context.Traveler.Zoning)
+            if (context.Traveler.Zoning)
             {
-                Thread.Sleep(100);
+                return;
             }
 
             if (signetNpc.MapName != context.Traveler.CurrentZone.Name)
@@ -90,28 +90,34 @@ namespace EasyFarm.States
             AskForSignet(context, fface, signetNpc);
         }
 
-        private static Person SearchWorldForSignetPerson(IGameContext context)
+        private static Person SearchWorldForSignetClosestPerson(IGameContext context)
         {
             Person signetNpc;
             string nationString = context.API.Player.Nation.ToString();
-            signetNpc = context.Traveler.SearchForClosestSignetNpc(nationString);
-
-            // signet NPC is in this zone
-            if (signetNpc != null)
-                return signetNpc;
-
+            
             while (context.NpcOverseer == null)
             {
                 Debug.Write(
                     "SearchWorldForSignetPerson is Waiting for NpcOverseer to be non null so it can use it to search all NPCs");
                 Thread.Sleep(200);
             }
-
+            
             List<Person> allPeople = context.NpcOverseer.GetAllPeople();
-            string npcpattern = context.Traveler.GetSignetNpcPatternByNation(nationString);
-            signetNpc = allPeople.Find(p => p.Name.Contains(npcpattern));
-
+            signetNpc = context.Traveler.SearchForClosestSignetNpc(nationString, allPeople);
             return signetNpc;
+
+            //
+            // // signet NPC is in this zone
+            // if (signetNpc != null)
+            //     return signetNpc;
+            //
+            //
+            //
+            // List<Person> allPeople = context.NpcOverseer.GetAllPeople();
+            // string npcpattern = context.Traveler.GetSignetNpcPatternByNation(nationString);
+            // signetNpc = allPeople.Find(p => p.Name.Contains(npcpattern));
+            //
+            // return signetNpc;
         }
 
         private static void AskForSignet(IGameContext context, IMemoryAPI fface, Person signetNpc)

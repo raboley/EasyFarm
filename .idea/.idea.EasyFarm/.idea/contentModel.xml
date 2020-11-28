@@ -229,7 +229,6 @@
           <e p="StateMemory.cs" t="Include" />
           <e p="StateStatus.cs" t="Include" />
           <e p="SummonTrustsState.cs" t="Include" />
-          <e p="TestMoveState.cs" t="Include" />
           <e p="TravelState.cs" t="Include" />
           <e p="TypeCache.cs" t="Include" />
           <e p="WeaponskillState.cs" t="Include" />

@@ -50,6 +50,7 @@ namespace EasyFarm.Context
                     Sell();
 
                     // If we sold it, the cursor will move to the next item automatically
+                    Thread.Sleep(500);
                     continue;
                 }
 
