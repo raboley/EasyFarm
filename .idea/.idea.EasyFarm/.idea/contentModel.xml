@@ -190,6 +190,9 @@
           <e p="Settings.Designer.cs" t="Include" />
           <e p="Settings.settings" t="Include" />
         </e>
+        <e p="Quests" t="Include">
+          <e p="Quest.cs" t="Include" />
+        </e>
         <e p="States" t="Include">
           <e p="ApproachState.cs" t="Include" />
           <e p="BaseState.cs" t="Include" />

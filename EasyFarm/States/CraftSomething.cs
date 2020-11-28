@@ -54,6 +54,7 @@ namespace EasyFarm.States
             knownRecipes.Add(CraftingRecipe.MapleLumber());
             knownRecipes.Add(CraftingRecipe.Hatchet());
             knownRecipes.Add(CraftingRecipe.BronzeIngotFromBeastCoin());
+            knownRecipes.Add(CraftingRecipe.RabbitMantle());
             return knownRecipes;
         }
     }

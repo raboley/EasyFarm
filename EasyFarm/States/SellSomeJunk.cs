@@ -49,9 +49,14 @@ namespace EasyFarm.States
             junkItems.Add("Grass Cloth");
             junkItems.Add("Grass Thread");
             // junkItems.Add("Rabbit Hide");
+            junkItems.Add("Bat Wing");
+            junkItems.Add("Hare Meat");
+            junkItems.Add("Fiend Blood");
             junkItems.Add("Wild Onion");
             junkItems.Add("Chestnut");
             junkItems.Add("handful of pugil scales");
+            junkItems.Add("Rabbit mantle");
+            
             
             
             var merchantName = "Phamelise";

@@ -280,6 +280,34 @@
         'Y': 0.0,
         'Z': -55.0
       }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 60.0,
+        'Y': 0.0,
+        'Z': -196.0
+      },
+      'ToPosition': {
+        'X': 84.0,
+        'Y': 0.0,
+        'Z': -193.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 60.0,
+        'Y': 0.0,
+        'Z': -196.0
+      },
+      'ToPosition': {
+        'X': 84.0,
+        'Y': 0.0,
+        'Z': -195.0
+      }
     }
   ]
 }

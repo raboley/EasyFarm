@@ -83,7 +83,9 @@ namespace EasyFarm.States
             // Has the user decided we should engage in battle. 
             if (context.Config.IsEngageEnabled)
                 if (!context.API.Player.Status.Equals(Status.Fighting) && context.Target.Distance < 25)
+                {
                     context.API.Windower.SendString(Constants.AttackTarget);
+                }
         }
     }
 }

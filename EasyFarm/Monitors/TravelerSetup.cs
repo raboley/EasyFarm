@@ -49,6 +49,10 @@ namespace EasyFarm.Monitors
             if (_context.Zone.Map.MapName != mapName)
                 return;
 
+
+            var zonePersister = ZoneMapPersister.NewZonePersister();
+            world.Zones = zonePersister.LoadAllOfType<Zone>();
+            world.Zones.RemoveAll(x => x.Name == _context.Zone.Name);
             world.Zones.Add(_context.Zone);
 
             if (_context.Npcs == null)
@@ -69,7 +73,8 @@ namespace EasyFarm.Monitors
                 {
                     // Gotta be a better way to say only set this up again once zone changes.
                     // Maybe fire a zone change event and let everything subscribe to it?
-                    Thread.Sleep(100);
+                    _context.Traveler.IsFighting = _context.API.Player.Status.Equals(Status.Fighting);
+                    Thread.Sleep(500);
                 }
 
                 _context.Traveler.Zoning = true;
@@ -82,14 +87,13 @@ namespace EasyFarm.Monitors
                 mapName = _context.Player.Zone.ToString();
                 while (_context.Zone?.Map?.MapName != mapName)
                     Thread.Sleep(100);
-
-                _context.Traveler.World.Zones = new List<Zone>();
-                _context.Traveler.World.Zones.Add(_context.Zone);
                 _context.Traveler.CurrentZone = _context.Zone;
-                
+
+                _context.Traveler.World.Zones = zonePersister.LoadAllOfType<Zone>();
+
                 while (_context.Mobs == null)
                     Thread.Sleep(100);
-                
+
                 _context.Traveler.World.Mobs = new List<Person>();
                 _context.Traveler.World.Mobs.AddRange(_context.Mobs);
 
@@ -100,7 +104,6 @@ namespace EasyFarm.Monitors
                 _context.Traveler.World.Npcs.AddRange(_context.Npcs);
                 LogViewModel.Write("Traveler setup for Zone: " + mapName);
                 _context.Traveler.Zoning = false;
-
             }
         }
     }

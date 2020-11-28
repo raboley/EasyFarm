@@ -728,7 +728,7 @@ namespace MemoryAPI.Memory
         public class ChatTools : IChatTools
         {
             private readonly EliteAPI _api;
-            public Queue<EliteAPI.ChatEntry> ChatEntries { get; set; } = new Queue<EliteAPI.ChatEntry>();
+            public ConcurrentQueue<EliteAPI.ChatEntry> ChatEntries { get; set; } = new ConcurrentQueue<ChatEntry>();
 
             public ChatTools(EliteAPI api)
             {
@@ -748,8 +748,20 @@ namespace MemoryAPI.Memory
 
             public string LastThingSaid()
             {
-                var chat = ChatEntries.ToList();
-                var lastThingSaid = chat.LastOrDefault()?.Text;
+                var lastThingSaid = "";
+                while (lastThingSaid == "")
+                {
+                    try
+                    {
+                        var chat = ChatEntries.ToList();
+                        lastThingSaid = chat.LastOrDefault()?.Text;
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.WriteLine(e);
+                    }
+                }
+
                 return lastThingSaid;
             }
         }
@@ -878,7 +890,7 @@ namespace MemoryAPI.Memory
                 while (_api.Menu.HelpName != menuHelpName)
                 {
                     RefreshMenuInCaseSomewhereWeird();
-                    
+
                     var startIndex = _api.Menu.MenuIndex;
                     Down();
                     while (startIndex != _api.Menu.MenuIndex)

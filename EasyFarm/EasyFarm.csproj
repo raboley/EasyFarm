@@ -271,6 +271,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Classes\NullUnit.cs" />
+    <Compile Include="Quests\Quest.cs" />
     <Compile Include="States\CraftSomething.cs" />
     <Compile Include="States\DoQuest.cs" />
     <Compile Include="States\ExploreZone.cs" />

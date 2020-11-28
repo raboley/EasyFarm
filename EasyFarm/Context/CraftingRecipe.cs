@@ -89,6 +89,18 @@ namespace EasyFarm.Context
             return soup;
         }
 
+        public static CraftingRecipe RabbitMantle()
+        {
+            var soup = new CraftingRecipe();
+            soup.Crystal = "Earth Crystal";
+            soup.RequiredItems = new List<Item>
+            {
+                new Item() {Name = "Rabbit Hide", Count = 5},
+                new Item() {Name = "Grass Thread", Count = 1},
+            };
+
+            return soup;
+        }
         public string Crystal { get; set; }
         public List<Item> RequiredItems { get; set; }
     }

@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics;
 using EasyFarm.Context;
 using EasyFarm.ViewModels;
 using Pathfinder;
@@ -8,7 +9,7 @@ namespace EasyFarm.States
 {
     public class HuntNotoriusMonster : BaseState
     {
-        private string thingToHunt;
+        private string thingToHuntName;
 
         public override bool Check(IGameContext context)
         {
@@ -21,6 +22,8 @@ namespace EasyFarm.States
             
             if (context.Inventory.InventoryIsFull())
                 return false;
+
+            if (new DoQuest().Check(context)) return false;
             
             if (context.Player.IsDead) return false;
 
@@ -50,10 +53,13 @@ namespace EasyFarm.States
             // Add logging points to queue if empty
             if (context.WoodChopper.LoggingPoints.Count == 0)
             {
+                thingToHuntName = "Jaggedy-Eared Jack";
+                var nm = context.Mobs.First(x => x.Name == thingToHuntName);
+                context.WoodChopper.LoggingPoints.Enqueue(nm);
+                
                 // First add things close by
-                thingToHunt = "Hare";
                 var closeLoggingPoints =
-                    context.Memory.UnitService.MobArray.ToList().FindAll(x => x.Name.Contains(thingToHunt));
+                    context.Memory.UnitService.MobArray.ToList().FindAll(x => x.Name.Contains(thingToHuntName));
 
                 foreach (var loggingPoint in closeLoggingPoints)
                 {
@@ -61,12 +67,13 @@ namespace EasyFarm.States
                     context.WoodChopper.LoggingPoints.Enqueue(tree);
                 }
                 
-                // Then all the ones that have ever been known
-                var loggingPoints = context.Mobs.ToList().FindAll(x => x.Name.Contains(thingToHunt));
-                foreach (var loggingPoint in loggingPoints)
-                {
-                    context.WoodChopper.LoggingPoints.Enqueue(loggingPoint);
-                }
+                
+                // // Then all the ones that have ever been known
+                // var loggingPoints = context.Mobs.ToList().FindAll(x => x.Name.Contains(thingToHunt));
+                // foreach (var loggingPoint in loggingPoints)
+                // {
+                //     context.WoodChopper.LoggingPoints.Enqueue(loggingPoint);
+                // }
             }
 
             if (context.WoodChopper.LoggingPoints.Count == 0)

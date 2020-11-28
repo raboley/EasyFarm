@@ -29,13 +29,13 @@ namespace EasyFarm.Context
 
         public void GoToChopWoodZone(IGameContext context)
         {
-            LogViewModel.Write("Going to go Chop Wood in: " + ChopWoodZone);
-            while (context.Traveler == null)
+            LogViewModel.Write("Going to zone: " + ChopWoodZone);
+            while (context.Traveler?.World?.Zones == null)
             {
                 Thread.Sleep(100);
             }
 
-            context.Traveler.GoToZone(ChopWoodZone);
+            context.Traveler.WalkToZone(ChopWoodZone);
         }
     }
 }
