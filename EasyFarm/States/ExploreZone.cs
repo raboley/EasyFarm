@@ -4,6 +4,7 @@ using System.Numerics;
 using System.Threading;
 using EasyFarm.Context;
 using EasyFarm.Parsing;
+using Pathfinder;
 using Pathfinder.Map;
 using Pathfinder.Travel;
 
@@ -54,7 +55,11 @@ namespace EasyFarm.States
                 points.Enqueue(new Vector3(-1000, 0, -1000));
                 points.Enqueue(new Vector3(1000, 0, -1000));
                 points.Enqueue(new Vector3(-1000, 0, 1000));
-
+                points.Enqueue(new Vector3(500, 0, 500));
+                points.Enqueue(new Vector3(-500, 0, -500));
+                points.Enqueue(new Vector3(500, 0, -500));
+                points.Enqueue(new Vector3(-500, 0, 500));
+                
                 context.Traveler.CurrentZone.PointsToExplore = points;
             }
 
@@ -72,8 +77,19 @@ namespace EasyFarm.States
             if (next == null)
                 return;
 
-            context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition((Vector3) next, secondsToRunFor: 300);
+            var nextPointForSure = (Vector3) next;
+            context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(nextPointForSure, secondsToRunFor: 300);
 
+            var distance = GridMath.GetDistancePos(context.Traveler.Walker.CurrentPosition,
+                nextPointForSure);
+
+            if (distance < 10)
+            {
+                context.Traveler.CurrentZone.Explored.Add(nextPointForSure);
+                context.Traveler.CurrentZone.NextPointToExplore = null; 
+            }
+                
+                
 
             // For now, ZoneMapPersister will set next point to explore to null whenever the traveler zones.
             // And set explored to add that one

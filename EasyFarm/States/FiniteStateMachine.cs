@@ -75,7 +75,7 @@ namespace EasyFarm.States
             // AddState(new MapState() {Priority = 5});
 
 
-            AddState(new ExploreZone() {Priority = 0});
+            // AddState(new ExploreZone() {Priority = 0});
             // AddState(new HuntNotoriusMonster() {Priority = 10});
             // AddState(new GoChopWood() {Priority = 10});
 

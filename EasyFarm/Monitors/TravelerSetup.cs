@@ -89,6 +89,7 @@ namespace EasyFarm.Monitors
                 while (_context.Zone?.Map?.MapName != mapName)
                     Thread.Sleep(100);
                 
+                _context.Traveler.CurrentZone = _context.Zone;
                 _context.Traveler.World.LoadAllZonesToWorld(_context.Zone);
 
                 while (_context.Mobs == null)

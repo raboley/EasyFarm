@@ -73,6 +73,10 @@ namespace EasyFarm.Monitors
                 if (unit.Name == "Treasure Casket")
                     continue;
                 
+                // Some weird things stored with this name... on points that shouldn't exist.
+                if (unit.Name == "")
+                    continue;
+                
                 Vector3 pos = ConvertPosition.RoundPositionToVector3(unit.Position);
                 var npc = new Person(unit.Id, unit.Name, pos);
                 peopleOverseer.PeopleManager.AddPerson(npc);
