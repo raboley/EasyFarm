@@ -138,7 +138,7 @@ namespace EasyFarm.Classes
 
             string currentlyEquipItemName;
             //// 
-            int equipmentId = equipment[slotId].Id;
+            int equipmentId = (int) equipment[slotId].ItemID;
             if (equipmentId == 0)
             {
                 currentlyEquipItemName = "";

@@ -26,5 +26,6 @@ namespace MemoryAPI.Chat
     {
         ConcurrentQueue<EliteAPI.ChatEntry> ChatEntries { get; set; }
         string LastThingSaid();
+        bool WaitToSeeIfStatementWasSaid(string thingToListenFor, EliteAPI.ChatEntry lastChatThingSaid, int timeout);
     }
 }

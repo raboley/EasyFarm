@@ -627,15 +627,18 @@ namespace MemoryAPI.Memory
 
             public int SubJobLevel => (int) _api.Player.SubJobLevel;
 
-            public List<EliteMMO.API.EliteAPI.InventoryItem> Equipment
+            public List<IItem> Equipment
             {
                 get
                 {
-                    List<EliteMMO.API.EliteAPI.InventoryItem> equips = new List<EliteMMO.API.EliteAPI.InventoryItem>();
+                    List<IItem> equips = new List<IItem>();
                     //return equips;
                     for (int i = 0; i < 17; i++)
                     {
-                        equips.Add((EliteMMO.API.EliteAPI.InventoryItem) _api.Inventory.GetEquippedItem(i));
+                        var item = _api.Inventory.GetEquippedItem(i);
+                        var equipmentItem = _api.Resources.GetItem(item.Id);
+
+                        equips.Add(equipmentItem);
                     }
 
                     return equips;
@@ -763,6 +766,28 @@ namespace MemoryAPI.Memory
                 }
 
                 return lastThingSaid;
+            }
+
+            public bool WaitToSeeIfStatementWasSaid(string thingToListenFor, ChatEntry lastChatThingSaid, int timeout)
+            {
+                DateTime duration = DateTime.Now.AddSeconds(timeout);
+                while (DateTime.Now < duration)
+                {
+                    if (ChatEntries.LastOrDefault() == lastChatThingSaid)
+                    {
+                        Thread.Sleep(100);
+                        continue;
+                    }
+
+                    var thingsSaidAfterStarting = ChatEntries.Where(x => x.Timestamp < DateTime.Now);
+
+                    if (thingsSaidAfterStarting.FirstOrDefault(x => x.Text.Contains(thingToListenFor)) != null)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
             }
         }
 
@@ -971,9 +996,6 @@ namespace MemoryAPI.Memory
             public int DialogId => (int) _api.Dialog.DialogId;
             public int DialogIndex => (int) _api.Dialog.DialogIndex;
             public int DialogOptionCount => (int) _api.Dialog.DialogOptionCount;
-            
-
-
         }
     }
 }

@@ -291,7 +291,7 @@
     <Compile Include="States\NeedSignet.cs" />
     <Compile Include="States\MapState.cs" />
     <Compile Include="States\DumpTreasureState.cs" />
-    <Compile Include="States\LevelChangeState.cs" />
+    <Compile Include="States\EquipmentManager.cs" />
     <Compile Include="States\SellSomeJunk.cs" />
     <Compile Include="States\SetSearchNpcState.cs" />
     <Compile Include="States\StateHistory.cs" />
@@ -574,9 +574,6 @@
       <Project>{cc6cc9be-32f0-4b8a-a1ad-6c7c744e2fad}</Project>
       <Name>MemoryAPI</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Quests" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

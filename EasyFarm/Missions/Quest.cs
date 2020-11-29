@@ -36,7 +36,7 @@ namespace EasyFarm.Missions
 
                 if (CanComplete.CanCompleteNow())
                 {
-                    var lastQuestStep = questStepsInProgress.LastOrDefault();
+                    var lastQuestStep = ToDoSteps.LastOrDefault();
                     if (lastQuestStep == null)
                         return;
                     questStepsInProgress.Add(lastQuestStep);

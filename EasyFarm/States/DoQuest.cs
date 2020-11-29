@@ -30,6 +30,12 @@ namespace EasyFarm.States
             if (context.Traveler?.CurrentZone?.Map == null)
                 return false;
 
+            if (context.Traveler.World?.Npcs == null)
+                return false;
+            
+            if (context.Traveler.World?.Mobs == null)
+                return false;
+
             if (new RestState().Check(context)) return false;
 
             if (new NeedSignet().Check(context)) return false;

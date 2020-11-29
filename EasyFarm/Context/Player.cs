@@ -16,6 +16,7 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System;
+using System.Diagnostics;
 using EasyFarm.Classes;
 using MemoryAPI;
 
@@ -101,5 +102,15 @@ namespace EasyFarm.Context
         }
 
         public Boolean IsDead => Status == Status.Dead1 || Status == Status.Dead2;
+        public void EquipBestGear()
+        {
+            var currentGear = _memoryAPI.Player.Equipment;
+
+            foreach (var item in currentGear)
+            {
+               Debug.Write(item); 
+            }
+
+        }
     }
 }

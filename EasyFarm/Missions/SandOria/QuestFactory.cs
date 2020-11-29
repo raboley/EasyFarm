@@ -9,7 +9,8 @@ namespace EasyFarm.Missions.SandOria
         {
             var todoList = new List<IQuestStep>
             {
-               new TheMerchantsBidding.TradeRabbitHideToParvipon(context) 
+                new TheMerchantsBidding.FightRabbitsToGetHide(context),
+                new TheMerchantsBidding.TradeRabbitHideToParvipon(context)
             };
 
             var completion = new TheMerchantsBidding.TheMerchantsBiddingCompletion {Context = context};

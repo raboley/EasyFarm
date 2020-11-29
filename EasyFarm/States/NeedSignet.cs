@@ -80,7 +80,7 @@ namespace EasyFarm.States
             if (signetNpc.MapName != context.Traveler.CurrentZone.Name)
                 return;
 
-            context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(signetNpc.Position);
+            context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(signetNpc.Position, secondsToRunFor: 60);
 
             IMemoryAPI fface = context.API;
 

@@ -30,7 +30,7 @@ namespace EasyFarm.Tests.TestTypes.Mocks
 
         public int SubJobLevel { get; set; }
 
-        public List<EliteAPI.InventoryItem> Equipment { get; set; }
+        public List<EliteAPI.IItem> Equipment { get; set; }
 
         public int MeritPoints => throw new System.NotImplementedException();
 

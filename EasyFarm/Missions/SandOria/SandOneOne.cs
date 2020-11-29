@@ -1,13 +1,16 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using EasyFarm.Context;
+using EliteMMO.API;
 
 namespace EasyFarm.Missions.SandOria
 {
     public class SandyOneOneCompletion : ICompleteRightNowCondition
     {
         public IGameContext Context;
-        
+
         public bool CanCompleteNow()
         {
             return Context.Inventory.HaveItemInInventoryContainer("Orcish Axe");
@@ -48,8 +51,7 @@ namespace EasyFarm.Missions.SandOria
 
             _talk.RespondWith(_context, "A mission, please.");
             _talk.RespondWith(_context, "Tell me more.");
-            // Press enter when it says Orcish axe
-            _talk.RespondWith(_context, "I accept.");
+            AcceptSandyOneOneQuest();
 
             if (IsDoneCheck() == Completed.Done)
             {
@@ -58,8 +60,20 @@ namespace EasyFarm.Missions.SandOria
             }
         }
 
+        private void AcceptSandyOneOneQuest()
+        {
+            // Press enter when it says Orcish axe
+            while (!_chat.LastThingSaid().Contains("Orcish"))
+            {
+                Thread.Sleep(100);
+            }
+            _context.API.Windower.SendKeyPress(Keys.NUMPADENTER);
+            _talk.RespondWith(_context, "I accept.");
+        }
+
         private void WalkToGateGuardAndTalk()
         {
+            
             _talk.WalkAndTalkToPersonByName(_context, GateGuardName);
         }
 
@@ -98,7 +112,24 @@ namespace EasyFarm.Missions.SandOria
                 }
             };
 
-            _trade.TradeItemsToPersonByName(_context, GateGuardName, items);
+            var tradeFailed = true;
+            while (tradeFailed)
+            {
+                var thingSaidBeforeTrading = _chat.ChatEntries.LastOrDefault();
+                _trade.TradeItemsToPersonByName(_context, GateGuardName, items);
+                var needToStartQuestAgain =
+                    _chat.WaitToSeeIfStatementWasSaid("before you bring me something", thingSaidBeforeTrading, 5);
+
+                if (needToStartQuestAgain)
+                {
+                    StartSandyOneOneAgain();
+                }
+                else
+                {
+                    tradeFailed = false;
+                }
+            }
+
 
             WaitForCutsceneToEnd();
         }
@@ -109,6 +140,25 @@ namespace EasyFarm.Missions.SandOria
             {
                 Thread.Sleep(100);
             }
+        }
+
+        private void StartSandyOneOneAgain()
+        {
+            Thread.Sleep(5000);
+            _talk.TalkToPersonByName(_context, GateGuardName);
+            _talk.RespondWith(_context, "Smash the Orcish Scouts.");
+            AcceptSandyOneOneQuest();
+        }
+
+        private void AcceptSandyOneOneQuest()
+        {
+            // Press enter when it says Orcish axe
+            while (!_chat.LastThingSaid().Contains("Orcish"))
+            {
+                Thread.Sleep(100);
+            }
+            _context.API.Windower.SendKeyPress(Keys.NUMPADENTER);
+            _talk.RespondWith(_context, "I accept.");
         }
 
         private void WalkToGateGuard()
@@ -128,5 +178,3 @@ namespace EasyFarm.Missions.SandOria
         }
     }
 }
-
-

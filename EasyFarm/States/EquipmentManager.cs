@@ -4,49 +4,79 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using EasyFarm.Classes;
+using EliteMMO.API;
 using static EliteMMO.API.EliteAPI;
 
 namespace EasyFarm.States
 {
-    public class LevelChangeState : BaseState
+    public class EquipmentManager
     {
         private int _last_level = 0;
-        private static int attemptToBuyFromAH = 1;
+        private static int attemptToBuyFromAH = 0;
 
-        public override bool Check(IGameContext context)
+        public static void EquipBestGear(IGameContext context, int attemptToBuyFromAuctionHouse = 0)
         {
+            // Get all current equipment
+            List<IItem> currentEquipment = new List<IItem>();
+            currentEquipment.AddRange(context.Memory.EliteApi.Player.Equipment);
 
-            if (_last_level != context.Player.JobLevel)
+            // Get All Items in inventory
+            var allItems = context.API.Inventory.GetItemsFromContainer();
+
+
+            // Loop Through each slot
+            foreach (var slot in Enum.GetValues(typeof(EquipSlots)).Cast<int>())
             {
-                _last_level = context.Player.JobLevel;
-                return true;
+                var currentEquip = currentEquipment[slot];
+                // Check for items of the same slot with higher level 
+                var best = GetBestItemForSlotAndJob(context,context.Player.Job.ToString(), context.Player.JobLevel, slot,
+                    allItems);
+                if (best == null)
+                    continue;
+
+                // and can be used by current job
+
+
+                // equip the gear if level is higher
+            }
+        }
+
+        private static EquipmentItem GetBestItemForSlotAndJob(IGameContext context,string job, int jobLevel, int equipSlotId,
+            List<IItem> items)
+        {
+            var itemsForSlot = new List<EquipmentItem>();
+            foreach (var item in items)
+            {
+                if (Inventory.CanSlotEquipItem(EliteMMO.API.EquipmentSlotMask.Main, item))
+                {
+                    var equipmentItem = context.Inventory.GetEquipmentItemFromItem(item);
+                    itemsForSlot.Add(equipmentItem);
+                }
             }
 
-            return false;
+
+            return null;
         }
 
-        public override void Run(IGameContext context)
-        {
-            EquipOptimalGear(context);
-        }
 
-        private static void EquipOptimalGear(IGameContext context)
+        public static void EquipOptimalGear(IGameContext context)
         {
-
             // Determine Optimal Gear from json or something
             Dictionary<string, string> optimalEquipment;
 
             optimalEquipment = DetermineOptimalGearForMainJobAndLevel(context);
-            if(optimalEquipment.Count == 0)
+            if (optimalEquipment.Count == 0)
             {
                 return;
             }
 
             // Figure out what gear is not already equiped
-            List<InventoryItem> currentEquipment = context.Memory.EliteApi.Player.Equipment;
-            Dictionary<string, string> neededEquipment = GetOptimalGearNotAlreadyEquipped(context, optimalEquipment, currentEquipment);
+            List<IItem> currentEquipment = context.Memory.EliteApi.Player.Equipment;
+            Dictionary<string, string> neededEquipment =
+                GetOptimalGearNotAlreadyEquipped(context, optimalEquipment, currentEquipment);
 
-            
+
             // loop through all needed items to buy & or equip them depending on config flag
             foreach (KeyValuePair<string, string> equip in neededEquipment.AsEnumerable())
             {
@@ -57,12 +87,25 @@ namespace EasyFarm.States
                 {
                     BuyItemFromAuctionHouseUsingAuctioneerAddOn(context, name);
                 }
+
                 EquipItemToSlot(context, slot, name);
             }
+
             //PrintCurrentEquipmentList(context, currentEquipment);
         }
 
-        private static Dictionary<string, string> GetOptimalGearNotAlreadyEquipped(IGameContext context, Dictionary<string, string> Equips, List<InventoryItem> currentEquipment)
+        public static bool CanEquipOnSlot(IItem item, int Slot)
+        {
+            int slotsThaCanBeEquipToBitMask = (int) item.Slots;
+            var canEquip = slotsThaCanBeEquipToBitMask & (uint) (Math.Pow(2, Slot));
+            if (canEquip == 0)
+                return false;
+
+            return true;
+        }
+
+        private static Dictionary<string, string> GetOptimalGearNotAlreadyEquipped(IGameContext context,
+            Dictionary<string, string> Equips, List<IItem> currentEquipment)
         {
             Dictionary<string, string> neededEquipment = new Dictionary<string, string>();
 
@@ -73,12 +116,12 @@ namespace EasyFarm.States
                 var name = equip.Value;
                 // determine if this item is already equip
                 // get the slot id of the item we are trying to check for.
-                EquipSlots slotEnum = (EquipSlots)Enum.Parse(typeof(EquipSlots), slot);
-                int slotId = (int)slotEnum;
+                EquipSlots slotEnum = (EquipSlots) Enum.Parse(typeof(EquipSlots), slot);
+                int slotId = (int) slotEnum;
 
                 string currentlyEquipItemName;
                 //// 
-                int equipmentId = currentEquipment[slotId].Id;
+                int equipmentId = (int) currentEquipment[slotId].ItemID;
                 if (equipmentId == 0)
                 {
                     currentlyEquipItemName = "";
@@ -96,12 +139,13 @@ namespace EasyFarm.States
                         currentlyEquipItemName = item.Name[0].ToString();
                     }
                 }
+
                 if (currentlyEquipItemName.ToLower() != name.ToLower())
                 {
                     neededEquipment.Add(slot, name);
                 }
-
             }
+
             return neededEquipment;
         }
 
@@ -112,7 +156,9 @@ namespace EasyFarm.States
 
             var dancerEquips = new Dictionary<int, Dictionary<string, string>>()
             {
-                {1 , new Dictionary<string, string> {
+                {
+                    1, new Dictionary<string, string>
+                    {
                         //{"Main", "Bronze Knife +1" },
                         //{"Head", "Bronze Cap +1" },
                         //{"Body", "I.R. Jack Coat" },
@@ -120,30 +166,32 @@ namespace EasyFarm.States
                         //{"Hands", "Bronze Mittens +1" },
                         //{"Feet", "Bronze Leggings +1" },
                         //{"Waist", "Blood Stone" },
-                        {"Ear1", "Cassie Earring" },
-                        {"Ear2", "Cassie Earring" },
+                        {"Ear1", "Cassie Earring"},
+                        {"Ear2", "Cassie Earring"},
                     }
                 }
             };
 
             var whiteMageEquips = new Dictionary<int, Dictionary<string, string>>()
             {
-                {33 , new Dictionary<string, string> {
-                    {"Main", "Spiked Club +1" },
-                    {"Sub", "Lizard Strap +1" },
-                    {"Ammo", "Morion Tathlum" },
-                    {"Head", "Trump Crown" },
-                    {"Neck", "Holy Phial" },
-                    {"Body", "Seer's Tunic +1" },
-                    {"Hands", "Savage gauntlets" },
-                    {"Legs", "Seer's Slacks +1" },
-                    {"Feet", "Seer's Pumps +1" },
-                    {"Back", "Talisman Cape" },
-                    {"Waist", "Mohbwa Sash +1" },
-                    {"Ear1", "Reraise Earring" },
-                    {"Ear2", "Magician's Earring" },
-                    {"Ring1", "Saintly Ring +1" },
-                    {"Ring2", "Saintly Ring +1" },
+                {
+                    33, new Dictionary<string, string>
+                    {
+                        {"Main", "Spiked Club +1"},
+                        {"Sub", "Lizard Strap +1"},
+                        {"Ammo", "Morion Tathlum"},
+                        {"Head", "Trump Crown"},
+                        {"Neck", "Holy Phial"},
+                        {"Body", "Seer's Tunic +1"},
+                        {"Hands", "Savage gauntlets"},
+                        {"Legs", "Seer's Slacks +1"},
+                        {"Feet", "Seer's Pumps +1"},
+                        {"Back", "Talisman Cape"},
+                        {"Waist", "Mohbwa Sash +1"},
+                        {"Ear1", "Reraise Earring"},
+                        {"Ear2", "Magician's Earring"},
+                        {"Ring1", "Saintly Ring +1"},
+                        {"Ring2", "Saintly Ring +1"},
                     }
                 }
             };
@@ -172,6 +220,7 @@ namespace EasyFarm.States
             {
                 Console.WriteLine("No valid level yet!");
             }
+
             return optimal_equipment;
         }
 
@@ -212,7 +261,9 @@ namespace EasyFarm.States
                 {
                     itemName = "";
                 }
-                Console.WriteLine("slot index:" + i + " has an item id of: " + equipmentId + " which is an item name of " + itemName);
+
+                Console.WriteLine("slot index:" + i + " has an item id of: " + equipmentId +
+                                  " which is an item name of " + itemName);
             }
         }
     }

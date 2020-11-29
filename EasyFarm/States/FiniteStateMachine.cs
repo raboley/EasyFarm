@@ -76,18 +76,24 @@ namespace EasyFarm.States
 
 
             // AddState(new ExploreZone() {Priority = 0});
-            // AddState(new HuntNotoriusMonster() {Priority = 10});
+            AddState(new HuntNotoriusMonster() {Priority = 10});
             // AddState(new GoChopWood() {Priority = 10});
 
             // Needs Signet
-            // AddState(new NeedSignet() {Priority = 21});
+            AddState(new NeedSignet() {Priority = 21});
 
             // The Finer Things
             // TODO: Uncomment this
             AddState(new CraftSomething() {Priority = 20});
 
             AddState(new SellSomeJunk() {Priority = 119});
-            // AddState(new DoQuest() {Priority = 130});
+            AddState(new DoQuest() {Priority = 0});
+            
+            
+            // TODO: Get Equipable By Jobs working,
+            // Then ensure weapon types are taken into account
+            // Then pick the highest Item level (or damage or def or something) that is available in inventory.
+            // AddState(new EquipBestGear() {Priority = 118});
 
 
             // AddState(new TestMoveState() { Priority = 10 });
@@ -218,6 +224,19 @@ namespace EasyFarm.States
             }
 
             // ReSharper disable once FunctionNeverReturns
+        }
+    }
+
+    public class EquipBestGear : BaseState
+    {
+        public override bool Check(IGameContext context)
+        {
+            return true;
+        }
+
+        public override void Run(IGameContext context)
+        {
+            EquipmentManager.EquipBestGear(context);
         }
     }
 

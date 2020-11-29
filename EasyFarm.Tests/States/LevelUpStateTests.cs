@@ -13,7 +13,7 @@ namespace EasyFarm.Tests.States
         private readonly WeaponskillState _sut = new WeaponskillState();
         private readonly TestContext _context = new TestContext();
         private readonly MockGameAPI _mockApi = new MockGameAPI();
-        private readonly LevelChangeState _levelChangeState = new LevelChangeState();
+        private readonly EquipmentManager _equipmentManager = new EquipmentManager();
 
         [Fact]
         public void EnumParseCanFigureOutSlotIdOfCurrentlyEquipedItems_Weapon()
@@ -65,7 +65,7 @@ namespace EasyFarm.Tests.States
             _context.Player.JobLevel = 1;
             //_context.Memory.EliteApi.Player.JobLevel = 2;
             // Verify outcome
-            bool result = _levelChangeState.Check(_context);
+            bool result = _equipmentManager.Check(_context);
             Assert.True(result);
             // Teardown	
         }
@@ -75,10 +75,10 @@ namespace EasyFarm.Tests.States
         {
             // Fixture setup            
             _context.Player.JobLevel = 1;
-            _levelChangeState.Check(_context);
+            _equipmentManager.Check(_context);
             // Excercise system
             _context.Player.JobLevel = 1;
-            bool result = _levelChangeState.Check(_context);
+            bool result = _equipmentManager.Check(_context);
             // Verify outcome
             Assert.False(result);
             // Teardown	
@@ -89,10 +89,10 @@ namespace EasyFarm.Tests.States
         {
             // Fixture setup            
             _context.Player.JobLevel = 1;
-            _levelChangeState.Check(_context);
+            _equipmentManager.Check(_context);
             // Excercise system
             _context.Player.JobLevel = 2;
-            bool result = _levelChangeState.Check(_context);
+            bool result = _equipmentManager.Check(_context);
             // Verify outcome
             Assert.True(result);
             // Teardown	
@@ -103,10 +103,10 @@ namespace EasyFarm.Tests.States
         {
             // Fixture setup
             _context.Player.JobLevel = 37;
-            _levelChangeState.Check(_context);
+            _equipmentManager.Check(_context);
             // Excercise system
             _context.Player.JobLevel = 5;
-            bool result = _levelChangeState.Check(_context);
+            bool result = _equipmentManager.Check(_context);
             // Verify outcome
             Assert.True(result);
             // Teardown	
@@ -138,7 +138,7 @@ namespace EasyFarm.Tests.States
                   };
 
             // Excercise system
-            var result = LevelChangeState.DetermineOptimalGearForMainJobAndLevel(_context);
+            var result = EquipmentManager.DetermineOptimalGearForMainJobAndLevel(_context);
 
             // Verify outcome
             Assert.Equal(expected.Count, result.Count);
@@ -158,7 +158,7 @@ namespace EasyFarm.Tests.States
             Dictionary<string, string> expected = new Dictionary<string, string>();
 
             // Excercise system
-            var result = LevelChangeState.DetermineOptimalGearForMainJobAndLevel(_context);
+            var result = EquipmentManager.DetermineOptimalGearForMainJobAndLevel(_context);
 
             // Verify outcome
             Assert.Equal(expected.Count, result.Count);
@@ -178,7 +178,7 @@ namespace EasyFarm.Tests.States
             Dictionary<string, string> expected = new Dictionary<string, string>();
 
             // Excercise system
-            var result = LevelChangeState.DetermineOptimalGearForMainJobAndLevel(_context);
+            var result = EquipmentManager.DetermineOptimalGearForMainJobAndLevel(_context);
 
             // Verify outcome
             Assert.Equal(expected.Count, result.Count);

@@ -57,6 +57,7 @@ namespace EasyFarm.Classes
 
         public void MoveToDesiredDialogOption(IGameContext context, int desiredIndex)
         {
+            int circuitBreaker = 0; 
             while (desiredIndex != context.Memory.EliteApi.Dialog.DialogIndex)
             {
                 var dialog = context.Memory.EliteApi.Dialog.GetDialog();
@@ -77,6 +78,10 @@ namespace EasyFarm.Classes
                 //{
                 //    return;
                 //}
+
+                if (circuitBreaker == 50)
+                    break;
+                circuitBreaker++;
             }
         }
 
@@ -106,12 +111,10 @@ namespace EasyFarm.Classes
 
         public void RespondWith(IGameContext context, string response)
         {
-            var currentDialog = context.API.Dialog.GetDialog();
-            while (currentDialog.Options.FirstOrDefault(x => x.Contains(response)) == null)
+            while (context.API.Dialog.DialogInfo.Options.FirstOrDefault(x => x.Contains(response)) == null)
             {
                 context.API.Windower.SendKeyPress(Keys.NUMPADENTER);
-                Thread.Sleep(500);
-                context.API.Dialog.GetDialog();
+                Thread.Sleep(1000);
             }
 
             SelectDialogOption(context, response);

@@ -9,5 +9,6 @@ namespace EasyFarm.Classes
         bool HaveItemInInventoryContainer(string itemPattern, int InventoryContainerId = 0);
         List<EliteAPI.IItem> GetMatchingItemsFromContainer(string itemPattern, int InventoryContainerId = 0);
         int GetCountOfItemsInContainer(string itemPattern, int InventoryContainerId = 0);
+        EquipmentItem GetEquipmentItemFromItem(EliteAPI.IItem item);
     }
 }

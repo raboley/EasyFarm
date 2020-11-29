@@ -16,11 +16,10 @@
         Feet = 8,
         Neck = 9,
         Waist = 10,
-        Ear1 = 11,
-        Ear2 = 12,
-        Ring1 = 13,
-        Ring2 = 14,
+        LEar = 11,
+        REar = 12,
+        LRing = 13,
+        RRing = 14,
         Back = 15,
-
     }
 }

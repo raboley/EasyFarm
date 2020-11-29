@@ -7,19 +7,24 @@ namespace EasyFarm.Missions
 {
     public abstract class BaseQuestStep : IQuestStep
     {
-        protected Traveler _traveler;
+
+        protected Traveler _traveler
+        {
+            get => _context.Traveler;
+        }
         protected IDialog _talk;
         protected IGameContext _context;
         protected ITradeMenu _trade;
         protected IChatTools _chat;
+        protected IInventory _inventory;
 
         protected BaseQuestStep(IGameContext context)
         {
             _context = context;
-            _traveler = context.Traveler;
             _talk = context.Dialog;
             _trade = context.Trade;
             _chat = context.API.Chat;
+            _inventory = context.Inventory;
         }
 
         public virtual void DoStep()

@@ -44,7 +44,7 @@ namespace MemoryAPI
         Job SubJob { get; }
         int JobLevel { get; }
         int SubJobLevel { get; }
-        List<EliteMMO.API.EliteAPI.InventoryItem> Equipment { get; }
+        List<EliteAPI.IItem> Equipment { get; }
         int MeritPoints { get; }
         Zone HomePoint { get; }
         Nations Nation { get; }
