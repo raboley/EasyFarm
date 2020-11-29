@@ -70,16 +70,19 @@ namespace EasyFarm.Tests.States
             // Teardown
         }
 
-        [Fact]
-        public void RunSendsPauseCommand()
-        {
-            // Setup fixture
-            // Exercise system
-            sut.Run(context);
-            // Verify outcome
-            Assert.Contains(typeof(Events.PauseEvent), Events);
-            // Teardown
-        }
+        /// <summary>
+        /// Don't Want to pause on Death...
+        /// </summary>
+        // [Fact]
+        // public void RunSendsPauseCommand()
+        // {
+        //     // Setup fixture
+        //     // Exercise system
+        //     sut.Run(context);
+        //     // Verify outcome
+        //     Assert.Contains(typeof(Events.PauseEvent), Events);
+        //     // Teardown
+        // }
 
         [Fact]
         public void RunAttemptsToHomepointAfterDeath()

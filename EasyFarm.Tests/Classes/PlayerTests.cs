@@ -148,5 +148,20 @@ namespace EasyFarm.Tests.Classes
             Assert.False(_mockApi.Mock.Navigator.IsRunning);
             // Teardown	
         }
+
+        //[Fact]
+        //public void IfItemIsEquipedDoNothing()
+        //{
+        //    // Fixture setup
+        //    string slot = "Head";
+        //    string name = "Really Cool Hat";
+        //    _mockApi.Mock.Player.Equipment.Add();
+
+        //    _mockApi.Mock.Player.Equipment[0].Id = 1234;
+        //    // Excercise sytem
+        //    bool currentlyEquipped = Player.CompareEquipedItem(_mockApi, slot, name);
+        //    // Verify outcome
+        //    Assert.True(currentlyEquipped);
+        //}
     }
 }

@@ -66,7 +66,16 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
-            ShouldRecycleBattleStateCheck(context);
+            try
+            {
+                ShouldRecycleBattleStateCheck(context);
+
+            }
+            catch (Exception e)
+            {
+
+                LogViewModel.Write($"Error thrown when trying to recycle battle state: '{e}'");
+            }
             
             // Cast only one action to prevent blocking curing. 
             var action = context.Config.BattleLists["Battle"].Actions

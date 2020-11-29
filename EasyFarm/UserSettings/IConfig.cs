@@ -51,6 +51,9 @@ namespace EasyFarm.UserSettings
         bool HomePointOnDeath { get; set; }
         bool EnableTabTargeting { get; set; }
         bool IsObjectAvoidanceEnabled { get; set; }
+        bool EnableDumpItemsAtBastok { get; set; }
+        bool ShouldDumpItemsNowButtonPressed { get; set; }
+        int TimeToDumpInMinutes { get; set; }
         double FollowDistance { get; set; }
         string FollowedPlayer { get; set; }
         Route Route { get; set; }

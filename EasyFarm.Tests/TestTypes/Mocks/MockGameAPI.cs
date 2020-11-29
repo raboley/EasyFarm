@@ -18,6 +18,9 @@
 using System.Collections.Generic;
 using MemoryAPI;
 using MemoryAPI.Chat;
+using MemoryAPI.Dialog;
+using MemoryAPI.Inventory;
+using MemoryAPI.Menu;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
 
@@ -88,5 +91,24 @@ namespace EasyFarm.Tests.TestTypes.Mocks
             get { return _instance.Resource; }
             set { _instance.Resource = value; }
         }
+
+        public IMenuTools Menu
+        {
+            get { return _instance.Menu; }
+            set { _instance.Menu = value; }
+        }
+        public IDialogTools Dialog
+        {
+            get { return _instance.Dialog; }
+            set { _instance.Dialog = value; }
+        }
+
+        public IInventoryTools Inventory
+        {
+            get { return _instance.Inventory; }
+            set { _instance.Inventory = value; }
+        }
+
+        public string ConfigFilePath { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     }
 }

@@ -17,16 +17,23 @@
 // ///////////////////////////////////////////////////////////////////
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using EasyFarm.Classes;
 using EasyFarm.States;
 using EasyFarm.UserSettings;
 using MemoryAPI;
+using Pathfinder.Map;
+using Pathfinder.People;
+using Pathfinder.Travel;
+using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
+using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.Context
 {
     public interface IGameContext
     {
         IConfig Config { get; set; }
+        IDialog Dialog { get; set; }
         IPlayer Player { get; set; }
         IUnit Target { get; set; }
         Boolean IsFighting { get; set; }
@@ -34,5 +41,17 @@ namespace EasyFarm.Context
         IList<IUnit> Units { get; set; }
         IMemoryAPI API { get; set; }
         StateMemory Memory { get; set; }
+        IMenu Menu { get; set; }
+        IInventory Inventory { get; set; }
+        INavigator Navigator { get; set; }
+        ZoneMapFactory ZoneMapFactory { get; set; }
+        ObservableCollection<Person> Npcs { get; set; }
+        ObservableCollection<Person> Mobs { get; set; }
+        Traveler Traveler { get; set; }
+        PeopleOverseer NpcOverseer { get; set; }
+        WoodChopper WoodChopper { get; set; }
+        Craft Craft { get; set; }
+        IShop Shop { get; set; }
+        ITradeMenu Trade { get; set; }
     }
 }

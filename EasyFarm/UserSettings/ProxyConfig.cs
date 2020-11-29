@@ -169,6 +169,24 @@ namespace EasyFarm.UserSettings
             get => Config.Instance.IsObjectAvoidanceEnabled;
             set => Config.Instance.IsObjectAvoidanceEnabled = value;
         }
+        public bool EnableDumpItemsAtBastok
+        {
+            get => Config.Instance.EnableDumpItemsAtBastok;
+            set => Config.Instance.EnableDumpItemsAtBastok = value;
+        }
+        public bool ShouldDumpItemsNowButtonPressed
+        {
+            get => Config.Instance.ShouldDumpItemsNowButtonPressed;
+            set => Config.Instance.ShouldDumpItemsNowButtonPressed = value;
+        }
+
+        public int TimeToDumpInMinutes
+        {
+            get => Config.Instance.TimeToDumpInMinutes;
+            set => Config.Instance.TimeToDumpInMinutes = value;
+        }
+
+        
         public double FollowDistance
         {
             get => Config.Instance.FollowDistance;

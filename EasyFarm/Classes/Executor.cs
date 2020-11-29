@@ -186,7 +186,7 @@ namespace EasyFarm.Classes
             return true;
         }
 
-        private void SendCommand(String command)
+        public void SendCommand(string command)
         {
             LastCommand = command;
             _fface.Windower.SendString(command);

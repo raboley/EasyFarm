@@ -19,6 +19,7 @@ using MemoryAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Castle.Core.Internal;
 using EasyFarm.UserSettings;
 using MemoryAPI.Memory;
 
@@ -89,10 +90,34 @@ namespace EasyFarm.Classes
             }
         }
 
+        public ICollection<IUnit> NpcUnits
+        {
+            get
+            {
+                return Units.Where(x => x.NpcType.Equals(NpcType.NPC)).ToList();
+            }
+        }
+        public ICollection<IUnit> InanimateObjectsUnits
+        {
+            get
+            {
+                return Units.Where(x => x.NpcType.Equals(NpcType.InanimateObject)).ToList().FindAll(n => !n.Name.IsNullOrEmpty());
+            }
+        }
+
         /// <returns></returns>
         public IUnit GetUnitByName(string name)
         {
             return Units.FirstOrDefault(x => x.Name == name);
+        }
+
+        public IUnit GetClosestUnitByPartialName(string name)
+        {
+            List<IUnit> matchingUnits = Units.Where(x => (x.Name != null && x.Name != ""))
+                .Where(x => x.Name.ToLower().Contains(name.ToLower())).ToList();
+            IUnit unit = matchingUnits.OrderBy(x => x.Distance).FirstOrDefault();
+            return unit;
+
         }
     }
 }

@@ -32,6 +32,20 @@ namespace EasyFarm.Classes
         ICollection<IUnit> MobArray { get; }
 
         /// <summary>
+        /// Retrieves the list of Npcs.
+        /// </summary>
+        ICollection<IUnit> NpcUnits { get; }
+
+
+        /// <summary>
+        /// Retrieves the list of MOBs.
+        /// </summary>
+        ICollection<IUnit> InanimateObjectsUnits { get; }
+
+
+        IUnit GetClosestUnitByPartialName(string name);
+
+        /// <summary>
         /// Retrieves a unit from the unit array by name.
         /// </summary>
         /// <param name="name"></param>

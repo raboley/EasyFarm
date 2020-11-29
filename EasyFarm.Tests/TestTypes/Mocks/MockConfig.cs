@@ -55,6 +55,9 @@ namespace EasyFarm.Tests.TestTypes.Mocks
         public double FollowDistance { get; set; }
         public string FollowedPlayer { get; set; }
         public Route Route { get; set; } = new Route();
+        public bool EnableDumpItemsAtBastok { get; set; }
+        public bool ShouldDumpItemsNowButtonPressed { get; set; }
+        public int TimeToDumpInMinutes { get; set; }
 
         public MockConfig()
         {

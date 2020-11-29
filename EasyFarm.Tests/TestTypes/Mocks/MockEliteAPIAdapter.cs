@@ -19,6 +19,9 @@ using System.Collections.Generic;
 using System.Linq;
 using MemoryAPI;
 using MemoryAPI.Chat;
+using MemoryAPI.Dialog;
+using MemoryAPI.Inventory;
+using MemoryAPI.Menu;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
 
@@ -40,6 +43,7 @@ namespace EasyFarm.Tests.TestTypes.Mocks
             PartyMember = mockEliteAPI.PartyMember.ToDictionary(x => x.Key, x => (IPartyMemberTools) x.Value);
             Target = mockEliteAPI.Target;
             Timer = mockEliteAPI.Timer;
+            
         }
 
         public INavigatorTools Navigator { get; set; }
@@ -51,5 +55,9 @@ namespace EasyFarm.Tests.TestTypes.Mocks
         public IWindowerTools Windower { get; set; }
         public IChatTools Chat { get; set; }
         public IResourcesTools Resource { get; set; }
+        public IMenuTools Menu { get; set; }
+        public IDialogTools Dialog { get; set; }
+        public IInventoryTools Inventory { get; set; }
+        public string ConfigFilePath { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     }
 }

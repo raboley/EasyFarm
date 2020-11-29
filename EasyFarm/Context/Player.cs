@@ -24,12 +24,12 @@ namespace EasyFarm.Context
     public class Player : IPlayer
     {
         private readonly IMemoryAPI _memoryAPI;
-        private readonly UnitService _unitService;
+        public readonly UnitService UnitService;
 
         public Player(IMemoryAPI memoryAPI)
         {
             _memoryAPI = memoryAPI;
-            _unitService = new UnitService(memoryAPI);
+            UnitService = new UnitService(memoryAPI);
         }
 
         public Status Status
@@ -46,7 +46,7 @@ namespace EasyFarm.Context
 
         public bool HasAggro
         {
-            get => _unitService.HasAggro;
+            get => UnitService.HasAggro;
             set => throw new NotImplementedException();
         }
 
@@ -67,5 +67,39 @@ namespace EasyFarm.Context
             get => _memoryAPI.Player.MPPCurrent;
             set => throw new NotImplementedException();
         }
+
+        public int JobLevel
+        {
+            get => _memoryAPI.Player.JobLevel;
+            set => throw new NotImplementedException();
+        }
+
+        public Job Job
+        {
+            get => _memoryAPI.Player.Job;
+            set => throw new NotImplementedException();
+        }
+
+        public Zone Homepoint
+        {
+            get => _memoryAPI.Player.HomePoint;
+            set => throw new NotImplementedException();
+        }
+
+        public string CurrentGoal { get; set; }
+
+        public Job SubJob
+        {
+            get => _memoryAPI.Player.SubJob;
+            set => throw new NotImplementedException();
+        }
+
+        public string Nation
+        {
+            get => _memoryAPI.Player.Nation.ToString();
+            set => throw new NotImplementedException();
+        }
+
+        public Boolean IsDead => Status == Status.Dead1 || Status == Status.Dead2;
     }
 }

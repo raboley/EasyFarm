@@ -18,7 +18,6 @@
 using System.Linq;
 using EasyFarm.Classes;
 using EasyFarm.Context;
-using EasyFarm.UserSettings;
 using MemoryAPI;
 using Player = EasyFarm.Classes.Player;
 

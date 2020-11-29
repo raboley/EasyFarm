@@ -33,6 +33,8 @@ namespace EasyFarm.UserSettings
     {
         private static Lazy<Config> _lazy = new Lazy<Config>(() => new Config());
 
+        public string FileName;
+
         /// <summary>
         ///     Used to filter out aggroed mobs.
         /// </summary>
@@ -200,6 +202,15 @@ namespace EasyFarm.UserSettings
         /// Whether the player should avoid objects when becoming stuck.
         /// </summary>
         public bool IsObjectAvoidanceEnabled = false;
+
+        /// <summary>
+        /// Should the player warp to bastok and dump items/spend merit points when full?
+        /// </summary>
+        public bool EnableDumpItemsAtBastok = false;
+
+        public bool ShouldDumpItemsNowButtonPressed = false;
+
+        public int TimeToDumpInMinutes = 10;
 
         /// <summary>
         /// The distance with which to follow a player.

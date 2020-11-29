@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props" Condition="Exists('..\packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,6 +44,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,16 +57,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chat\IChatTools.cs" />
-    <Compile Include="Enums\enums.cs" />
+    <Compile Include="Dialog\IDialogTools.cs" />
+    <Compile Include="Enums\AbilityList.cs" />
+    <Compile Include="Enums\InventoryContainer.cs" />
+    <Compile Include="Enums\EquipSlots.cs" />
+    <Compile Include="Enums\Job.cs" />
     <Compile Include="Enums\NPCType.cs" />
+    <Compile Include="Enums\SpellList.cs" />
+    <Compile Include="Enums\Status.cs" />
+    <Compile Include="Enums\StatusEffect.cs" />
     <Compile Include="Enums\Structures.cs" />
+    <Compile Include="Enums\WeaponSkillList.cs" />
+    <Compile Include="Enums\Zone.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="IMemoryAPI.cs" />
     <Compile Include="Memory\EliteApiExtensions.cs" />
     <Compile Include="Memory\EliteMMOWrapper.cs" />
+    <Compile Include="Inventory\IInventoryTools.cs" />
+    <Compile Include="Memory\EliteMmoWrapper.InventoryTools.cs" />
+    <Compile Include="Memory\EliteMMOWrapper\CraftMenuTools.cs" />
+    <Compile Include="Memory\EliteMMOWrapper\ICraftMenuTools.cs" />
+    <Compile Include="Memory\EliteMMOWrapper\ITradeMenuTools.cs" />
+    <Compile Include="Memory\EliteMMOWrapper\TradeMenuTools.cs" />
+    <Compile Include="Memory\EliteMMOWrapper\WorldPoint.cs" />
+    <Compile Include="Memory\JsonSerializer.cs" />
     <Compile Include="Memory\MemoryWrapper.cs" />
     <Compile Include="Memory\PollingProcessor.cs" />
     <Compile Include="Memory\RuntimeCache.cs" />
+    <Compile Include="Menu\IMenuTools.cs" />
     <Compile Include="Navigation\Position.cs" />
     <Compile Include="Navigation\INavigatorTools.cs" />
     <Compile Include="NPC\INPCTools.cs" />
@@ -73,7 +97,22 @@
     <Compile Include="Timer\ITimerTools.cs" />
     <Compile Include="Windower\IWindowerTools.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Pathfinder\Pathfinder\Pathfinder.csproj">
+      <Project>{8AE72A1D-6503-4464-873D-C30A67D99C8A}</Project>
+      <Name>Pathfinder</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

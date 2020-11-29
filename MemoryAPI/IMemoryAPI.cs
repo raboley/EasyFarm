@@ -16,6 +16,10 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using MemoryAPI.Chat;
+using MemoryAPI.Dialog;
+using MemoryAPI.Inventory;
+using MemoryAPI.Memory.EliteMMOWrapper;
+using MemoryAPI.Menu;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
 
@@ -32,5 +36,11 @@ namespace MemoryAPI
         IWindowerTools Windower { get; set; }
         IChatTools Chat { get; set; }
         IResourcesTools Resource { get; set; }
+        IMenuTools Menu { get; set; }
+        IDialogTools Dialog { get; set; }
+        IInventoryTools Inventory { get; set; }
+        ICraftMenuTools Craft { get; set; }
+        ITradeMenuTools Trade { get; set; }
+        string ConfigFilePath { get; set; }
     }
 }

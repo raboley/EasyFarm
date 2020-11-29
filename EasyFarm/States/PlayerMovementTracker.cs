@@ -15,19 +15,21 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using EasyFarm.Classes;
+using EasyFarm.Context;
 using MemoryAPI;
 using MemoryAPI.Navigation;
+using Player = EasyFarm.Classes.Player;
 
 namespace EasyFarm.States
 {
     public class PlayerMovementTracker
     {
         private readonly IMemoryAPI _fface;
-        private readonly Queue<Position> _positionHistory = new Queue<Position>();
+        // private readonly Queue<Position> _positionHistory = new Queue<Position>();
 
         public PlayerMovementTracker(IMemoryAPI fface)
         {
@@ -36,17 +38,38 @@ namespace EasyFarm.States
 
         public void RunComponent()
         {
-            var position = _fface.Player.Position;
-            _positionHistory.Enqueue(Helpers.ToPosition(position.X, position.Y, position.Z, position.H));
-            if (_positionHistory.Count >= 15) _positionHistory.Dequeue();
-            Player.Instance.IsMoving = IsMoving();
+            // // string mapName = _context.Player.Zone.ToString();
+            // string mapName = _fface.Player.Zone.ToString();
+            // if (mapName == "Unknown" || mapName.IsNullOrEmpty())
+            //     return;
+            //
+            // _context.ZoneMapFactory.Persister = NewZoneMapPersister();
+            // _context.Zone.Map = _context.ZoneMapFactory.LoadGridOrCreateNew(mapName);
+            // _context.Zone.Name = mapName;
+            // var collectionWatcher = new CollectionWatcher<Node>(_context.Zone.Map.UnknownNodes, new KnownNodeActor(_context.ZoneMapFactory.Persister, _context.Zone.Map));
+            //
+            // // LogViewModel.Write("Starting To record Player position in zone:" + mapName);
+            // while (mapName == _context.Player.Zone.ToString())
+            // {
+            TrackPlayerPosition();
+            //     var node = _context.Zone.Map.GetNodeFromWorldPoint(new Vector3(position.X, position.Y, position.X));
+            //     if (_context.Zone.Map.UnknownNodes.Contains(node))
+            //     {
+            //         _context.Zone.Map.AddKnownNode(node.WorldPosition);
+            //         // TODO do this async or something? It takes a long time.
+            //         _context.ZoneMapFactory.Persister.Save(_context.Zone.Map);
+            //     }
+            // }
         }
 
-        public bool IsMoving()
+        private void TrackPlayerPosition()
         {
-            var changeInX = _positionHistory.Average(positon => positon.X) - _fface.Player.PosX;
-            var changeInZ = _positionHistory.Average(position => position.Z) - _fface.Player.PosZ;
-            return Math.Abs(changeInX) + Math.Abs(changeInZ) > 0;
+            Position unUsedValue;  
+            
+            var position = _fface.Player.Position;
+            _fface.Player.PositionHistory.Enqueue(Helpers.ToPosition(position.X, position.Y, position.Z, position.H)); 
+            if (_fface.Player.PositionHistory.Count >= 15) _fface.Player.PositionHistory.TryDequeue(out unUsedValue);
+            
         }
     }
 }

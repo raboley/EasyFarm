@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props" Condition="Exists('..\packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -64,6 +65,9 @@
     <Reference Include="System.Activities" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -87,8 +91,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DialogTests.cs" />
     <Compile Include="Classes\EventsTests.cs" />
+    <Compile Include="Classes\NavigatorTests.cs" />
+    <Compile Include="Classes\SpotFactoryTests.cs" />
+    <Compile Include="Classes\SpotTests.cs" />
+    <Compile Include="Classes\ZoneMapFactoryTests.cs" />
+    <Compile Include="Pathfinding\GridTests.cs" />
+    <Compile Include="Pathfinding\MappingConversionsTests.cs" />
+    <Compile Include="Pathfinding\NodeTests.cs" />
+    <Compile Include="States\LevelUpStateTests.cs" />
     <Compile Include="States\WeaponSkillStateTests.cs" />
+    <Compile Include="TestTypes\Mocks\MockChatTools.cs" />
+    <Compile Include="TestTypes\Mocks\MockNavigatorTools.cs" />
+    <Compile Include="TestTypes\Mocks\MockNPC.cs" />
+    <Compile Include="TestTypes\Mocks\MockNPCTools.cs" />
+    <Compile Include="TestTypes\Mocks\MockPartyMemberTools.cs" />
+    <Compile Include="TestTypes\Mocks\MockPlayerTools.cs" />
+    <Compile Include="TestTypes\Mocks\MockTargetTools.cs" />
+    <Compile Include="TestTypes\Mocks\MockTimerTools.cs" />
+    <Compile Include="TestTypes\Mocks\MockWindowerTools.cs" />
     <Compile Include="TestTypes\OtherTestEvent.cs" />
     <Compile Include="TestTypes\TestEvent.cs" />
     <Compile Include="Context\MockPlayer.cs" />
@@ -135,6 +157,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Pathfinder\Pathfinder\Pathfinder.csproj">
+      <Project>{8ae72a1d-6503-4464-873d-c30a67d99c8a}</Project>
+      <Name>Pathfinder</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EasyFarm\EasyFarm.csproj">
       <Project>{14508978-627b-46ae-9779-1f6b4fb0611e}</Project>
       <Name>EasyFarm</Name>
@@ -150,6 +176,7 @@
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.2.0.0\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\dotnet\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -157,6 +184,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Fody.2.0.0\build\dotnet\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.0.0\build\dotnet\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props" Condition="Exists('..\packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -35,7 +36,8 @@
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>false</BootstrapperEnabled>
-    <NuGetPackageImportStamp>24a6fa16</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>EasyFarm.App</StartupObject>
@@ -126,9 +128,8 @@
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>$(SolutionDir)packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
@@ -140,6 +141,12 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Pathfinder\packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -176,12 +183,40 @@
     <Compile Include="Classes\AppServices.cs" />
     <Compile Include="Classes\BattleList.cs" />
     <Compile Include="Classes\BattleLists.cs" />
+    <Compile Include="Classes\Dialog.cs" />
+    <Compile Include="Classes\IDialog.cs" />
+    <Compile Include="Classes\IInventory.cs" />
+    <Compile Include="Classes\IMenu.cs" />
+    <Compile Include="Classes\IMonitor.cs" />
+    <Compile Include="Classes\INavigator.cs" />
+    <Compile Include="Classes\Inventory.cs" />
+    <Compile Include="Context\Craft.cs" />
+    <Compile Include="Context\CraftingRecipe.cs" />
+    <Compile Include="Context\IShop.cs" />
+    <Compile Include="Context\Item.cs" />
+    <Compile Include="Context\ITradeMenu.cs" />
+    <Compile Include="Context\MenuBase.cs" />
+    <Compile Include="Context\Shop.cs" />
+    <Compile Include="Context\TradeItem.cs" />
+    <Compile Include="Context\TradeMenu.cs" />
+    <Compile Include="Context\WoodChopper.cs" />
+    <Compile Include="ConvertPosition.cs" />
+    <Compile Include="ffxi\Mover.cs" />
+    <Compile Include="ffxi\MoverSetup.cs" />
+    <Compile Include="Mapping\GraphConverter.cs" />
+    <Compile Include="Mapping\ISpot.cs" />
     <Compile Include="Classes\IUnit.cs" />
     <Compile Include="Classes\IUnitFilters.cs" />
     <Compile Include="Classes\IUnitService.cs" />
     <Compile Include="Classes\EventMessenger.cs" />
+    <Compile Include="Mapping\IZoneMap.cs" />
+    <Compile Include="Classes\Menu.cs" />
+    <Compile Include="Classes\Navigator.cs" />
     <Compile Include="Classes\Result.cs" />
+    <Compile Include="Mapping\Spot.cs" />
+    <Compile Include="Mapping\SpotFactory.cs" />
     <Compile Include="Classes\TargetPriority.cs" />
+    <Compile Include="Mapping\ZoneMap.cs" />
     <Compile Include="Context\GameContext.cs" />
     <Compile Include="Context\IGameContext.cs" />
     <Compile Include="Context\IPlayer.cs" />
@@ -189,16 +224,35 @@
     <Compile Include="Handlers\SelectAbilityRequestHandler.cs" />
     <Compile Include="Handlers\SelectCharacter.cs" />
     <Compile Include="Handlers\SelectCharacterResult.cs" />
-    <Compile Include="Handlers\BaseCommand.cs" />
+    <Compile Include="Handlers\EventHandlerBase.cs" />
     <Compile Include="Infrastructure\CompositeRoot.cs" />
     <Compile Include="Handlers\LoadedEvent.cs" />
     <Compile Include="Infrastructure\TabViewModels.cs" />
-    <Compile Include="Handlers\UpdateAPI.cs" />
+    <Compile Include="Handlers\UpdateEliteAPI.cs" />
+    <Compile Include="Mapping\ZoneMapFactory.cs" />
+    <Compile Include="Missions\BaseQuestStep.cs" />
+    <Compile Include="Missions\Completed.cs" />
+    <Compile Include="Missions\ImmediateCompletionCondition.cs" />
+    <Compile Include="Missions\IQuestStep.cs" />
+    <Compile Include="Missions\Sandy.cs" />
+    <Compile Include="Monitors\MobMonitor.cs" />
+    <Compile Include="Monitors\MobPersister.cs" />
+    <Compile Include="Monitors\NPCMonitor.cs" />
+    <Compile Include="Monitors\NpcPersister.cs" />
+    <Compile Include="Monitors\TravelerMonitor.cs" />
+    <Compile Include="Monitors\TravelerSetup.cs" />
+    <Compile Include="Monitors\ZoneMapMonitor.cs" />
+    <Compile Include="Monitors\ZoneMapPersister.cs" />
     <Compile Include="Parsing\AbilityMapper.cs" />
     <Compile Include="Parsing\ItemMapper.cs" />
     <Compile Include="Parsing\Resource.cs" />
     <Compile Include="Parsing\ResourceMapper.cs" />
+    <Compile Include="Parsing\Resources.cs" />
     <Compile Include="Parsing\SpellMapper.cs" />
+    <Compile Include="Pathfinding\Grid.cs" />
+    <Compile Include="Pathfinding\Heap.cs" />
+    <Compile Include="Pathfinding\MappingConversion.cs" />
+    <Compile Include="Pathfinding\Node.cs" />
     <Compile Include="Persistence\Persister.cs" />
     <Compile Include="Persistence\JsonPersister.cs" />
     <Compile Include="Classes\PlayerMonitor.cs" />
@@ -222,6 +276,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Classes\NullUnit.cs" />
+    <Compile Include="Quests\Quest.cs" />
+    <Compile Include="States\CraftSomething.cs" />
+    <Compile Include="States\DoQuest.cs" />
+    <Compile Include="States\ExploreZone.cs" />
+    <Compile Include="States\GoChopWood.cs" />
+    <Compile Include="States\GoFight.cs" />
+    <Compile Include="States\HuntNotoriusMonster.cs" />
+    <Compile Include="States\NeedSignet.cs" />
+    <Compile Include="States\MapState.cs" />
+    <Compile Include="States\DumpTreasureState.cs" />
+    <Compile Include="States\LevelChangeState.cs" />
+    <Compile Include="States\SellSomeJunk.cs" />
+    <Compile Include="States\SetSearchNpcState.cs" />
     <Compile Include="States\StateHistory.cs" />
     <Compile Include="States\StateLog.cs" />
     <Compile Include="States\StateStatus.cs" />
@@ -257,7 +324,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="UserSettings\ProxyConfig.cs" />
+    <Compile Include="Mapping\ZoneMapViewModel.cs" />
     <Compile Include="ViewModels\BattlesViewModel.cs" />
+    <Compile Include="ViewModels\DebugViewModel.cs" />
     <Compile Include="ViewModels\FollowViewModel.cs" />
     <Compile Include="Classes\ISystemTray.cs" />
     <Compile Include="Classes\LinqExtensions.cs" />
@@ -295,6 +364,12 @@
     <Compile Include="ViewModels\IgnoredViewModel.cs" />
     <Compile Include="ViewModels\LogViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Mapping\ZoneMapView.xaml.cs">
+      <DependentUpon>ZoneMapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DebugView.xaml.cs">
+      <DependentUpon>DebugView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FollowView.xaml.cs">
       <DependentUpon>FollowView.xaml</DependentUpon>
     </Compile>
@@ -343,6 +418,7 @@
     <Compile Include="Persistence\IPersister.cs" />
     <Compile Include="Classes\Unit.cs" />
     <Compile Include="Classes\UnitService.cs" />
+    <Compile Include="Classes\TreeNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
@@ -381,6 +457,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\AbilityView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Mapping\ZoneMapView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DebugView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -477,6 +561,10 @@
     <Content Include="Dependencies\EliteMMO.API.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Pathfinder\Pathfinder\Pathfinder.csproj">
+      <Project>{8ae72a1d-6503-4464-873d-c30a67d99c8a}</Project>
+      <Name>Pathfinder</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MemoryAPI\MemoryAPI.csproj">
       <Project>{cc6cc9be-32f0-4b8a-a1ad-6c7c744e2fad}</Project>
       <Name>MemoryAPI</Name>
@@ -486,6 +574,12 @@
   <PropertyGroup>
     <PostBuildEvent>copy "$(ProjectDir)\Dependencies\*.*" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.runner.visualstudio.2.4.1\build\net20\xunit.runner.visualstudio.props'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

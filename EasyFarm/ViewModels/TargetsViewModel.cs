@@ -16,7 +16,6 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System.Collections.ObjectModel;
-using EasyFarm.Classes;
 using EasyFarm.UserSettings;
 
 namespace EasyFarm.ViewModels

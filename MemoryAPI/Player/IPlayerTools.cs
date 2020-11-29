@@ -15,7 +15,11 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+
+using System.Collections.Concurrent;
 using MemoryAPI.Navigation;
+using System.Collections.Generic;
+using EliteMMO.API;
 
 namespace MemoryAPI
 {
@@ -38,5 +42,13 @@ namespace MemoryAPI
         Zone Zone { get; }
         Job Job { get; }
         Job SubJob { get; }
+        int JobLevel { get; }
+        int SubJobLevel { get; }
+        List<EliteMMO.API.EliteAPI.InventoryItem> Equipment { get; }
+        int MeritPoints { get; }
+        Zone HomePoint { get; }
+        Nations Nation { get; }
+        ConcurrentQueue<Position> PositionHistory { get; set; }
+        bool IsMoving();
     }
 }

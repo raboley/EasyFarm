@@ -31,6 +31,7 @@ namespace EasyFarm.Persistence
         private readonly string _extension;
         private readonly string _fileType;
         private readonly string _startPath;
+        public string FilePath;
 
         public SettingsManager(string extension, string fileType)
         {
@@ -47,7 +48,16 @@ namespace EasyFarm.Persistence
         /// <exception cref="System.InvalidOperationException"></exception>
         public bool TrySave<T>(T value)
         {
-            string path = GetSavePath();
+            
+            string path;
+            //if (String.IsNullOrEmpty(Config.Instance.FileName))
+            //{
+                path = GetSavePath();
+            //}
+            //else
+            //{
+            //    path = Config.Instance.FileName;
+            //}
 
             if (string.IsNullOrWhiteSpace(path))
             {
@@ -57,6 +67,7 @@ namespace EasyFarm.Persistence
             try
             {                
                 Serialization.Serialize(path, value);
+                FilePath = path;
                 return true;
             }
             catch (InvalidOperationException ex)
@@ -83,7 +94,8 @@ namespace EasyFarm.Persistence
             }
 
             try
-            {                
+            {
+                FilePath = path;
                 return Serialization.Deserialize<T>(path);
             }
             catch (InvalidOperationException ex)

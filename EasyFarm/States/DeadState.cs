@@ -26,8 +26,7 @@ namespace EasyFarm.States
     {
         public override bool Check(IGameContext context)
         {
-            var status = context.Player.Status;
-            return status == Status.Dead1 || status == Status.Dead2;
+            return context.Player.IsDead;
         }
 
         public override void Run(IGameContext context)
@@ -35,14 +34,22 @@ namespace EasyFarm.States
             // Stop program from running to next waypoint.
             context.API.Navigator.Reset();
 
+            if (context.Traveler == null)
+                return;
+            // Set traveler to dead so ZonePersister doesn't try to add a zone boundary in the middle of the zone.
+            context.Traveler.IsDead = true;
+
             if (context.Config.HomePointOnDeath) HomePointOnDeath(context);
 
             // Stop the engine from running.
-            AppServices.SendPauseEvent();
+            // AppServices.SendPauseEvent();
         }
 
         private void HomePointOnDeath(IGameContext context)
         {
+            
+            TimeWaiter.Pause(1000);
+            context.API.Windower.SendKeyPress(Keys.ESCAPE);
             TimeWaiter.Pause(2000);
             context.API.Windower.SendKeyPress(Keys.NUMPADENTER);
             TimeWaiter.Pause(1000);

@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
-using System.Collections.Generic;
+
 using System.Linq;
 using EasyFarm.Classes;
 using EasyFarm.Context;
@@ -35,7 +35,7 @@ namespace EasyFarm.States
         /// <returns></returns>
         public override bool Check(IGameContext context)
         {
-            // Check for effects taht stop resting. 
+            // Check for effects that stop resting. 
             if (ProhibitEffects.ProhibitEffectsDots
                 .Intersect(context.API.Player.StatusEffects).Any()) 
                 return false;

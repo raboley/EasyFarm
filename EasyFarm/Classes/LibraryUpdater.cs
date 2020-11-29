@@ -22,7 +22,6 @@ using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
-using MahApps.Metro.Controls.Dialogs;
 using NLog;
 
 namespace EasyFarm.Classes
@@ -36,6 +35,8 @@ namespace EasyFarm.Classes
 
         public bool HasUpdate()
         {
+            return false;
+
             var filePath = Path.Combine(Environment.CurrentDirectory, "EliteAPI.dll");
             FileVersionInfo fileInfo = GetFileInfo(filePath);
 

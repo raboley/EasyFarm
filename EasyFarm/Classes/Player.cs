@@ -17,10 +17,11 @@
 // ///////////////////////////////////////////////////////////////////
 using System;
 using System.Diagnostics;
+using EasyFarm.Context;
 using MemoryAPI;
-using System.Threading;
 using EasyFarm.UserSettings;
 using EliteMMO.API;
+using Pathfinder.People;
 
 namespace EasyFarm.Classes
 {
@@ -88,6 +89,7 @@ namespace EasyFarm.Classes
             TimeWaiter.Pause(100);
         }
 
+
         public static void SetTarget(IMemoryAPI fface, IUnit target)
         {
             if (!Config.Instance.EnableTabTargeting)
@@ -123,6 +125,51 @@ namespace EasyFarm.Classes
             {
                 fface.Target.SetNPCTarget(target.Id);
                 fface.Windower.SendString(Constants.SetTargetCursor);
+            }
+        }
+
+        public static bool CompareEquipedItem(IMemoryAPI fface, string slot, string name)
+        {
+            var equipment = fface.Player.Equipment;
+            // determine if this item is already equip
+            // get the slot id of the item we are trying to check for.
+            EquipSlots slotEnum = (EquipSlots)Enum.Parse(typeof(EquipSlots), slot);
+            int slotId = (int)slotEnum;
+
+            string currentlyEquipItemName;
+            //// 
+            int equipmentId = equipment[slotId].Id;
+            if (equipmentId == 0)
+            {
+                currentlyEquipItemName = "";
+            }
+            else
+            {
+                // Now get the name from the resources file
+                var item = fface.Resource.GetItem(equipmentId);
+                if (item == null)
+                {
+                    currentlyEquipItemName = "";
+                }
+                else
+                {
+                    currentlyEquipItemName = item.Name[0].ToString();
+                }
+            }
+            if (currentlyEquipItemName.ToLower() != name.ToLower())
+            {
+                return true;
+                //BuyItemFromAuctionHouseAndEquipIt(context, slot, name);
+
+                //}
+                //else
+                //{
+                //    context.Memory.Executor.SendCommand("/s I already have: " + name + " Equiped");
+                //}
+            }
+            else
+            {
+                return false;
             }
         }
     }

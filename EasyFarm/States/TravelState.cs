@@ -15,6 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+
+using System;
 using System.Linq;
 using EasyFarm.Classes;
 using EasyFarm.Context;
@@ -54,15 +56,21 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
-            context.API.Navigator.DistanceTolerance = 1;
+            // DateTime duration = DateTime.Now.AddSeconds(5);
+            // while (context.Traveler._pathToWalk.Count != 0 && DateTime.Now < duration)
+            // {
+            //     context.Traveler.GoToPosition(context.Traveler._pathToWalk.Dequeue());
+            // }
 
+            context.API.Navigator.DistanceTolerance = 3;
+            
             var nextPosition = context.Config.Route.GetNextPosition(context.API.Player.Position);
             var shouldKeepRunningToNextWaypoint = context.Config.Route.Waypoints.Count != 1;
-
+            
             context.API.Navigator.GotoWaypoint(
                 nextPosition,
                 context.Config.IsObjectAvoidanceEnabled,
-                shouldKeepRunningToNextWaypoint);
+                shouldKeepRunningToNextWaypoint, context.Zone.Map);
         }
 
         public override void Exit(IGameContext context)

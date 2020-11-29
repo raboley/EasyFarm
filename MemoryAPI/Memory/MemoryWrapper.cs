@@ -17,6 +17,10 @@
 // ///////////////////////////////////////////////////////////////////
 using System.Collections.Generic;
 using MemoryAPI.Chat;
+using MemoryAPI.Dialog;
+using MemoryAPI.Inventory;
+using MemoryAPI.Memory.EliteMMOWrapper;
+using MemoryAPI.Menu;
 using MemoryAPI.Resources;
 using MemoryAPI.Windower;
 
@@ -46,5 +50,15 @@ namespace MemoryAPI.Memory
         public IChatTools Chat { get; set; }
 
         public IResourcesTools Resource { get; set; }
+
+        public IDialogTools Dialog { get; set; }
+
+        public IMenuTools Menu { get; set; }
+        
+        public IInventoryTools Inventory { get; set; }
+        public ITradeMenuTools Trade { get; set; }
+        public string ConfigFilePath { get; set; }
+        public ICraftMenuTools Craft { get; set; }
+
     }
 }

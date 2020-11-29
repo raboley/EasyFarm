@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Russell\AppData\local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Russell\AppData\local\JetBrains\Rider2020.2\resharper-host\local\Transient\Rider\v202\SolutionCaches\_EasyFarm.662483375.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Russell\source\repos\raboley\EasyFarm" t="IncludeFlat">
+      <e p="EasyFarm" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Classes" t="Include">
+          <e p="AbilityUtils.cs" t="Include" />
+          <e p="ActionFilters.cs" t="Include" />
+          <e p="AppServices.cs" t="Include" />
+          <e p="BattleAbility.cs" t="Include" />
+          <e p="BattleList.cs" t="Include" />
+          <e p="BattleLists.cs" t="Include" />
+          <e p="Dialog.cs" t="Include" />
+          <e p="EventMessenger.cs" t="Include" />
+          <e p="Executor.cs" t="Include" />
+          <e p="IDialog.cs" t="Include" />
+          <e p="IInventory.cs" t="Include" />
+          <e p="IMenu.cs" t="Include" />
+          <e p="IMonitor.cs" t="Include" />
+          <e p="INavigator.cs" t="Include" />
+          <e p="Inventory.cs" t="Include" />
+          <e p="ISystemTray.cs" t="Include" />
+          <e p="IUnit.cs" t="Include" />
+          <e p="IUnitFilters.cs" t="Include" />
+          <e p="IUnitService.cs" t="Include" />
+          <e p="LibraryUpdater.cs" t="Include" />
+          <e p="LinqExtensions.cs" t="Include" />
+          <e p="LogEntries.cs" t="Include" />
+          <e p="Menu.cs" t="Include" />
+          <e p="Navigator.cs" t="Include" />
+          <e p="NullUnit.cs" t="Include" />
+          <e p="PathRecorder.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
+          <e p="PlayerMonitor.cs" t="Include" />
+          <e p="ProhibitEffects.cs" t="Include" />
+          <e p="Range.cs" t="Include" />
+          <e p="Result.cs" t="Include" />
+          <e p="SystemTray.cs" t="Include" />
+          <e p="TargetPriority.cs" t="Include" />
+          <e p="TimeWaiter.cs" t="Include" />
+          <e p="TreeNode.cs" t="Include" />
+          <e p="Unit.cs" t="Include" />
+          <e p="UnitFilters.cs" t="Include" />
+          <e p="UnitService.cs" t="Include" />
+        </e>
+        <e p="Context" t="Include">
+          <e p="Craft.cs" t="Include" />
+          <e p="CraftingRecipe.cs" t="Include" />
+          <e p="GameContext.cs" t="Include" />
+          <e p="IGameContext.cs" t="Include" />
+          <e p="IPlayer.cs" t="Include" />
+          <e p="IShop.cs" t="Include" />
+          <e p="Item.cs" t="Include" />
+          <e p="ITradeMenu.cs" t="Include" />
+          <e p="MenuBase.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
+          <e p="Shop.cs" t="Include" />
+          <e p="TradeItem.cs" t="Include" />
+          <e p="TradeMenu.cs" t="Include" />
+          <e p="WoodChopper.cs" t="Include" />
+        </e>
+        <e p="ConvertPosition.cs" t="Include" />
+        <e p="Dependencies" t="Include">
+          <e p="EliteAPI.dll" t="Include" />
+          <e p="EliteMMO.API.dll" t="Include" />
+        </e>
+        <e p="EasyFarm.csproj" t="IncludeRecursive" />
+        <e p="FFXI" t="Include">
+          <e p="Mover.cs" t="Include" />
+          <e p="MoverSetup.cs" t="Include" />
+        </e>
+        <e p="Handlers" t="Include">
+          <e p="EventHandlerBase.cs" t="Include" />
+          <e p="LoadedEvent.cs" t="Include" />
+          <e p="SelectAbilityRequestHandler.cs" t="Include" />
+          <e p="SelectCharacter.cs" t="Include" />
+          <e p="SelectCharacterEvent.cs" t="Include" />
+          <e p="SelectCharacterResult.cs" t="Include" />
+          <e p="UpdateEliteAPI.cs" t="Include" />
+        </e>
+        <e p="Infrastructure" t="Include">
+          <e p="AppBoot.cs" t="Include" />
+          <e p="CompositeRoot.cs" t="Include" />
+          <e p="Events.cs" t="Include" />
+          <e p="InverseBooleanConverter.cs" t="Include" />
+          <e p="IViewModel.cs" t="Include" />
+          <e p="TabViewModels.cs" t="Include" />
+          <e p="ViewModelBase.cs" t="Include" />
+        </e>
+        <e p="Logging" t="Include">
+          <e p="ILogger.cs" t="Include" />
+          <e p="LogEntry.cs" t="Include" />
+          <e p="Logger.cs" t="Include" />
+          <e p="LoggingEventType.cs" t="Include" />
+          <e p="NLogTextFileLogger.cs" t="Include" />
+        </e>
+        <e p="Mapping" t="Include">
+          <e p="GraphConverter.cs" t="Include" />
+          <e p="ISpot.cs" t="Include" />
+          <e p="IZoneMap.cs" t="Include" />
+          <e p="Spot.cs" t="Include" />
+          <e p="SpotFactory.cs" t="Include" />
+          <e p="ZoneMap.cs" t="Include" />
+          <e p="ZoneMapFactory.cs" t="Include" />
+          <e p="ZoneMapView.xaml" t="Include" />
+          <e p="ZoneMapView.xaml.cs" t="Include" />
+          <e p="ZoneMapViewModel.cs" t="Include" />
+        </e>
+        <e p="Missions" t="Include">
+          <e p="BaseQuestStep.cs" t="Include" />
+          <e p="Completed.cs" t="Include" />
+          <e p="ImmediateCompletionCondition.cs" t="Include" />
+          <e p="IQuestStep.cs" t="Include" />
+          <e p="Sandy.cs" t="Include" />
+        </e>
+        <e p="Monitors" t="Include">
+          <e p="MobMonitor.cs" t="Include" />
+          <e p="MobPersister.cs" t="Include" />
+          <e p="NPCMonitor.cs" t="Include" />
+          <e p="NpcPersister.cs" t="Include" />
+          <e p="TravelerMonitor.cs" t="Include" />
+          <e p="TravelerSetup.cs" t="Include" />
+          <e p="ZoneMapMonitor.cs" t="Include" />
+          <e p="ZoneMapPersister.cs" t="Include" />
+        </e>
+        <e p="NLog.config" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="x86" t="Include">
+            <e p="Debug" t="Include">
+              <e p="App.g.cs" t="Include" />
+              <e p="EasyFarm_Content.g.cs" t="Include" />
+              <e p="GeneratedInternalTypeHelper.g.cs" t="Include" />
+              <e p="Mapping" t="Include">
+                <e p="ZoneMapView.g.cs" t="Include" />
+              </e>
+              <e p="Views" t="Include">
+                <e p="AbilityView.g.cs" t="Include" />
+                <e p="BattlesView.g.cs" t="Include" />
+                <e p="DebugView.g.cs" t="Include" />
+                <e p="FollowView.g.cs" t="Include" />
+                <e p="IgnoredView.g.cs" t="Include" />
+                <e p="LogView.g.cs" t="Include" />
+                <e p="MainView.g.cs" t="Include" />
+                <e p="MasterView.g.cs" t="Include" />
+                <e p="RestingView.g.cs" t="Include" />
+                <e p="RoutesView.g.cs" t="Include" />
+                <e p="SelectActionDialog.g.cs" t="Include" />
+                <e p="SelectProcessDialog.g.cs" t="Include" />
+                <e p="SettingsView.g.cs" t="Include" />
+                <e p="TargetingView.g.cs" t="Include" />
+                <e p="TargetsView.g.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="packages.config" t="Include" />
+        <e p="Parsing" t="Include">
+          <e p="Ability.cs" t="Include" />
+          <e p="AbilityMapper.cs" t="Include" />
+          <e p="AbilityService.cs" t="Include" />
+          <e p="AbilityType.cs" t="Include" />
+          <e p="CategoryType.cs" t="Include" />
+          <e p="ElementType.cs" t="Include" />
+          <e p="ItemMapper.cs" t="Include" />
+          <e p="Resource.cs" t="Include" />
+          <e p="ResourceHelper.cs" t="Include" />
+          <e p="ResourceMapper.cs" t="Include" />
+          <e p="Resources.cs" t="Include" />
+          <e p="SkillType.cs" t="Include" />
+          <e p="SpellMapper.cs" t="Include" />
+          <e p="TargetType.cs" t="Include" />
+        </e>
+        <e p="Pathfinding" t="Include">
+          <e p="Grid.cs" t="Include" />
+          <e p="Heap.cs" t="Include" />
+          <e p="MappingConversion.cs" t="Include" />
+          <e p="Node.cs" t="Include" />
+        </e>
+        <e p="Persistence" t="Include">
+          <e p="IPersister.cs" t="Include" />
+          <e p="JsonPersister.cs" t="Include" />
+          <e p="Persister.cs" t="Include" />
+          <e p="Serialization.cs" t="Include" />
+          <e p="SettingsManager.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include">
+          <e p="app.manifest" t="Include" />
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="Quests" t="Include">
+          <e p="Quest.cs" t="Include" />
+        </e>
+        <e p="States" t="Include">
+          <e p="ApproachState.cs" t="Include" />
+          <e p="BaseState.cs" t="Include" />
+          <e p="BattleState.cs" t="Include" />
+          <e p="CraftSomething.cs" t="Include" />
+          <e p="DeadState.cs" t="Include" />
+          <e p="DoQuest.cs" t="Include" />
+          <e p="DumpTreasureState.cs" t="Include" />
+          <e p="EndState.cs" t="Include" />
+          <e p="ExploreZone.cs" t="Include" />
+          <e p="FiniteStateMachine.cs" t="Include" />
+          <e p="FollowState.cs" t="Include" />
+          <e p="GameEngine.cs" t="Include" />
+          <e p="GoChopWood.cs" t="Include" />
+          <e p="GoFight.cs" t="Include" />
+          <e p="HealingState.cs" t="Include" />
+          <e p="HuntNotoriusMonster.cs" t="Include" />
+          <e p="IState.cs" t="Include" />
+          <e p="LevelChangeState.cs" t="Include" />
+          <e p="MapState.cs" t="Include" />
+          <e p="NeedSignet.cs" t="Include" />
+          <e p="PlayerMovementTracker.cs" t="Include" />
+          <e p="PullState.cs" t="Include" />
+          <e p="RestState.cs" t="Include" />
+          <e p="Route.cs" t="Include" />
+          <e p="SellSomeJunk.cs" t="Include" />
+          <e p="SetFightingState.cs" t="Include" />
+          <e p="SetSearchNpcState.cs" t="Include" />
+          <e p="SetTargetState.cs" t="Include" />
+          <e p="StartEngineState.cs" t="Include" />
+          <e p="StartState.cs" t="Include" />
+          <e p="StateHistory.cs" t="Include" />
+          <e p="StateLog.cs" t="Include" />
+          <e p="StateMemory.cs" t="Include" />
+          <e p="StateStatus.cs" t="Include" />
+          <e p="SummonTrustsState.cs" t="Include" />
+          <e p="TravelState.cs" t="Include" />
+          <e p="TypeCache.cs" t="Include" />
+          <e p="WeaponskillState.cs" t="Include" />
+          <e p="ZoneState.cs" t="Include" />
+        </e>
+        <e p="trayicon.ico" t="Include" />
+        <e p="UserSettings" t="Include">
+          <e p="Config.cs" t="Include" />
+          <e p="Constants.cs" t="Include" />
+          <e p="IConfig.cs" t="Include" />
+          <e p="ProxyConfig.cs" t="Include" />
+        </e>
+        <e p="ViewModels" t="Include">
+          <e p="BattlesViewModel.cs" t="Include" />
+          <e p="DebugViewModel.cs" t="Include" />
+          <e p="FollowViewModel.cs" t="Include" />
+          <e p="IgnoredViewModel.cs" t="Include" />
+          <e p="ListViewModel.cs" t="Include" />
+          <e p="LogViewModel.cs" t="Include" />
+          <e p="MainViewModel.cs" t="Include" />
+          <e p="MasterViewModel.cs" t="Include" />
+          <e p="RestingViewModel.cs" t="Include" />
+          <e p="RoutesViewModel.cs" t="Include" />
+          <e p="SelectProcessViewModel.cs" t="Include" />
+          <e p="SettingsViewModel.cs" t="Include" />
+          <e p="TargetingViewModel.cs" t="Include" />
+          <e p="TargetsViewModel.cs" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="AbilityView.xaml" t="Include" />
+          <e p="AbilityView.xaml.cs" t="Include" />
+          <e p="BattlesView.xaml" t="Include" />
+          <e p="BattlesView.xaml.cs" t="Include" />
+          <e p="DebugView.xaml" t="Include" />
+          <e p="DebugView.xaml.cs" t="Include" />
+          <e p="FollowView.xaml" t="Include" />
+          <e p="FollowView.xaml.cs" t="Include" />
+          <e p="IgnoredView.xaml" t="Include" />
+          <e p="IgnoredView.xaml.cs" t="Include" />
+          <e p="LogView.xaml" t="Include" />
+          <e p="LogView.xaml.cs" t="Include" />
+          <e p="MainView.xaml" t="Include" />
+          <e p="MainView.xaml.cs" t="Include" />
+          <e p="MasterView.xaml" t="Include" />
+          <e p="MasterView.xaml.cs" t="Include" />
+          <e p="RestingView.xaml" t="Include" />
+          <e p="RestingView.xaml.cs" t="Include" />
+          <e p="RoutesView.xaml" t="Include" />
+          <e p="RoutesView.xaml.cs" t="Include" />
+          <e p="SelectActionDialog.xaml" t="Include" />
+          <e p="SelectActionDialog.xaml.cs" t="Include" />
+          <e p="SelectProcessDialog.xaml" t="Include" />
+          <e p="SelectProcessDialog.xaml.cs" t="Include" />
+          <e p="SettingsView.xaml" t="Include" />
+          <e p="SettingsView.xaml.cs" t="Include" />
+          <e p="Styles.xaml" t="Include" />
+          <e p="TargetingView.xaml" t="Include" />
+          <e p="TargetingView.xaml.cs" t="Include" />
+          <e p="TargetsView.xaml" t="Include" />
+          <e p="TargetsView.xaml.cs" t="Include" />
+          <e p="ViewDictionary.xaml" t="Include" />
+        </e>
+      </e>
+      <e p="EasyFarm.sln" t="IncludeFlat" />
+      <e p="EasyFarm.Tests" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Classes" t="Include">
+          <e p="AbilityUtilsTests.cs" t="Include" />
+          <e p="ActionFilterTests.cs" t="Include" />
+          <e p="DialogTests.cs" t="Include" />
+          <e p="EventsTests.cs" t="Include" />
+          <e p="ExecutorTests.cs" t="Include" />
+          <e p="LogEntriesTests.cs" t="Include" />
+          <e p="NavigatorTests.cs" t="Include" />
+          <e p="PathRecorderTest.cs" t="Include" />
+          <e p="PlayerTests.cs" t="Include" />
+          <e p="RangeTests.cs" t="Include" />
+          <e p="SerializationTests.cs" t="Include" />
+          <e p="SpotFactoryTests.cs" t="Include" />
+          <e p="SpotTests.cs" t="Include" />
+          <e p="UnitFilterTests.cs" t="Include" />
+          <e p="ZoneMapFactoryTests.cs" t="Include" />
+        </e>
+        <e p="Context" t="Include">
+          <e p="MockPlayer.cs" t="Include" />
+          <e p="TestContext.cs" t="Include" />
+        </e>
+        <e p="EasyFarm.Tests.csproj" t="IncludeRecursive" />
+        <e p="FodyWeavers.xml" t="Include" />
+        <e p="Logging" t="Include">
+          <e p="LogEntryTests.cs" t="Include" />
+        </e>
+        <e p="ModuleInitializer.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Parsing" t="Include">
+          <e p="AbilityMapperTests.cs" t="Include" />
+          <e p="AbilityTests.cs" t="Include" />
+          <e p="ItemMapperTests.cs" t="Include" />
+          <e p="ResourcesTests.cs" t="Include" />
+          <e p="SpellMapperTests.cs" t="Include" />
+        </e>
+        <e p="Pathfinding" t="Include">
+          <e p="GridTests.cs" t="Include" />
+          <e p="MappingConversionsTests.cs" t="Include" />
+          <e p="NodeTests.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="States" t="Include">
+          <e p="BattleStateTests.cs" t="Include" />
+          <e p="DeadStateTests.cs" t="Include" />
+          <e p="LevelUpStateTests.cs" t="Include" />
+          <e p="RestStateTests.cs" t="Include" />
+          <e p="SetTargetStateTests.cs" t="Include" />
+          <e p="TargetPriorityTests.cs" t="Include" />
+          <e p="WeaponSkillStateTests.cs" t="Include" />
+          <e p="ZoneStateTests.cs" t="Include" />
+        </e>
+        <e p="TestTypes" t="Include">
+          <e p="AbstractTestBase.cs" t="Include" />
+          <e p="CustomAssert.cs" t="Include" />
+          <e p="Mocks" t="Include">
+            <e p="MockChatTools.cs" t="Include" />
+            <e p="MockConfig.cs" t="Include" />
+            <e p="MockEliteAPI.cs" t="Include" />
+            <e p="MockEliteAPIAdapter.cs" t="Include" />
+            <e p="MockGameAPI.cs" t="Include" />
+            <e p="MockNavigatorTools.cs" t="Include" />
+            <e p="MockNPC.cs" t="Include" />
+            <e p="MockNPCTools.cs" t="Include" />
+            <e p="MockPartyMemberTools.cs" t="Include" />
+            <e p="MockPlayerTools.cs" t="Include" />
+            <e p="MockTargetTools.cs" t="Include" />
+            <e p="MockTimerTools.cs" t="Include" />
+            <e p="MockUnit.cs" t="Include" />
+            <e p="MockUnitService.cs" t="Include" />
+            <e p="MockWindowerTools.cs" t="Include" />
+          </e>
+          <e p="MockUnitFilters.cs" t="Include" />
+          <e p="OtherTestEvent.cs" t="Include" />
+          <e p="TestEvent.cs" t="Include" />
+        </e>
+        <e p="ViewModels" t="Include">
+          <e p="IgnoredViewModelTests.cs" t="Include" />
+          <e p="MasterViewModelTests.cs" t="Include" />
+        </e>
+      </e>
+      <e p="MemoryAPI" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Chat" t="Include">
+          <e p="IChatTools.cs" t="Include" />
+        </e>
+        <e p="Dialog" t="Include">
+          <e p="IDialogTools.cs" t="Include" />
+        </e>
+        <e p="Enums" t="Include">
+          <e p="AbilityList.cs" t="Include" />
+          <e p="EquipSlots.cs" t="Include" />
+          <e p="InventoryContainer.cs" t="Include" />
+          <e p="Job.cs" t="Include" />
+          <e p="NPCType.cs" t="Include" />
+          <e p="SpellList.cs" t="Include" />
+          <e p="Status.cs" t="Include" />
+          <e p="StatusEffect.cs" t="Include" />
+          <e p="Structures.cs" t="Include" />
+          <e p="WeaponSkillList.cs" t="Include" />
+          <e p="Zone.cs" t="Include" />
+        </e>
+        <e p="Helpers.cs" t="Include" />
+        <e p="IMemoryAPI.cs" t="Include" />
+        <e p="Inventory" t="Include">
+          <e p="IInventoryTools.cs" t="Include" />
+        </e>
+        <e p="Memory" t="Include">
+          <e p="EliteApiExtensions.cs" t="Include" />
+          <e p="EliteMMOWrapper" t="Include">
+            <e p="CraftMenuTools.cs" t="Include" />
+            <e p="ICraftMenuTools.cs" t="Include" />
+            <e p="ITradeMenuTools.cs" t="Include" />
+            <e p="TradeMenuTools.cs" t="Include" />
+            <e p="WorldPoint.cs" t="Include" />
+          </e>
+          <e p="EliteMMOWrapper.cs" t="Include" />
+          <e p="EliteMmoWrapper.InventoryTools.cs" t="Include" />
+          <e p="JsonSerializer.cs" t="Include" />
+          <e p="MemoryWrapper.cs" t="Include" />
+          <e p="PollingProcessor.cs" t="Include" />
+          <e p="RuntimeCache.cs" t="Include" />
+        </e>
+        <e p="MemoryAPI.csproj" t="IncludeRecursive" />
+        <e p="Menu" t="Include">
+          <e p="IMenuTools.cs" t="Include" />
+        </e>
+        <e p="Navigation" t="Include">
+          <e p="INavigatorTools.cs" t="Include" />
+          <e p="Position.cs" t="Include" />
+        </e>
+        <e p="NPC" t="Include">
+          <e p="INPCTools.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PartyMember" t="Include">
+          <e p="IPartyMemberTools.cs" t="Include" />
+        </e>
+        <e p="Player" t="Include">
+          <e p="IPlayerTools.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="IResourcesTools.cs" t="Include" />
+          <e p="ResourcesTools.cs" t="Include" />
+        </e>
+        <e p="Target" t="Include">
+          <e p="ITargetTools.cs" t="Include" />
+        </e>
+        <e p="Timer" t="Include">
+          <e p="ITimerTools.cs" t="Include" />
+        </e>
+        <e p="Windower" t="Include">
+          <e p="IWindowerTools.cs" t="Include" />
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive">
+        <e p="xunit.runner.visualstudio.2.4.1\build\_common\xunit.abstractions.dll" t="Include" />
+        <e p="xunit.runner.visualstudio.2.4.1\build\_common\xunit.runner.reporters.net452.dll" t="Include" />
+        <e p="xunit.runner.visualstudio.2.4.1\build\_common\xunit.runner.utility.net452.dll" t="Include" />
+        <e p="xunit.runner.visualstudio.2.4.1\build\_common\xunit.runner.visualstudio.testadapter.dll" t="Include" />
+      </e>
+    </e>
+    <e p="C:\Users\Russell\source\repos\raboley\Pathfinder\Pathfinder" t="IncludeRecursive">
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="ExampleWorld.cs" t="Include" />
+      <e p="Map" t="Include">
+        <e p="Heap.cs" t="Include" />
+        <e p="Node.cs" t="Include" />
+        <e p="Zone.cs" t="Include" />
+        <e p="ZoneBoundary.cs" t="Include" />
+        <e p="ZoneMap.cs" t="Include" />
+        <e p="ZoneMapFactory.cs" t="Include" />
+        <e p="ZoneOverseer.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages.config" t="Include" />
+      <e p="Pathfinder.csproj" t="IncludeRecursive" />
+      <e p="Pathing" t="Include">
+        <e p="IPathfindingStyle.cs" t="Include" />
+        <e p="IPathSmoother.cs" t="Include" />
+        <e p="PathfinderMath.cs" t="Include" />
+        <e p="Pathfinding.cs" t="Include" />
+        <e p="WorldPathfinder.cs" t="Include" />
+      </e>
+      <e p="People" t="Include">
+        <e p="IEntity.cs" t="Include" />
+        <e p="PeopleManager.cs" t="Include" />
+        <e p="PeopleOverseer.cs" t="Include" />
+        <e p="Person.cs" t="Include" />
+      </e>
+      <e p="Persistence" t="Include">
+        <e p="FilePersister.cs" t="Include" />
+        <e p="FileTextPersister.cs" t="Include" />
+        <e p="IPersister.cs" t="Include" />
+      </e>
+      <e p="Point.cs" t="Include" />
+      <e p="PrintConsole" t="Include">
+        <e p="INodePrinter.cs" t="Include" />
+        <e p="PrintCoordinates.cs" t="Include" />
+        <e p="PrintKnown.cs" t="Include" />
+        <e p="PrintPath.cs" t="Include" />
+        <e p="PrintWalkable.cs" t="Include" />
+      </e>
+      <e p="Properties" t="Include">
+        <e p="Annotations.cs" t="Include" />
+        <e p="Annotations1.cs" t="Include" />
+        <e p="AssemblyInfo.cs" t="Include" />
+        <e p="Resources.Designer.cs" t="Include" />
+        <e p="Resources.resx" t="Include" />
+      </e>
+      <e p="Travel" t="Include">
+        <e p="IWalker.cs" t="Include" />
+        <e p="Traveler.cs" t="Include" />
+        <e p="Walker.cs" t="Include" />
+        <e p="Zoner.cs" t="Include" />
+      </e>
+      <e p="Watchers" t="Include">
+        <e p="CollectionWatcher.cs" t="Include" />
+        <e p="IActor.cs" t="Include" />
+        <e p="ItemsChangedObservableCollection.cs" t="Include" />
+        <e p="KnownNodeActor.cs" t="Include" />
+        <e p="PersisterActor.cs" t="Include" />
+        <e p="PersonWatcher.cs" t="Include" />
+        <e p="Watcher.cs" t="Include" />
+      </e>
+      <e p="World.cs" t="Include" />
+    </e>
+  </component>
+</project>

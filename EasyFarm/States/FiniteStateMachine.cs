@@ -15,6 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,12 @@ using System.Threading.Tasks;
 using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.Logging;
+using EasyFarm.Parsing;
 using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
 using MemoryAPI;
+using Pathfinder.Travel;
+using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.States
 {
@@ -37,31 +41,65 @@ namespace EasyFarm.States
         private CancellationTokenSource _cancellation = new CancellationTokenSource();
         private readonly GameContext _context;
 
-        public FiniteStateMachine(IMemoryAPI fface)
+        public FiniteStateMachine(IMemoryAPI fface, GameContext gameContext)
         {
             _fface = fface;
-            _context = new GameContext(fface);
-
+            _context = gameContext;
             //Create the states
-            AddState(new DeadState() {Priority = 7});
-            AddState(new ZoneState() {Priority = 7});
-            AddState(new SetTargetState() {Priority = 7});
-            AddState(new SetFightingState() {Priority = 7});
-            AddState(new FollowState() {Priority = 5});
-            AddState(new RestState() {Priority = 2});
-            AddState(new SummonTrustsState() {Priority = 6});
-            AddState(new ApproachState() {Priority = 0});
+
+            AddState(new ManualOverrideState() {Priority = 9999});
+
+            // Fighting States
+            AddState(new SetTargetState() {Priority = 10});
+            AddState(new SetFightingState() {Priority = 10});
+            AddState(new ApproachState() {Priority = 1});
             AddState(new BattleState() {Priority = 3});
             AddState(new WeaponskillState() {Priority = 2});
             AddState(new PullState() {Priority = 4});
+
+
+            // AddState( new GoFight() {Priority = 8});
+            // AddState( new WalkStraight() {Priority = 0});
+
+            AddState(new DeadState() {Priority = 51});
+            AddState(new ZoneState() {Priority = 51});
+            AddState(new FollowState() {Priority = 5});
+            AddState(new RestState() {Priority = 2});
+            AddState(new SummonTrustsState() {Priority = 6});
             AddState(new StartState() {Priority = 5});
             AddState(new TravelState() {Priority = 1});
             AddState(new HealingState() {Priority = 2});
             AddState(new EndState() {Priority = 3});
             AddState(new StartEngineState() {Priority = Constants.MaxPriority});
+            // AddState(new DumpTreasureState() { Priority = 2 });
+            // AddState(new MapState() {Priority = 5});
+
+
+            // AddState(new ExploreZone() {Priority = 0});
+            // AddState(new HuntNotoriusMonster() {Priority = 10});
+            // AddState(new GoChopWood() {Priority = 10});
+
+            // Needs Signet
+            // AddState(new NeedSignet() {Priority = 21});
+
+            // The Finer Things
+            // TODO: Uncomment this
+            AddState(new CraftSomething() {Priority = 20});
+
+            AddState(new SellSomeJunk() {Priority = 119});
+            // AddState(new DoQuest() {Priority = 130});
+
+
+            // AddState(new TestMoveState() { Priority = 10 });
+
+            // Inventory Is Full
+            // Have some ingredients to craft
+            // Hungry
+            // Trying to Level Up
 
             _states.ForEach(x => x.Enabled = true);
         }
+
 
         private void AddState(IState component)
         {
@@ -115,6 +153,8 @@ namespace EasyFarm.States
                         Logger.Log(new LogEntry(LoggingEventType.Error, "FSM error", ex));
                         LogViewModel.Write("An error has occurred: please check easyfarm.log for more information");
                         AppServices.InformUser("An error occurred!");
+                        // I do want to write exception message for now.
+                        LogViewModel.Write(ex.Message);
                     }
                     finally
                     {
@@ -139,6 +179,9 @@ namespace EasyFarm.States
                 // Sort the List, States may have updated Priorities.
                 _states.Sort();
 
+                // watch for events that should break running.
+
+
                 // Find a State that says it needs to run.
                 foreach (var mc in _states.Where(x => x.Enabled).ToList())
                 {
@@ -149,12 +192,26 @@ namespace EasyFarm.States
                     // Run last state's exits method.
                     if (_cache[mc] != isRunnable)
                     {
-                        if (isRunnable) mc.Enter(_context);
-                        else mc.Exit(_context);
+                        if (isRunnable)
+                        {
+                            mc.Enter(_context);
+                        }
+                        else
+                        {
+                            mc.Exit(_context);
+                        }
+
                         _cache[mc] = isRunnable;
                     }
 
-                    if (isRunnable) mc.Run(_context);
+                    if (isRunnable)
+                    {
+                        mc.Run(_context);
+                        TimeWaiter.Pause(250);
+                        // Need to fix up the battle stuff before adding this...
+                        // Would be better if you didn't go through every state so mutual exclusion was required in each state...
+                        // break;
+                    }
                 }
 
                 TimeWaiter.Pause(250);
@@ -162,5 +219,9 @@ namespace EasyFarm.States
 
             // ReSharper disable once FunctionNeverReturns
         }
+    }
+
+    public class ManualOverrideState : BaseState
+    {
     }
 }

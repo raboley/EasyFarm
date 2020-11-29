@@ -18,6 +18,7 @@
 
 using EasyFarm.Classes;
 using EasyFarm.UserSettings;
+
 using MemoryAPI;
 
 namespace EasyFarm.States
@@ -31,6 +32,7 @@ namespace EasyFarm.States
             UnitService = new UnitService(eliteApi);
             UnitFilters = new UnitFilters();
             Config = new ProxyConfig();
+            
         }
 
         public IConfig Config { get; set; }

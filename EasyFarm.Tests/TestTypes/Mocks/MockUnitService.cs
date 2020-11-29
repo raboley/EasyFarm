@@ -24,6 +24,14 @@ namespace EasyFarm.Tests.TestTypes.Mocks
     {
         public bool HasAggro { get; }
         public ICollection<IUnit> MobArray { get; } = new List<IUnit>();
+        public ICollection<IUnit> NpcUnits { get; }
+        public ICollection<IUnit> InanimateObjectsUnits { get; }
+
+        public IUnit GetClosestUnitByPartialName(string name)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IUnit GetUnitByName(string name)
         {
             throw new System.NotImplementedException();

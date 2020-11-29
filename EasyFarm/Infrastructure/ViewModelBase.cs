@@ -18,6 +18,7 @@
 using System;
 using System.IO;
 using EasyFarm.Classes;
+using EasyFarm.Monitors;
 using EasyFarm.Parsing;
 using EasyFarm.Persistence;
 using EasyFarm.States;
@@ -50,6 +51,8 @@ namespace EasyFarm.Infrastructure
 
         public static AbilityService AbilityService { get; set; } = new AbilityService(null);
 
+        public static NpcMonitor NpcMonitor { get; set; }
+
         /// <summary>
         /// Set up session from given EliteApi session.
         /// </summary>
@@ -68,6 +71,9 @@ namespace EasyFarm.Infrastructure
             PathRecorder = new PathRecorder(FFACE);
 
             AbilityService = new AbilityService(FFACE);
+            
+            // // Track the NPCs
+            // NpcMonitor = new NpcMonitor(FFACE);
 
             AutoLoadSettings();
         }
@@ -79,7 +85,9 @@ namespace EasyFarm.Infrastructure
             var fileName = $"{characterName}.eup";
             if (String.IsNullOrWhiteSpace(fileName)) return;
             if (!File.Exists(fileName)) return;
+
             var config = persister.Deserialize<Config>(fileName);
+            config.FileName = fileName;
             Config.Instance = config;
             AppServices.SendConfigLoaded();
         }

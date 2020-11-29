@@ -16,6 +16,8 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using EasyFarm.Classes;
+using EasyFarm.Context;
+using EasyFarm.Monitors;
 using EasyFarm.UserSettings;
 using MemoryAPI;
 
@@ -33,6 +35,7 @@ namespace EasyFarm.States
         private readonly IMemoryAPI _fface;
 
         private readonly PlayerMonitor _playerMonitor;
+        private readonly ZoneMapMonitor _zoneMapMonitor;
 
         /// <summary>
         ///     The engine that controls player actions.
@@ -44,11 +47,21 @@ namespace EasyFarm.States
         /// </summary>
         public bool IsWorking;
 
+        private NpcMonitor _npcMonitor;
+        private MobMonitor _mobMonitor;
+        private TravelerMonitor _travelerMonitor;
+
         public GameEngine(IMemoryAPI fface)
         {
             _fface = fface;
-            _stateMachine = new FiniteStateMachine(fface);
+            var context = new GameContext(fface);
+            
+            _stateMachine = new FiniteStateMachine(fface, context);
             _playerMonitor = new PlayerMonitor(fface);
+            _npcMonitor = new NpcMonitor(fface, context);
+            _mobMonitor = new MobMonitor(fface, context);
+            _travelerMonitor = new TravelerMonitor(fface, context);
+            _zoneMapMonitor = new ZoneMapMonitor(fface, context);
         }
 
         /// <summary>
@@ -64,6 +77,10 @@ namespace EasyFarm.States
                 IsWorking = true;
                 _stateMachine.Start();
                 _playerMonitor.Start();
+                _npcMonitor.Start();
+                _mobMonitor.Start();
+                _travelerMonitor.Start();
+                _zoneMapMonitor.Start();
                 return true;
             }
 
@@ -79,6 +96,10 @@ namespace EasyFarm.States
             IsWorking = false;
             _stateMachine.Stop();
             _playerMonitor.Stop();
+            _npcMonitor.Stop();
+            _mobMonitor.Stop();
+            _travelerMonitor.Stop();
+            _zoneMapMonitor.Stop();
         }
     }
 }
