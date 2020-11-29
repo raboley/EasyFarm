@@ -1,6 +1,6 @@
 using EasyFarm.Classes;
 using EasyFarm.Context;
-using MemoryAPI.Memory.EliteMMOWrapper;
+using MemoryAPI.Chat;
 using Pathfinder.Travel;
 
 namespace EasyFarm.Missions
@@ -11,6 +11,7 @@ namespace EasyFarm.Missions
         protected IDialog _talk;
         protected IGameContext _context;
         protected ITradeMenu _trade;
+        protected IChatTools _chat;
 
         protected BaseQuestStep(IGameContext context)
         {
@@ -18,6 +19,7 @@ namespace EasyFarm.Missions
             _traveler = context.Traveler;
             _talk = context.Dialog;
             _trade = context.Trade;
+            _chat = context.API.Chat;
         }
 
         public virtual void DoStep()

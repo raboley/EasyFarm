@@ -3,10 +3,7 @@ using System.Linq;
 using System.Threading;
 using EasyFarm.Context;
 using EasyFarm.Missions;
-using EliteMMO.API;
-using Pathfinder;
-using Pathfinder.People;
-using Player = EasyFarm.Classes.Player;
+using EasyFarm.Missions.SandOria;
 
 namespace EasyFarm.States
 {
@@ -16,8 +13,11 @@ namespace EasyFarm.States
 
         public void SetCurrentQuests(IGameContext context)
         {
-            var missions = new List<IQuest>();
-            missions.Add(Quest.SandyOneOne(context));
+            var missions = new List<IQuest>
+            {
+                MissionFactory.SandyOneOne(context),
+                QuestFactory.TheMerchantsBidding(context)
+            };
 
             CurrentQuests = missions;
         }
