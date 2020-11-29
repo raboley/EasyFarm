@@ -232,9 +232,15 @@
     <Compile Include="Mapping\ZoneMapFactory.cs" />
     <Compile Include="Missions\BaseQuestStep.cs" />
     <Compile Include="Missions\Completed.cs" />
-    <Compile Include="Missions\ImmediateCompletionCondition.cs" />
+    <Compile Include="Missions\ICompleteRightNowCondition.cs" />
+    <Compile Include="Missions\IQuest.cs" />
     <Compile Include="Missions\IQuestStep.cs" />
-    <Compile Include="Missions\Sandy.cs" />
+    <Compile Include="Missions\NoInstantCompletion.cs" />
+    <Compile Include="Missions\Quest.cs" />
+    <Compile Include="Missions\SandOria\MissionFactory.cs" />
+    <Compile Include="Missions\SandOria\QuestFactory.cs" />
+    <Compile Include="Missions\SandOria\SandOneOne.cs" />
+    <Compile Include="Missions\SandOria\TheMerchantsBidding.cs" />
     <Compile Include="Monitors\MobMonitor.cs" />
     <Compile Include="Monitors\MobPersister.cs" />
     <Compile Include="Monitors\NPCMonitor.cs" />
@@ -276,7 +282,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Classes\NullUnit.cs" />
-    <Compile Include="Quests\Quest.cs" />
     <Compile Include="States\CraftSomething.cs" />
     <Compile Include="States\DoQuest.cs" />
     <Compile Include="States\ExploreZone.cs" />
@@ -569,6 +574,9 @@
       <Project>{cc6cc9be-32f0-4b8a-a1ad-6c7c744e2fad}</Project>
       <Name>MemoryAPI</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Quests" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
