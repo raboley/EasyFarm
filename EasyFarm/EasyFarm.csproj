@@ -230,6 +230,11 @@
     <Compile Include="Infrastructure\TabViewModels.cs" />
     <Compile Include="Handlers\UpdateEliteAPI.cs" />
     <Compile Include="Mapping\ZoneMapFactory.cs" />
+    <Compile Include="Missions\BaseQuestStep.cs" />
+    <Compile Include="Missions\Completed.cs" />
+    <Compile Include="Missions\ImmediateCompletionCondition.cs" />
+    <Compile Include="Missions\IQuestStep.cs" />
+    <Compile Include="Missions\Sandy.cs" />
     <Compile Include="Monitors\MobMonitor.cs" />
     <Compile Include="Monitors\MobPersister.cs" />
     <Compile Include="Monitors\NPCMonitor.cs" />

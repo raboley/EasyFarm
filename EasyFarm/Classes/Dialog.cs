@@ -2,6 +2,9 @@
 using EasyFarm.ViewModels;
 using MemoryAPI;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using EliteMMO.API;
 
 namespace EasyFarm.Classes
 {
@@ -35,9 +38,11 @@ namespace EasyFarm.Classes
                 {
                     if (i == 10)
                     {
-                        LogViewModel.Write($"Error occurred when selecting dialog options. Couldn't find dialog option '{desiredOptionText}' for question: '{dialog.Question}'");
+                        LogViewModel.Write(
+                            $"Error occurred when selecting dialog options. Couldn't find dialog option '{desiredOptionText}' for question: '{dialog.Question}'");
                         return;
                     }
+
                     i++;
                     TimeWaiter.Pause(500);
                     continue;
@@ -52,7 +57,6 @@ namespace EasyFarm.Classes
 
         public void MoveToDesiredDialogOption(IGameContext context, int desiredIndex)
         {
-
             while (desiredIndex != context.Memory.EliteApi.Dialog.DialogIndex)
             {
                 var dialog = context.Memory.EliteApi.Dialog.GetDialog();
@@ -65,6 +69,7 @@ namespace EasyFarm.Classes
                 {
                     context.API.Windower.SendKeyPress(EliteMMO.API.Keys.UP);
                 }
+
                 TimeWaiter.Pause(100);
 
                 //// some menus have hidden options, but all show up in the returned options, so need to also check that current index text doesn't equal to desired text
@@ -83,5 +88,44 @@ namespace EasyFarm.Classes
                 TimeWaiter.Pause(200);
             }
         }
+
+        public void TalkToPersonByName(IGameContext context, string name)
+        {
+            // Move this
+            var unit = context.Memory.UnitService.GetUnitByName(name);
+            if (unit == null)
+                return;
+
+            context.Target = unit;
+            Player.SetTarget(context.API, unit);
+
+            // Talk
+            context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
+            TimeWaiter.Pause(1000);
+        }
+
+        public void RespondWith(IGameContext context, string response)
+        {
+            var currentDialog = context.API.Dialog.GetDialog();
+            while (currentDialog.Options.FirstOrDefault(x => x.Contains(response)) == null)
+            {
+                context.API.Windower.SendKeyPress(Keys.NUMPADENTER);
+                Thread.Sleep(500);
+                context.API.Dialog.GetDialog();
+            }
+
+            SelectDialogOption(context, response);
+        }
+
+        public void WalkAndTalkToPersonByName(IGameContext context, string name)
+        {
+            context.Traveler.WalkAcrossWorldToNpcByName(name);
+            if (context.Traveler.AmNotWithinTalkingDistanceToPersonByName(name))
+                return;
+
+            context.Dialog.TalkToPersonByName(context, name);
+        }
+        
+
     }
 }

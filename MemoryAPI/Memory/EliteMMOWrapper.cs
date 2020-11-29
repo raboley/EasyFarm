@@ -971,6 +971,9 @@ namespace MemoryAPI.Memory
             public int DialogId => (int) _api.Dialog.DialogId;
             public int DialogIndex => (int) _api.Dialog.DialogIndex;
             public int DialogOptionCount => (int) _api.Dialog.DialogOptionCount;
+            
+
+
         }
     }
 }

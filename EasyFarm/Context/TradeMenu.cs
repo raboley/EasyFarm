@@ -1,9 +1,18 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using EliteMMO.API;
 using MemoryAPI;
+using Player = EasyFarm.Classes.Player;
 
 namespace EasyFarm.Context
 {
+    public class ItemsToTrade
+    {
+        public string Name { get; set; }
+        public int NumberToTrade { get; set; }
+    }
+
     public class TradeMenu : ITradeMenu
     {
         private IMemoryAPI _api;
@@ -63,5 +72,58 @@ namespace EasyFarm.Context
         }
 
         public bool IsTradeMenuOpen => _api.Trade.IsTradeMenuOpen;
+
+        public void TradeItemsToPersonByName(IGameContext context, string name, List<ItemsToTrade> itemsToTrade)
+        {
+            StartTradingWithPersonByName(context, name);
+            AddItemsFromInventoryToTradeMenu(context, itemsToTrade);
+            FinishTrade(context);
+        }
+
+        private static void FinishTrade(IGameContext context)
+        {
+            context.API.Menu.ClickTrade();
+        }
+
+        private static void AddItemsFromInventoryToTradeMenu(IGameContext context, List<ItemsToTrade> itemsToTrade)
+        {
+            var itemsInInventory = context.API.Inventory.GetInventoryItemsFromContainer();
+            for (int i = 0; i < itemsToTrade.Count; i++)
+            {
+                var item = itemsToTrade[i];
+
+                var inventoryItems = context.API.Inventory.GetMatchingInventoryItemsFromContainer(item.Name);
+                if (inventoryItems.Count == 0)
+                    continue;
+                var inventoryItem = inventoryItems.First();
+
+                var tradeItem = new EliteAPI.TradeItem
+                {
+                    Index = i,
+                    ItemCount = (byte) item.NumberToTrade,
+                    ItemId = inventoryItem.Id,
+                    ItemIndex = (byte) inventoryItem.Index
+                };
+
+                context.API.Trade.SetTradeItem(i, tradeItem);
+            }
+        }
+
+        private void StartTradingWithPersonByName(IGameContext context, string name)
+        {
+            while (!_api.Trade.IsTradeMenuOpen)
+            {
+                TargetUnitFromName(context, name);
+                Thread.Sleep(200);
+                context.API.Menu.OpenTradeMenu();
+            }
+        }
+
+        private static void TargetUnitFromName(IGameContext context, string name)
+        {
+            var unit = context.Memory.UnitService.GetUnitByName(name);
+            context.Target = unit;
+            EasyFarm.Classes.Player.SetTarget(context.API, unit);
+        }
     }
 }

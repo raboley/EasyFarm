@@ -18,11 +18,11 @@ namespace EasyFarm.States
 
             if (new RestState().Check(context)) return false;
 
-            if (new NeedSignet().Check(context)) return false;
-            if (new DoQuest().Check(context)) return false;
+            // if (new NeedSignet().Check(context)) return false;
+            // if (new DoQuest().Check(context)) return false;
 
-            if (context.Inventory.InventoryIsFull())
-                return false;
+            // if (context.Inventory.InventoryIsFull())
+            //     return false;
 
             if (context.Player.IsDead) return false;
 

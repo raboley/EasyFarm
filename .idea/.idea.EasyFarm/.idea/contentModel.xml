@@ -112,6 +112,13 @@
           <e p="ZoneMapView.xaml.cs" t="Include" />
           <e p="ZoneMapViewModel.cs" t="Include" />
         </e>
+        <e p="Missions" t="Include">
+          <e p="BaseQuestStep.cs" t="Include" />
+          <e p="Completed.cs" t="Include" />
+          <e p="ImmediateCompletionCondition.cs" t="Include" />
+          <e p="IQuestStep.cs" t="Include" />
+          <e p="Sandy.cs" t="Include" />
+        </e>
         <e p="Monitors" t="Include">
           <e p="MobMonitor.cs" t="Include" />
           <e p="MobPersister.cs" t="Include" />

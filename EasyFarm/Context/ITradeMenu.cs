@@ -8,5 +8,6 @@ namespace EasyFarm.Context
         bool SetTradeItem(int index, TradeItem item);
         bool SetTradeItems(List<TradeItem> items);
         bool IsTradeMenuOpen { get; }
+        void TradeItemsToPersonByName(IGameContext context, string name, List<ItemsToTrade> itemsToTrade);
     }
 }

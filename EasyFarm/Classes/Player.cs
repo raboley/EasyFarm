@@ -17,9 +17,11 @@
 // ///////////////////////////////////////////////////////////////////
 using System;
 using System.Diagnostics;
+using EasyFarm.Context;
 using MemoryAPI;
 using EasyFarm.UserSettings;
 using EliteMMO.API;
+using Pathfinder.People;
 
 namespace EasyFarm.Classes
 {
@@ -86,6 +88,7 @@ namespace EasyFarm.Classes
             fface.Navigator.Reset();
             TimeWaiter.Pause(100);
         }
+
 
         public static void SetTarget(IMemoryAPI fface, IUnit target)
         {

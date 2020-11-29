@@ -50,13 +50,13 @@ namespace EasyFarm.Monitors
                 return;
 
 
-            var zonePersister = ZoneMapPersister.NewZonePersister();
-            world.Zones = zonePersister.LoadAllOfType<Zone>();
-            world.Zones.RemoveAll(x => x.Name == _context.Zone.Name);
-            world.Zones.Add(_context.Zone);
+            world.ZonePersister = ZoneMapPersister.NewZonePersister();
+            world.LoadAllZonesToWorld(_context.Zone);
 
             if (_context.Npcs == null)
                 return;
+
+            world.PeopleManager = _context.NpcOverseer;
             world.Npcs.AddRange(_context.Npcs);
 
             if (_context.Mobs == null)
@@ -88,9 +88,8 @@ namespace EasyFarm.Monitors
                 mapName = _context.Player.Zone.ToString();
                 while (_context.Zone?.Map?.MapName != mapName)
                     Thread.Sleep(100);
-                _context.Traveler.CurrentZone = _context.Zone;
-
-                _context.Traveler.World.Zones = zonePersister.LoadAllOfType<Zone>();
+                
+                _context.Traveler.World.LoadAllZonesToWorld(_context.Zone);
 
                 while (_context.Mobs == null)
                     Thread.Sleep(100);

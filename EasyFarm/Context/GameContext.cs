@@ -52,8 +52,10 @@ namespace EasyFarm.Context
             Zone = new Pathfinder.Map.Zone("unknown");
             Craft = new Craft(api);
             Shop = new Shop(api);
-            // Trade = new TradeMenu(api);
+            Trade = new TradeMenu(api);
         }
+
+        public ITradeMenu Trade { get; set; }
 
         public Craft Craft { get; set; }
         public IShop Shop { get; set; }
