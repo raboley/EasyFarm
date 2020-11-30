@@ -49,7 +49,7 @@ namespace EasyFarm.Soul
             if (_context.Player.JobLevel > 5 && _context.Player.JobLevel <= 14)
                 FightBatsInTomb();
 
-            if (_context.Player.JobLevel > 14)
+            if (_context.Player.JobLevel > 14 && !_context.Inventory.HaveItemInInventoryContainer("Rabbit charm"))
                 FarmJagedyEaredJack();
         }
 
@@ -101,7 +101,7 @@ namespace EasyFarm.Soul
         //     _context.WoodChopper.SetMobsToTarget(_context, mobsToFight);
         //
         //     _context.WoodChopper.ChopWoodZone = targetZone;
-        //     if (!_context.WoodChopper.GoToTargetZone(_context))
+        //     if (!_context.WoodChopper.TryToGoToTargetZone(_context))
         //         return;
         //
         //

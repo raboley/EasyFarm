@@ -88,7 +88,8 @@ namespace EasyFarm.ViewModels
                 .Where(x => !string.IsNullOrWhiteSpace((x.MainWindowTitle)))
                 .ToList());
 
-            if (Processes.Count > 0) return;
+            if (Processes.Count > 0) 
+                return;
 
             Processes.AddRange(Process.GetProcesses()
                 .Where(x => !string.IsNullOrWhiteSpace(x.MainWindowTitle))

@@ -48,7 +48,7 @@ namespace EasyFarm.Context
             Thread.Sleep(4000);
         }
 
-        public bool GoToTargetZone(IGameContext context)
+        public bool TryToGoToTargetZone(IGameContext context)
         {
             while (context.Traveler?.World?.Zones == null)
             {
@@ -103,9 +103,9 @@ namespace EasyFarm.Context
             {
                 foreach (var targetMob in mobsToFight)
                 {
-                    if (!mob.Name.Contains(targetMob)) 
+                    if (!mob.Name.Contains(targetMob))
                         continue;
-                    
+
                     mobsMatchingNameWithinDistance.Add(mob);
                     break;
                 }
@@ -119,13 +119,14 @@ namespace EasyFarm.Context
                 LoggingPoints.Enqueue(person);
             }
         }
-        
-        public void LoopOverMobsInList(IGameContext context,List<string> mobsToFight, string targetZone, string purpose, Vector3 centerPoint, int distance)
+
+        public void LoopOverMobsInList(IGameContext context, List<string> mobsToFight, string targetZone,
+            string purpose, Vector3 centerPoint, int distance)
         {
             SetMobsToTarget(context, mobsToFight);
 
             ChopWoodZone = targetZone;
-            if (!GoToTargetZone(context))
+            if (!TryToGoToTargetZone(context))
                 return;
 
 
@@ -142,9 +143,10 @@ namespace EasyFarm.Context
             if (NextPoint == null)
                 SetNextPoint();
 
-            if (NextPoint != null)
-                context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(NextPoint.Position);
+            if (NextPoint == null)
+                return;
 
+            context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(NextPoint.Position);
             SetNextPointIfHasBeenReached(context.Traveler.Walker.CurrentPosition);
         }
     }
