@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using EasyFarm.Classes;
+using EasyFarm.Soul;
 using EasyFarm.States;
 using EasyFarm.UserSettings;
 using MemoryAPI;
@@ -56,6 +57,7 @@ namespace EasyFarm.Context
         }
 
         public ITradeMenu Trade { get; set; }
+        public ICalling Calling { get; set; }
 
         public Craft Craft { get; set; }
         public IShop Shop { get; set; }
@@ -87,6 +89,6 @@ namespace EasyFarm.Context
         public StateMemory Memory { get; set; }
         public Traveler Traveler { get; set; }
         public PeopleOverseer NpcOverseer { get; set; }
-        public WoodChopper WoodChopper { get; set; } = new WoodChopper();
+        public PersonLooper WoodChopper { get; set; } = new PersonLooper();
     }
 }

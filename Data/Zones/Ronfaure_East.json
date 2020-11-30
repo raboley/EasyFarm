@@ -1,5 +1,8 @@
 {
   'Name': 'Ronfaure_East',
+  'PointsToExplore': [],
+  'NextPointToExplore': null,
+  'Explored': [],
   'Boundaries': [
     {
       'ToZone': 'Southern_San_dOria',
@@ -307,6 +310,20 @@
         'X': 84.0,
         'Y': 0.0,
         'Z': -195.0
+      }
+    },
+    {
+      'ToZone': 'King_Ranperres_Tomb',
+      'FromZone': 'Ronfaure_East',
+      'FromPosition': {
+        'X': 201.0,
+        'Y': 0.0,
+        'Z': -541.0
+      },
+      'ToPosition': {
+        'X': -131.0,
+        'Y': 0.0,
+        'Z': 256.0
       }
     }
   ]

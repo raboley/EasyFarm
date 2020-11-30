@@ -43,7 +43,7 @@ namespace EasyFarm.States
         {
             context.WoodChopper.ChopWoodZone = "Ronfaure_East"; 
             context.Player.CurrentGoal = "Chop Wood";
-            context.WoodChopper.GoToChopWoodZone(context);
+            context.WoodChopper.GoToTargetZone(context);
 
             if (context.API.Player.Zone.ToString() != context.WoodChopper.ChopWoodZone)
                 return;
@@ -88,7 +88,7 @@ namespace EasyFarm.States
                     GridMath.RoundVector3(closeByLoggingPoint.Position.To2DVector3()));
 
             if (context.WoodChopper.NextPoint == null)
-                context.WoodChopper.NextPoint = context.WoodChopper.LoggingPoints.Dequeue();
+                context.WoodChopper.SetNextPoint();
 
 
             context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(context.WoodChopper.NextPoint.Position);
@@ -113,7 +113,7 @@ namespace EasyFarm.States
             }
 
             if (HasHatchet(context)) 
-                WoodChopper.ChopTree(context, loggingUnit);
+                PersonLooper.ChopTree(context, loggingUnit);
         }
 
         private bool HasHatchet(IGameContext context)

@@ -128,6 +128,7 @@
           </e>
         </e>
         <e p="Monitors" t="Include">
+          <e p="CallingMonitor.cs" t="Include" />
           <e p="MobMonitor.cs" t="Include" />
           <e p="MobPersister.cs" t="Include" />
           <e p="NPCMonitor.cs" t="Include" />
@@ -205,12 +206,17 @@
           <e p="Settings.Designer.cs" t="Include" />
           <e p="Settings.settings" t="Include" />
         </e>
+        <e p="Soul" t="Include">
+          <e p="Calling.cs" t="Include" />
+          <e p="ICalling.cs" t="Include" />
+        </e>
         <e p="States" t="Include">
           <e p="ApproachState.cs" t="Include" />
           <e p="BaseState.cs" t="Include" />
           <e p="BattleState.cs" t="Include" />
           <e p="CraftSomething.cs" t="Include" />
           <e p="DeadState.cs" t="Include" />
+          <e p="DoMyCurrentGoalState.cs" t="Include" />
           <e p="DoQuest.cs" t="Include" />
           <e p="DumpTreasureState.cs" t="Include" />
           <e p="EndState.cs" t="Include" />

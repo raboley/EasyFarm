@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using EasyFarm.Classes;
+using EasyFarm.Soul;
 using EasyFarm.States;
 using EasyFarm.UserSettings;
 using MemoryAPI;
@@ -49,9 +50,11 @@ namespace EasyFarm.Context
         ObservableCollection<Person> Mobs { get; set; }
         Traveler Traveler { get; set; }
         PeopleOverseer NpcOverseer { get; set; }
-        WoodChopper WoodChopper { get; set; }
+        PersonLooper WoodChopper { get; set; }
         Craft Craft { get; set; }
         IShop Shop { get; set; }
         ITradeMenu Trade { get; set; }
     }
+
+
 }

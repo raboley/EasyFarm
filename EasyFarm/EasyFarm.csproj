@@ -241,6 +241,7 @@
     <Compile Include="Missions\SandOria\QuestFactory.cs" />
     <Compile Include="Missions\SandOria\SandOneOne.cs" />
     <Compile Include="Missions\SandOria\TheMerchantsBidding.cs" />
+    <Compile Include="Monitors\CallingMonitor.cs" />
     <Compile Include="Monitors\MobMonitor.cs" />
     <Compile Include="Monitors\MobPersister.cs" />
     <Compile Include="Monitors\NPCMonitor.cs" />
@@ -282,7 +283,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Classes\NullUnit.cs" />
+    <Compile Include="Soul\Calling.cs" />
+    <Compile Include="Soul\ICalling.cs" />
     <Compile Include="States\CraftSomething.cs" />
+    <Compile Include="States\DoMyCurrentGoalState.cs" />
     <Compile Include="States\DoQuest.cs" />
     <Compile Include="States\ExploreZone.cs" />
     <Compile Include="States\GoChopWood.cs" />

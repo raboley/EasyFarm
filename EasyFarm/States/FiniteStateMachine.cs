@@ -25,6 +25,7 @@ using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.Logging;
 using EasyFarm.Parsing;
+using EasyFarm.Soul;
 using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
 using MemoryAPI;
@@ -40,13 +41,15 @@ namespace EasyFarm.States
         private readonly List<IState> _states = new List<IState>();
         private CancellationTokenSource _cancellation = new CancellationTokenSource();
         private readonly GameContext _context;
+        private readonly ICalling _calling;
 
         public FiniteStateMachine(IMemoryAPI fface, GameContext gameContext)
         {
             _fface = fface;
             _context = gameContext;
-            //Create the states
+            _calling = new Calling(_context);
 
+            //Create the states
             AddState(new ManualOverrideState() {Priority = 9999});
 
             // Fighting States
@@ -74,9 +77,10 @@ namespace EasyFarm.States
             // AddState(new DumpTreasureState() { Priority = 2 });
             // AddState(new MapState() {Priority = 5});
 
+            AddState(new DoMyCurrentGoalState(_calling) {Priority = 0});
 
             // AddState(new ExploreZone() {Priority = 0});
-            AddState(new HuntNotoriusMonster() {Priority = 10});
+            // AddState(new HuntNotoriusMonster() {Priority = 10});
             // AddState(new GoChopWood() {Priority = 10});
 
             // Needs Signet

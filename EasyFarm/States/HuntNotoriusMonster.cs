@@ -39,7 +39,7 @@ namespace EasyFarm.States
         {
             context.WoodChopper.ChopWoodZone = "Ronfaure_West"; 
             LogViewModel.Write("Going to Hunt Notorious Monster in Zone: " + context.WoodChopper.ChopWoodZone);
-            context.WoodChopper.GoToChopWoodZone(context);
+            context.WoodChopper.GoToTargetZone(context);
 
             if (context.API.Player.Zone.ToString() != context.WoodChopper.ChopWoodZone)
                 return;
@@ -78,9 +78,9 @@ namespace EasyFarm.States
 
             if (context.WoodChopper.LoggingPoints.Count == 0)
                 return;
-            
+
             if (context.WoodChopper.NextPoint == null)
-                context.WoodChopper.NextPoint = context.WoodChopper.LoggingPoints.Dequeue();
+                context.WoodChopper.SetNextPoint();
             
             context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(context.WoodChopper.NextPoint.Position);
             

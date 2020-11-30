@@ -78,6 +78,7 @@ namespace EasyFarm.States
                 return;
                     
             var lastZone = context.Traveler.CurrentZone.Map.MapName;
+            var didntZoneNaturally = context.Traveler.IsDead;
 
             // Stop program from running to next waypoint.
             context.API.Navigator.Reset();
@@ -94,7 +95,7 @@ namespace EasyFarm.States
                 ZoningAction();
             }
 
-            if (context.Traveler.GetBorderZonePosition(lastZone) == null)
+            if (context.Traveler.GetBorderZonePosition(lastZone) == null && didntZoneNaturally == false)
             {
                 LogViewModel.Write("Don't have the zone border on this sid from: " + lastZone + "To here: " + context.API.Player.Zone);
                 LogViewModel.Write("Backing up until I zone again so I can record this zone and can get back.");
