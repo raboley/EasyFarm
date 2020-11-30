@@ -33,19 +33,15 @@ namespace EasyFarm.Context
             return true;
         }
 
-        public static void ChopTree(IGameContext context, IUnit loggingUnit)
+        public bool HasHatchet(IGameContext context)
         {
-            context.Target = loggingUnit;
-            // Face mob. 
-            context.API.Navigator.FaceHeading(context.Target.Position);
-            context.API.Navigator.GotoNPC(context.Target.Id, context.Config.IsObjectAvoidanceEnabled);
+            if (context.Inventory.InventoryIsFull())
+                return false;
 
-            // Target mob if not currently targeted. 
-            Classes.Player.SetTarget(context.API, context.Target);
+            if (context.Inventory.HaveItemInInventoryContainer("Hatchet"))
+                return true;
 
-            LogViewModel.Write("Chopping down tree at: " + context.Target.Position);
-            context.API.Windower.SendString("/item Hatchet <t>");
-            Thread.Sleep(4000);
+            return false;
         }
 
         public bool TryToGoToTargetZone(IGameContext context)
@@ -130,7 +126,7 @@ namespace EasyFarm.Context
                 return;
 
 
-            if (Purpose != purpose || LoggingPoints.Count == 0)
+            if (ShouldSetNewLoggingPoints(purpose))
             {
                 Purpose = purpose;
                 SetAllMobsWithinDistanceOfPointToLoggingPoints(context, mobsToFight, centerPoint,
@@ -148,6 +144,96 @@ namespace EasyFarm.Context
 
             context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(NextPoint.Position);
             SetNextPointIfHasBeenReached(context.Traveler.Walker.CurrentPosition);
+        }
+
+        private bool ShouldSetNewLoggingPoints(string purpose)
+        {
+            return Purpose != purpose || LoggingPoints.Count == 0;
+        }
+
+        public void ChopTreesInZone(IGameContext context, string targetZone, string purpose, string resourceName)
+        {
+            ChopWoodZone = targetZone;
+            if (!TryToGoToTargetZone(context))
+                return;
+
+            if (ShouldSetNewLoggingPoints(purpose))
+            {
+                Purpose = purpose;
+                SetLggingPointsWithAllGatherPointsInZone(context, resourceName);
+            }
+
+            if (LoggingPoints.IsEmpty)
+                return;
+
+            if (NextPoint == null)
+                SetNextPoint();
+
+            if (NextPoint == null)
+                return;
+
+            context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(NextPoint.Position);
+            if (HasHatchet(context))
+                ChopTree(context);
+        }
+
+        private void SetLggingPointsWithAllGatherPointsInZone(IGameContext context, string gatherPointName)
+        {
+            // First add things close by
+            var closeLoggingPoints =
+                context.Memory.UnitService.NpcUnits.ToList().FindAll(x => x.Name == gatherPointName && x.IsRendered);
+
+            var orderedCloseByLoggingPoints = closeLoggingPoints.OrderBy(x => x.Distance);
+            
+            foreach (var loggingPoint in orderedCloseByLoggingPoints)
+            {
+                var tree = new Person(loggingPoint.Id, loggingPoint.Name,
+                    GridMath.RoundVector3(loggingPoint.Position.To2DVector3()));
+                
+                context.WoodChopper.LoggingPoints.Enqueue(tree);
+            }
+
+            // Then all the ones that have ever been known
+            var loggingPoints = context.Npcs.ToList().FindAll(x => x.Name == gatherPointName);
+            var orderedLoggingPoints = loggingPoints.OrderBy(x =>
+                GridMath.GetDistancePos(context.Traveler.Walker.CurrentPosition, x.Position));
+            foreach (var loggingPoint in orderedLoggingPoints)
+            {
+                if (context.WoodChopper.LoggingPoints.Contains(loggingPoint))
+                    continue;
+                
+                context.WoodChopper.LoggingPoints.Enqueue(loggingPoint);
+            }
+        }
+        
+        public static void ChopTree(IGameContext context)
+        {
+            var distanceToLoggingPoint = GridMath.GetDistancePos(context.Traveler.Walker.CurrentPosition,
+                context.WoodChopper.NextPoint.Position);
+
+            if (distanceToLoggingPoint > 1)
+                return;
+            
+            var loggingUnit =
+                context.Memory.UnitService.NpcUnits.FirstOrDefault(x => x.Id == context.WoodChopper.NextPoint.Id);
+            context.WoodChopper.NextPoint = null;
+
+            if (loggingUnit == null)
+            {
+                return;
+            }
+            
+            context.Target = loggingUnit;
+            // Face mob. 
+            context.API.Navigator.FaceHeading(context.Target.Position);
+            context.API.Navigator.GotoNPC(context.Target.Id, context.Config.IsObjectAvoidanceEnabled);
+
+            // Target mob if not currently targeted. 
+            Classes.Player.SetTarget(context.API, context.Target);
+
+            LogViewModel.Write("Chopping down tree at: " + context.Target.Position);
+            context.API.Windower.SendString("/item Hatchet <t>");
+            Thread.Sleep(4000);
         }
     }
 }

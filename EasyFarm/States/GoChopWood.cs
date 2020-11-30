@@ -97,23 +97,12 @@ namespace EasyFarm.States
             // context.Traveler.PathfindAndWalkTwoFarAwayWorldMapPosition(context.WoodChopper.NextPoint.Position);
             // Chop wood
 
-            var distanceToLoggingPoint = GridMath.GetDistancePos(context.Traveler.Walker.CurrentPosition,
-                context.WoodChopper.NextPoint.Position);
 
-            if (distanceToLoggingPoint > 1)
-                return;
 
-            var loggingUnit =
-                context.Memory.UnitService.NpcUnits.FirstOrDefault(x => x.Id == context.WoodChopper.NextPoint.Id);
-            context.WoodChopper.NextPoint = null;
 
-            if (loggingUnit == null)
-            {
-                return;
-            }
 
             if (HasHatchet(context)) 
-                PersonLooper.ChopTree(context, loggingUnit);
+                PersonLooper.ChopTree(context);
         }
 
         private bool HasHatchet(IGameContext context)

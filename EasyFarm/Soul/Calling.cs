@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,14 @@ using Pathfinder.Travel;
 
 namespace EasyFarm.Soul
 {
+    public class Objective
+    {
+        public Func<IGameContext, bool> ShouldDo { get; set; }
+
+        // Action is the same as func, but it doesn't have a return.
+        public Action<IGameContext> Do { get; set; }
+    }
+
     public class Calling : ICalling
     {
         private IGameContext _context;
@@ -43,14 +52,39 @@ namespace EasyFarm.Soul
         public void Do()
         {
             // Get to lvl 3 fighting rabbits in east ronafare
-            if (_context.Player.JobLevel <= 5)
-                FightRabbitsInEastRon();
+            var levelUpToFive = new Objective
+            {
+                ShouldDo = context => context.Player.JobLevel <= 5,
+                Do = context => FightRabbitsInEastRon(context)
+            };
+            if (levelUpToFive.ShouldDo(_context))
+                levelUpToFive.Do(_context);
+
             // Get to lvl 5
             if (_context.Player.JobLevel > 5 && _context.Player.JobLevel <= 14)
                 FightBatsInTomb();
 
             if (_context.Player.JobLevel > 14 && !_context.Inventory.HaveItemInInventoryContainer("Rabbit charm"))
+            {
                 FarmJagedyEaredJack();
+                return;
+            }
+
+            var chopWoodInRon = new Objective
+            {
+                ShouldDo = context => context.Inventory.HaveItemInInventoryContainer("Hatchet"),
+                Do = context =>
+                {
+                    var resourceName = "Logging Point";
+                    var chopWoodZone = Zone.Ronfaure_East.ToString();
+                    var purpose = "ChopWoodInRon";
+
+                    context.WoodChopper.ChopTreesInZone(context, chopWoodZone, purpose, resourceName);
+                }
+            };
+            
+            if (chopWoodInRon.ShouldDo(_context))
+                chopWoodInRon.Do(_context);
         }
 
         private void FarmJagedyEaredJack()
@@ -66,9 +100,9 @@ namespace EasyFarm.Soul
             // Get some grass thread
             mobsToFight.Add("weaver");
 
-            var centerPoint = new Vector3(-268, 0, -257); 
+            var centerPoint = new Vector3(-268, 0, -257);
             var distance = 30;
-            
+
             _context.WoodChopper.LoopOverMobsInList(_context, mobsToFight, targetZone, purpose, centerPoint, distance);
         }
 
@@ -76,7 +110,7 @@ namespace EasyFarm.Soul
         {
         }
 
-        private void FightRabbitsInEastRon()
+        private void FightRabbitsInEastRon(IGameContext context)
         {
             var targetZone = Zone.Ronfaure_East.ToString();
             var purpose = "LevelTo6";
@@ -91,7 +125,7 @@ namespace EasyFarm.Soul
             var distance = 50;
 
 
-            _context.WoodChopper.LoopOverMobsInList(_context, mobsToFight, targetZone, purpose, centerPoint, distance);
+            _context.WoodChopper.LoopOverMobsInList(context, mobsToFight, targetZone, purpose, centerPoint, distance);
 
             // Run to Ranfare's tomb.
         }
