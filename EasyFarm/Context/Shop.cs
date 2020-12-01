@@ -39,6 +39,7 @@ namespace EasyFarm.Context
             int maxInventorySize = 80;
             for (int i = 0; i < maxInventorySize; i++)
             {
+                Thread.Sleep(1000);
                 if (ItemIsAJunkItem(junkItems))
                 {
                     if (_context.Inventory.ShopItemCountMax > 1)
@@ -48,12 +49,9 @@ namespace EasyFarm.Context
                     }
 
                     Sell();
-
                     // If we sold it, the cursor will move to the next item automatically
-                    Thread.Sleep(500);
                     continue;
                 }
-
                 Down();
             }
 
@@ -122,6 +120,7 @@ namespace EasyFarm.Context
             while (_context.Menu.MenuItemCount != MenuItemCountForSellItem)
             {
                 Enter();
+                Thread.Sleep(500);
             }
         }
 

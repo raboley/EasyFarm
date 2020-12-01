@@ -56,9 +56,15 @@ namespace EasyFarm.States
             //     }
             // }
 
-            if (context.Traveler.CurrentZone.Map.MapName == "Southern_San_dOria" &&
-                context.Inventory.GetCountOfItemsInContainer("Rabbit Hide") > 3)
-                return true;
+            if (context.Traveler.CurrentZone.Map.MapName != "Southern_San_dOria")
+                return false;
+            
+            if (context.Inventory.GetCountOfItemsInContainer("Rabbit Hide") < 3)
+                return false;
+
+            // I don't want to do this if we can craft rabbit mantles.
+            if (context.Inventory.HaveItemInInventoryContainer("Earth Crystal"))
+                return false;
 
             return false;
         }

@@ -61,10 +61,10 @@ namespace EasyFarm.Soul
                 levelUpToFive.Do(_context);
 
             // Get to lvl 5
-            if (_context.Player.JobLevel > 5 && _context.Player.JobLevel <= 14)
-                FightBatsInTomb();
+            // if (_context.Player.JobLevel > 5 && _context.Player.JobLevel <= 15)
 
-            if (_context.Player.JobLevel > 14 && !_context.Inventory.HaveItemInInventoryContainer("Rabbit charm"))
+
+            if (_context.Player.JobLevel > 30 && !_context.Inventory.HaveItemInInventoryContainer("Rabbit charm"))
             {
                 FarmJagedyEaredJack();
                 return;
@@ -72,17 +72,42 @@ namespace EasyFarm.Soul
 
             var chopWoodInRon = new Objective
             {
-                ShouldDo = context => context.Inventory.HaveItemInInventoryContainer("Hatchet"),
+                ShouldDo = context =>
+                {
+                    if (context.Player.JobLevel <= 5)
+                        return false;
+                    
+                    return context.Inventory.HaveItemInInventoryContainer("Hatchet");
+                },
                 Do = context =>
                 {
                     var resourceName = "Logging Point";
                     var chopWoodZone = Zone.Ronfaure_East.ToString();
                     var purpose = "ChopWoodInRon";
+                    var mobsToFight = new List<string>();
+
+                    if (context.Player.JobLevel < 16)
+                    {
+                        // Ground crystals
+                        // mobsToFight.Add("Rabbit");
+
+                        // Wind Crystals
+                        mobsToFight.Add("bat");
+                    }
+
+                    // And Fire Crystals
+                    // I want to steal some beastcoins
+                    mobsToFight.Add("orc");
+                    // Get some grass thread
+                    mobsToFight.Add("weaver");
+
+                    context.WoodChopper.SetMobsToTarget(context, mobsToFight);
+
 
                     context.WoodChopper.ChopTreesInZone(context, chopWoodZone, purpose, resourceName);
                 }
             };
-            
+
             if (chopWoodInRon.ShouldDo(_context))
                 chopWoodInRon.Do(_context);
         }
@@ -122,7 +147,7 @@ namespace EasyFarm.Soul
             mobsToFight.Add("Bat");
 
             var centerPoint = new Vector3(79, 0, 275);
-            var distance = 50;
+            var distance = 300;
 
 
             _context.WoodChopper.LoopOverMobsInList(context, mobsToFight, targetZone, purpose, centerPoint, distance);

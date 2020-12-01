@@ -21,14 +21,11 @@ namespace EasyFarm.Context
 
         public bool SetNextPoint()
         {
-            if (NextPoint == null)
-            {
-                var worked = LoggingPoints.TryDequeue(out var nextPoint);
-                if (worked == false)
-                    return false;
+            var worked = LoggingPoints.TryDequeue(out var nextPoint);
+            if (worked == false)
+                return false;
 
-                NextPoint = nextPoint;
-            }
+            NextPoint = nextPoint;
 
             return true;
         }
@@ -61,7 +58,8 @@ namespace EasyFarm.Context
 
         public void SetNextPointIfHasBeenReached(Vector3 currentPosition, int acceptableDistance = 1)
         {
-            if (GridMath.GetDistancePos(currentPosition, NextPoint.Position) > acceptableDistance)
+            var distance = GridMath.GetDistancePos(currentPosition, NextPoint.Position);
+            if (distance > acceptableDistance)
                 return;
 
             if (LoggingPoints.IsEmpty)
@@ -80,6 +78,15 @@ namespace EasyFarm.Context
 
         public void SetMobsToTarget(IGameContext context, List<string> mobsToFight)
         {
+            // if (context.Config.TargetedMobs.ToList() != mobsToFight)
+            // {
+            //     while (context.Config.TargetedMobs.Count > 0)
+            //     {
+            //         context.Config.TargetedMobs.RemoveAt(0);
+            //     }
+            // }
+
+
             foreach (var mob in mobsToFight)
             {
                 if (!context.Config.TargetedMobs.Contains(mob))
@@ -171,10 +178,18 @@ namespace EasyFarm.Context
 
             if (NextPoint == null)
                 return;
+            IUnit closeByLoggingPoint = null;
+
+            if (HasHatchet(context))
+                closeByLoggingPoint = context.Memory.UnitService.GetClosestUnitByPartialName("Logging Point");
+            if (closeByLoggingPoint != null && closeByLoggingPoint.IsRendered)
+                context.WoodChopper.NextPoint = new Person(closeByLoggingPoint.Id, closeByLoggingPoint.Name,
+                    GridMath.RoundVector3(closeByLoggingPoint.Position.To2DVector3()));
 
             context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(NextPoint.Position);
             if (HasHatchet(context))
-                ChopTree(context);
+                ChopTree(context, resourceName);
+            SetNextPointIfHasBeenReached(context.Traveler.Walker.CurrentPosition);
         }
 
         private void SetLggingPointsWithAllGatherPointsInZone(IGameContext context, string gatherPointName)
@@ -184,12 +199,12 @@ namespace EasyFarm.Context
                 context.Memory.UnitService.NpcUnits.ToList().FindAll(x => x.Name == gatherPointName && x.IsRendered);
 
             var orderedCloseByLoggingPoints = closeLoggingPoints.OrderBy(x => x.Distance);
-            
+
             foreach (var loggingPoint in orderedCloseByLoggingPoints)
             {
                 var tree = new Person(loggingPoint.Id, loggingPoint.Name,
                     GridMath.RoundVector3(loggingPoint.Position.To2DVector3()));
-                
+
                 context.WoodChopper.LoggingPoints.Enqueue(tree);
             }
 
@@ -201,28 +216,29 @@ namespace EasyFarm.Context
             {
                 if (context.WoodChopper.LoggingPoints.Contains(loggingPoint))
                     continue;
-                
+
                 context.WoodChopper.LoggingPoints.Enqueue(loggingPoint);
             }
         }
-        
-        public static void ChopTree(IGameContext context)
+
+        public static void ChopTree(IGameContext context, string resourceName)
         {
             var distanceToLoggingPoint = GridMath.GetDistancePos(context.Traveler.Walker.CurrentPosition,
                 context.WoodChopper.NextPoint.Position);
 
             if (distanceToLoggingPoint > 1)
                 return;
-            
+
             var loggingUnit =
                 context.Memory.UnitService.NpcUnits.FirstOrDefault(x => x.Id == context.WoodChopper.NextPoint.Id);
             context.WoodChopper.NextPoint = null;
+
 
             if (loggingUnit == null)
             {
                 return;
             }
-            
+
             context.Target = loggingUnit;
             // Face mob. 
             context.API.Navigator.FaceHeading(context.Target.Position);

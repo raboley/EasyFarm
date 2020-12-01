@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using Xceed.Wpf.DataGrid.Converters;
 
 namespace EasyFarm.Context
 {
@@ -52,13 +54,41 @@ namespace EasyFarm.Context
 
             return soup;
         }
-        public static CraftingRecipe Hatchet()
+        public static CraftingRecipe BronzeSheet()
         {
             var soup = new CraftingRecipe();
             soup.Crystal = "Fire Crystal";
             soup.RequiredItems = new List<Item>
             {
+                new Item() {Name = "Bronze Ingot", Count = 1}
+            };
+
+            return soup;
+        }
+        
+        public static CraftingRecipe Hatchet(IGameContext context)
+        {
+            var soup = new CraftingRecipe();
+            soup.ShouldCraft = () => context.Inventory.GetCountOfItemsInContainer("Hatchet") < 12;
+            
+            soup.Crystal = "Fire Crystal";
+            soup.RequiredItems = new List<Item>
+            {
                 new Item() {Name = "Bronze Ingot", Count = 2},
+                new Item() {Name = "Maple Lumber", Count = 1}
+            };
+
+            return soup;
+        }
+
+        public static CraftingRecipe MapleWand()
+        {
+            var soup = new CraftingRecipe();
+            
+            soup.Crystal = "Wind Crystal";
+            soup.RequiredItems = new List<Item>
+            {
+                new Item() {Name = "Chocobo Fthr.", Count = 1},
                 new Item() {Name = "Maple Lumber", Count = 1}
             };
 
@@ -103,5 +133,15 @@ namespace EasyFarm.Context
         }
         public string Crystal { get; set; }
         public List<Item> RequiredItems { get; set; }
+
+        public Func<bool> ShouldCraft { get; set; }
+
+        public CraftingRecipe(Func<bool> shouldCraft = null)
+        {
+            if (shouldCraft == null)
+                shouldCraft = () => true;
+            
+            ShouldCraft = shouldCraft;
+        }
     }
 }

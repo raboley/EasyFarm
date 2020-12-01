@@ -20,11 +20,11 @@ namespace EasyFarm.States
             
             if (context.Target.IsValid) return false;
             
-            var knownRecipes = GetKnownRecipes();
+            var knownRecipes = GetKnownRecipes(context);
 
             foreach (var recipe in knownRecipes)
             {
-                if (context.Craft.HaveAllMaterialsToCraft(recipe))
+                if (context.Craft.CanAndShouldCraft(recipe))
                     return true;
             }
 
@@ -35,26 +35,28 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
-            var knownRecipes = GetKnownRecipes();
+            var knownRecipes = GetKnownRecipes(context);
 
             foreach (var recipe in knownRecipes)
             {
-                if (context.Craft.HaveAllMaterialsToCraft(recipe))
+                if (context.Craft.CanAndShouldCraft(recipe))
                     context.Craft.AttemptToCraft(recipe);
             }
         }
         
-        private static List<CraftingRecipe> GetKnownRecipes()
+        private static List<CraftingRecipe> GetKnownRecipes(IGameContext context)
         {
             var knownRecipes = new List<CraftingRecipe>();
             knownRecipes.Add(CraftingRecipe.StoneSoup());
-            knownRecipes.Add(CraftingRecipe.ArrowWoodLumber());
+            // knownRecipes.Add(CraftingRecipe.ArrowWoodLumber());
             knownRecipes.Add(CraftingRecipe.BronzeIngotFromGoblinHelmet());
             knownRecipes.Add(CraftingRecipe.BronzeIngotFromGoblinMail());
             knownRecipes.Add(CraftingRecipe.MapleLumber());
-            knownRecipes.Add(CraftingRecipe.Hatchet());
+            knownRecipes.Add(CraftingRecipe.Hatchet(context));
             knownRecipes.Add(CraftingRecipe.BronzeIngotFromBeastCoin());
+            knownRecipes.Add(CraftingRecipe.BronzeSheet());
             knownRecipes.Add(CraftingRecipe.RabbitMantle());
+            knownRecipes.Add(CraftingRecipe.MapleWand());
             return knownRecipes;
         }
     }

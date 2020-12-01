@@ -102,7 +102,7 @@ namespace EasyFarm.States
 
 
             if (HasHatchet(context)) 
-                PersonLooper.ChopTree(context);
+                PersonLooper.ChopTree(context, "Logging Point");
         }
 
         private bool HasHatchet(IGameContext context)

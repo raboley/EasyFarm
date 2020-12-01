@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -19,17 +20,31 @@ namespace EasyFarm.Context
             _context = context;
         }
 
-        public bool HaveAllMaterialsToCraft(CraftingRecipe recipe)
+        public bool CanAndShouldCraft(CraftingRecipe recipe)
+        {
+            if (!recipe.ShouldCraft())
+                return false;
+
+
+            if (!HaveAllMaterialsToCraft(recipe))
+                return false;
+
+            return true;
+        }
+
+
+        private bool HaveAllMaterialsToCraft(CraftingRecipe recipe)
         {
             if (!HasCrystal(recipe))
                 return false;
-            
+
             // have all items
             if (!HasAllItems(recipe))
                 return false;
 
             return true;
         }
+
 
         private bool HasAllItems(CraftingRecipe recipe)
         {
