@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
@@ -116,6 +117,20 @@ namespace EasyFarm.Context
             }
         }
 
+        private void SetAllMobsInZoneToLoggingPoints(IGameContext context , List<string> mobsToFight)
+        {
+            LoggingPoints = new ConcurrentQueue<Person>();
+
+            var allKnownMatchingMobs = GetMobsMatchingListOfStrings(mobsToFight, context.Traveler.World.Mobs);
+
+            var closestMobsFirst = allKnownMatchingMobs
+                .OrderBy(x => GridMath.GetDistancePos(context.Traveler.Walker.CurrentPosition, x.Position)).ToList();
+            foreach (var person in closestMobsFirst)
+            {
+                LoggingPoints.Enqueue(person);
+            } 
+        }
+
         private static List<Person> GetMobsMatchingListOfStrings(List<string> mobsToFight, List<Person> listOfMobs)
         {
             var mobsMatchingName = new List<Person>();
@@ -137,7 +152,7 @@ namespace EasyFarm.Context
         public void LoopOverMobsWithinDistanceOfPoint(IGameContext context, List<string> mobsToFight, string targetZone,
             string purpose, Vector3 centerPoint, int distance)
         {
-            SetMobsToTarget(context, mobsToFight);
+
 
             ChopWoodZone = targetZone;
             if (!TryToGoToTargetZone(context))
@@ -150,6 +165,13 @@ namespace EasyFarm.Context
                 SetAllMobsWithinDistanceOfPointToLoggingPoints(context, mobsToFight, centerPoint,
                     distance);
             }
+
+            LoopOverMobs(context, mobsToFight);
+        }
+
+        private void LoopOverMobs(IGameContext context, List<string> mobsToFight)
+        {
+            SetMobsToTarget(context, mobsToFight);
 
             if (LoggingPoints.IsEmpty)
                 return;
@@ -266,7 +288,21 @@ namespace EasyFarm.Context
         public void LoopOverMobsInZoneMatchingList(IGameContext context, List<string> mobsToFight, string targetZone,
             string purpose)
         {
-            GetMobsMatchingListOfStrings(mobsToFight,)
+            if (context.Traveler?.World?.Mobs == null)
+                return;
+
+            ChopWoodZone = targetZone;
+            if (!TryToGoToTargetZone(context))
+                return;
+
+
+            if (ShouldSetNewLoggingPoints(purpose))
+            {
+                Purpose = purpose;
+                SetAllMobsInZoneToLoggingPoints(context, mobsToFight);
+            }
+            
+            LoopOverMobs(context, mobsToFight); 
         }
     }
 }
