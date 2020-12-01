@@ -148,6 +148,39 @@ namespace EasyFarm.Soul
 
             if (levelUpPastFifteen.ShouldDo(_context))
                 levelUpPastFifteen.Do(_context);
+            
+            var levelUpToThirtyThree = new Objective
+            {
+                ShouldDo = context =>
+                {
+                    if (!levelUpPastFifteen.Done(context))
+                        return false;
+
+                    if (context.Player.JobLevel > 32)
+                        return false;
+
+                    return true;
+                },
+                Do = context =>
+                {
+                    var targetZone = Zone.Valkurm_Dunes.ToString();
+                    var purpose = "LevelUpTo33";
+
+                    var mobsToFight = new List<string>();
+                    mobsToFight.Add("Hare");
+                    mobsToFight.Add("Lizard");
+                    // Adding this for a chance at wind crystals
+                    mobsToFight.Add("Bat");
+
+                    // TODO: Make this a center point for the entrance to the zone from k. highlands.
+                    _context.WoodChopper.LoopOverMobsInZoneMatchingList(context, mobsToFight, targetZone, purpose); 
+                }
+                
+                
+            };
+
+            if (levelUpToThirtyThree.ShouldDo(_context))
+                levelUpToThirtyThree.Do(_context);
         }
         
         
@@ -171,9 +204,6 @@ namespace EasyFarm.Soul
             _context.WoodChopper.LoopOverMobsWithinDistanceOfPoint(_context, mobsToFight, targetZone, purpose, centerPoint, distance);
         }
 
-        private void FightBatsInTomb()
-        {
-        }
 
         private void FightRabbitsInEastRon(IGameContext context)
         {
