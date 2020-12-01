@@ -43,7 +43,7 @@ namespace EasyFarm.States
         {
             context.WoodChopper.ChopWoodZone = "Ronfaure_East"; 
             context.Player.CurrentGoal = "Chop Wood";
-            context.WoodChopper.TryToGoToTargetZone(context);
+            context.WoodChopper.TryToGoToTargetZone(context, "Ronfaure_East");
 
             if (context.API.Player.Zone.ToString() != context.WoodChopper.ChopWoodZone)
                 return;

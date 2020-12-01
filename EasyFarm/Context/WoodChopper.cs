@@ -14,6 +14,70 @@ namespace EasyFarm.Context
 {
     public class PersonLooper
     {
+        /// <summary>
+        /// Finds all known mobs in a zone, and then walks to each of them from closest mob to farthest mob.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="mobsToFight"></param>
+        /// <param name="targetZone"></param>
+        /// <param name="purpose"></param>
+        public void LoopOverMobsInZoneMatchingList(IGameContext context, List<string> mobsToFight, string targetZone,
+            string purpose)
+        {
+            if (!TryToGoToTargetZone(context, targetZone))
+                return;
+
+            if (ShouldSetNewLoggingPoints(purpose))
+            {
+                SetAllMobsInZoneToLoggingPoints(context, mobsToFight);
+            }
+
+            LoopOverMobs(context, mobsToFight);
+        }
+
+        /// <summary>
+        /// Finds all mobs within a certain distance from a given center point that match a given list of mob names
+        /// then walks to each mob in a loop based on distance from the player.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="mobsToFight"></param>
+        /// <param name="targetZone"></param>
+        /// <param name="purpose"></param>
+        /// <param name="centerPoint"></param>
+        /// <param name="distance"></param>
+        public void LoopOverMobsWithinDistanceOfPoint(IGameContext context, List<string> mobsToFight, string targetZone,
+            string purpose, Vector3 centerPoint, int distance)
+        {
+            if (!TryToGoToTargetZone(context, targetZone))
+                return;
+
+
+            if (ShouldSetNewLoggingPoints(purpose))
+            {
+                SetAllMobsWithinDistanceOfPointToLoggingPoints(context, mobsToFight, centerPoint,
+                    distance, purpose);
+            }
+
+            LoopOverMobs(context, mobsToFight);
+        }
+
+        public bool TryToGoToTargetZone(IGameContext context, string targetZone)
+        {
+            ChopWoodZone = targetZone;
+            if (context.Traveler?.World?.Zones == null)
+            {
+                return false;
+            }
+
+            if (context.Traveler.CurrentZone.Name == ChopWoodZone)
+                return true;
+
+            LogViewModel.Write("Going to zone: " + ChopWoodZone);
+            context.Traveler.WalkToZone(ChopWoodZone);
+            return false;
+        }
+
+
         public ConcurrentQueue<Person> LoggingPoints { get; set; } = new ConcurrentQueue<Person>();
         public Person NextPoint { get; set; }
         public string Purpose { get; set; }
@@ -42,20 +106,6 @@ namespace EasyFarm.Context
             return false;
         }
 
-        public bool TryToGoToTargetZone(IGameContext context)
-        {
-            while (context.Traveler?.World?.Zones == null)
-            {
-                Thread.Sleep(100);
-            }
-
-            if (context.Traveler.CurrentZone.Name == ChopWoodZone)
-                return true;
-
-            LogViewModel.Write("Going to zone: " + ChopWoodZone);
-            context.Traveler.WalkToZone(ChopWoodZone);
-            return false;
-        }
 
         public void SetNextPointIfHasBeenReached(Vector3 currentPosition, int acceptableDistance = 1)
         {
@@ -100,8 +150,12 @@ namespace EasyFarm.Context
         }
 
         public void SetAllMobsWithinDistanceOfPointToLoggingPoints(IGameContext context, List<string> mobsToFight,
-            Vector3 centerPoint, int distance)
+            Vector3 centerPoint, int distance, string purpose)
         {
+            if (context.Traveler?.World?.Mobs == null)
+                return;
+
+            Purpose = purpose;
             LoggingPoints = new ConcurrentQueue<Person>();
             var allMobsWithinDistance =
                 GetAllMobsWithinDistanceOfPoint(context, centerPoint, distance);
@@ -117,8 +171,10 @@ namespace EasyFarm.Context
             }
         }
 
-        private void SetAllMobsInZoneToLoggingPoints(IGameContext context , List<string> mobsToFight)
+        private void SetAllMobsInZoneToLoggingPoints(IGameContext context, List<string> mobsToFight)
         {
+            if (context.Traveler?.World?.Mobs == null)
+                return;
             LoggingPoints = new ConcurrentQueue<Person>();
 
             var allKnownMatchingMobs = GetMobsMatchingListOfStrings(mobsToFight, context.Traveler.World.Mobs);
@@ -128,7 +184,7 @@ namespace EasyFarm.Context
             foreach (var person in closestMobsFirst)
             {
                 LoggingPoints.Enqueue(person);
-            } 
+            }
         }
 
         private static List<Person> GetMobsMatchingListOfStrings(List<string> mobsToFight, List<Person> listOfMobs)
@@ -149,25 +205,6 @@ namespace EasyFarm.Context
             return mobsMatchingName;
         }
 
-        public void LoopOverMobsWithinDistanceOfPoint(IGameContext context, List<string> mobsToFight, string targetZone,
-            string purpose, Vector3 centerPoint, int distance)
-        {
-
-
-            ChopWoodZone = targetZone;
-            if (!TryToGoToTargetZone(context))
-                return;
-
-
-            if (ShouldSetNewLoggingPoints(purpose))
-            {
-                Purpose = purpose;
-                SetAllMobsWithinDistanceOfPointToLoggingPoints(context, mobsToFight, centerPoint,
-                    distance);
-            }
-
-            LoopOverMobs(context, mobsToFight);
-        }
 
         private void LoopOverMobs(IGameContext context, List<string> mobsToFight)
         {
@@ -193,14 +230,12 @@ namespace EasyFarm.Context
 
         public void ChopTreesInZone(IGameContext context, string targetZone, string purpose, string resourceName)
         {
-            ChopWoodZone = targetZone;
-            if (!TryToGoToTargetZone(context))
+            if (!TryToGoToTargetZone(context, targetZone))
                 return;
 
             if (ShouldSetNewLoggingPoints(purpose))
             {
-                Purpose = purpose;
-                SetLggingPointsWithAllGatherPointsInZone(context, resourceName);
+                SetLoggingPointsWithAllGatherPointsInZone(context, resourceName, purpose);
             }
 
             if (LoggingPoints.IsEmpty)
@@ -225,8 +260,10 @@ namespace EasyFarm.Context
             SetNextPointIfHasBeenReached(context.Traveler.Walker.CurrentPosition);
         }
 
-        private void SetLggingPointsWithAllGatherPointsInZone(IGameContext context, string gatherPointName)
+        private void SetLoggingPointsWithAllGatherPointsInZone(IGameContext context, string gatherPointName,
+            string purpose)
         {
+            Purpose = purpose;
             // First add things close by
             var closeLoggingPoints =
                 context.Memory.UnitService.NpcUnits.ToList().FindAll(x => x.Name == gatherPointName && x.IsRendered);
@@ -283,26 +320,6 @@ namespace EasyFarm.Context
             LogViewModel.Write("Chopping down tree at: " + context.Target.Position);
             context.API.Windower.SendString("/item Hatchet <t>");
             Thread.Sleep(4000);
-        }
-
-        public void LoopOverMobsInZoneMatchingList(IGameContext context, List<string> mobsToFight, string targetZone,
-            string purpose)
-        {
-            if (context.Traveler?.World?.Mobs == null)
-                return;
-
-            ChopWoodZone = targetZone;
-            if (!TryToGoToTargetZone(context))
-                return;
-
-
-            if (ShouldSetNewLoggingPoints(purpose))
-            {
-                Purpose = purpose;
-                SetAllMobsInZoneToLoggingPoints(context, mobsToFight);
-            }
-            
-            LoopOverMobs(context, mobsToFight); 
         }
     }
 }

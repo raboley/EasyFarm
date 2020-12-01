@@ -95,7 +95,7 @@ namespace EasyFarm.Soul
                     if (context.Player.JobLevel < 16)
                     {
                         // Ground crystals
-                        // mobsToFight.Add("Rabbit");
+                        mobsToFight.Add("hare");
 
                         // Wind Crystals
                         mobsToFight.Add("bat");
@@ -124,7 +124,7 @@ namespace EasyFarm.Soul
                     if (!chopWoodInRon.Done(context))
                         return false;
 
-                    if (context.Player.JobLevel > 21)
+                    if (context.Player.JobLevel > 24)
                         return false;
 
                     return true;
@@ -149,6 +149,8 @@ namespace EasyFarm.Soul
             if (levelUpPastFifteen.ShouldDo(_context))
                 levelUpPastFifteen.Do(_context);
         }
+        
+        
 
         private void FarmJagedyEaredJack()
         {
@@ -189,36 +191,6 @@ namespace EasyFarm.Soul
 
 
             _context.WoodChopper.LoopOverMobsWithinDistanceOfPoint(context, mobsToFight, targetZone, purpose, centerPoint, distance);
-
-            // Run to Ranfare's tomb.
         }
-
-        // private void LoopOverMobsInList(List<string> mobsToFight, string targetZone, string purpose, Vector3 centerPoint, int distance)
-        // {
-        //     _context.WoodChopper.SetMobsToTarget(_context, mobsToFight);
-        //
-        //     _context.WoodChopper.ChopWoodZone = targetZone;
-        //     if (!_context.WoodChopper.TryToGoToTargetZone(_context))
-        //         return;
-        //
-        //
-        //     if (_context.WoodChopper.Purpose != purpose || _context.WoodChopper.LoggingPoints.Count == 0)
-        //     {
-        //         _context.WoodChopper.Purpose = purpose;
-        //         _context.WoodChopper.SetAllMobsWithinDistanceOfPointToLoggingPoints(_context, mobsToFight, centerPoint,
-        //             distance);
-        //     }
-        //
-        //     if (_context.WoodChopper.LoggingPoints.IsEmpty)
-        //         return;
-        //
-        //     if (_context.WoodChopper.NextPoint == null)
-        //         _context.WoodChopper.SetNextPoint();
-        //
-        //     if (_context.WoodChopper.NextPoint != null)
-        //         _traveler.PathfindAndWalkToFarAwayWorldMapPosition(_context.WoodChopper.NextPoint.Position);
-        //
-        //     _context.WoodChopper.SetNextPointIfHasBeenReached(_traveler.Walker.CurrentPosition);
-        // }
     }
 }

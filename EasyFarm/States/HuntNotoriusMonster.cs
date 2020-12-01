@@ -39,7 +39,7 @@ namespace EasyFarm.States
         {
             context.WoodChopper.ChopWoodZone = "Ronfaure_West"; 
             LogViewModel.Write("Going to Hunt Notorious Monster in Zone: " + context.WoodChopper.ChopWoodZone);
-            context.WoodChopper.TryToGoToTargetZone(context);
+            context.WoodChopper.TryToGoToTargetZone(context, "Ronfaure_West");
 
             if (context.API.Player.Zone.ToString() != context.WoodChopper.ChopWoodZone)
                 return;
