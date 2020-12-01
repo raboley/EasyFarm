@@ -54,7 +54,9 @@ namespace EasyFarm.States
             junkItems.Add("Wild Onion");
             junkItems.Add("Chestnut");
             junkItems.Add("handful of pugil scales");
-            junkItems.Add("Rabbit mantle");
+            junkItems.Add("Rabbit Mantle");
+            junkItems.Add("Maple Wand");
+            
             
             
             

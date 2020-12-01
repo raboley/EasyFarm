@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
@@ -65,16 +66,42 @@ namespace EasyFarm.Context
         /// <returns></returns>
         private bool ItemIsAJunkItem(List<string> junkItems)
         {
+            if (!ItemIsInJunkItemsList(junkItems)) 
+                return false;
+
+            if (ItemIsCurrentlyEquipped())
+                return false;
+
+            return true;
+        }
+
+        private bool ItemIsCurrentlyEquipped()
+        {
+            for (int i = 0; i < 17; i++)
+            {
+                var equippedItem = _context.Inventory.GetEquippedItem(i);
+                if (equippedItem == null)
+                    continue;
+                
+                if (equippedItem.Index == _context.Inventory.SelectedItemIndex)
+                    return true;
+            }
+            
+            return false;
+        }
+
+        private bool ItemIsInJunkItemsList(List<string> junkItems)
+        {
             foreach (var junkItem in junkItems)
             {
                 if (junkItem.Contains("*"))
                 {
                     var wildcardJunkItem = junkItem.Replace("*", "");
-                    if (_context.Inventory.SelectedItemName.Contains(wildcardJunkItem))
+                    if (_context.Inventory.SelectedItemName.ToLower().Contains(wildcardJunkItem.ToLower()))
                         return true;
                 }
 
-                if (_context.Inventory.SelectedItemName == junkItem)
+                if (String.Equals(_context.Inventory.SelectedItemName, junkItem, StringComparison.CurrentCultureIgnoreCase))
                     return true;
             }
 
