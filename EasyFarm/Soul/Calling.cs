@@ -16,6 +16,7 @@ namespace EasyFarm.Soul
     public class Objective
     {
         public Func<IGameContext, bool> ShouldDo { get; set; }
+        public Func<IGameContext, bool> Done { get; set; }
 
         // Action is the same as func, but it doesn't have a return.
         public Action<IGameContext> Do { get; set; }
@@ -72,11 +73,16 @@ namespace EasyFarm.Soul
 
             var chopWoodInRon = new Objective
             {
+                Done = context => context.Player.JobLevel > 14,
+
                 ShouldDo = context =>
                 {
                     if (context.Player.JobLevel <= 5)
                         return false;
-                    
+
+                    // Might change this, but only doing this for leveling right now.
+                    if (context.Player.JobLevel > 14)
+                        return false;
                     return context.Inventory.HaveItemInInventoryContainer("Hatchet");
                 },
                 Do = context =>
@@ -110,6 +116,38 @@ namespace EasyFarm.Soul
 
             if (chopWoodInRon.ShouldDo(_context))
                 chopWoodInRon.Do(_context);
+
+            var levelUpPastFifteen = new Objective
+            {
+                ShouldDo = context =>
+                {
+                    if (!chopWoodInRon.Done(context))
+                        return false;
+
+                    if (context.Player.JobLevel > 21)
+                        return false;
+
+                    return true;
+                },
+                Do = context =>
+                {
+                    var targetZone = Zone.Ronfaure_East.ToString();
+                    var purpose = "LevelTo6";
+
+                    var mobsToFight = new List<string>();
+                    mobsToFight.Add("Hare");
+                    mobsToFight.Add("orc");
+                    // Adding this for a chance at wind crystals
+                    mobsToFight.Add("Bat");
+
+                    _context.WoodChopper.LoopOverMobsInZoneMatchingList(context, mobsToFight, targetZone, purpose); 
+                }
+                
+                
+            };
+
+            if (levelUpPastFifteen.ShouldDo(_context))
+                levelUpPastFifteen.Do(_context);
         }
 
         private void FarmJagedyEaredJack()
@@ -128,7 +166,7 @@ namespace EasyFarm.Soul
             var centerPoint = new Vector3(-268, 0, -257);
             var distance = 30;
 
-            _context.WoodChopper.LoopOverMobsInList(_context, mobsToFight, targetZone, purpose, centerPoint, distance);
+            _context.WoodChopper.LoopOverMobsWithinDistanceOfPoint(_context, mobsToFight, targetZone, purpose, centerPoint, distance);
         }
 
         private void FightBatsInTomb()
@@ -150,7 +188,7 @@ namespace EasyFarm.Soul
             var distance = 300;
 
 
-            _context.WoodChopper.LoopOverMobsInList(context, mobsToFight, targetZone, purpose, centerPoint, distance);
+            _context.WoodChopper.LoopOverMobsWithinDistanceOfPoint(context, mobsToFight, targetZone, purpose, centerPoint, distance);
 
             // Run to Ranfare's tomb.
         }

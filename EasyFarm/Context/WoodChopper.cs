@@ -58,9 +58,13 @@ namespace EasyFarm.Context
 
         public void SetNextPointIfHasBeenReached(Vector3 currentPosition, int acceptableDistance = 1)
         {
-            var distance = GridMath.GetDistancePos(currentPosition, NextPoint.Position);
-            if (distance > acceptableDistance)
-                return;
+            if (NextPoint != null)
+            {
+                var distance = GridMath.GetDistancePos(currentPosition, NextPoint.Position);
+                if (distance > acceptableDistance)
+                    return;
+            }
+
 
             if (LoggingPoints.IsEmpty)
                 return;
@@ -101,18 +105,7 @@ namespace EasyFarm.Context
             var allMobsWithinDistance =
                 GetAllMobsWithinDistanceOfPoint(context, centerPoint, distance);
 
-            var mobsMatchingNameWithinDistance = new List<Person>();
-            foreach (var mob in allMobsWithinDistance)
-            {
-                foreach (var targetMob in mobsToFight)
-                {
-                    if (!mob.Name.Contains(targetMob))
-                        continue;
-
-                    mobsMatchingNameWithinDistance.Add(mob);
-                    break;
-                }
-            }
+            var mobsMatchingNameWithinDistance = GetMobsMatchingListOfStrings(mobsToFight, allMobsWithinDistance);
 
 
             var closestMobsFirst = mobsMatchingNameWithinDistance
@@ -123,7 +116,25 @@ namespace EasyFarm.Context
             }
         }
 
-        public void LoopOverMobsInList(IGameContext context, List<string> mobsToFight, string targetZone,
+        private static List<Person> GetMobsMatchingListOfStrings(List<string> mobsToFight, List<Person> listOfMobs)
+        {
+            var mobsMatchingName = new List<Person>();
+            foreach (var mob in listOfMobs)
+            {
+                foreach (var targetMob in mobsToFight)
+                {
+                    if (!mob.Name.Contains(targetMob))
+                        continue;
+
+                    mobsMatchingName.Add(mob);
+                    break;
+                }
+            }
+
+            return mobsMatchingName;
+        }
+
+        public void LoopOverMobsWithinDistanceOfPoint(IGameContext context, List<string> mobsToFight, string targetZone,
             string purpose, Vector3 centerPoint, int distance)
         {
             SetMobsToTarget(context, mobsToFight);
@@ -250,6 +261,12 @@ namespace EasyFarm.Context
             LogViewModel.Write("Chopping down tree at: " + context.Target.Position);
             context.API.Windower.SendString("/item Hatchet <t>");
             Thread.Sleep(4000);
+        }
+
+        public void LoopOverMobsInZoneMatchingList(IGameContext context, List<string> mobsToFight, string targetZone,
+            string purpose)
+        {
+            GetMobsMatchingListOfStrings(mobsToFight,)
         }
     }
 }
