@@ -131,8 +131,8 @@ namespace EasyFarm.Soul
                 },
                 Do = context =>
                 {
-                    var targetZone = Zone.Ronfaure_East.ToString();
-                    var purpose = "LevelTo6";
+                    var targetZone = Zone.La_Theine_Plateau.ToString();
+                    var purpose = "LevelUpPast15";
 
                     var mobsToFight = new List<string>();
                     mobsToFight.Add("Hare");
