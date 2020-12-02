@@ -63,10 +63,14 @@ namespace EasyFarm.Context
 
 
                 var lastIndex = _context.Inventory.SelectedItemIndex;
+                var j = 0;
                 while (_context.Inventory.SelectedItemIndex == lastIndex)
                 {
                     Down();
                     Thread.Sleep(500);
+                    j++;
+                    if (j > 5)
+                        break;
                 }
             }
 
