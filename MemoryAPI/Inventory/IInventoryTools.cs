@@ -28,7 +28,7 @@ namespace MemoryAPI.Inventory
         uint SelectedItemIndex { get; }
         uint ShopItemCount { get; }
         uint ShopItemCountMax { get; set; }
-        int GetContainerCount(int containerId);
+        int GetContainerCount(int containerId = 0);
         EliteAPI.InventoryItem GetContainerItem(int containerId, int itemIndex);
         int GetContainerMaxCount(int containerId);
         EliteAPI.InventoryItem GetEquippedItem(int slotId);

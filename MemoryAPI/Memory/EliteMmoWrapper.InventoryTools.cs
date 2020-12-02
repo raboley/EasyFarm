@@ -34,7 +34,7 @@ namespace MemoryAPI.Memory
                 }
             }
 
-            public int GetContainerCount(int containerId)
+            public int GetContainerCount(int containerId = 0)
             {
                 return _api.Inventory.GetContainerCount(containerId);
             }

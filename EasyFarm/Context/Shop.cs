@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using EasyFarm.Classes;
 using EliteMMO.API;
 using MemoryAPI;
 using Xceed.Wpf.Toolkit.Primitives;
@@ -18,6 +19,60 @@ namespace EasyFarm.Context
             _context = context;
         }
 
+        public void SellAllJunkToMerchant(IGameContext context, string merchantName, List<string> junkItems)
+        {
+            // Now that I should be close to merchant talk to them
+            IMemoryAPI fface = context.API;
+            IUnit npc = context.Memory.UnitService.GetClosestUnitByPartialName(merchantName);
+
+            // Close menu in case player has menu open prior to trading.
+            CloseMenu();
+
+            context.Navigator.InteractWithUnit(context, fface, npc);
+
+            SellAllJunk(junkItems);
+        }
+
+        public void SellAllJunk(List<string> junkItems)
+        {
+            SelectSell();
+            // Go to the top of the shop list
+            HighlightFirstItemInShopMenu();
+
+            int itemsInCurrentInventory = _context.Inventory.GetContainerCount();
+            for (int i = 0; i <= itemsInCurrentInventory; i++)
+            {
+                // Check if item is junk
+                Thread.Sleep(1000);
+                if (ItemIsAJunkItem(junkItems))
+                {
+                    if (!ShowPriceAndGetToSellOption())
+                        continue;
+
+                    // need to sell multiple
+                    if (_context.Menu.MenuItemCount == 5)
+                    {
+                        ChooseToSellAll();
+                    }
+
+                    Sell();
+                    // If we sold it, the cursor will move to the next item automatically
+                    i++;
+                    continue;
+                }
+
+
+                var lastIndex = _context.Inventory.SelectedItemIndex;
+                while (_context.Inventory.SelectedItemIndex == lastIndex)
+                {
+                    Down();
+                    Thread.Sleep(500);
+                }
+            }
+
+            CloseMenu();
+        }
+
         public void SelectSell()
         {
             while (_context.Menu.IsMenuOpen != true)
@@ -31,33 +86,16 @@ namespace EasyFarm.Context
             Enter();
         }
 
-        public void SellAllJunk(List<string> junkItems)
+
+        private void HighlightFirstItemInShopMenu()
         {
-            SelectSell();
-            // Go to the top of the shop list
-            HighlightFirstItemInShopMenu();
+            while (_context.Menu.MenuItemCount != 10)
+                Thread.Sleep(100);
 
-            int maxInventorySize = 80;
-            for (int i = 0; i < maxInventorySize; i++)
-            {
-                Thread.Sleep(1000);
-                if (ItemIsAJunkItem(junkItems))
-                {
-                    if (_context.Inventory.ShopItemCountMax > 1)
-                    {
-                        // If we have multiple, have to select how many.
-                        SellMultiple();
-                    }
-
-                    Sell();
-                    // If we sold it, the cursor will move to the next item automatically
-                    continue;
-                }
-                Down();
-            }
-
-            CloseMenu();
+            while (_context.Menu.MenuIndex != 1)
+                Up();
         }
+
 
         /// <summary>
         /// Allows for fuzzy matching if junk item name contains a * anywhere, (doesn't care where)
@@ -66,28 +104,13 @@ namespace EasyFarm.Context
         /// <returns></returns>
         private bool ItemIsAJunkItem(List<string> junkItems)
         {
-            if (!ItemIsInJunkItemsList(junkItems)) 
+            if (!ItemIsInJunkItemsList(junkItems))
                 return false;
 
             if (ItemIsCurrentlyEquipped())
                 return false;
 
             return true;
-        }
-
-        private bool ItemIsCurrentlyEquipped()
-        {
-            for (int i = 0; i < 17; i++)
-            {
-                var equippedItem = _context.Inventory.GetEquippedItem(i);
-                if (equippedItem == null)
-                    continue;
-                
-                if (equippedItem.Index == _context.Inventory.SelectedItemIndex)
-                    return true;
-            }
-            
-            return false;
         }
 
         private bool ItemIsInJunkItemsList(List<string> junkItems)
@@ -101,33 +124,57 @@ namespace EasyFarm.Context
                         return true;
                 }
 
-                if (String.Equals(_context.Inventory.SelectedItemName, junkItem, StringComparison.CurrentCultureIgnoreCase))
+                if (String.Equals(_context.Inventory.SelectedItemName, junkItem,
+                    StringComparison.CurrentCultureIgnoreCase))
                     return true;
             }
 
             return false;
         }
 
-        private void SellMultiple()
+
+        private bool ItemIsCurrentlyEquipped()
         {
-            GetToHowManyToSellMenu();
-            ChooseToSellAll();
-            Sell();
+            for (int i = 0; i < 17; i++)
+            {
+                var equippedItem = _context.Inventory.GetEquippedItem(i);
+                if (equippedItem == null)
+                    continue;
+
+                if (equippedItem.Index == _context.Inventory.SelectedItemIndex)
+                    return true;
+            }
+
+            return false;
+        }
+
+        private bool ShowPriceAndGetToSellOption()
+        {
+            var i = 0;
+            while (_context.Menu.MenuItemCount == 10)
+            {
+                Enter();
+                Thread.Sleep(500);
+                i++;
+                if (i > 5)
+                    return false;
+            }
+
+            return true;
+        }
+
+        private void ChooseToSellAll()
+        {
+            while (_context.Inventory.ShopItemCount != _context.Inventory.ShopItemCountMax)
+            {
+                Left();
+                Thread.Sleep(501);
+            }
         }
 
         private void Sell()
         {
             var i = 0;
-            while (_context.Menu.MenuItemCount != 2)
-            {
-                Enter();
-                Thread.Sleep(1000);
-                i++;
-                if (i > 5)
-                    return;
-            }
-
-            i = 0;
             while (_context.Menu.MenuIndex != 1)
             {
                 Up();
@@ -139,36 +186,6 @@ namespace EasyFarm.Context
 
             Enter();
             Thread.Sleep(1000);
-        }
-
-        private void ChooseToSellAll()
-        {
-            Thread.Sleep(501);
-            Left();
-        }
-
-        private void GetToHowManyToSellMenu()
-        {
-            // The four directions for increasing and decreasing price + 1 for typing in the number seem to be the trick.
-            // Have to do a while loop because we don't know if the price is visible or not.
-            int MenuItemCountForSellItem = 5;
-            while (_context.Menu.MenuItemCount != MenuItemCountForSellItem)
-            {
-                Enter();
-                Thread.Sleep(500);
-                if (_context.Menu.MenuItemCount == 2)
-                    break;
-            }
-        }
-
-
-        private void HighlightFirstItemInShopMenu()
-        {
-            while (_context.Menu.MenuItemCount != 10)
-                Thread.Sleep(100);
-
-            while (_context.Menu.MenuIndex != 1)
-                Up();
         }
     }
 }

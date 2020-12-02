@@ -6,5 +6,6 @@ namespace EasyFarm.Context
     {
         void SelectSell();
         void SellAllJunk(List<string> junkItems);
+        void SellAllJunkToMerchant(IGameContext context, string merchantName, List<string> junkItems);
     }
 }

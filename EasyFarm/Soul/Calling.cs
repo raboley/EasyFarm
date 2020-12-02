@@ -123,15 +123,15 @@ namespace EasyFarm.Soul
                 }
             };
 
-            var levelUpToTwentyOne = new Objective
+            var levelUpToTwentyFour = new Objective
             {
-                Done = context => context.Player.JobLevel > 21,
+                Done = context => context.Player.JobLevel > 23,
                 ShouldDo = context =>
                 {
                     if (!levelUpToFifteen.Done(context))
                         return false;
 
-                    if (context.Player.JobLevel > 21)
+                    if (context.Player.JobLevel > 23)
                         return false;
 
                     return true;
@@ -173,7 +173,7 @@ namespace EasyFarm.Soul
             {
                 ShouldDo = context =>
                 {
-                    if (!levelUpToTwentyOne.Done(context))
+                    if (!levelUpToTwentyFour.Done(context))
                         return false;
 
                     if (context.Player.JobLevel > 32)
@@ -209,7 +209,7 @@ namespace EasyFarm.Soul
             var objectives = new List<Objective>();
             objectives.Add(levelUpToFive);
             objectives.Add(levelUpToFifteen);
-            objectives.Add(levelUpToTwentyOne);
+            objectives.Add(levelUpToTwentyFour);
             objectives.Add(levelUpToThirtyThree);
             objectives.Add(CampJagedyEaredJack);
 

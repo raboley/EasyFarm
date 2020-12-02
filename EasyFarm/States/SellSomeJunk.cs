@@ -23,7 +23,7 @@ namespace EasyFarm.States
 
             if (new ZoneState().Check(context))
                 return false;
-            
+
             if (context.Inventory.InventoryIsFull()) 
                 return true;
 
@@ -99,12 +99,7 @@ namespace EasyFarm.States
                 return;
             
             // Now that I should be close to merchant talk to them
-            IMemoryAPI fface = context.API;
-            IUnit npc = context.Memory.UnitService.GetClosestUnitByPartialName(merchantName);
-            context.Navigator.InteractWithUnit(context, fface, npc);
-            
-            // Sell all junk
-            context.Shop.SellAllJunk(junkItems);
+            context.Shop.SellAllJunkToMerchant(context, merchantName, junkItems);
 
         }
         public Person SearchWorldForPerson(IGameContext context, string personName)
