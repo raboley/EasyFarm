@@ -229,9 +229,9 @@ namespace EasyFarm.Soul
             mobsToFight.Add("orc");
             // Get some grass thread
             mobsToFight.Add("weaver");
-
+            
             var centerPoint = new Vector3(-268, 0, -257);
-            var distance = 30;
+            var distance = 100;
 
             context.WoodChopper.LoopOverMobsWithinDistanceOfPoint(context, mobsToFight, targetZone, purpose,
                 centerPoint, distance);

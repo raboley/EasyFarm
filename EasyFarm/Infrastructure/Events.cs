@@ -23,6 +23,10 @@ namespace EasyFarm.Infrastructure
         {
             public string Message { get; set; }
         }
+        public class CurrentObjectiveEvent
+        {
+            public string Message { get; set; }
+        }
 
         public class PauseEvent { }
 

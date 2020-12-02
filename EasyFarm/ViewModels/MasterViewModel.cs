@@ -59,6 +59,7 @@ namespace EasyFarm.ViewModels
 
             AppServices.RegisterEvent<Events.TitleEvent>(this, e => MainWindowTitle = e.Message);
             AppServices.RegisterEvent<Events.StatusBarEvent>(this, e => StatusBarText = e.Message);
+            AppServices.RegisterEvent<Events.CurrentObjectiveEvent>(this, e => CurrentObjectiveText = e.Message);
             AppServices.RegisterEvent<Events.PauseEvent>(this, x => StopEngine());
             AppServices.RegisterEvent<Events.ResumeEvent>(this, x => StartEngine());
 
@@ -84,6 +85,14 @@ namespace EasyFarm.ViewModels
         {
             get { return _statusBarText; }
             set { Set(ref _statusBarText, value); }
+        }
+        
+        private string _currentObjectiveText;
+
+        public string CurrentObjectiveText
+        {
+            get { return _currentObjectiveText; }
+            set { Set(ref _currentObjectiveText, value); }
         }
 
         /// <summary>

@@ -63,11 +63,6 @@ namespace EasyFarm.States
             junkItems.Add("Animal Glue");
             junkItems.Add("Rock Salt");
             
-            
-            
-            
-            
-            
             var merchantName = "Ferdoulemiont";
             // var merchant = "Ostalie";
             
