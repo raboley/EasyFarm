@@ -33,7 +33,7 @@ namespace EasyFarm.Context
         }
 
 
-        private bool HaveAllMaterialsToCraft(CraftingRecipe recipe)
+        public bool HaveAllMaterialsToCraft(CraftingRecipe recipe)
         {
             if (!HasCrystal(recipe))
                 return false;

@@ -14,13 +14,45 @@ using Pathfinder.Travel;
 
 namespace EasyFarm.Soul
 {
-    public class Objective
+    public interface IObjective
     {
+        string Name { get; set; }
+        Func<IGameContext, bool> ShouldDo { get; set; }
+        Func<IGameContext, bool> CanDo { get; set; }
+        Func<IGameContext, bool> Done { get; set; }
+        Action<IGameContext> Do { get; set; }
+        Action<IGameContext> DoPreWork { get; set; }
+    }
+
+    public class Objective : IObjective
+    {
+        public string Name { get; set; }
         public Func<IGameContext, bool> ShouldDo { get; set; }
+        public Func<IGameContext, bool> CanDo { get; set; }
         public Func<IGameContext, bool> Done { get; set; }
 
         // Action is the same as func, but it doesn't have a return.
         public Action<IGameContext> Do { get; set; }
+        public Action<IGameContext> DoPreWork { get; set; }
+    }
+
+    public class CraftingObjective : IObjective
+    {
+        public string Name { get; set; }
+        private IGameContext _context;
+
+        public CraftingObjective(IGameContext gameContext)
+        {
+            _context = gameContext;
+        }
+
+        public CraftingRecipe Recipe { get; set; }
+
+        public Func<IGameContext, bool> ShouldDo { get; set; }
+        public Func<IGameContext, bool> CanDo { get; set; }
+        public Func<IGameContext, bool> Done { get; set; }
+        public Action<IGameContext> Do { get; set; }
+        public Action<IGameContext> DoPreWork { get; set; }
     }
 
     public class Calling : ICalling
@@ -49,7 +81,9 @@ namespace EasyFarm.Soul
                 Objectives = SandoriaCalling();
         }
 
-        public List<Objective> Objectives { get; set; }
+        public List<IObjective> Objectives { get; set; }
+        public string Name { get; set; }
+        public Func<IGameContext, bool> Done { get; set; }
 
         public bool CanDo()
         {
@@ -68,7 +102,7 @@ namespace EasyFarm.Soul
             }
         }
 
-        private List<Objective> SandoriaCalling()
+        public List<IObjective> SandoriaCalling()
         {
             // Get to lvl 3 fighting rabbits in east ronafare
             var levelUpToFive = new Objective
@@ -98,7 +132,7 @@ namespace EasyFarm.Soul
                 {
                     var resourceName = "Logging Point";
                     var chopWoodZone = Zone.Ronfaure_East.ToString();
-                    var purpose = "ChopWoodInRon";
+                    var purpose = "levelUpToFifteen";
                     var mobsToFight = new List<string>();
 
                     if (context.Player.JobLevel < 16)
@@ -206,12 +240,40 @@ namespace EasyFarm.Soul
                 Do = context => FarmJagedyEaredJack(context)
             };
 
-            var objectives = new List<Objective>();
+
+            var gatherLogsInRonfare = new Objective
+            {
+                ShouldDo = context => false,
+                Do = context =>
+                {
+                    var resourceName = "Logging Point";
+                    var chopWoodZone = Zone.Ronfaure_East.ToString();
+                    var purpose = "ChopWoodInRon";
+                    
+                    var mobsToFight = new List<string>();
+                    if (context.Player.Job == Job.Thief)
+                    {
+                        mobsToFight.Add("orc");
+                        // Get some grass thread
+                        mobsToFight.Add("weaver");
+                    }
+                    else
+                    {
+                        mobsToFight.Add("dontFightAnything");
+                    }
+
+                    context.WoodChopper.SetMobsToTarget(context, mobsToFight);
+                    context.WoodChopper.ChopTreesInZone(context, chopWoodZone, purpose, resourceName);
+                }
+            };
+
+            var objectives = new List<IObjective>();
             objectives.Add(levelUpToFive);
             objectives.Add(levelUpToFifteen);
             objectives.Add(levelUpToTwentyFour);
             objectives.Add(levelUpToThirtyThree);
             objectives.Add(CampJagedyEaredJack);
+            objectives.Add(gatherLogsInRonfare);
 
             return objectives;
         }
@@ -229,7 +291,7 @@ namespace EasyFarm.Soul
             mobsToFight.Add("orc");
             // Get some grass thread
             mobsToFight.Add("weaver");
-            
+
             var centerPoint = new Vector3(-268, 0, -257);
             var distance = 100;
 

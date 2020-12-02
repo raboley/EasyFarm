@@ -284,6 +284,7 @@
     </Compile>
     <Compile Include="Classes\NullUnit.cs" />
     <Compile Include="Soul\Calling.cs" />
+    <Compile Include="Soul\CallingFactory.cs" />
     <Compile Include="Soul\ICalling.cs" />
     <Compile Include="States\CraftSomething.cs" />
     <Compile Include="States\DoMyCurrentGoalState.cs" />

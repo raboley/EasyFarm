@@ -134,6 +134,18 @@ namespace EasyFarm.Context
             return soup;
         }
         
+        public static CraftingRecipe LauanLumber()
+        {
+            var soup = new CraftingRecipe();
+            soup.Crystal = "Wind Crystal";
+            soup.RequiredItems = new List<Item>
+            {
+                new Item() {Name = "Lauan Log", Count = 1},
+            };
+
+            return soup;
+        }
+        
         public static CraftingRecipe AshLumber(IGameContext context)
         {
             var soup = new CraftingRecipe();
@@ -148,6 +160,17 @@ namespace EasyFarm.Context
             return soup;
         }
 
+        public static CraftingRecipe WorkBench()
+        {
+            var soup = new CraftingRecipe();
+            soup.Crystal = "Earth Crystal";
+            soup.RequiredItems = new List<Item>
+            {
+                new Item() {Name = "Lauan Lumber", Count = 4},
+            };
+
+            return soup;
+        }
         public static CraftingRecipe RabbitMantle()
         {
             var soup = new CraftingRecipe();
