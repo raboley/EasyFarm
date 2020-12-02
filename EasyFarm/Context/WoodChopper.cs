@@ -1,17 +1,35 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Numerics;
 using System.Threading;
 using EasyFarm.Classes;
 using EasyFarm.ViewModels;
+using EasyFarm.Views;
 using NLog.Fluent;
 using Pathfinder;
 using Pathfinder.People;
 
 namespace EasyFarm.Context
 {
+    public static class ExtensionMethods
+    {
+        public static int Remove<T>(
+            this ObservableCollection<T> coll, Func<T, bool> condition)
+        {
+            var itemsToRemove = coll.Where(condition).ToList();
+
+            foreach (var itemToRemove in itemsToRemove)
+            {
+                coll.Remove(itemToRemove);
+            }
+
+            return itemsToRemove.Count;
+        }
+    }
+
     public class PersonLooper
     {
         /// <summary>
@@ -25,10 +43,14 @@ namespace EasyFarm.Context
             string purpose)
         {
             if (!TryToGoToTargetZone(context, targetZone))
+            {
+                SetMobsToTargetToNothing(context);
                 return;
+            }
 
             if (ShouldSetNewLoggingPoints(purpose))
             {
+                Purpose = purpose;
                 SetAllMobsInZoneToLoggingPoints(context, mobsToFight);
             }
 
@@ -49,11 +71,15 @@ namespace EasyFarm.Context
             string purpose, Vector3 centerPoint, int distance)
         {
             if (!TryToGoToTargetZone(context, targetZone))
+            {
+                SetMobsToTargetToNothing(context);
                 return;
+            }
 
 
             if (ShouldSetNewLoggingPoints(purpose))
             {
+                Purpose = purpose;
                 SetAllMobsWithinDistanceOfPointToLoggingPoints(context, mobsToFight, centerPoint,
                     distance, purpose);
             }
@@ -131,21 +157,84 @@ namespace EasyFarm.Context
             return allMobsWithinDistanceOfPoint.ToList();
         }
 
+        public void SetMobsToTargetToNothing(IGameContext context)
+        {
+            var mobsToFight = new List<string>
+            {
+                "dontFightAnything"
+            };
+            
+            RemoveAllTargetedMobs(context, mobsToFight);
+            AddAllMobsToFight(context, mobsToFight);
+        }
         public void SetMobsToTarget(IGameContext context, List<string> mobsToFight)
         {
-            // if (context.Config.TargetedMobs.ToList() != mobsToFight)
-            // {
-            //     while (context.Config.TargetedMobs.Count > 0)
-            //     {
-            //         context.Config.TargetedMobs.RemoveAt(0);
-            //     }
-            // }
+            RemoveAllTargetedMobs(context, mobsToFight);
+            ConfigureSettingsToFight(context, mobsToFight);
+        }
 
+        private static void RemoveAllTargetedMobs(IGameContext context, List<string> mobsToFight)
+        {
+            if (context.Config.TargetedMobs.Count > mobsToFight.Count)
+            {
+                while (context.Config.TargetedMobs.Count > 0)
+                {
+                    App.Current.Dispatcher.Invoke((Action) delegate // <--- HERE
+                    {
+                        context.Config.TargetedMobs.RemoveAt(0);
+                    });
+                }
+            }
+        }
 
+        private static void ConfigureSettingsToFight(IGameContext context, List<string> mobsToFight)
+        {
+            AddAllMobsToFight(context, mobsToFight);
+
+            if (!context.Config.UnclaimedFilter)
+            {
+                App.Current.Dispatcher.Invoke((Action) delegate // <--- HERE
+                {
+                    context.Config.UnclaimedFilter = true;
+                });
+            }
+
+            if (!context.Config.AggroFilter)
+            {
+                App.Current.Dispatcher.Invoke((Action) delegate // <--- HERE
+                {
+                    context.Config.AggroFilter = true;
+                });
+            }
+
+            if (!context.Config.PartyFilter)
+            {
+                App.Current.Dispatcher.Invoke((Action) delegate // <--- HERE
+                {
+                    context.Config.PartyFilter = true;
+                });
+            }
+
+            if (Math.Abs(context.Config.DetectionDistance - 50) > 0)
+            {
+                App.Current.Dispatcher.Invoke((Action) delegate // <--- HERE
+                {
+                    context.Config.DetectionDistance = 50;
+                });
+            }
+        }
+
+        private static void AddAllMobsToFight(IGameContext context, List<string> mobsToFight)
+        {
             foreach (var mob in mobsToFight)
             {
                 if (!context.Config.TargetedMobs.Contains(mob))
-                    context.Config.TargetedMobs.Add(mob);
+                {
+                    App.Current.Dispatcher.Invoke((Action) delegate // <--- HERE
+                    {
+                        context.Config.TargetedMobs.Add(mob);
+                    });
+                }
             }
         }
 
@@ -225,7 +314,14 @@ namespace EasyFarm.Context
 
         private bool ShouldSetNewLoggingPoints(string purpose)
         {
-            return Purpose != purpose || LoggingPoints.Count == 0;
+            if (Purpose == purpose)
+                return false;
+            if (LoggingPoints.Count > 0)
+                return false;
+
+            LogViewModel.Write("Setting up things to loop over for purpose: " + purpose);
+
+            return true;
         }
 
         public void ChopTreesInZone(IGameContext context, string targetZone, string purpose, string resourceName)

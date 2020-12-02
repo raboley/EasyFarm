@@ -117,16 +117,24 @@ namespace EasyFarm.Context
 
         private void Sell()
         {
+            var i = 0;
             while (_context.Menu.MenuItemCount != 2)
             {
                 Enter();
                 Thread.Sleep(1000);
+                i++;
+                if (i > 5)
+                    return;
             }
 
+            i = 0;
             while (_context.Menu.MenuIndex != 1)
             {
                 Up();
                 Thread.Sleep(1000);
+                i++;
+                if (i > 5)
+                    return;
             }
 
             Enter();
@@ -148,6 +156,8 @@ namespace EasyFarm.Context
             {
                 Enter();
                 Thread.Sleep(500);
+                if (_context.Menu.MenuItemCount == 2)
+                    break;
             }
         }
 

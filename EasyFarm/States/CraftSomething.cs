@@ -40,7 +40,10 @@ namespace EasyFarm.States
             foreach (var recipe in knownRecipes)
             {
                 if (context.Craft.CanAndShouldCraft(recipe))
+                {
                     context.Craft.AttemptToCraft(recipe);
+                    break;
+                }
             }
         }
         
@@ -48,7 +51,8 @@ namespace EasyFarm.States
         {
             var knownRecipes = new List<CraftingRecipe>();
             knownRecipes.Add(CraftingRecipe.StoneSoup());
-            // knownRecipes.Add(CraftingRecipe.ArrowWoodLumber());
+            knownRecipes.Add(CraftingRecipe.ArrowWoodLumber(context));
+            knownRecipes.Add(CraftingRecipe.AshLumber(context));
             knownRecipes.Add(CraftingRecipe.BronzeIngotFromGoblinHelmet());
             knownRecipes.Add(CraftingRecipe.BronzeIngotFromGoblinMail());
             knownRecipes.Add(CraftingRecipe.MapleLumber());
@@ -57,6 +61,7 @@ namespace EasyFarm.States
             knownRecipes.Add(CraftingRecipe.BronzeSheet());
             knownRecipes.Add(CraftingRecipe.RabbitMantle());
             knownRecipes.Add(CraftingRecipe.MapleWand());
+            knownRecipes.Add(CraftingRecipe.SaltedHare());
             return knownRecipes;
         }
     }

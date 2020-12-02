@@ -5,6 +5,7 @@ using System.Linq;
 using System.Numerics;
 using EasyFarm.Classes;
 using EasyFarm.Context;
+using EliteMMO.API;
 using MemoryAPI;
 using MemoryAPI.Chat;
 using Pathfinder;
@@ -43,7 +44,12 @@ namespace EasyFarm.Soul
             _trade = context.Trade;
             _chat = context.API.Chat;
             _inventory = context.Inventory;
+
+            if (context.Player.Nation == Nations.SandOria.ToString())
+                Objectives = SandoriaCalling();
         }
+
+        public List<Objective> Objectives { get; set; }
 
         public bool CanDo()
         {
@@ -52,38 +58,41 @@ namespace EasyFarm.Soul
 
         public void Do()
         {
+            foreach (var objective in Objectives)
+            {
+                if (objective.ShouldDo(_context))
+                {
+                    objective.Do(_context);
+                    break;
+                }
+            }
+        }
+
+        private List<Objective> SandoriaCalling()
+        {
             // Get to lvl 3 fighting rabbits in east ronafare
             var levelUpToFive = new Objective
             {
                 ShouldDo = context => context.Player.JobLevel <= 5,
-                Do = context => FightRabbitsInEastRon(context)
+                Do = context => FightRabbitsInEastRon(context),
+                Done = context => context.Player.JobLevel > 5
             };
-            if (levelUpToFive.ShouldDo(_context))
-                levelUpToFive.Do(_context);
 
-            // Get to lvl 5
-            // if (_context.Player.JobLevel > 5 && _context.Player.JobLevel <= 15)
-
-
-            if (_context.Player.JobLevel > 30 && !_context.Inventory.HaveItemInInventoryContainer("Rabbit charm"))
+            var levelUpToFifteen = new Objective
             {
-                FarmJagedyEaredJack();
-                return;
-            }
-
-            var chopWoodInRon = new Objective
-            {
-                Done = context => context.Player.JobLevel > 14,
+                Done = context => context.Player.JobLevel > 15,
 
                 ShouldDo = context =>
                 {
-                    if (context.Player.JobLevel <= 5)
+                    if (!levelUpToFive.Done(context))
                         return false;
 
                     // Might change this, but only doing this for leveling right now.
-                    if (context.Player.JobLevel > 14)
+                    if (context.Player.JobLevel > 15)
                         return false;
-                    return context.Inventory.HaveItemInInventoryContainer("Hatchet");
+
+                    return true;
+                    // return context.Inventory.HaveItemInInventoryContainer("Hatchet");
                 },
                 Do = context =>
                 {
@@ -114,17 +123,15 @@ namespace EasyFarm.Soul
                 }
             };
 
-            if (chopWoodInRon.ShouldDo(_context))
-                chopWoodInRon.Do(_context);
-
-            var levelUpPastFifteen = new Objective
+            var levelUpToTwentyOne = new Objective
             {
+                Done = context => context.Player.JobLevel > 21,
                 ShouldDo = context =>
                 {
-                    if (!chopWoodInRon.Done(context))
+                    if (!levelUpToFifteen.Done(context))
                         return false;
 
-                    if (context.Player.JobLevel > 24)
+                    if (context.Player.JobLevel > 21)
                         return false;
 
                     return true;
@@ -132,28 +139,41 @@ namespace EasyFarm.Soul
                 Do = context =>
                 {
                     var targetZone = Zone.La_Theine_Plateau.ToString();
-                    var purpose = "LevelUpPast15";
+                    string purpose = "";
 
                     var mobsToFight = new List<string>();
-                    mobsToFight.Add("Hare");
-                    mobsToFight.Add("orc");
-                    // Adding this for a chance at wind crystals
-                    mobsToFight.Add("Bat");
 
-                    _context.WoodChopper.LoopOverMobsInZoneMatchingList(context, mobsToFight, targetZone, purpose); 
+                    if (context.Player.JobLevel < 19)
+                    {
+                        purpose = "levelUpToNineTeen";
+                        mobsToFight.Add("wasp");
+                        mobsToFight.Add("orc");
+                        mobsToFight.Add("Hare");
+                        // Adding this for a chance at wind crystals
+                        mobsToFight.Add("Bat");
+                    }
+
+                    if (context.Player.JobLevel >= 19)
+                    {
+                        purpose = "levelUpPastNineteen";
+                        mobsToFight.Add("Thickshell");
+                        mobsToFight.Add("Funguar");
+                        mobsToFight.Add("Sheep");
+                        mobsToFight.Add("Neckchopper");
+                        mobsToFight.Add("Stonechucker");
+                        mobsToFight.Add("Akaba");
+                    }
+
+
+                    _context.WoodChopper.LoopOverMobsInZoneMatchingList(context, mobsToFight, targetZone, purpose);
                 }
-                
-                
             };
 
-            if (levelUpPastFifteen.ShouldDo(_context))
-                levelUpPastFifteen.Do(_context);
-            
             var levelUpToThirtyThree = new Objective
             {
                 ShouldDo = context =>
                 {
-                    if (!levelUpPastFifteen.Done(context))
+                    if (!levelUpToTwentyOne.Done(context))
                         return false;
 
                     if (context.Player.JobLevel > 32)
@@ -173,19 +193,31 @@ namespace EasyFarm.Soul
                     mobsToFight.Add("Bat");
 
                     // TODO: Make this a center point for the entrance to the zone from k. highlands.
-                    _context.WoodChopper.LoopOverMobsInZoneMatchingList(context, mobsToFight, targetZone, purpose); 
+                    _context.WoodChopper.LoopOverMobsInZoneMatchingList(context, mobsToFight, targetZone, purpose);
                 }
-                
-                
             };
 
-            if (levelUpToThirtyThree.ShouldDo(_context))
-                levelUpToThirtyThree.Do(_context);
-        }
-        
-        
 
-        private void FarmJagedyEaredJack()
+            var CampJagedyEaredJack = new Objective
+            {
+                ShouldDo = context =>
+                    context.Player.JobLevel > 30 && !context.Inventory.HaveItemInInventoryContainer("Rabbit charm") &&
+                    context.Player.Job == Job.Thief,
+                Do = context => FarmJagedyEaredJack(context)
+            };
+
+            var objectives = new List<Objective>();
+            objectives.Add(levelUpToFive);
+            objectives.Add(levelUpToFifteen);
+            objectives.Add(levelUpToTwentyOne);
+            objectives.Add(levelUpToThirtyThree);
+            objectives.Add(CampJagedyEaredJack);
+
+            return objectives;
+        }
+
+
+        private void FarmJagedyEaredJack(IGameContext context)
         {
             var targetZone = Zone.Ronfaure_West.ToString();
             var purpose = "FarmJEJ";
@@ -201,7 +233,8 @@ namespace EasyFarm.Soul
             var centerPoint = new Vector3(-268, 0, -257);
             var distance = 30;
 
-            _context.WoodChopper.LoopOverMobsWithinDistanceOfPoint(_context, mobsToFight, targetZone, purpose, centerPoint, distance);
+            context.WoodChopper.LoopOverMobsWithinDistanceOfPoint(context, mobsToFight, targetZone, purpose,
+                centerPoint, distance);
         }
 
 
@@ -220,7 +253,8 @@ namespace EasyFarm.Soul
             var distance = 300;
 
 
-            _context.WoodChopper.LoopOverMobsWithinDistanceOfPoint(context, mobsToFight, targetZone, purpose, centerPoint, distance);
+            _context.WoodChopper.LoopOverMobsWithinDistanceOfPoint(context, mobsToFight, targetZone, purpose,
+                centerPoint, distance);
         }
     }
 }

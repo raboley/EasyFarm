@@ -17,6 +17,7 @@
 // ///////////////////////////////////////////////////////////////////
 
 using System.Runtime.InteropServices;
+using EliteMMO.API;
 
 namespace MemoryAPI
 {
@@ -36,5 +37,38 @@ namespace MemoryAPI
             public short Mnd;
             public short Chr;
         } // @ public struct PlayerStats
+        
+        
+        public class CraftSkill
+        {
+
+            public bool Capped;
+            public int Rank;
+            public int Skill;
+
+            public CraftSkill(EliteAPI.PlayerCraftSkill playerCraftSkill)
+            {
+                Capped = playerCraftSkill.Capped;
+                Rank = playerCraftSkill.Rank;
+                Skill = playerCraftSkill.Skill;
+            }
+        }
+        
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct CraftSkills
+        {
+            public CraftSkill Fishing;
+            public CraftSkill Woodworking;
+            public CraftSkill Smithing;
+            public CraftSkill Goldsmithing;
+            public CraftSkill Clothcraft;
+            public CraftSkill Leathercraft;
+            public CraftSkill Bonecraft;
+            public CraftSkill Alchemy;
+            public CraftSkill Cooking;
+            public CraftSkill Synergy;
+            public CraftSkill Riding;
+        } // @ public struct PlayerStats
+        
     }
 }

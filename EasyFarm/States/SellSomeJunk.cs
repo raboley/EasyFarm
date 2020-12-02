@@ -56,11 +56,19 @@ namespace EasyFarm.States
             junkItems.Add("handful of pugil scales");
             junkItems.Add("Rabbit Mantle");
             junkItems.Add("Maple Wand");
+            junkItems.Add("G. Sheep Meat");
+            junkItems.Add("Sleepshroom");
+            junkItems.Add("Sheep Tooth");
+            junkItems.Add("*salted");
+            junkItems.Add("Animal Glue");
+            junkItems.Add("Rock Salt");
             
             
             
             
-            var merchantName = "Phamelise";
+            
+            
+            var merchantName = "Ferdoulemiont";
             // var merchant = "Ostalie";
             
             // is merchant in zone?

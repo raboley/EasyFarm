@@ -87,7 +87,6 @@ namespace EasyFarm.States
             AddState(new NeedSignet() {Priority = 21});
 
             // The Finer Things
-            // TODO: Uncomment this
             AddState(new CraftSomething() {Priority = 20});
 
             AddState(new SellSomeJunk() {Priority = 119});

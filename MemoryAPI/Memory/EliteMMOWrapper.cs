@@ -606,6 +606,29 @@ namespace MemoryAPI.Memory
                 }
             }
 
+            public Structures.CraftSkills CraftSkills
+            {
+                get
+                {
+                    var craftSkills = _api.Player.CraftSkills;
+
+                    return new Structures.CraftSkills()
+                    {
+                        Fishing = new Structures.CraftSkill(craftSkills.Fishing),
+                        Woodworking = new Structures.CraftSkill(craftSkills.Woodworking),
+                        Smithing = new Structures.CraftSkill(craftSkills.Smithing),
+                        Goldsmithing = new Structures.CraftSkill(craftSkills.Goldsmithing),
+                        Clothcraft = new Structures.CraftSkill(craftSkills.Clothcraft),
+                        Leathercraft = new Structures.CraftSkill(craftSkills.Leathercraft),
+                        Bonecraft = new Structures.CraftSkill(craftSkills.Bonecraft),
+                        Alchemy = new Structures.CraftSkill(craftSkills.Alchemy),
+                        Cooking = new Structures.CraftSkill(craftSkills.Cooking),
+                        Synergy = new Structures.CraftSkill(craftSkills.Synergy),
+                        Riding = new Structures.CraftSkill(craftSkills.Riding),
+                    };
+                }
+            }
+
             public Status Status => Helpers.ToStatus((EntityStatus) _api.Player.Status);
 
             public StatusEffect[] StatusEffects

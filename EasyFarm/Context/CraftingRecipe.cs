@@ -43,6 +43,19 @@ namespace EasyFarm.Context
             return soup;
         }
         
+        public static CraftingRecipe SaltedHare()
+        {
+            var soup = new CraftingRecipe();
+            soup.Crystal = "Fire Crystal";
+            soup.RequiredItems = new List<Item>
+            {
+                new Item() {Name = "Hare Meat", Count = 1},
+                new Item() {Name = "Rock Salt", Count = 1}
+            };
+
+            return soup;
+        }
+        
         public static CraftingRecipe BronzeIngotFromBeastCoin()
         {
             var soup = new CraftingRecipe();
@@ -95,10 +108,12 @@ namespace EasyFarm.Context
             return soup;
         }
         
-        public static CraftingRecipe ArrowWoodLumber()
+        public static CraftingRecipe ArrowWoodLumber(IGameContext context)
         {
             var soup = new CraftingRecipe();
             soup.Crystal = "Wind Crystal";
+            soup.ShouldCraft = () => context.API.Player.CraftSkills.Woodworking.Skill <= 2;
+            
             soup.RequiredItems = new List<Item>
             {
                 new Item() {Name = "Arrowwood Log", Count = 1},
@@ -114,6 +129,20 @@ namespace EasyFarm.Context
             soup.RequiredItems = new List<Item>
             {
                 new Item() {Name = "Maple Log", Count = 1},
+            };
+
+            return soup;
+        }
+        
+        public static CraftingRecipe AshLumber(IGameContext context)
+        {
+            var soup = new CraftingRecipe();
+            soup.Crystal = "Wind Crystal";
+            soup.ShouldCraft = () => context.API.Player.CraftSkills.Woodworking.Skill >= 4;
+            
+            soup.RequiredItems = new List<Item>
+            {
+                new Item() {Name = "Ash Log", Count = 1},
             };
 
             return soup;

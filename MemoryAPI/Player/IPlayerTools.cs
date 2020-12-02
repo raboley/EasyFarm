@@ -49,6 +49,7 @@ namespace MemoryAPI
         Zone HomePoint { get; }
         Nations Nation { get; }
         ConcurrentQueue<Position> PositionHistory { get; set; }
+        Structures.CraftSkills CraftSkills { get; }
         bool IsMoving();
     }
 }
