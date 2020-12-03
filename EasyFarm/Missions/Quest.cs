@@ -62,13 +62,14 @@ namespace EasyFarm.Missions
                     }
 
 
-                    questStep.InProgress = true;
-                    while (questStep.InProgress)
-                    {
+                    // questStep.InProgress = true;
+                    // while (questStep.InProgress)
+                    // {
                         // DoStep should change questStep to IsDone when 
                         // all it is completed.
                         questStep.DoStep();
-                    }
+                            // questStep.InProgress = false;
+                    // }
 
                     MarkStepAsDone(questStep);
                 }

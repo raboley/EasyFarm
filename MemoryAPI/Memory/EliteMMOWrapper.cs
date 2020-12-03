@@ -1003,6 +1003,8 @@ namespace MemoryAPI.Memory
             {
                 _api = api;
             }
+            
+
 
             public DialogInfo GetDialog()
             {

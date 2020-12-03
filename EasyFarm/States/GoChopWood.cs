@@ -96,11 +96,7 @@ namespace EasyFarm.States
             // TODO: Make traveler stop path finding when someone has aggro.
             // context.Traveler.PathfindAndWalkTwoFarAwayWorldMapPosition(context.WoodChopper.NextPoint.Position);
             // Chop wood
-
-
-
-
-
+            
             if (HasHatchet(context)) 
                 PersonLooper.ChopTree(context, "Logging Point");
         }

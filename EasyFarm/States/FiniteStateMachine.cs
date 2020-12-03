@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.Logging;
@@ -28,7 +29,10 @@ using EasyFarm.Parsing;
 using EasyFarm.Soul;
 using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
+using EliteMMO.API;
 using MemoryAPI;
+using MemoryAPI.Chat;
+using MemoryAPI.Dialog;
 using Pathfinder.Travel;
 using Zone = Pathfinder.Map.Zone;
 
@@ -77,29 +81,28 @@ namespace EasyFarm.States
             // AddState(new DumpTreasureState() { Priority = 2 });
             // AddState(new MapState() {Priority = 5});
 
-            AddState(new DoMyCurrentGoalState(_calling) {Priority = 0});
+            AddState(new DoMyCurrentGoalState(gameContext, _calling) {Priority = 0});
 
             // AddState(new ExploreZone() {Priority = 0});
             // AddState(new HuntNotoriusMonster() {Priority = 10});
             // AddState(new GoChopWood() {Priority = 10});
 
             // Needs Signet
-            AddState(new NeedSignet() {Priority = 21});
 
             // The Finer Things
+            AddState(new NeedSignet() {Priority = 21});
             AddState(new CraftSomething() {Priority = 20});
-
             AddState(new SellSomeJunk() {Priority = 119});
             AddState(new DoQuest() {Priority = 0});
-            
-            
+
+
             // TODO: Get Equipable By Jobs working,
             // Then ensure weapon types are taken into account
             // Then pick the highest Item level (or damage or def or something) that is available in inventory.
             // AddState(new EquipBestGear() {Priority = 118});
 
 
-            // AddState(new TestMoveState() { Priority = 10 });
+            // AddState(new TestState() {Priority = 999});
 
             // Inventory Is Full
             // Have some ingredients to craft
@@ -227,6 +230,59 @@ namespace EasyFarm.States
             }
 
             // ReSharper disable once FunctionNeverReturns
+        }
+    }
+
+    public class TestState : BaseState
+    {
+        public override bool Check(IGameContext context)
+        {
+            return true;
+        }
+
+        public override void Run(IGameContext context)
+        {
+            while (true)
+            {
+                var talk = context.API.Chat;
+                var chatEntries = talk.ChatEntries;
+                var lastThingSaid = talk.LastThingSaid();
+                // var lastChatEntry = talk.ChatEntries.Last();
+
+                var dialog = context.API.Dialog;
+                var info = dialog.DialogInfo;
+                var getInfo = dialog.GetDialog();
+
+                var menu = context.Menu;
+                // Try to see if i am in a dialog.
+                // var amInDialog = context.Dialog.AmInDialog(context);
+
+                ////// Test bed ////
+                // Record last thing said, and last dialog
+                var dialogText = dialog.GetDialogText();
+                // var responses = new List<string>
+                // {
+                //     "Smash the Orc",
+                //     "Could you explain again",
+                //     "no"
+                // };
+
+
+
+
+                // Choose Dialog 
+                // Choose Option 
+
+
+                // Do i need to press enter
+                // If lastChatEntryHasn'tChanged in half a second
+                // And I am not in a dialog
+                // Then I probably need to press enter
+            }
+
+            // Interact with Guard
+            // if dialog pops up (Which mission will you undertake)
+            // start the mission again
         }
     }
 

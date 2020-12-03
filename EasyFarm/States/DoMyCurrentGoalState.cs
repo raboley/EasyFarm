@@ -7,9 +7,12 @@ namespace EasyFarm.States
     {
         private readonly ICalling _calling;
 
-        public DoMyCurrentGoalState(ICalling calling)
+        public DoMyCurrentGoalState(IGameContext context,ICalling calling)
         {
             _calling = calling;
+            // _calling = CallingFactory.JuniorWoodWorker(context, calling.Objectives);
+
+
         }
 
         public override bool Check(IGameContext context)
@@ -24,6 +27,7 @@ namespace EasyFarm.States
             if (new SellSomeJunk().Check(context)) return false;
 
             if (new DoQuest().Check(context)) return false;
+            if (new CraftSomething().Check(context)) return false;
             
             if (context.Player.IsDead) return false;
 

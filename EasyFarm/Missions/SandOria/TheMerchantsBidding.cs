@@ -73,14 +73,16 @@ namespace EasyFarm.Missions.SandOria
                 };
 
                 _trade.TradeItemsToPersonByName(_context, QuestGiverName, items);
+                
+                _context.Dialog.ResumeUntilNothingElseSaid(_context);
 
-                // press enter until you see Obtained 120 gil.
-                while (_chat.LastThingSaid().Contains("Thank you for the help"))
-                {
-                    Thread.Sleep(100);
-                }
-
-                _context.API.Windower.SendKeyPress(Keys.NUMPADENTER);
+                // // press enter until you see Obtained 120 gil.
+                // while (_chat.LastThingSaid().Contains("Thank you for the help"))
+                // {
+                //     Thread.Sleep(100);
+                // }
+                //
+                // _context.API.Windower.SendKeyPress(Keys.NUMPADENTER);
             }
 
             public TradeRabbitHideToParvipon(IGameContext context) : base(context)

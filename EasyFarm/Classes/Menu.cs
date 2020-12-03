@@ -1,4 +1,5 @@
-﻿using EasyFarm.Context;
+﻿using System.Threading;
+using EasyFarm.Context;
 using EliteMMO.API;
 using MemoryAPI;
 
@@ -26,6 +27,36 @@ namespace EasyFarm.Classes
             //    TimeWaiter.Pause(500);
             //    context.API.Windower.SendKeyPress(Keys.ESCAPE);
             //}
+        }
+
+        public void Up()
+        {
+            _api.Windower.SendKeyPress(Keys.UP);
+            Thread.Sleep(100);
+        }
+
+        public void Down()
+        {
+            _api.Windower.SendKeyPress(Keys.DOWN);
+            Thread.Sleep(100);
+        }
+
+        public void Left()
+        {
+            _api.Windower.SendKeyPress(Keys.LEFT);
+            Thread.Sleep(100);
+        }
+
+        public void Right()
+        {
+            _api.Windower.SendKeyPress(Keys.RIGHT);
+            Thread.Sleep(100);
+        }
+
+        public void Enter()
+        {
+            _api.Windower.SendKeyPress(Keys.NUMPADENTER);
+            Thread.Sleep(100);
         }
     }
 }

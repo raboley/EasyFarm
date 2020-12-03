@@ -22,6 +22,7 @@ namespace EasyFarm.Soul
             var arrowWoodRecipe = CraftingRecipe.ArrowWoodLumber(gameContext);
             var twoArrowWoodLumber = new CraftingObjective(gameContext)
             {
+                Name = "twoArrowWoodLumber",
                 DoPreWork = context =>
                 {
                     if (context.Inventory.HaveItemInInventoryContainer(arrowWoodRecipe.Crystal))
@@ -31,7 +32,7 @@ namespace EasyFarm.Soul
                         arrowWoodRecipe.RequiredItems.First().Count)
                         itemFinder.GoGetItem(context, arrowWoodRecipe.RequiredItems.First().Name);
                 },
-                CanDo = context => context.Craft.HaveAllMaterialsToCraft(CraftingRecipe.ArrowWoodLumber(context)),
+                ShouldDo = context => context.Craft.HaveAllMaterialsToCraft(CraftingRecipe.ArrowWoodLumber(context)),
                 Do = context => context.Craft.AttemptToCraft(CraftingRecipe.ArrowWoodLumber(context)),
                 Done = context => context.API.Player.CraftSkills.Woodworking.Skill >= 2
             };
@@ -39,6 +40,7 @@ namespace EasyFarm.Soul
             var mapleRecipe = CraftingRecipe.MapleLumber();
             var fiveMapleLumber = new CraftingObjective(gameContext)
             {
+                Name = "fiveMapleLumber",
                 DoPreWork = context =>
                 {
                     if (!twoArrowWoodLumber.Done(context))
@@ -51,7 +53,7 @@ namespace EasyFarm.Soul
                         mapleRecipe.RequiredItems.First().Count)
                         itemFinder.GoGetItem(context, mapleRecipe.RequiredItems.First().Name);
                 },
-                CanDo = context => context.Craft.HaveAllMaterialsToCraft(CraftingRecipe.MapleLumber()),
+                ShouldDo = context => context.Craft.HaveAllMaterialsToCraft(CraftingRecipe.MapleLumber()),
                 Do = context => context.Craft.AttemptToCraft(CraftingRecipe.MapleLumber()),
                 Done = context => context.API.Player.CraftSkills.Woodworking.Skill >= 5
             };
@@ -61,6 +63,7 @@ namespace EasyFarm.Soul
             var lauanLumberRecipe = CraftingRecipe.LauanLumber();
             var preWorkLauanLumber = new CraftingObjective(gameContext)
             {
+                Name = "preWorkLauanLumber",
                 DoPreWork = context =>
                 {
                     if (context.Inventory.HaveItemInInventoryContainer(lauanLumberRecipe.Crystal))
@@ -70,7 +73,7 @@ namespace EasyFarm.Soul
                         lauanLumberRecipe.RequiredItems.First().Count)
                         itemFinder.GoGetItem(context, lauanLumberRecipe.RequiredItems.First().Name);
                 },
-                CanDo = context => context.Craft.HaveAllMaterialsToCraft(CraftingRecipe.WorkBench()),
+                ShouldDo = context => context.Craft.HaveAllMaterialsToCraft(CraftingRecipe.WorkBench()),
                 Do = context => context.Craft.AttemptToCraft(CraftingRecipe.WorkBench()),
                 Done = context => context.API.Player.CraftSkills.Woodworking.Skill >= 5
             };
@@ -78,6 +81,7 @@ namespace EasyFarm.Soul
             var workBenchRecipe = CraftingRecipe.WorkBench();
             var sevenWorkBench = new CraftingObjective(gameContext)
             {
+                Name = "sevenWorkBench",
                 DoPreWork = context =>
                 {
                     if (!fiveMapleLumber.Done(context))
@@ -93,17 +97,23 @@ namespace EasyFarm.Soul
                         // TODO: Add all the crafting recipes to GoGetItems so it can craft things that are pre-reqs.
                         itemFinder.GoGetItem(context, workBenchRecipe.RequiredItems.First().Name);
                 },
-                CanDo = context => context.Craft.HaveAllMaterialsToCraft(CraftingRecipe.WorkBench()),
+                ShouldDo = context => context.Craft.HaveAllMaterialsToCraft(CraftingRecipe.WorkBench()),
                 Do = context => context.Craft.AttemptToCraft(CraftingRecipe.WorkBench()),
                 Done = context => context.API.Player.CraftSkills.Woodworking.Skill >= 5
             };
             // Ash Lumber
 
             ////// Test Bed /////
-            if (!sevenWorkBench.CanDo(gameContext))
-                sevenWorkBench.DoPreWork(gameContext);
+            // if (!sevenWorkBench.ShouldDo(gameContext))
+            //     sevenWorkBench.DoPreWork(gameContext);
 
             /////////////////////
+            
+            objectives.Add(sevenWorkBench);
+            objectives.Add(preWorkLauanLumber);
+            objectives.Add(fiveMapleLumber);
+            objectives.Add(twoArrowWoodLumber);
+             
             calling.Objectives = objectives;
             return calling;
         }

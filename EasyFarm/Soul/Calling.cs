@@ -138,7 +138,7 @@ namespace EasyFarm.Soul
                     if (context.Player.JobLevel < 16)
                     {
                         // Ground crystals
-                        mobsToFight.Add("hare");
+                        // mobsToFight.Add("hare");
 
                         // Wind Crystals
                         mobsToFight.Add("bat");
@@ -182,7 +182,7 @@ namespace EasyFarm.Soul
                         purpose = "levelUpToNineTeen";
                         mobsToFight.Add("wasp");
                         mobsToFight.Add("orc");
-                        mobsToFight.Add("Hare");
+                        // mobsToFight.Add("Hare");
                         // Adding this for a chance at wind crystals
                         mobsToFight.Add("Bat");
                     }
@@ -249,7 +249,7 @@ namespace EasyFarm.Soul
                     var resourceName = "Logging Point";
                     var chopWoodZone = Zone.Ronfaure_East.ToString();
                     var purpose = "ChopWoodInRon";
-                    
+
                     var mobsToFight = new List<string>();
                     if (context.Player.Job == Job.Thief)
                     {
@@ -306,8 +306,11 @@ namespace EasyFarm.Soul
             var purpose = "LevelTo6";
 
             var mobsToFight = new List<string>();
-            mobsToFight.Add("Hare");
-            mobsToFight.Add("Rabbit");
+            if (context.Player.JobLevel < 3)
+            {
+                mobsToFight.Add("Rabbit");
+            }
+
             // Adding this for a chance at wind crystals
             mobsToFight.Add("Bat");
 

@@ -40,7 +40,7 @@ namespace EasyFarm.Context
             HighlightFirstItemInShopMenu();
 
             int itemsInCurrentInventory = _context.Inventory.GetContainerCount();
-            for (int i = 0; i <= itemsInCurrentInventory; i++)
+            for (int i = 0; i <= itemsInCurrentInventory+1; i++)
             {
                 // Check if item is junk
                 Thread.Sleep(1000);

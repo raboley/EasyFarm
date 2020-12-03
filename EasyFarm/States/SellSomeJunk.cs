@@ -15,15 +15,7 @@ namespace EasyFarm.States
     {
         public override bool Check(IGameContext context)
         {
-            if (context.Traveler == null)
-                return false;
             
-            if (context.Traveler.Zoning)
-                return false;
-
-            if (new ZoneState().Check(context))
-                return false;
-
             if (context.Inventory.InventoryIsFull()) 
                 return true;
 
@@ -35,10 +27,20 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
+            if (context.Traveler == null)
+                return ;
+            
+            if (context.Traveler.Zoning)
+                return ;
+
+            if (new ZoneState().Check(context))
+                return ;
+            
             LogViewModel.Write("Inventory is full, going to go Sell Junk!");
             
             List<string> junkItems = new List<string>();
-            junkItems.Add("Orcish Axe");
+            // junkItems.Add("Orcish Axe");
+            junkItems.Add("Workbench");
             junkItems.Add("Zinc Ore");
             junkItems.Add("Fruit Seeds");
             junkItems.Add("Bind");

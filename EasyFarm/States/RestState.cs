@@ -48,6 +48,9 @@ namespace EasyFarm.States
             if (context.Player.Status == Status.Fighting) 
                 return false;
 
+            if (new DeadState().Check(context))
+                return false;
+
             // Check if we should rest for health.
             if (ShouldRestForHealth(
                 context.Player.HppCurrent,

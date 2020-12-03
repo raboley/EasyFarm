@@ -144,10 +144,12 @@ namespace EasyFarm.Missions.SandOria
 
         private void StartSandyOneOneAgain()
         {
-            Thread.Sleep(5000);
-            _talk.TalkToPersonByName(_context, GateGuardName);
-            _talk.RespondWith(_context, "Smash the Orcish Scouts.");
-            AcceptSandyOneOneQuest();
+            var responses = new List<string>
+            {
+                "Smash the Orc",
+                "accept",
+            };
+            _context.Dialog.HaveConversationWithPerson(_context, GateGuardName, responses);
         }
 
         private void AcceptSandyOneOneQuest()

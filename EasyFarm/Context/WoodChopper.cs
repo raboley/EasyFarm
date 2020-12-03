@@ -314,13 +314,11 @@ namespace EasyFarm.Context
 
         private bool ShouldSetNewLoggingPoints(string purpose)
         {
-            if (Purpose == purpose)
+            var countOfLogPoints = LoggingPoints.Count;
+            if (Purpose == purpose && countOfLogPoints > 0)
                 return false;
-            if (LoggingPoints.Count > 0)
-                return false;
-
+            
             LogViewModel.Write("Setting up things to loop over for purpose: " + purpose);
-
             return true;
         }
 

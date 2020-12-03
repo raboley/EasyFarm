@@ -27,20 +27,40 @@ namespace EasyFarm.Context
             }
             Up();
         }
-        protected void Enter()
+        
+        protected void Select()
         {
             _context.Windower.SendKeyPress(Keys.NUMPADENTER);
             Thread.Sleep(100);
         }
+        
 
-        protected void Right()
+
+
+
+        protected void Up()
         {
-            _context.Windower.SendKeyPress(Keys.RIGHT);
+            _context.Windower.SendKeyPress(Keys.UP);
+            Thread.Sleep(100);
+        }
+        protected void Down()
+        {
+            _context.Windower.SendKeyPress(Keys.DOWN);
             Thread.Sleep(100);
         }
         protected void Left()
         {
             _context.Windower.SendKeyPress(Keys.LEFT);
+            Thread.Sleep(100);
+        }
+        protected void Right()
+        {
+            _context.Windower.SendKeyPress(Keys.RIGHT);
+            Thread.Sleep(100);
+        }
+        protected void Enter()
+        {
+            _context.Windower.SendKeyPress(Keys.NUMPADENTER);
             Thread.Sleep(100);
         }
 
@@ -63,11 +83,7 @@ namespace EasyFarm.Context
             Thread.Sleep(100);
         }
 
-        protected void Up()
-        {
-            _context.Windower.SendKeyPress(Keys.UP);
-            Thread.Sleep(100);
-        }
+
 
         protected void ChooseCrystalSynthesis()
         {
@@ -86,11 +102,7 @@ namespace EasyFarm.Context
             Select();
         }
 
-        protected void Select()
-        {
-            _context.Windower.SendKeyPress(Keys.NUMPADENTER);
-            Thread.Sleep(100);
-        }
+
 
         protected void OpenSynthesisMenu()
         {
@@ -121,11 +133,7 @@ namespace EasyFarm.Context
             Select();
         }
 
-        protected void Down()
-        {
-            _context.Windower.SendKeyPress(Keys.DOWN);
-            Thread.Sleep(100);
-        }
+
 
         private void RefreshMenuInCaseSomewhereWeird()
         {

@@ -1,4 +1,5 @@
-﻿using EasyFarm.Context;
+﻿using System;
+using EasyFarm.Context;
 using EasyFarm.ViewModels;
 using MemoryAPI;
 using System.Collections.Generic;
@@ -15,6 +16,77 @@ namespace EasyFarm.Classes
         public Dialog(IMemoryAPI memory)
         {
             _memory = memory;
+        }
+
+        public void HaveConversationWithPerson(IGameContext context, string personName, List<string> responses)
+        {
+            var lastChatEntry = context.Dialog.LastThingAnNpcSaid(context);
+            // Talk to NPC 
+            context.Dialog.TalkToPersonByName(context, personName);
+            var convoType = context.Dialog.IsInADialogOrConversationWithNpc(context, lastChatEntry, 5);
+            if (convoType == NpcTalkStyle.Question)
+            {
+                foreach (var response in responses)
+                {
+                    context.Dialog.RespondWith(context, response);
+                }
+            }
+            else
+            {
+                ResumeUntilNothingElseSaid(context);
+            }
+        }
+
+        public void ResumeToNextDialog(IGameContext context)
+        {
+            while (!context.Dialog.AmInDialog(context, 1))
+            {
+                var lastChatEntry = LastThingAnNpcSaid(context);
+                if (LastThingAnNpcSaid(context) == lastChatEntry)
+                    context.Menu.Enter();
+
+                Thread.Sleep(500);
+            }
+        }
+
+        public void ResumeUntilNothingElseSaid(IGameContext context)
+        {
+            while (true)
+            {
+                var lastChatEntry = LastThingAnNpcSaid(context);
+                if (LastThingAnNpcSaid(context) == lastChatEntry)
+                    context.Menu.Enter();
+
+                Thread.Sleep(500);
+                if (LastThingAnNpcSaid(context) == lastChatEntry)
+                    break;
+            } 
+        }
+
+        public EliteAPI.ChatEntry LastThingAnNpcSaid(IGameContext context)
+        {
+            return context.API.Chat.ChatEntries.ToList().FindLast(x => x.ChatType == 152);
+        }
+
+        public bool AmInDialog(IGameContext context, int secondsToWait = 3)
+        {
+            var lastDialogIndex = context.API.Dialog.DialogIndex;
+
+            DateTime duration = DateTime.Now.AddSeconds(secondsToWait);
+            while (DateTime.Now < duration)
+            {
+                context.Menu.Down();
+                Thread.Sleep(300);
+                if (lastDialogIndex != context.API.Dialog.DialogIndex)
+                    return true;
+
+                context.Menu.Up();
+                Thread.Sleep(300);
+                if (lastDialogIndex != context.API.Dialog.DialogIndex)
+                    return true;
+            }
+
+            return false;
         }
 
         public void ChooseDialogOptions(IGameContext context, List<string> desiredOptionTexts)
@@ -57,7 +129,7 @@ namespace EasyFarm.Classes
 
         public void MoveToDesiredDialogOption(IGameContext context, int desiredIndex)
         {
-            int circuitBreaker = 0; 
+            int circuitBreaker = 0;
             while (desiredIndex != context.Memory.EliteApi.Dialog.DialogIndex)
             {
                 var dialog = context.Memory.EliteApi.Dialog.GetDialog();
@@ -111,13 +183,16 @@ namespace EasyFarm.Classes
 
         public void RespondWith(IGameContext context, string response)
         {
-            while (context.API.Dialog.DialogInfo.Options.FirstOrDefault(x => x.Contains(response)) == null)
-            {
-                context.API.Windower.SendKeyPress(Keys.NUMPADENTER);
-                Thread.Sleep(1000);
-            }
+            // while (context.API.Dialog.DialogInfo.Options.FirstOrDefault(x => x.ToLower().Contains(response.ToLower())) == null)
+            // {
+            // context.API.Windower.SendKeyPress(Keys.NUMPADENTER);
+            // Thread.Sleep(1000);
+            ResumeToNextDialog(context);
+            // }
 
-            SelectDialogOption(context, response);
+            var exactResponse =
+                context.API.Dialog.DialogInfo.Options.FirstOrDefault(x => x.ToLower().Contains(response.ToLower()));
+            SelectDialogOption(context, exactResponse);
         }
 
         public void WalkAndTalkToPersonByName(IGameContext context, string name)
@@ -128,7 +203,45 @@ namespace EasyFarm.Classes
 
             context.Dialog.TalkToPersonByName(context, name);
         }
-        
 
+        public bool HasNpcSaidSomethingNew(IGameContext context, EliteAPI.ChatEntry lastChatEntry, int secondsToWait)
+        {
+            DateTime duration = DateTime.Now.AddSeconds(secondsToWait);
+            while (DateTime.Now < duration)
+            {
+                if (lastChatEntry != LastThingAnNpcSaid(context))
+                    return true;
+            }
+
+            return false;
+        }
+
+        public NpcTalkStyle IsInADialogOrConversationWithNpc(IGameContext context,
+            EliteAPI.ChatEntry lastChatEntryFromNpc, int secondsToCheckFor = 5)
+        {
+            DateTime duration = DateTime.Now.AddSeconds(5);
+            while (DateTime.Now < duration)
+            {
+                // if a new chat entry added
+                if (context.Dialog.HasNpcSaidSomethingNew(context, lastChatEntryFromNpc, 1))
+                {
+                    return NpcTalkStyle.Statement;
+                }
+
+                if (context.Dialog.AmInDialog(context, 1))
+                {
+                    return NpcTalkStyle.Question;
+                }
+            }
+
+            return NpcTalkStyle.NotTalkingToAnNpc;
+        }
+    }
+
+    public enum NpcTalkStyle
+    {
+        Statement,
+        Question,
+        NotTalkingToAnNpc
     }
 }
