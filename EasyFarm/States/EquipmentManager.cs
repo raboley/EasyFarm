@@ -30,6 +30,7 @@ namespace EasyFarm.States
             {
                 var currentEquip = currentEquipment[slot];
                 // Check for items of the same slot with higher level 
+                // Convert this to slot mask.
                 var best = GetBestItemForSlotAndJob(context,context.Player.Job.ToString(), context.Player.JobLevel, slot,
                     allItems);
                 if (best == null)

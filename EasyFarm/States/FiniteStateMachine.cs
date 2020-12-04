@@ -102,7 +102,7 @@ namespace EasyFarm.States
             // AddState(new EquipBestGear() {Priority = 118});
 
 
-            // AddState(new TestState() {Priority = 999});
+            AddState(new TestState() {Priority = 999});
 
             // Inventory Is Full
             // Have some ingredients to craft
@@ -244,45 +244,10 @@ namespace EasyFarm.States
         {
             while (true)
             {
-                var talk = context.API.Chat;
-                var chatEntries = talk.ChatEntries;
-                var lastThingSaid = talk.LastThingSaid();
-                // var lastChatEntry = talk.ChatEntries.Last();
-
-                var dialog = context.API.Dialog;
-                var info = dialog.DialogInfo;
-                var getInfo = dialog.GetDialog();
-
-                var menu = context.Menu;
-                // Try to see if i am in a dialog.
-                // var amInDialog = context.Dialog.AmInDialog(context);
-
-                ////// Test bed ////
-                // Record last thing said, and last dialog
-                var dialogText = dialog.GetDialogText();
-                // var responses = new List<string>
-                // {
-                //     "Smash the Orc",
-                //     "Could you explain again",
-                //     "no"
-                // };
-
-
-
-
-                // Choose Dialog 
-                // Choose Option 
-
-
-                // Do i need to press enter
-                // If lastChatEntryHasn'tChanged in half a second
-                // And I am not in a dialog
-                // Then I probably need to press enter
+                // Skill is the weapon type :) 
+                EquipmentManager.EquipBestGear(context); 
+                
             }
-
-            // Interact with Guard
-            // if dialog pops up (Which mission will you undertake)
-            // start the mission again
         }
     }
 
