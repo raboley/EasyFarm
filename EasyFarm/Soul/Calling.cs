@@ -190,6 +190,7 @@ namespace EasyFarm.Soul
                     if (context.Player.JobLevel >= 19)
                     {
                         purpose = "levelUpPastNineteen";
+                        mobsToFight.Add("wasp");
                         mobsToFight.Add("Thickshell");
                         mobsToFight.Add("Funguar");
                         mobsToFight.Add("Sheep");

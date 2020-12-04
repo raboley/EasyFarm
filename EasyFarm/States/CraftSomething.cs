@@ -50,6 +50,7 @@ namespace EasyFarm.States
         private static List<CraftingRecipe> GetKnownRecipes(IGameContext context)
         {
             var knownRecipes = new List<CraftingRecipe>();
+            knownRecipes.Add(CraftingRecipe.AshClub(context));
             knownRecipes.Add(CraftingRecipe.WorkBench());
             knownRecipes.Add(CraftingRecipe.StoneSoup());
             knownRecipes.Add(CraftingRecipe.ArrowWoodLumber(context));
@@ -63,6 +64,7 @@ namespace EasyFarm.States
             knownRecipes.Add(CraftingRecipe.RabbitMantle());
             knownRecipes.Add(CraftingRecipe.MapleWand());
             knownRecipes.Add(CraftingRecipe.SaltedHare());
+            knownRecipes.Add(CraftingRecipe.BeesWax());
             return knownRecipes;
         }
     }

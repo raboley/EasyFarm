@@ -804,7 +804,7 @@ namespace MemoryAPI.Memory
 
                     var thingsSaidAfterStarting = ChatEntries.Where(x => x.Timestamp < DateTime.Now);
 
-                    if (thingsSaidAfterStarting.FirstOrDefault(x => x.Text.Contains(thingToListenFor)) != null)
+                    if (thingsSaidAfterStarting.FirstOrDefault(x => x.Text.ToLower().Contains(thingToListenFor.ToLower())) != null)
                     {
                         return true;
                     }

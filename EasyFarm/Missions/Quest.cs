@@ -21,58 +21,55 @@ namespace EasyFarm.Missions
         public Quest(List<IQuestStep> questSteps, ICompleteRightNowCondition canComplete = null)
         {
             ToDoSteps = questSteps;
-            
+
             if (canComplete == null)
-                CanComplete = new NoInstantCompletion(); 
-            else 
+                CanComplete = new NoInstantCompletion();
+            else
                 CanComplete = canComplete;
         }
 
         public void Do()
         {
-            while (!Completed)
+            var questStepsInProgress = new List<IQuestStep>();
+
+            if (CanComplete.CanCompleteNow())
             {
-                var questStepsInProgress = new List<IQuestStep>();
-
-                if (CanComplete.CanCompleteNow())
-                {
-                    var lastQuestStep = ToDoSteps.LastOrDefault();
-                    if (lastQuestStep == null)
-                        return;
-                    questStepsInProgress.Add(lastQuestStep);
-                }
-                else
-                {
-                    questStepsInProgress.AddRange(ToDoSteps);
-                }
+                var lastQuestStep = ToDoSteps.LastOrDefault();
+                if (lastQuestStep == null)
+                    return;
+                questStepsInProgress.Add(lastQuestStep);
+            }
+            else
+            {
+                questStepsInProgress.AddRange(ToDoSteps);
+            }
 
 
-                foreach (var questStep in questStepsInProgress)
+            foreach (var questStep in questStepsInProgress)
+            {
+                if (!questStep.InProgress)
                 {
-                    if (!questStep.InProgress)
+                    if (questStep.IsDone)
+                        continue;
+
+                    if (questStep.IsDoneCheck() == Missions.Completed.Done)
                     {
-                        if (questStep.IsDone)
-                            continue;
-
-                        if (questStep.IsDoneCheck() == Missions.Completed.Done)
-                        {
-                            MarkStepAsDone(questStep);
-                            continue;
-                        }
+                        MarkStepAsDone(questStep);
+                        continue;
                     }
-
-
-                    // questStep.InProgress = true;
-                    // while (questStep.InProgress)
-                    // {
-                        // DoStep should change questStep to IsDone when 
-                        // all it is completed.
-                        questStep.DoStep();
-                            // questStep.InProgress = false;
-                    // }
-
-                    MarkStepAsDone(questStep);
                 }
+
+
+                // questStep.InProgress = true;
+                // while (questStep.InProgress)
+                // {
+                // DoStep should change questStep to IsDone when 
+                // all it is completed.
+                questStep.DoStep();
+                // questStep.InProgress = false;
+                // }
+
+                MarkStepAsDone(questStep);
             }
         }
 

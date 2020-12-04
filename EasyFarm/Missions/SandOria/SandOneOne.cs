@@ -115,10 +115,11 @@ namespace EasyFarm.Missions.SandOria
             var tradeFailed = true;
             while (tradeFailed)
             {
-                var thingSaidBeforeTrading = _chat.ChatEntries.LastOrDefault();
+                var thingSaidBeforeTrading = _context.Dialog.LastThingAnNpcSaid(_context);
                 _trade.TradeItemsToPersonByName(_context, GateGuardName, items);
                 var needToStartQuestAgain =
-                    _chat.WaitToSeeIfStatementWasSaid("before you bring me something", thingSaidBeforeTrading, 5);
+                    _chat.WaitToSeeIfStatementWasSaid("before you bring me something", thingSaidBeforeTrading, 10);
+                _context.Dialog.ResumeUntilNothingElseSaid(_context);
 
                 if (needToStartQuestAgain)
                 {
@@ -136,10 +137,11 @@ namespace EasyFarm.Missions.SandOria
 
         private void WaitForCutsceneToEnd()
         {
-            while (!_context.API.Chat.LastThingSaid().Contains("your work is done."))
-            {
-                Thread.Sleep(100);
-            }
+            _context.Dialog.ResumeUntilNothingElseSaid(_context);
+            // while (!_context.API.Chat.LastThingSaid().Contains("your work is done."))
+            // {
+            //     Thread.Sleep(100);
+            // }
         }
 
         private void StartSandyOneOneAgain()

@@ -39,8 +39,10 @@ namespace EasyFarm.Context
             // Go to the top of the shop list
             HighlightFirstItemInShopMenu();
 
-            int itemsInCurrentInventory = _context.Inventory.GetContainerCount();
-            for (int i = 0; i <= itemsInCurrentInventory+1; i++)
+            // int itemsInCurrentInventory = _context.Inventory.GetContainerCount();
+            // while (_context.Inventory.SelectedItemIndex != _context.Inventory.GetContainerMaxCount(0))
+            int MaxSize = _context.Inventory.GetContainerMaxCount(0);
+            for (int i = 0; i <= MaxSize; i++)
             {
                 // Check if item is junk
                 Thread.Sleep(1000);
@@ -57,7 +59,6 @@ namespace EasyFarm.Context
 
                     Sell();
                     // If we sold it, the cursor will move to the next item automatically
-                    i++;
                     continue;
                 }
 

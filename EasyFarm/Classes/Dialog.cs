@@ -58,9 +58,26 @@ namespace EasyFarm.Classes
                     context.Menu.Enter();
 
                 Thread.Sleep(500);
-                if (LastThingAnNpcSaid(context) == lastChatEntry)
+                // if (LastThingAnNpcSaid(context) == lastChatEntry)
+                //     break;
+
+                if (!AmInConversation(context)) 
                     break;
-            } 
+            }
+        }
+
+        private static bool AmInConversation(IGameContext context)
+        {
+            var lastH = context.API.Player.Position.H;
+            context.API.Windower.SendKeyPress(Keys.A);
+            Thread.Sleep(100);
+            var difference = Math.Abs(lastH - context.API.Player.Position.H);
+            if (difference < .001)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public EliteAPI.ChatEntry LastThingAnNpcSaid(IGameContext context)
@@ -173,8 +190,13 @@ namespace EasyFarm.Classes
             if (unit == null)
                 return;
 
-            context.Target = unit;
-            Player.SetTarget(context.API, unit);
+            DateTime duration = DateTime.Now.AddSeconds(5);
+            while (context.API.Target.ID != unit.Id && DateTime.Now < duration)
+            {
+                context.Target = unit;
+                Player.SetTarget(context.API, unit);
+                Thread.Sleep(100);
+            }
 
             // Talk
             context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);

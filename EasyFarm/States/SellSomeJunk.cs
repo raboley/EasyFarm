@@ -15,6 +15,8 @@ namespace EasyFarm.States
     {
         public override bool Check(IGameContext context)
         {
+            if (new RestState().Check(context)) return false;
+
             
             if (context.Inventory.InventoryIsFull()) 
                 return true;
@@ -64,6 +66,8 @@ namespace EasyFarm.States
             junkItems.Add("*salted");
             junkItems.Add("Animal Glue");
             junkItems.Add("Rock Salt");
+            junkItems.Add("Beeswax");
+            junkItems.Add("Ash Club");
             
             var merchantName = "Ferdoulemiont";
             // var merchant = "Ostalie";

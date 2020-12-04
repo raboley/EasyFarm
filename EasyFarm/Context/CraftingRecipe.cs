@@ -79,6 +79,19 @@ namespace EasyFarm.Context
             return soup;
         }
         
+        public static CraftingRecipe BeesWax()
+        {
+            var soup = new CraftingRecipe();
+            soup.Crystal = "Fire Crystal";
+            soup.RequiredItems = new List<Item>
+            {
+                new Item() {Name = "Beehive Chip", Count = 3},
+                new Item() {Name = "Distilled Water", Count = 1}
+            };
+
+            return soup;
+        }
+        
         public static CraftingRecipe Hatchet(IGameContext context)
         {
             var soup = new CraftingRecipe();
@@ -159,6 +172,21 @@ namespace EasyFarm.Context
 
             return soup;
         }
+        
+        public static CraftingRecipe AshClub(IGameContext context)
+        {
+            var soup = new CraftingRecipe();
+            soup.Crystal = "Wind Crystal";
+            soup.ShouldCraft = () => context.API.Player.CraftSkills.Woodworking.Skill >= 5;
+            
+            soup.RequiredItems = new List<Item>
+            {
+                new Item() {Name = "Ash Lumber", Count = 1},
+            };
+
+            return soup;
+        }
+        
 
         public static CraftingRecipe WorkBench()
         {
