@@ -1,0 +1,116 @@
+﻿// ///////////////////////////////////////////////////////////////////
+// This file is a part of EasyFarm for Final Fantasy XI
+// Copyright (C) 2013 Mykezero
+//  
+// EasyFarm is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//  
+// EasyFarm is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// If not, see <http://www.gnu.org/licenses/>.
+// ///////////////////////////////////////////////////////////////////
+
+using System;
+using System.Diagnostics;
+using FinalFantasyXI.Classes;
+
+namespace FinalFantasyXI.Context
+{
+    public class Player : IPlayer
+    {
+        private readonly IMemoryAPI _memoryAPI;
+        public readonly UnitService UnitService;
+
+        public Player(IMemoryAPI memoryAPI)
+        {
+            _memoryAPI = memoryAPI;
+            UnitService = new UnitService(memoryAPI);
+        }
+
+        public Status Status
+        {
+            get => _memoryAPI.Player.Status;
+            set => throw new NotImplementedException();
+        }
+
+        public int HppCurrent
+        {
+            get => _memoryAPI.Player.HPPCurrent;
+            set => throw new NotImplementedException();
+        }
+
+        public bool HasAggro
+        {
+            get => UnitService.HasAggro;
+            set => throw new NotImplementedException();
+        }
+
+        public Zone Zone
+        {
+            get => _memoryAPI.Player.Zone;
+            set => throw new NotImplementedException();
+        }
+
+        public int Str
+        {
+            get => _memoryAPI.Player.Stats.Str;
+            set => throw new NotImplementedException();
+        }
+
+        public int MppCurrent
+        {
+            get => _memoryAPI.Player.MPPCurrent;
+            set => throw new NotImplementedException();
+        }
+
+        public int JobLevel
+        {
+            get => _memoryAPI.Player.JobLevel;
+            set => throw new NotImplementedException();
+        }
+
+        public Job Job
+        {
+            get => _memoryAPI.Player.Job;
+            set => throw new NotImplementedException();
+        }
+
+        public Zone Homepoint
+        {
+            get => _memoryAPI.Player.HomePoint;
+            set => throw new NotImplementedException();
+        }
+
+        public string CurrentGoal { get; set; }
+
+        public Job SubJob
+        {
+            get => _memoryAPI.Player.SubJob;
+            set => throw new NotImplementedException();
+        }
+
+        public string Nation
+        {
+            get => _memoryAPI.Player.Nation.ToString();
+            set => throw new NotImplementedException();
+        }
+
+        public Boolean IsDead => Status == Status.Dead1 || Status == Status.Dead2;
+        public void EquipBestGear()
+        {
+            var currentGear = _memoryAPI.Player.Equipment;
+
+            foreach (var item in currentGear)
+            {
+               Debug.Write((object) item); 
+            }
+
+        }
+    }
+}

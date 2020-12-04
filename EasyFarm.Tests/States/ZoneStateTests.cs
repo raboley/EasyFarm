@@ -16,9 +16,6 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System;
-using EasyFarm.Context;
-using EasyFarm.Parsing;
-using EasyFarm.States;
 using EasyFarm.Tests.Context;
 using MemoryAPI;
 using Xunit;

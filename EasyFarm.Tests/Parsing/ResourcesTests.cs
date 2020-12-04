@@ -16,7 +16,6 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System.Linq;
-using EasyFarm.Parsing;
 using Xunit;
 
 namespace EasyFarm.Tests.Parsing

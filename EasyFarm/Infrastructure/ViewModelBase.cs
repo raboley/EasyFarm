@@ -17,12 +17,6 @@
 // ///////////////////////////////////////////////////////////////////
 using System;
 using System.IO;
-using EasyFarm.Classes;
-using EasyFarm.Monitors;
-using EasyFarm.Parsing;
-using EasyFarm.Persistence;
-using EasyFarm.States;
-using EasyFarm.UserSettings;
 using MemoryAPI;
 
 namespace EasyFarm.Infrastructure

@@ -15,11 +15,9 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
-using EasyFarm.Classes;
+
 using EasyFarm.Infrastructure;
 using EasyFarm.Logging;
-using EasyFarm.Persistence;
-using EasyFarm.UserSettings;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Windows.Input;

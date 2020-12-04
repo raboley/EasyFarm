@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using EasyFarm.UserSettings;
 using MemoryAPI;
 using MemoryAPI.Navigation;
 

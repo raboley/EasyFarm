@@ -18,7 +18,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
-using EasyFarm.Parsing;
 using MahApps.Metro.Controls.Dialogs;
 
 namespace EasyFarm.Views

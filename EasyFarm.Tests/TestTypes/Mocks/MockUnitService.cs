@@ -16,7 +16,6 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System.Collections.Generic;
-using EasyFarm.Classes;
 
 namespace EasyFarm.Tests.TestTypes.Mocks
 {

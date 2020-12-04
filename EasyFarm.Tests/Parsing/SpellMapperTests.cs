@@ -16,7 +16,6 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System;
-using EasyFarm.Parsing;
 using EliteMMO.API;
 using Xunit;
 using TargetType = EliteMMO.API.TargetType;

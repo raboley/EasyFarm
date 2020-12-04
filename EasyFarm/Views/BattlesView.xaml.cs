@@ -16,7 +16,6 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System.Windows;
-using EasyFarm.Classes;
 using EasyFarm.ViewModels;
 
 namespace EasyFarm.Views

@@ -16,9 +16,7 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System.Windows.Input;
-using EasyFarm.Classes;
 using EasyFarm.Infrastructure;
-using EasyFarm.UserSettings;
 using GalaSoft.MvvmLight.Command;
 
 namespace EasyFarm.ViewModels

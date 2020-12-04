@@ -18,7 +18,6 @@
 
 using System.Threading.Tasks;
 using System.Windows;
-using EasyFarm.Classes;
 using MahApps.Metro.Controls.Dialogs;
 
 namespace EasyFarm.Handlers

@@ -1,5 +1,4 @@
-﻿using EasyFarm.Pathfinding;
-using Xunit;
+﻿using Xunit;
 using System.Numerics;
 
 namespace EasyFarm.Tests.Pathfinding

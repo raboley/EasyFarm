@@ -19,10 +19,8 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
-using EasyFarm.Classes;
 using EasyFarm.Handlers;
 using EasyFarm.Mapping;
-using EasyFarm.Persistence;
 using EasyFarm.ViewModels;
 using EasyFarm.Views;
 using MahApps.Metro.Controls;

@@ -17,7 +17,7 @@
 // ///////////////////////////////////////////////////////////////////
 
 using System.Collections.ObjectModel;
-using EasyFarm.UserSettings;
+using FinalFantasyXI.UserSettings;
 
 namespace EasyFarm.ViewModels
 {

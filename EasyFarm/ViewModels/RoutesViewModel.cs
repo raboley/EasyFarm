@@ -18,11 +18,7 @@
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
-using EasyFarm.Classes;
 using EasyFarm.Infrastructure;
-using EasyFarm.Persistence;
-using EasyFarm.States;
-using EasyFarm.UserSettings;
 using GalaSoft.MvvmLight.Command;
 using MemoryAPI;
 using MemoryAPI.Navigation;

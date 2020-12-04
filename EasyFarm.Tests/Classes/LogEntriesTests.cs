@@ -18,7 +18,6 @@
 using System;
 using System.Linq;
 using System.Windows.Threading;
-using EasyFarm.Classes;
 using Xunit;
 
 namespace EasyFarm.Tests.Classes

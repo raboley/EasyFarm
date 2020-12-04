@@ -17,10 +17,7 @@
 // ///////////////////////////////////////////////////////////////////
 
 using System;
-using EasyFarm.Classes;
 using EasyFarm.Logging;
-using EasyFarm.Persistence;
-using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
 using EasyFarm.Views;
 

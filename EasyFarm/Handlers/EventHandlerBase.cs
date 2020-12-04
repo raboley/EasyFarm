@@ -17,7 +17,7 @@
 // ///////////////////////////////////////////////////////////////////
 
 using System.Threading.Tasks;
-using EasyFarm.Classes;
+using FinalFantasyXI.Classes;
 
 namespace EasyFarm.Handlers
 {

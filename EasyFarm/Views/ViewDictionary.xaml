@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:viewModels="clr-namespace:EasyFarm.ViewModels"
                     xmlns:views="clr-namespace:EasyFarm.Views"
-                    xmlns:mapping="clr-namespace:EasyFarm.Mapping">
+                    xmlns:mapping="clr-namespace:EasyFarm.Mapping"
+                    xmlns:mapping1="clr-namespace:FinalFantasyXI.Mapping;assembly=FinalFantasyXI">
     <DataTemplate DataType="{x:Type viewModels:BattlesViewModel}">
         <views:BattlesView />
     </DataTemplate>
@@ -33,7 +34,7 @@
     <DataTemplate DataType="{x:Type viewModels:TargetingViewModel}">
         <views:TargetingView />
     </DataTemplate>
-    <DataTemplate DataType="{x:Type mapping:ZoneMapViewModel}">
+    <DataTemplate DataType="{x:Type mapping1:ZoneMapViewModel}">
         <mapping:ZoneMapView />
     </DataTemplate>
     <DataTemplate DataType="{x:Type viewModels:MainViewModel}">

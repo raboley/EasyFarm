@@ -1,6 +1,4 @@
-﻿using EasyFarm.Classes;
-using EasyFarm.States;
-using EasyFarm.Tests.Context;
+﻿using EasyFarm.Tests.Context;
 using EasyFarm.Tests.TestTypes;
 using Xunit;
 

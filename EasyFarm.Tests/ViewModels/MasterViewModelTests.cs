@@ -1,5 +1,4 @@
-﻿using EasyFarm.Classes;
-using EasyFarm.ViewModels;
+﻿using EasyFarm.ViewModels;
 using Xunit;
 
 namespace EasyFarm.Tests.ViewModels

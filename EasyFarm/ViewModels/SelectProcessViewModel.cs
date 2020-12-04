@@ -22,7 +22,6 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using EasyFarm.Classes;
 
 namespace EasyFarm.ViewModels
 {

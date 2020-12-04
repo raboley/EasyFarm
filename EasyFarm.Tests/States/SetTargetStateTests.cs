@@ -17,7 +17,6 @@
 // ///////////////////////////////////////////////////////////////////
 
 using System.Linq;
-using EasyFarm.States;
 using EasyFarm.Tests.Context;
 using EasyFarm.ViewModels;
 using Xunit;

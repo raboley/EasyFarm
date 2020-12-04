@@ -18,10 +18,11 @@
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using EasyFarm.Classes;
 using EasyFarm.Infrastructure;
+using EasyFarm.Services;
 using EasyFarm.ViewModels;
 using EasyFarm.Views;
+using FinalFantasyXI.Classes;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using MemoryAPI.Memory;

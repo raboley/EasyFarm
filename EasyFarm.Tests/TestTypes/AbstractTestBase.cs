@@ -17,7 +17,6 @@
 // ///////////////////////////////////////////////////////////////////
 using System;
 using System.Collections.Generic;
-using EasyFarm.Classes;
 using EasyFarm.Infrastructure;
 using EasyFarm.Tests.TestTypes.Mocks;
 using MemoryAPI;

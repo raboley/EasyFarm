@@ -1,5 +1,4 @@
-﻿using EasyFarm.Classes;
-using Xunit;
+﻿using Xunit;
 
 namespace EasyFarm.Tests.Classes
 {

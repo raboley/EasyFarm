@@ -18,9 +18,10 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
-using EasyFarm.Classes;
 using EasyFarm.Infrastructure;
-using EasyFarm.UserSettings;
+using EasyFarm.Services;
+using FinalFantasyXI.Classes;
+using FinalFantasyXI.UserSettings;
 using GalaSoft.MvvmLight.Command;
 
 namespace EasyFarm.ViewModels

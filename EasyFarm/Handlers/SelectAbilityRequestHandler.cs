@@ -19,8 +19,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EasyFarm.Infrastructure;
-using EasyFarm.Parsing;
 using EasyFarm.Views;
+using FinalFantasyXI.Parsing;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 

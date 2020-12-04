@@ -17,7 +17,6 @@
 // ///////////////////////////////////////////////////////////////////
 using System.Collections.Generic;
 using EasyFarm.Infrastructure;
-using EasyFarm.States;
 using EasyFarm.Tests.Context;
 using EasyFarm.Tests.TestTypes;
 using EliteMMO.API;

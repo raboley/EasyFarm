@@ -17,11 +17,7 @@
 // ///////////////////////////////////////////////////////////////////
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using EasyFarm.Classes;
-using EasyFarm.Context;
-using EasyFarm.States;
 using EasyFarm.Tests.TestTypes.Mocks;
-using EasyFarm.UserSettings;
 using MemoryAPI;
 using Pathfinder.Map;
 using Pathfinder.People;
