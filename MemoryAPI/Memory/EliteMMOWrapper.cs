@@ -89,10 +89,23 @@ namespace MemoryAPI.Memory
             public void FaceHeading(Position position)
             {
                 var player = _api.Entity.GetLocalPlayer();
+                var playerPosition = new Position
+                {
+                    X = player.X,
+                    Y = player.Y,
+                    Z = player.Z
+                };
+
+                var radian = CalculateRadianForWhereToTurn(position, playerPosition);
+                _api.Entity.SetEntityHPosition(_api.Entity.LocalPlayerIndex, (float) radian);
+            }
+
+            public double CalculateRadianForWhereToTurn(Position position, Position player)
+            {
                 var angle = (byte) (Math.Atan((position.Z - player.Z) / (position.X - player.X)) * -(128.0f / Math.PI));
                 if (player.X > position.X) angle += 128;
                 var radian = (float) angle / 255 * 2 * Math.PI;
-                _api.Entity.SetEntityHPosition(_api.Entity.LocalPlayerIndex, (float) radian);
+                return radian;
             }
 
             private double DistanceTo(Position position)
@@ -804,7 +817,8 @@ namespace MemoryAPI.Memory
 
                     var thingsSaidAfterStarting = ChatEntries.Where(x => x.Timestamp < DateTime.Now);
 
-                    if (thingsSaidAfterStarting.FirstOrDefault(x => x.Text.ToLower().Contains(thingToListenFor.ToLower())) != null)
+                    if (thingsSaidAfterStarting.FirstOrDefault(x =>
+                        x.Text.ToLower().Contains(thingToListenFor.ToLower())) != null)
                     {
                         return true;
                     }
@@ -1003,7 +1017,6 @@ namespace MemoryAPI.Memory
             {
                 _api = api;
             }
-            
 
 
             public DialogInfo GetDialog()

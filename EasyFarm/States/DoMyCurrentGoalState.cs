@@ -26,7 +26,7 @@ namespace EasyFarm.States
 
             if (new SellSomeJunk().Check(context)) return false;
 
-            if (new DoQuest().Check(context)) return false;
+            // if (new DoQuest().Check(context)) return false;
             if (new CraftSomething().Check(context)) return false;
             
             if (context.Player.IsDead) return false;

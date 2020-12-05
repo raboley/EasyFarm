@@ -26,6 +26,7 @@ using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.Logging;
 using EasyFarm.Parsing;
+using EasyFarm.Pathfinding;
 using EasyFarm.Soul;
 using EasyFarm.UserSettings;
 using EasyFarm.ViewModels;
@@ -33,7 +34,9 @@ using EliteMMO.API;
 using MemoryAPI;
 using MemoryAPI.Chat;
 using MemoryAPI.Dialog;
+using Pathfinder;
 using Pathfinder.Travel;
+using StatusEffect = MemoryAPI.StatusEffect;
 using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.States
@@ -91,9 +94,9 @@ namespace EasyFarm.States
 
             // The Finer Things
             AddState(new NeedSignet() {Priority = 21});
-            AddState(new CraftSomething() {Priority = 20});
+            // AddState(new CraftSomething() {Priority = 20});
             AddState(new SellSomeJunk() {Priority = 119});
-            AddState(new DoQuest() {Priority = 0});
+            // AddState(new DoQuest() {Priority = 0});
 
 
             // TODO: Get Equipable By Jobs working,
@@ -102,7 +105,7 @@ namespace EasyFarm.States
             // AddState(new EquipBestGear() {Priority = 118});
 
 
-            AddState(new TestState() {Priority = 999});
+            // AddState(new TestState() {Priority = 999});
 
             // Inventory Is Full
             // Have some ingredients to craft
@@ -244,11 +247,30 @@ namespace EasyFarm.States
         {
             while (true)
             {
+                // Craft mode
+                // get synt support
+                // context.Craft.GetSynthesisSupport(context, StatusEffect.Woodworking_Imagery);
+                // context.Craft.EatCraftSkillUpFood(context);
+
+
                 // Skill is the weapon type :) 
-                EquipmentManager.EquipBestGear(context); 
+                // EquipmentManager.EquipBestGear(context); 
+
+                //////////////////////////////
+                //Open Doors
+                // if within 10 m of a door
+                // and headed toward it
+                //target it
+                // and open it
+                if (context.Traveler == null)
+                    return;
                 
+                // TODO: Integrate into walker so it opens doors when close by.
+                context.Navigator.OpenDoor(context, context.API);
             }
         }
+
+
     }
 
     public class EquipBestGear : BaseState

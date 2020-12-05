@@ -15,5 +15,7 @@ namespace EasyFarm.Classes
         void WaitForZone(IMemoryAPI fface, IGameContext context);
         void WarpHome(IMemoryAPI fface, IGameContext context);
         void GoToNpc(IGameContext context, IMemoryAPI fface, string npcName);
+        void InteractWithoutMoving(IGameContext context, IMemoryAPI fface, IUnit unit);
+        void OpenDoor(IGameContext context, IMemoryAPI fface);
     }
 }

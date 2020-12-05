@@ -51,7 +51,7 @@ namespace EasyFarm.States
             junkItems.Add("Shall Shell");
             junkItems.Add("Grass Cloth");
             // junkItems.Add("Grass Thread");
-            // junkItems.Add("Rabbit Hide");
+            junkItems.Add("Rabbit Hide");
             junkItems.Add("Bat Wing");
             junkItems.Add("Hare Meat");
             junkItems.Add("Fiend Blood");
@@ -68,6 +68,9 @@ namespace EasyFarm.States
             junkItems.Add("Rock Salt");
             junkItems.Add("Beeswax");
             junkItems.Add("Ash Club");
+            junkItems.Add("*crab meat");
+            junkItems.Add("Honey");
+            junkItems.Add("Sheepskin");
             
             var merchantName = "Ferdoulemiont";
             // var merchant = "Ostalie";
@@ -79,12 +82,12 @@ namespace EasyFarm.States
             var merchant = SearchWorldForPerson(context, merchantName);
             
             // Go to Zone of merchant
-            while (context.API.Player.Zone.ToString() != merchant.MapName)
+            if (context.API.Player.Zone.ToString() != merchant.MapName)
             {
                 context.Traveler.WalkToZone(merchant.MapName);
             }
             
-            while (context.Traveler.Zoning)
+            if (context.Traveler.Zoning)
             {
                 Thread.Sleep(100);
             }

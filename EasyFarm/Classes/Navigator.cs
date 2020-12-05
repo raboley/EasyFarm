@@ -8,6 +8,7 @@ using MemoryAPI.Navigation;
 using System;
 using System.IO;
 using EasyFarm.ViewModels;
+using Pathfinder;
 
 namespace EasyFarm.Classes
 {
@@ -51,11 +52,32 @@ namespace EasyFarm.Classes
         public void InteractWithUnit(IGameContext context, IMemoryAPI fface, IUnit unit)
         {
             context.Memory.EliteApi.Navigator.GotoNPC(unit.Id, context.Config.IsObjectAvoidanceEnabled);
+            InteractWithoutMoving(context, fface, unit);
+        }
+
+        public void InteractWithoutMoving(IGameContext context, IMemoryAPI fface, IUnit unit)
+        {
             TargetUnit(context, fface, unit);
             context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
             TimeWaiter.Pause(1000);
         }
 
+        public void OpenDoor(IGameContext context, IMemoryAPI fface)
+        {
+            IUnit door = context.Memory.UnitService.GetClosestUnitByPartialName("Door");
+            var distanceToDoor = GridMath.GetDistancePos(context.Traveler.Walker.CurrentPosition,
+                GridMath.RoundVector3(door.Position.ToVector3()));
+            
+            if (distanceToDoor < 5)
+            {
+                // TODO: Figure out how to make this only trigger when looking at a door.
+                // context(door.Position, context.API.Player.Position);
+                // var radian = context.API.Navigator.CalculateRadianForWhereToTurn(door.Position, context.API.Player.Position);
+                
+                context.Navigator.InteractWithoutMoving(context, fface, door);
+            }
+        }
+        
         public void GoToNpc(IGameContext context, IMemoryAPI fface, string npcName)
         {
             IUnit npc = context.Memory.UnitService.GetClosestUnitByPartialName(npcName);

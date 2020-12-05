@@ -16,6 +16,7 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 
+using EliteMMO.API;
 using MemoryAPI.Memory;
 using MemoryAPI.Navigation;
 using Pathfinder.Map;
@@ -30,5 +31,6 @@ namespace MemoryAPI
         void GotoNPC(int ID, bool useObjectAvoidance);
         void Reset();
         void SetViewMode(EliteMmoWrapper.ViewMode viewMode);
+        double CalculateRadianForWhereToTurn(Position position, Position player);
     }
 }

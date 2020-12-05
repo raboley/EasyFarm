@@ -5,6 +5,8 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using System.Windows.Media.Imaging;
+using EasyFarm.ViewModels;
 using MemoryAPI;
 using Keys = EliteMMO.API.Keys;
 
@@ -55,11 +57,11 @@ namespace EasyFarm.Context
                 var itemId = _context.Inventory.GetItemIdFromName(recipeItem.Name);
                 if (itemId == null)
                     return false;
-                
+
                 var inventoryItem = itemsInInventory.FirstOrDefault(x => x.Id == (int) itemId);
                 if (inventoryItem == null)
                     return false;
-                
+
                 if (inventoryItem.Count < recipe.RequiredItems[i].Count)
                     return false;
             }
@@ -123,7 +125,6 @@ namespace EasyFarm.Context
         }
 
 
-
         public void OpenCraftingMenu()
         {
             OpenSynthesisMenu();
@@ -136,7 +137,7 @@ namespace EasyFarm.Context
             {
                 // Cant trust MenuItemCount because blanks are considered in the iteration
                 var OriginalMenuIndex = 999;
-                
+
                 while (_context.Inventory.SelectedItemName != crystal &&
                        _context.Menu.MenuIndex != OriginalMenuIndex)
                 {
@@ -155,6 +156,52 @@ namespace EasyFarm.Context
 
 
             Select();
+        }
+
+        public void GetSynthesisSupport(IGameContext context,
+            StatusEffect supportType = StatusEffect.Woodworking_Imagery)
+        {
+            if (supportType == StatusEffect.Woodworking_Imagery)
+            {
+                if (!context.API.Player.StatusEffects.Contains(supportType))
+                {
+                    var gil = context.Inventory.GetGill();
+                    if (gil > 100)
+                        context.Dialog.HaveConversationWithPerson(context, "Ulycille",
+                            new List<string> {"Advanced synthesis", "Accept"});
+                }
+
+                return;
+            }
+            
+            LogViewModel.Write("I don't know how to get support for effect: " + supportType);
+        }
+
+        public void EatCraftSkillUpFood(IGameContext context)
+        {
+            if (!context.API.Player.StatusEffects.Contains(StatusEffect.Food))
+            {
+                var haveCraftSkillUpItems = context.Inventory.HaveItemInInventoryContainer("Macaron");
+                if (haveCraftSkillUpItems)
+                {
+                    var macaron = "";
+
+                    var cherryMacaron = "Cherry Macaron";
+                    if (context.Inventory.HaveItemInInventoryContainer(cherryMacaron))
+                        macaron = cherryMacaron;
+
+                    var coffeeMacaron = "Coffee Macaron";
+                    if (context.Inventory.HaveItemInInventoryContainer(coffeeMacaron))
+                        macaron = coffeeMacaron;
+
+                    var kitronMacaron = "Kitron Macaron";
+                    if (context.Inventory.HaveItemInInventoryContainer(kitronMacaron))
+                        macaron = kitronMacaron;
+
+                    if (macaron != "")
+                        context.API.Windower.SendString("/item \"" + macaron + "\" <me>");
+                }
+            } 
         }
     }
 }

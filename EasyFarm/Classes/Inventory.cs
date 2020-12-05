@@ -17,7 +17,10 @@ namespace EasyFarm.Classes
             _api = api;
         }
 
-
+        public int GetGill()
+        {
+            return (int) _api.Inventory.GetInventoryItemsFromContainer(0).First().Count;
+        }
         
         public bool InventoryIsFull(int InventoryContainerId = 0)
         {
