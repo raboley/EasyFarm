@@ -32,6 +32,7 @@ namespace EasyFarm.Tests.Context
         public IUnit Target { get; set; }
         public bool IsFighting { get; set; }
         public Zone Zone { get; set; }
+        public NavMesh NavMesh { get; }
         public IList<IUnit> Units { get; set; }
         public IMemoryAPI API { get; set; }
         public StateMemory Memory { get; set; }

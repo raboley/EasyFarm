@@ -44,16 +44,6 @@ Development has slowed, and mostly happens on the weekends.
 
 **Important:** *Make sure you're using the X86 version of the Visual Studio C++ Redistributables even if you have a 64 bit operating system.*
     
-#### Setup!
-
-EasyFarm Now uses NavMeshes for great accuracy in travel. To get it working, first
-built EasyFarm. 
-
-Then Copy the [EasyFarm\Dependencies\navmeshes](EasyFarm/Dependencies/navmeshes)
-into [EasyFarm\bin\Debug\navmeshes](EasyFarm/bin/Debug).
-
-Now Running EasyFarm it should be able to figure out the navmesh!
-
 #### Tutorials
 Visit the [tutorials](https://github.com/EasyFarm/EasyFarm/wiki) page for more information on setting up the program. 
 

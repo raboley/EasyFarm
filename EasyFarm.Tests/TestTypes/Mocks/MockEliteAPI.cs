@@ -111,6 +111,16 @@ namespace EasyFarm.Tests.TestTypes.Mocks
         {
         }
 
+        public void GotoWaypoint(Position position, bool keepRunning)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void GotoNPC(int ID, Position position, bool keepRunning)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void GotoWaypoint(Position position, bool useObjectAvoidance, bool keepRunning)
         {
             throw new System.NotImplementedException();
