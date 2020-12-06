@@ -20,7 +20,7 @@ using EasyFarm.Classes;
 using EasyFarm.Context;
 using EasyFarm.UserSettings;
 using MemoryAPI;
-using Pathfinder;
+using MemoryAPI.Navigation;
 using Player = EasyFarm.Classes.Player;
 
 namespace EasyFarm.States
@@ -42,9 +42,6 @@ namespace EasyFarm.States
             // Target dead or null.
             if (!context.Target.IsValid) return false;
 
-            if (context.Traveler == null)
-                return false;
-
             // We should approach mobs that have aggroed or have been pulled. 
             if (context.Target.Status.Equals(Status.Fighting)) return true;
 
@@ -56,36 +53,56 @@ namespace EasyFarm.States
             if (!usable.Any()) return true;
 
             // Approach mobs if their distance is close. 
-            // return context.Target.Distance < 8;
-
-            return true;
+            return context.Target.Distance < 8;
         }
 
         public override void Run(IGameContext context)
         {
-            // fix bug to change target on aggro from someone else
-            // fix bug where approach doesn't seem to work. it only works because we are usually going to some other place.
-            // Has the user decided that we should approach targets?
-            if (context.Config.IsApproachEnabled)
-            {
-                context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(GridMath.RoundVector3( context.Target.Position.To2DVector3()));
-                // Move to target if out of melee range. 
-                // context.API.Navigator.DistanceTolerance = context.Config.MeleeDistance;
-                // context.API.Navigator.GotoNPC(context.Target.Id, context.Config.IsObjectAvoidanceEnabled);
-            }
-
-            // Face mob. 
-            context.API.Navigator.FaceHeading(context.Target.Position);
-
             // Target mob if not currently targeted. 
             Player.SetTarget(context.API, context.Target);
 
-            // Has the user decided we should engage in battle. 
-            if (context.Config.IsEngageEnabled)
-                if (!context.API.Player.Status.Equals(Status.Fighting) && context.Target.Distance < 25)
+            // Has the user decided that we should approach targets?
+            if (context.Config.IsApproachEnabled)
+            {
+                // Move to target if out of melee range. 
+                var path = context.NavMesh.FindPathBetween(context.API.Player.Position, context.Target.Position);
+                if (path.Count > 0)
                 {
-                    context.API.Windower.SendString(Constants.AttackTarget);
+                    if (path.Count > 1)
+                    {
+                        context.API.Navigator.DistanceTolerance = 0.5;
+                    }
+                    else
+                    {
+                        context.API.Navigator.DistanceTolerance = context.Config.MeleeDistance;
+                    }
+
+                    while (path.Count > 0 && path.Peek().Distance(context.API.Player.Position) <= context.API.Navigator.DistanceTolerance)
+                    {
+                        path.Dequeue();
+                    }
+                    
+                    if (path.Count > 0)
+                    {
+                        context.API.Navigator.GotoNPC(context.Target.Id, path.Peek(), true);
+                    }
+                    else
+                    {
+                        context.API.Navigator.FaceHeading(context.Target.Position);
+                        context.API.Navigator.Reset();
+
+                        // Has the user decided we should engage in battle. 
+                        if (context.Config.IsEngageEnabled)
+                            if (!context.API.Player.Status.Equals(Status.Fighting) && context.Target.Distance < 25)
+                                context.API.Windower.SendString(Constants.AttackTarget);
+                    }
                 }
+            } 
+            else
+            {
+                // Face mob. 
+                context.API.Navigator.FaceHeading(context.Target.Position);
+            }
         }
     }
 }

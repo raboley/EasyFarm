@@ -101,6 +101,7 @@
     <Compile Include="Pathfinding\MappingConversionsTests.cs" />
     <Compile Include="Pathfinding\NodeTests.cs" />
     <Compile Include="States\LevelUpStateTests.cs" />
+    <Compile Include="States\SummonTrustsStateTests.cs" />
     <Compile Include="States\WeaponSkillStateTests.cs" />
     <Compile Include="TestTypes\Mocks\MockChatTools.cs" />
     <Compile Include="TestTypes\Mocks\MockNavigatorTools.cs" />

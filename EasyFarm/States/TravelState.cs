@@ -15,11 +15,10 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
-
-using System;
 using System.Linq;
 using EasyFarm.Classes;
 using EasyFarm.Context;
+using MemoryAPI.Navigation;
 
 namespace EasyFarm.States
 {
@@ -56,21 +55,39 @@ namespace EasyFarm.States
 
         public override void Run(IGameContext context)
         {
-            // DateTime duration = DateTime.Now.AddSeconds(5);
-            // while (context.Traveler._pathToWalk.Count != 0 && DateTime.Now < duration)
-            // {
-            //     context.Traveler.GoToPosition(context.Traveler._pathToWalk.Dequeue());
-            // }
+            context.API.Navigator.DistanceTolerance = 1;
 
-            context.API.Navigator.DistanceTolerance = 3;
-            
-            var nextPosition = context.Config.Route.GetNextPosition(context.API.Player.Position);
-            var shouldKeepRunningToNextWaypoint = context.Config.Route.Waypoints.Count != 1;
-            
-            context.API.Navigator.GotoWaypoint(
+            var currentPosition = context.Config.Route.GetCurrentPosition(context.API.Player.Position);
+
+            if (currentPosition == null || currentPosition.Distance(context.API.Player.Position) <= 0.5)
+            {
+                currentPosition = context.Config.Route.GetNextPosition(context.API.Player.Position);
+            }
+
+            /*context.API.Navigator.GotoWaypoint(
                 nextPosition,
                 context.Config.IsObjectAvoidanceEnabled,
-                shouldKeepRunningToNextWaypoint, context.Zone.Map);
+                shouldKeepRunningToNextWaypoint);*/
+
+            var path = context.NavMesh.FindPathBetween(context.API.Player.Position, currentPosition);
+            if (path.Count > 0)
+            {
+                context.API.Navigator.DistanceTolerance = 0.5;
+
+                while (path.Count > 0 && path.Peek().Distance(context.API.Player.Position) <= context.API.Navigator.DistanceTolerance)
+                {
+                    path.Dequeue();
+                }
+
+                if (path.Count > 0)
+                {
+                    context.API.Navigator.GotoWaypoint(path.Peek(), true);
+                } 
+                else
+                {
+                    context.Config.Route.GetNextPosition(context.API.Player.Position);
+                }
+            }
         }
 
         public override void Exit(IGameContext context)

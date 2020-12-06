@@ -39,6 +39,7 @@ namespace EasyFarm.Context
         IUnit Target { get; set; }
         Boolean IsFighting { get; set; }
         Zone Zone { get; set; }
+        NavMesh NavMesh { get; }
         IList<IUnit> Units { get; set; }
         IMemoryAPI API { get; set; }
         StateMemory Memory { get; set; }

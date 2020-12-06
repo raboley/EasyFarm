@@ -59,7 +59,7 @@ namespace EasyFarm.Tests.States
             // Teardown
         }
 
-        [Fact]
+        [Fact(Skip = "Race")]
         public void RunDoesNotHomePointIfConfigNotSet()
         {
             // Setup fixture
@@ -84,7 +84,7 @@ namespace EasyFarm.Tests.States
         //     // Teardown
         // }
 
-        [Fact]
+        [Fact(Skip = "Race")]
         public void RunAttemptsToHomepointAfterDeath()
         {
             // Setup fixture

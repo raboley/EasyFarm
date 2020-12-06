@@ -38,6 +38,7 @@ namespace EasyFarm.Tests.Context
         public IUnit Target { get; set; }
         public bool IsFighting { get; set; }
         public Zone Zone { get; set; }
+        public NavMesh NavMesh { get; }
         public IList<IUnit> Units { get; set; }
         public IMemoryAPI API { get; set; }
         public StateMemory Memory { get; set; }
@@ -93,6 +94,13 @@ namespace EasyFarm.Tests.Context
         public void SetPlayerFighting()
         {
             MockAPI.Player.Status = Status.Fighting;
+        }
+
+        public void AddTrustToParty(string trustName = null)
+        {
+            MockAPI.PartyMember[1].Name = "Trust";
+            MockAPI.PartyMember[1].UnitPresent = true;
+            Config.TrustPartySize = 1;
         }
     }
 }

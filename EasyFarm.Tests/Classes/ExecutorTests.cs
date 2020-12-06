@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using Xunit;
 using EasyFarm.Classes;
 using EasyFarm.Parsing;
+using EasyFarm.Tests.Context;
 using EasyFarm.Tests.TestTypes;
 
 namespace EasyFarm.Tests.Classes
@@ -56,7 +57,7 @@ namespace EasyFarm.Tests.Classes
             IUnit unit = FindUnit();
             Executor sut = new Executor(MockGameAPI);
             // Exercise system
-            sut.UseTargetedActions(new List<BattleAbility> { battleAbility }, unit);
+            sut.UseTargetedActions(new TestContext(), new List<BattleAbility> { battleAbility }, unit);
             // Verify outcome
             Assert.Equal("/magic test <t>", MockGameAPI.Mock.Windower.LastCommand);
             // Teardown

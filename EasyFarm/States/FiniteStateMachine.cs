@@ -47,7 +47,7 @@ namespace EasyFarm.States
         private readonly IMemoryAPI _fface;
         private readonly List<IState> _states = new List<IState>();
         private CancellationTokenSource _cancellation = new CancellationTokenSource();
-        private readonly GameContext _context;
+        public readonly GameContext _context;
         private readonly ICalling _calling;
 
         public FiniteStateMachine(IMemoryAPI fface, GameContext gameContext)
@@ -57,6 +57,14 @@ namespace EasyFarm.States
             _calling = new Calling(_context);
 
             //Create the states
+            AddState(new DeadState() {Priority = 7});
+            AddState(new ZoneState() {Priority = 7});
+            AddState(new SetTargetState() {Priority = 0});
+            AddState(new SetFightingState() {Priority = 7});
+            AddState(new FollowState() {Priority = 5});
+            AddState(new RestState() {Priority = 2});
+            AddState(new SummonTrustsState() {Priority = 6});
+            AddState(new ApproachState() {Priority = 0});
             AddState(new ManualOverrideState() {Priority = 9999});
 
             // Fighting States

@@ -39,6 +39,7 @@ namespace EasyFarm
             _appBoot = new AppBoot(app);
             _appBoot.Initialize();
             _appBoot.Navigate<MasterViewModel>();
+            // TODO: Figure out how to select process if only one exists here.
             _appBoot.Show();
         }
 

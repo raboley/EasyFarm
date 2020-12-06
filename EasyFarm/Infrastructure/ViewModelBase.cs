@@ -74,6 +74,9 @@ namespace EasyFarm.Infrastructure
             
             // // Track the NPCs
             // NpcMonitor = new NpcMonitor(FFACE);
+            
+            // TODO: Start Zone Recorder
+            
 
             AutoLoadSettings();
         }

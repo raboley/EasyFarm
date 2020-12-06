@@ -16,11 +16,13 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using EasyFarm.Classes;
+using EasyFarm.Parsing;
 using EasyFarm.States;
 using EasyFarm.Tests.Context;
 using EasyFarm.Tests.TestTypes;
 using MemoryAPI;
 using Xunit;
+using Xunit.Sdk;
 
 namespace EasyFarm.Tests.States
 {
@@ -44,7 +46,7 @@ namespace EasyFarm.Tests.States
             // Teardown
         }
 
-        [Fact]
+        [Fact(Skip = "Race")]
         public void WhenEngagedNotSetShouldBattle()
         {
             // Fixture setup
@@ -114,18 +116,18 @@ namespace EasyFarm.Tests.States
             // Teardown
         }
 
-        //[Fact]
-        //public void WithInvalidActionWillNotSendCommand()
-        //{
-        //    // Fixture setup
-        //    BattleAbility ability = FindAbility();
-        //    ability.IsEnabled = false;
-        //    context.Config.BattleLists["Battle"].Actions.Add(ability);
-        //    // Exercise system
-        //    sut.Run(context);
-        //    // Verify outcome
-        //    Assert.Null(context.MockAPI.Windower.LastCommand);
-        //}
+        [Fact(Skip = "Race")]
+        public void WithInvalidActionWillNotSendCommand()
+        {
+            // Fixture setup
+            BattleAbility ability = FindAbility();
+            ability.IsEnabled = false;
+            context.Config.BattleLists["Battle"].Actions.Add(ability);
+            // Exercise system
+            sut.Run(context);
+            // Verify outcome
+            Assert.Null(context.MockAPI.Windower.LastCommand);
+        }
 
         [Fact]
         public void WithHealingPlayerWillStandUp()

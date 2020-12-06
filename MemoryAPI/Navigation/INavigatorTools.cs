@@ -15,11 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
-
-using EliteMMO.API;
-using MemoryAPI.Memory;
 using MemoryAPI.Navigation;
-using Pathfinder.Map;
+using System.Collections.Generic;
 
 namespace MemoryAPI
 {
@@ -27,10 +24,8 @@ namespace MemoryAPI
     {
         double DistanceTolerance { get; set; }
         void FaceHeading(Position position);
-        bool GotoWaypoint(Position position, bool useObjectAvoidance, bool keepRunning, ZoneMap zoneMap);
-        void GotoNPC(int ID, bool useObjectAvoidance);
+        void GotoWaypoint(Position position, bool keepRunning);
+        void GotoNPC(int ID, Position position, bool keepRunning);
         void Reset();
-        void SetViewMode(EliteMmoWrapper.ViewMode viewMode);
-        double CalculateRadianForWhereToTurn(Position position, Position player);
     }
 }

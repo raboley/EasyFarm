@@ -69,6 +69,7 @@ namespace EasyFarm.Classes
             if (!fface.Player.Status.Equals(Status.Fighting))
             {
                 fface.Windower.SendString(Constants.AttackTarget);
+                Thread.Sleep(1500); // avoid stuck detection from triggering
             }
         }
 
@@ -80,6 +81,7 @@ namespace EasyFarm.Classes
             if (fface.Player.Status.Equals(Status.Fighting))
             {
                 fface.Windower.SendString(Constants.AttackOff);
+                Thread.Sleep(1500); // avoid stuck detection from triggering
             }
         }
 

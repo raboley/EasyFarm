@@ -29,6 +29,7 @@ using Pathfinder.Map;
 using Pathfinder.People;
 using Pathfinder.Persistence;
 using Pathfinder.Travel;
+using Zone = MemoryAPI.Zone;
 
 namespace EasyFarm.Context
 {
@@ -42,6 +43,9 @@ namespace EasyFarm.Context
             Dialog = new Dialog(api);
             Memory = new StateMemory(api);
             Target = new NullUnit();
+            NavMesh = new NavMesh();
+            Zone = api.Player.Zone;
+            NavMesh.LoadZone(_zone);
             Menu = new Menu(api);
             Navigator = new Navigator(api);
             Inventory = new Inventory(api);
@@ -50,7 +54,7 @@ namespace EasyFarm.Context
             {
                 Persister = new FilePersister()
             };
-            Zone = new Pathfinder.Map.Zone("unknown");
+            PathfinderZone = new Pathfinder.Map.Zone("unknown");
             Craft = new Craft(api);
             Shop = new Shop(api);
             Trade = new TradeMenu(api);
@@ -71,9 +75,23 @@ namespace EasyFarm.Context
         public INavigator Navigator { get; set; }
         public IMenu Menu { get; set; }
         public Boolean IsFighting { get; set; }
-        public Pathfinder.Map.Zone Zone { get; set; }
+        public Pathfinder.Map.Zone PathfinderZone { get; set; }
         public IInventory Inventory { get; set; }
         // public ITradeMenu Trade { get; set; }
+        private Zone _zone;
+        public Zone Zone
+        {
+            get
+            {
+                return _zone;
+            }
+            set
+            {
+                NavMesh.LoadZone(_zone);
+                _zone = value;
+            }
+        }
+        public NavMesh NavMesh { get; set; }
 
         public IList<IUnit> Units
         {

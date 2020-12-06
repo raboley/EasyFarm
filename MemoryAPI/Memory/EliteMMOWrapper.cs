@@ -86,26 +86,28 @@ namespace MemoryAPI.Memory
                 _api = api;
             }
 
+            private static float Bearing(Position player, Position position)
+            {
+                var bearing = -Math.Atan2(position.Z - player.Z, position.X - player.X);
+
+                return (float)bearing;
+            }
+
             public void FaceHeading(Position position)
             {
                 var player = _api.Entity.GetLocalPlayer();
-                var playerPosition = new Position
+                var playerPosition = new Position();
+                playerPosition.X = player.X;
+                playerPosition.Y = player.Y;
+                playerPosition.Z = player.Z;
+                playerPosition.H = player.H;
+
+                var radian = Bearing(playerPosition, position);
+                if (_api.Player.H != radian)
                 {
-                    X = player.X,
-                    Y = player.Y,
-                    Z = player.Z
-                };
-
-                var radian = CalculateRadianForWhereToTurn(position, playerPosition);
-                _api.Entity.SetEntityHPosition(_api.Entity.LocalPlayerIndex, (float) radian);
-            }
-
-            public double CalculateRadianForWhereToTurn(Position position, Position player)
-            {
-                var angle = (byte) (Math.Atan((position.Z - player.Z) / (position.X - player.X)) * -(128.0f / Math.PI));
-                if (player.X > position.X) angle += 128;
-                var radian = (float) angle / 255 * 2 * Math.PI;
-                return radian;
+                    SetViewMode(ViewMode.FirstPerson);
+                }
+                _api.Entity.SetEntityHPosition(_api.Entity.LocalPlayerIndex, (float)radian);
             }
 
             private double DistanceTo(Position position)
@@ -118,30 +120,19 @@ namespace MemoryAPI.Memory
                     Math.Pow(position.Z - player.Z, 2));
             }
 
-            public bool GotoWaypoint(Position position, bool useObjectAvoidance, bool keepRunning, ZoneMap zoneMap)
+            public void GotoWaypoint(Position position, bool keepRunning)
             {
-                if (!(DistanceTo(position) > DistanceTolerance)) return false;
-                bool stop = MoveForwardTowardsPosition(() => position, useObjectAvoidance, zoneMap);
-                if (stop)
-                {
-                    Reset();
-                    return true;
-                }
-
+                if (!(DistanceTo(position) > DistanceTolerance)) return;
+                MoveForwardTowardsPosition(() => position);
                 if (!keepRunning) Reset();
-                return false;
             }
 
-            public void GotoNPC(int id, bool useObjectAvoidance)
+            public void GotoNPC(int id, Position position, bool keepRunning)
             {
-                Position destination = GetEntityPosition(id);
-
-                bool shouldKeepRunning = !(DistanceTo(destination) < DistanceTolerance);
-
-                GotoWaypoint(destination, useObjectAvoidance, shouldKeepRunning, null);
-                KeepOneYalmBack(destination);
-                FaceHeading(destination);
-                Reset();
+                if (!(DistanceTo(position) > DistanceTolerance)) return;
+                GotoWaypoint(position, true);
+                KeepOneYalmBack(GetEntityPosition(id));
+                if (!keepRunning) Reset();
             }
 
             private Position GetEntityPosition(int id)
@@ -151,42 +142,15 @@ namespace MemoryAPI.Memory
                 return position;
             }
 
-            private bool MoveForwardTowardsPosition(Func<Position> targetPosition,
-                bool useObjectAvoidance, ZoneMap zoneMap)
+            private void MoveForwardTowardsPosition(
+                Func<Position> targetPosition)
             {
-                double distanceToDestination = DistanceTo(targetPosition());
-                if (!(distanceToDestination > DistanceTolerance)) return false;
+                DateTime duration = DateTime.Now.AddSeconds(5);
 
-                DateTime duration = DateTime.Now.AddSeconds(0.01);
-
-                Debug.Write("Headed to Position: " + targetPosition());
-                Stopwatch sw = new Stopwatch();
-                while (DistanceTo(targetPosition()) > DistanceTolerance && DateTime.Now < duration)
-                {
-                    sw.Start();
-                    Debug.Write("Walking!");
-                    SetViewMode(ViewMode.FirstPerson);
-                    FaceHeading(targetPosition());
-                    _api.ThirdParty.KeyDown(Keys.NUMPAD8);
-                    if (useObjectAvoidance)
-                    {
-                        bool needNewPath = AvoidObstacles(targetPosition(), zoneMap);
-                        if (needNewPath)
-                        {
-                            Debug.Write("Player Needs new Path");
-                            return true;
-                        }
-                    }
-
-                    sw.Stop();
-                    Debug.Write("time to walk: " + sw.ElapsedMilliseconds);
-                    // Thread.Sleep(100);
-
-                    // var player = _api.Entity.GetLocalPlayer();
-                    // Debug.Write($"Player is at X:{player.X} Y:{player.Y} Z:{player.Z} H:{player.H}" + Environment.NewLine);
-                }
-
-                return false;
+                FaceHeading(targetPosition());
+                _api.ThirdParty.KeyDown(Keys.NUMPAD8);
+                
+                AvoidObstacles();
             }
 
             private void KeepRunningWithKeyboard()
@@ -203,7 +167,6 @@ namespace MemoryAPI.Memory
 
                 while (DistanceTo(position) <= TooCloseDistance && DateTime.Now < duration)
                 {
-                    SetViewMode(ViewMode.FirstPerson);
                     FaceHeading(position);
                     Thread.Sleep(30);
                 }
@@ -222,31 +185,12 @@ namespace MemoryAPI.Memory
             /// <summary>
             /// Attempts to get a stuck player moving again.
             /// </summary>
-            /// <param name="targetPosition"></param>
-            /// <param name="zoneMap"></param>
-            private bool AvoidObstacles(Position targetPosition, ZoneMap zoneMap)
+            private void AvoidObstacles()
             {
-                if (IsStuck)
+                if (IsStuck())
                 {
-                    var player = _api.Entity.GetLocalPlayer();
-                    Debug.Write($"Player is stuck at X:{player.X} Y:{player.Y} Z:{player.Z} H:{player.H}" +
-                                Environment.NewLine);
-
-                    if (IsEngaged())
-                    {
-                        Disengage();
-                        WiggleCharacter(attempts: 3);
-                    }
-                    else
-                    {
-                        RecordTravelBlock(targetPosition, zoneMap);
-                        var turnRight = new Position();
-                        turnRight.X = targetPosition.X + 1;
-                        turnRight.Z = targetPosition.Z;
-                        // FaceHeading(turnRight);
-                        return true;
-                        // RequestNewPath();
-                    }
+                    if (IsEngaged()) Disengage();
+                    WiggleCharacter(attempts: 3);
                 }
 
                 return false;
@@ -373,7 +317,7 @@ namespace MemoryAPI.Memory
                 {
                     _api.Entity.GetLocalPlayer().H = _api.Player.H + (float) (Math.PI / 180 * dir);
                     _api.ThirdParty.KeyDown(Keys.NUMPAD8);
-                    Thread.Sleep(TimeSpan.FromSeconds(2));
+                    Thread.Sleep(TimeSpan.FromSeconds(1));
                     _api.ThirdParty.KeyUp(Keys.NUMPAD8);
                     count++;
                     if (count == 4)
