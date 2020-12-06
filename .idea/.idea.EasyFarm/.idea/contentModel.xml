@@ -34,6 +34,7 @@
           <e p="LogEntries.cs" t="Include" />
           <e p="Menu.cs" t="Include" />
           <e p="Navigator.cs" t="Include" />
+          <e p="NavMesh.cs" t="Include" />
           <e p="NullUnit.cs" t="Include" />
           <e p="PathRecorder.cs" t="Include" />
           <e p="Player.cs" t="Include" />
@@ -69,6 +70,16 @@
         <e p="Dependencies" t="Include">
           <e p="EliteAPI.dll" t="Include" />
           <e p="EliteMMO.API.dll" t="Include" />
+        </e>
+        <e p="Detour" t="Include">
+          <e p="DetourCommon.cs" t="Include" />
+          <e p="DetourNavMesh.cs" t="Include" />
+          <e p="DetourNavMeshBuilder.cs" t="Include" />
+          <e p="DetourNavMeshQuery.cs" t="Include" />
+          <e p="DetourNode.cs" t="Include" />
+          <e p="DetourNode.cs.meta" t="Include" />
+          <e p="DetourStatus.cs" t="Include" />
+          <e p="DetourStatus.cs.meta" t="Include" />
         </e>
         <e p="EasyFarm.csproj" t="IncludeRecursive" />
         <e p="FFXI" t="Include">
@@ -206,6 +217,26 @@
           <e p="Settings.Designer.cs" t="Include" />
           <e p="Settings.settings" t="Include" />
         </e>
+        <e p="Recast" t="Include">
+          <e p="Recast.cs" t="Include" />
+          <e p="Recast.cs.meta" t="Include" />
+          <e p="RecastArea.cs" t="Include" />
+          <e p="RecastArea.cs.meta" t="Include" />
+          <e p="RecastContour.cs" t="Include" />
+          <e p="RecastContour.cs.meta" t="Include" />
+          <e p="RecastFilter.cs" t="Include" />
+          <e p="RecastFilter.cs.meta" t="Include" />
+          <e p="RecastLayers.cs" t="Include" />
+          <e p="RecastLayers.cs.meta" t="Include" />
+          <e p="RecastMesh.cs" t="Include" />
+          <e p="RecastMesh.cs.meta" t="Include" />
+          <e p="RecastMeshDetail.cs" t="Include" />
+          <e p="RecastMeshDetail.cs.meta" t="Include" />
+          <e p="RecastRasterization.cs" t="Include" />
+          <e p="RecastRasterization.cs.meta" t="Include" />
+          <e p="RecastRegion.cs" t="Include" />
+          <e p="RecastRegion.cs.meta" t="Include" />
+        </e>
         <e p="Soul" t="Include">
           <e p="Calling.cs" t="Include" />
           <e p="CallingFactory.cs" t="Include" />
@@ -230,6 +261,7 @@
           <e p="GoFight.cs" t="Include" />
           <e p="HealingState.cs" t="Include" />
           <e p="HuntNotoriusMonster.cs" t="Include" />
+          <e p="INpcAction.cs" t="Include" />
           <e p="IState.cs" t="Include" />
           <e p="MapState.cs" t="Include" />
           <e p="NeedSignet.cs" t="Include" />
@@ -365,6 +397,7 @@
           <e p="LevelUpStateTests.cs" t="Include" />
           <e p="RestStateTests.cs" t="Include" />
           <e p="SetTargetStateTests.cs" t="Include" />
+          <e p="SummonTrustsStateTests.cs" t="Include" />
           <e p="TargetPriorityTests.cs" t="Include" />
           <e p="WeaponSkillStateTests.cs" t="Include" />
           <e p="ZoneStateTests.cs" t="Include" />

@@ -93,6 +93,8 @@ namespace MemoryAPI.Memory
                 return (float)bearing;
             }
 
+            
+            
             public void FaceHeading(Position position)
             {
                 var player = _api.Entity.GetLocalPlayer();
@@ -187,13 +189,11 @@ namespace MemoryAPI.Memory
             /// </summary>
             private void AvoidObstacles()
             {
-                if (IsStuck())
+                if (IsStuck)
                 {
                     if (IsEngaged()) Disengage();
                     WiggleCharacter(attempts: 3);
                 }
-
-                return false;
             }
 
 

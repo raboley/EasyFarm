@@ -309,6 +309,7 @@
     <Compile Include="States\GoChopWood.cs" />
     <Compile Include="States\GoFight.cs" />
     <Compile Include="States\HuntNotoriusMonster.cs" />
+    <Compile Include="States\INpcAction.cs" />
     <Compile Include="States\NeedSignet.cs" />
     <Compile Include="States\MapState.cs" />
     <Compile Include="States\DumpTreasureState.cs" />
@@ -608,9 +609,6 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>xcopy /S "$(ProjectDir)\Dependencies\*.*" "$(TargetDir)"</PostBuildEvent>
-  </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
@@ -621,7 +619,13 @@
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
+
   -->
+  <Target Name="AfterBuild">
+    <Message Text="I ran after build" />
+    <ItemGroup>
+      <MyDependencyFiles Include="$(ProjectDir)Dependencies\**\*.*"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(MyDependencyFiles)" DestinationFiles="@(MyDependencyFiles->'$(TargetDir)\%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
 </Project>

@@ -43,15 +43,15 @@ namespace EasyFarm.Monitors
             if (_context.Zone == null)
                 return;
 
-            if (_context.Zone.Map == null)
+            if (_context.PathfinderZone.Map == null)
                 return;
 
-            if (_context.Zone.Map.MapName != mapName)
+            if (_context.PathfinderZone.Map.MapName != mapName)
                 return;
 
 
             world.ZonePersister = ZoneMapPersister.NewZonePersister();
-            world.LoadAllZonesToWorld(_context.Zone);
+            world.LoadAllZonesToWorld(_context.PathfinderZone);
 
             if (_context.Npcs == null)
                 return;
@@ -64,7 +64,7 @@ namespace EasyFarm.Monitors
             world.Mobs.AddRange(_context.Mobs);
 
             LogViewModel.Write("Setting up Traveler for Zone: " + mapName);
-            _context.Traveler = new Traveler(_context.Zone.Name, world, mover);
+            _context.Traveler = new Traveler(_context.PathfinderZone.Name, world, mover);
             LogViewModel.Write("Traveler Setup for Zone: " + mapName);
 
             while (true)
@@ -86,11 +86,11 @@ namespace EasyFarm.Monitors
                     Thread.Sleep(100);
 
                 mapName = _context.Player.Zone.ToString();
-                while (_context.Zone?.Map?.MapName != mapName)
+                while (_context.PathfinderZone?.Map?.MapName != mapName)
                     Thread.Sleep(100);
                 
-                _context.Traveler.CurrentZone = _context.Zone;
-                _context.Traveler.World.LoadAllZonesToWorld(_context.Zone);
+                _context.Traveler.CurrentZone = _context.PathfinderZone;
+                _context.Traveler.World.LoadAllZonesToWorld(_context.PathfinderZone);
 
                 while (_context.Mobs == null)
                     Thread.Sleep(100);

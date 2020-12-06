@@ -44,7 +44,7 @@ namespace EasyFarm.States
 
         public override bool Check(IGameContext context)
         {
-            if (context.Zone?.Map == null)
+            if (context.PathfinderZone?.Map == null)
                 return false;
 
             var zoning = Zoning(context);
@@ -71,7 +71,7 @@ namespace EasyFarm.States
         {
             // Set new currentZone.
             // context.Zone = context.Player.Zone;
-            if (context.Zone?.Map == null)
+            if (context.PathfinderZone?.Map == null)
                 return;
 
             if (context?.Traveler?.CurrentZone?.Map?.MapName == null)

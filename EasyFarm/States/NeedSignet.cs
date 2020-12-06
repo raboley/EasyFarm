@@ -28,6 +28,7 @@ using MemoryAPI;
 using Pathfinder;
 using Pathfinder.People;
 using StatusEffect = MemoryAPI.StatusEffect;
+using Zone = Pathfinder.Map.Zone;
 
 namespace EasyFarm.States
 {
@@ -52,6 +53,13 @@ namespace EasyFarm.States
         {
             if (context.Traveler?.Zoning == true)
                 return;
+
+            if (context.Zone == MemoryAPI.Zone.Unknown)
+                return;
+
+            if (context.NavMesh.Zone == MemoryAPI.Zone.Unknown)
+                return;
+            
             // context.Player.CurrentGoal = "Signet";
             LogViewModel.Write("I don't have signet, Setting my goal to go get Signet");
             while (context.Traveler == null)
@@ -80,7 +88,9 @@ namespace EasyFarm.States
             if (signetNpc.MapName != context.Traveler.CurrentZone.Name)
                 return;
 
-            context.Traveler.PathfindAndWalkToFarAwayWorldMapPosition(signetNpc.Position, secondsToRunFor: 60);
+            var signetUnit = context.Memory.UnitService.GetClosestUnitByPartialName(signetNpc.Name);
+            if (!context.Navigator.TryTravelToNpc(context, signetUnit))
+                return;
 
             IMemoryAPI fface = context.API;
 
@@ -123,7 +133,7 @@ namespace EasyFarm.States
         private static void AskForSignet(IGameContext context, IMemoryAPI fface, Person signetNpc)
         {
             IUnit signetUnit = context.Memory.UnitService.GetClosestUnitByPartialName(signetNpc.Name);
-            context.Navigator.InteractWithUnit(context, fface, signetUnit);
+            context.Navigator.TravelToNpcAndTalk(context,  signetUnit);
 
             while (!context.API.Chat.LastThingSaid().Contains("I will bestow upon you"))
             {

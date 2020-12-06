@@ -14,7 +14,7 @@ namespace EasyFarm.ffxi
 
             if (context.Zone == null)
                 return;
-            world.Zones.Add(context.Zone);
+            world.Zones.Add(context.PathfinderZone);
 
             if (context.Npcs == null)
                 return;
@@ -24,7 +24,7 @@ namespace EasyFarm.ffxi
                 return;
             world.Mobs.AddRange(context.Mobs);
 
-            context.Traveler = new Traveler(context.Zone.Name, world, mover);
+            context.Traveler = new Traveler(context.PathfinderZone.Name, world, mover);
         }
     }
 }

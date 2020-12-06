@@ -183,7 +183,7 @@ namespace EasyFarm.States
         private static void StoreSealsAndCretsAtShemo(IGameContext context, IMemoryAPI fface)
         {
             IUnit shemo = context.Memory.UnitService.GetClosestUnitByPartialName("shemo");
-            context.Memory.EliteApi.Navigator.GotoNPC(shemo.Id, context.Config.IsObjectAvoidanceEnabled);
+            context.Navigator.TravelToNpcAndTalk(context, shemo);
 
             TradeAllItemsToTalkers(context, fface, "seal", shemo);
             TradeAllItemsToTalkers(context, fface, "crest", shemo);
@@ -259,8 +259,7 @@ namespace EasyFarm.States
 
         private static void OpenDoor(IGameContext context, IMemoryAPI fface)
         {
-            IUnit door = context.Memory.UnitService.GetClosestUnitByPartialName("Door");
-            context.Navigator.InteractWithUnit(context, fface, door);
+            context.Navigator.OpenDoor(context, fface);
         }
 
         private static void StoreCrystalsAtMoogle(IGameContext context, IMemoryAPI fface)
@@ -313,7 +312,7 @@ namespace EasyFarm.States
                 throw new ArgumentNullException(nameof(shopKeeper));
             }
             
-            context.Navigator.InteractWithUnit(context, fface, shopKeeper);
+            context.Navigator.TravelToNpcAndTalk(context, shopKeeper);
             TimeWaiter.Pause(1000);
             context.Dialog.ExitDialog(context);
             TimeWaiter.Pause(1000);
@@ -351,12 +350,12 @@ namespace EasyFarm.States
 
             IUnit Isakoth = context.Memory.UnitService.GetClosestUnitByPartialName("Isakoth");
             TimeWaiter.Pause(100);
-            context.API.Navigator.GotoNPC(Isakoth.Id, context.Config.IsObjectAvoidanceEnabled);
+            context.Navigator.TravelToNpcAndTalk(context, Isakoth);
 
             // trying to make sure he is loaded so that you can actually exchange sparks.
             TimeWaiter.Pause(2000);
 
-            context.Navigator.GoToNpc(context, fface, "Isakoth");
+            context.Navigator.TravelToNpcAndTalk(context, Isakoth);
 
             TimeWaiter.Pause(2000);
 
@@ -427,7 +426,7 @@ namespace EasyFarm.States
         {
 
             IUnit rabidWolfIM = context.Memory.UnitService.GetClosestUnitByPartialName("wolf");
-            context.Navigator.InteractWithUnit(context, fface, rabidWolfIM);
+            context.Navigator.TravelToNpcAndTalk(context, rabidWolfIM);
             TimeWaiter.Pause(2000);
             context.API.Windower.SendKeyPress(EliteMMO.API.Keys.RETURN);
             TimeWaiter.Pause(5000);
@@ -452,7 +451,7 @@ namespace EasyFarm.States
 
         private static void BuyAllGobbieKeys(IGameContext context, IMemoryAPI fface, IUnit igsli)
         {
-            context.Navigator.InteractWithUnit(context, fface, igsli);
+            context.Navigator.TravelToNpcAndTalk(context, igsli);
             TimeWaiter.Pause(3000);
             // navigate to buy some items
             context.API.Windower.SendKeyPress(EliteMMO.API.Keys.DOWN);
@@ -488,7 +487,7 @@ namespace EasyFarm.States
 
         private static void WarpToBoyahdaTree(IGameContext context, IMemoryAPI fface, IUnit igsli)
         {
-            context.Navigator.InteractWithUnit(context, fface, igsli);
+            context.Navigator.TravelToNpcAndTalk(context, igsli);
             TimeWaiter.Pause(4000);
             // teleport menu
             context.API.Windower.SendKeyPress(EliteMMO.API.Keys.DOWN);

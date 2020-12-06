@@ -38,7 +38,7 @@ namespace EasyFarm.Context
         IPlayer Player { get; set; }
         IUnit Target { get; set; }
         Boolean IsFighting { get; set; }
-        Zone Zone { get; set; }
+        MemoryAPI.Zone Zone { get; set; }
         NavMesh NavMesh { get; }
         IList<IUnit> Units { get; set; }
         IMemoryAPI API { get; set; }
@@ -55,6 +55,7 @@ namespace EasyFarm.Context
         Craft Craft { get; set; }
         IShop Shop { get; set; }
         ITradeMenu Trade { get; set; }
+        Pathfinder.Map.Zone PathfinderZone { get; set; }
     }
 
 

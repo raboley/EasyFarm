@@ -170,7 +170,7 @@ namespace EasyFarm.ffxi
         public int DistanceTolerance { get; set; } = 1;
         private void LookAtTargetPosition(Vector3 targetPosition)
         {
-            _context.API.Navigator.SetViewMode(EliteMmoWrapper.ViewMode.FirstPerson);
+            // _context.API.Navigator.SetViewMode(EliteMmoWrapper.ViewMode.FirstPerson);
             _context.API.Navigator.FaceHeading(new Position(targetPosition));
         }
 

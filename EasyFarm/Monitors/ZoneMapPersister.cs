@@ -35,25 +35,27 @@ namespace EasyFarm.Monitors
             // Load up the Zone
             var zone = GetOrCreateNewZone(mapName, out var zonePersister);
 
-            _context.Zone = zone;
+            _context.PathfinderZone = zone;
 
-            _context.ZoneMapFactory.DefaultGridSize = new Vector2(2001f, 2001f);
+            // Settings for if I were to use the x, y coord stuff.
+            // _context.ZoneMapFactory.DefaultGridSize = new Vector2(2001f, 2001f);
+            _context.ZoneMapFactory.DefaultGridSize = new Vector2(11f, 11f);
             _context.ZoneMapFactory.Persister = NewZoneMapPersister();
             LogViewModel.Write("Mapper thread loading up grid for: " + mapName);
-            _context.Zone.Map = _context.ZoneMapFactory.LoadGridOrCreateNew(mapName);
+            _context.PathfinderZone.Map = _context.ZoneMapFactory.CreateNewZoneMap(mapName);
 
 
             LogViewModel.Write("Mapper grid loaded!");
             while (mapName == _context.Player.Zone.ToString())
             {
-                var pos = GridMath.RoundVector3(new Vector3(_context.API.Player.PosX, _context.API.Player.PosY,
-                    _context.API.Player.PosZ));
-                var node = _context.Zone.Map.GetNodeFromWorldPoint(pos);
-                // if (_context.Zone.Map.UnknownNodes.Contains(node))
-                // {
-                    _context.Zone.Map.AddKnownNode(node.WorldPosition);
-                    // Debug.Write("in map: " + _context.Zone.Name + " Adding position: " + node.WorldPosition);
-                // }
+                // var pos = GridMath.RoundVector3(new Vector3(_context.API.Player.PosX, _context.API.Player.PosY,
+                //     _context.API.Player.PosZ));
+                // var node = _context.Zone.Map.GetNodeFromWorldPoint(pos);
+                // // if (_context.Zone.Map.UnknownNodes.Contains(node))
+                // // {
+                //     _context.Zone.Map.AddKnownNode(node.WorldPosition);
+                //     // Debug.Write("in map: " + _context.Zone.Name + " Adding position: " + node.WorldPosition);
+                // // }
             }
 
             var lastPositionBeforeZone = ConvertPosition.RoundPositionToVector3(_context.API.Player.Position);
@@ -88,7 +90,7 @@ namespace EasyFarm.Monitors
                     string newMapName = _context.API.Player.Zone.ToString();
                     Vector3 newMapPosition = ConvertPosition.RoundPositionToVector3(_context.API.Player.Position);
 
-                    _context.Zone.AddBoundary(mapName, lastPositionBeforeZone, newMapName,
+                    _context.PathfinderZone.AddBoundary(mapName, lastPositionBeforeZone, newMapName,
                         newMapPosition);
 
                     // We must have explored this point because we zoned and not due to death.
@@ -107,7 +109,7 @@ namespace EasyFarm.Monitors
             }
 
             zonePersister.Save(_context.Zone);
-            _context.ZoneMapFactory.Persister.Save(_context.Zone.Map);
+            // _context.ZoneMapFactory.Persister.Save(_context.Zone.Map);
             LogViewModel.Write("Saved map: " + mapName);
             _context.Traveler.IsDead = false;
         }

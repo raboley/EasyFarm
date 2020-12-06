@@ -28,7 +28,7 @@ namespace EasyFarm.Context
             // Close menu in case player has menu open prior to trading.
             CloseMenu();
 
-            context.Navigator.InteractWithUnit(context, fface, npc);
+            context.Navigator.TravelToNpcAndTalk(context, npc);
 
             SellAllJunk(junkItems);
         }

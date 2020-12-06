@@ -13,7 +13,7 @@ public class NavMesh
 	static int NAVMESHSET_MAGIC = 'M' << 24 | 'S' << 16 | 'E' << 8 | 'T'; //'MSET';
 	static int NAVMESHSET_VERSION = 1;
 	private Detour.dtNavMesh dtNavMesh;
-	private Zone _zone;
+	public Zone Zone;
 
 	public NavMesh()
 	{
@@ -92,7 +92,7 @@ public class NavMesh
 
 		string path = "navmeshes\\" + zone.ToString() + ".nav";
 
-		if (_zone == zone && dtNavMesh != null)
+		if (Zone == zone && dtNavMesh != null)
 		{
 			return true;
 		}

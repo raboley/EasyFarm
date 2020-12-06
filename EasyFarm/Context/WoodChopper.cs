@@ -6,6 +6,7 @@ using System.Linq;
 using System.Numerics;
 using System.Threading;
 using EasyFarm.Classes;
+using EasyFarm.States;
 using EasyFarm.ViewModels;
 using EasyFarm.Views;
 using NLog.Fluent;
@@ -406,8 +407,16 @@ namespace EasyFarm.Context
             context.Target = loggingUnit;
             // Face mob. 
             context.API.Navigator.FaceHeading(context.Target.Position);
-            context.API.Navigator.GotoNPC(context.Target.Id, context.Config.IsObjectAvoidanceEnabled);
+            context.Navigator.TravelToNpcAndPerformAction(context, context.Target, new ChopWoodAction());
 
+ 
+        }
+    }
+
+    public class ChopWoodAction : INpcAction
+    {
+        public void PerformAction(IGameContext context)
+        {
             // Target mob if not currently targeted. 
             Classes.Player.SetTarget(context.API, context.Target);
 

@@ -12,7 +12,7 @@ namespace EasyFarm.States
         {
             string fightZone = GetFightZoneByNation(context);
             
-            if (context.Zone.Name != fightZone)
+            if (context.PathfinderZone.Name != fightZone)
                 return true;
 
             return false;
