@@ -182,6 +182,7 @@ public class NavMesh
 
 	}
 
+	// TODO: Do this instead of using Pathfinder.
 	public Queue<Position> FindPathBetween(Position start, Position end, bool useStraightPath = false)
 	{
 		var path = new Queue<Position>();
