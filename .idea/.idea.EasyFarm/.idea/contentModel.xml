@@ -72,6 +72,10 @@
         </e>
         <e p="EasyFarm.csproj" t="IncludeRecursive" />
         <e p="FFXI" t="Include">
+          <e p="MeshWalker" t="Include">
+            <e p="Imports.cs" t="Include" />
+            <e p="position_t.cs" t="Include" />
+          </e>
           <e p="Mover.cs" t="Include" />
           <e p="MoverSetup.cs" t="Include" />
         </e>

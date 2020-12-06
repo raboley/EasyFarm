@@ -38,6 +38,7 @@
     <BootstrapperEnabled>false</BootstrapperEnabled>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>EasyFarm.App</StartupObject>
@@ -201,6 +202,8 @@
     <Compile Include="Context\TradeMenu.cs" />
     <Compile Include="Context\WoodChopper.cs" />
     <Compile Include="ConvertPosition.cs" />
+    <Compile Include="ffxi\MeshWalker\Imports.cs" />
+    <Compile Include="ffxi\MeshWalker\position_t.cs" />
     <Compile Include="ffxi\Mover.cs" />
     <Compile Include="ffxi\MoverSetup.cs" />
     <Compile Include="Mapping\GraphConverter.cs" />
