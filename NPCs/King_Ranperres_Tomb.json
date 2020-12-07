@@ -1,0 +1,32 @@
+[
+  {
+    'Id': 504,
+    'Name': 'Goblin Footprint',
+    'Position': {
+      'X': -114.0,
+      'Y': 0.0,
+      'Z': 256.0
+    },
+    'MapName': 'King_Ranperres_Tomb'
+  },
+  {
+    'Id': 511,
+    'Name': 'Grounds Tome',
+    'Position': {
+      'X': -119.0,
+      'Y': 0.0,
+      'Z': 252.0
+    },
+    'MapName': 'King_Ranperres_Tomb'
+  },
+  {
+    'Id': 521,
+    'Name': 'Survival Guide',
+    'Position': {
+      'X': -119.0,
+      'Y': 0.0,
+      'Z': 248.0
+    },
+    'MapName': 'King_Ranperres_Tomb'
+  }
+]

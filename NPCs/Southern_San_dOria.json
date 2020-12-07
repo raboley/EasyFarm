@@ -1,0 +1,1782 @@
+[
+  {
+    'Id': 2314,
+    'Name': 'D]\u0001',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 190,
+    'Name': 'Adaunel',
+    'Position': {
+      'X': 80.0,
+      'Y': 0.0,
+      'Z': -25.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 193,
+    'Name': 'Maugie',
+    'Position': {
+      'X': 105.0,
+      'Y': 0.0,
+      'Z': -17.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 98,
+    'Name': 'Ambrotien',
+    'Position': {
+      'X': 93.0,
+      'Y': 0.0,
+      'Z': -57.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 100,
+    'Name': 'Anxaberoute',
+    'Position': {
+      'X': 109.0,
+      'Y': 0.0,
+      'Z': -49.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 102,
+    'Name': 'Arpevion, T.K.',
+    'Position': {
+      'X': 105.0,
+      'Y': 0.0,
+      'Z': -53.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 341,
+    'Name': 'Voidwatch Purveyor',
+    'Position': {
+      'X': 100.0,
+      'Y': 0.0,
+      'Z': -50.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 675,
+    'Name': 'Enigmatic Footprints',
+    'Position': {
+      'X': 71.0,
+      'Y': 0.0,
+      'Z': -49.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 4,
+    'Name': 'Cahaurme',
+    'Position': {
+      'X': 56.0,
+      'Y': 0.0,
+      'Z': -29.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 9,
+    'Name': 'Phamelise',
+    'Position': {
+      'X': 64.0,
+      'Y': 0.0,
+      'Z': -8.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 10,
+    'Name': 'Apairemant',
+    'Position': {
+      'X': 73.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 136,
+    'Name': 'Home Point #2',
+    'Position': {
+      'X': 45.0,
+      'Y': 0.0,
+      'Z': -35.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 61,
+    'Name': 'Authere',
+    'Position': {
+      'X': 35.0,
+      'Y': 0.0,
+      'Z': -33.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 62,
+    'Name': 'Blendare',
+    'Position': {
+      'X': 33.0,
+      'Y': 0.0,
+      'Z': -30.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 112,
+    'Name': 'Lanqueron',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': -28.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 114,
+    'Name': 'Vaquelage',
+    'Position': {
+      'X': 17.0,
+      'Y': 0.0,
+      'Z': -29.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 115,
+    'Name': 'Auction Counter',
+    'Position': {
+      'X': 9.0,
+      'Y': 0.0,
+      'Z': -31.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 117,
+    'Name': 'Auction Counter',
+    'Position': {
+      'X': 2.0,
+      'Y': 0.0,
+      'Z': -40.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 118,
+    'Name': 'Auction Counter',
+    'Position': {
+      'X': -4.0,
+      'Y': 0.0,
+      'Z': -39.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 197,
+    'Name': 'Pourette',
+    'Position': {
+      'X': 33.0,
+      'Y': 0.0,
+      'Z': -13.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 305,
+    'Name': 'Fonteloube',
+    'Position': {
+      'X': 8.0,
+      'Y': 0.0,
+      'Z': -66.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 307,
+    'Name': 'Collione',
+    'Position': {
+      'X': 10.0,
+      'Y': 0.0,
+      'Z': -66.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 119,
+    'Name': 'Simmie',
+    'Position': {
+      'X': -7.0,
+      'Y': 0.0,
+      'Z': -28.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 43,
+    'Name': 'Chocobo',
+    'Position': {
+      'X': 25.0,
+      'Y': 0.0,
+      'Z': -90.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 194,
+    'Name': 'Foletta',
+    'Position': {
+      'X': 12.0,
+      'Y': 0.0,
+      'Z': -82.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 116,
+    'Name': 'Auction Counter',
+    'Position': {
+      'X': -9.0,
+      'Y': 0.0,
+      'Z': -31.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 42,
+    'Name': 'Chocobo',
+    'Position': {
+      'X': 12.0,
+      'Y': 0.0,
+      'Z': -89.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 44,
+    'Name': 'Chocobo',
+    'Position': {
+      'X': 20.0,
+      'Y': 0.0,
+      'Z': -97.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 315,
+    'Name': 'Esmallegue',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': -83.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 16,
+    'Name': 'Well',
+    'Position': {
+      'X': 5.0,
+      'Y': 0.0,
+      'Z': -89.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 41,
+    'Name': 'Ferdoulemiont',
+    'Position': {
+      'X': 11.0,
+      'Y': 0.0,
+      'Z': -96.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 179,
+    'Name': 'Door:Chocobo Stables',
+    'Position': {
+      'X': -8.0,
+      'Y': 0.0,
+      'Z': -92.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 274,
+    'Name': 'Hantileon',
+    'Position': {
+      'X': -3.0,
+      'Y': 0.0,
+      'Z': -105.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 47,
+    'Name': 'Camereine',
+    'Position': {
+      'X': -9.0,
+      'Y': 0.0,
+      'Z': -101.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 303,
+    'Name': 'Arvilauge',
+    'Position': {
+      'X': -13.0,
+      'Y': 0.0,
+      'Z': -93.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 48,
+    'Name': 'Emoussine',
+    'Position': {
+      'X': -13.0,
+      'Y': 0.0,
+      'Z': -101.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 50,
+    'Name': 'Chocobo',
+    'Position': {
+      'X': -7.0,
+      'Y': 0.0,
+      'Z': -104.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 51,
+    'Name': 'Chocobo',
+    'Position': {
+      'X': -11.0,
+      'Y': 0.0,
+      'Z': -104.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 49,
+    'Name': 'Meuneille',
+    'Position': {
+      'X': -16.0,
+      'Y': 0.0,
+      'Z': -101.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 52,
+    'Name': 'Chocobo',
+    'Position': {
+      'X': -15.0,
+      'Y': 0.0,
+      'Z': -104.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 256,
+    'Name': 'Ophelia',
+    'Position': {
+      'X': -26.0,
+      'Y': 0.0,
+      'Z': -97.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 310,
+    'Name': 'Palabelle',
+    'Position': {
+      'X': -28.0,
+      'Y': 0.0,
+      'Z': -81.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 308,
+    'Name': '',
+    'Position': {
+      'X': -30.0,
+      'Y': 0.0,
+      'Z': -84.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 313,
+    'Name': 'Gate: Chocobo Circuit',
+    'Position': {
+      'X': -31.0,
+      'Y': 0.0,
+      'Z': -84.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 113,
+    'Name': 'Arpetion',
+    'Position': {
+      'X': -12.0,
+      'Y': 0.0,
+      'Z': -30.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 90,
+    'Name': 'Rosel',
+    'Position': {
+      'X': 70.0,
+      'Y': 0.0,
+      'Z': 41.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 91,
+    'Name': 'Miogique',
+    'Position': {
+      'X': 68.0,
+      'Y': 0.0,
+      'Z': 37.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 92,
+    'Name': 'Carautia',
+    'Position': {
+      'X': 68.0,
+      'Y': 0.0,
+      'Z': 39.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 93,
+    'Name': 'Victoire',
+    'Position': {
+      'X': 68.0,
+      'Y': 0.0,
+      'Z': 38.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 126,
+    'Name': 'Ailevia',
+    'Position': {
+      'X': -10.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 133,
+    'Name': 'Maleme',
+    'Position': {
+      'X': 33.0,
+      'Y': 0.0,
+      'Z': 21.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 206,
+    'Name': 'NPC',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 418,
+    'Name': '',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 2,
+    'Name': 'Aubejart',
+    'Position': {
+      'X': 3.0,
+      'Y': 0.0,
+      'Z': 47.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 195,
+    'Name': 'Femitte',
+    'Position': {
+      'X': -17.0,
+      'Y': 0.0,
+      'Z': 12.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 196,
+    'Name': 'Rouva',
+    'Position': {
+      'X': -16.0,
+      'Y': 0.0,
+      'Z': 12.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 3,
+    'Name': 'Ephauge',
+    'Position': {
+      'X': -3.0,
+      'Y': 0.0,
+      'Z': 47.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 651,
+    'Name': '',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 652,
+    'Name': 'Iroha',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 30,
+    'Name': 'Raminel',
+    'Position': {
+      'X': -16.0,
+      'Y': 0.0,
+      'Z': -29.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 5,
+    'Name': 'Baunise',
+    'Position': {
+      'X': -56.0,
+      'Y': 0.0,
+      'Z': -29.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 8,
+    'Name': 'Corua',
+    'Position': {
+      'X': -64.0,
+      'Y': 0.0,
+      'Z': -9.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 123,
+    'Name': 'Clainomille',
+    'Position': {
+      'X': -68.0,
+      'Y': 0.0,
+      'Z': -11.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 349,
+    'Name': 'Chat Manual',
+    'Position': {
+      'X': -69.0,
+      'Y': 0.0,
+      'Z': -47.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 140,
+    'Name': 'Hae Jakhya',
+    'Position': {
+      'X': -73.0,
+      'Y': 0.0,
+      'Z': -24.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 7,
+    'Name': 'Machielle',
+    'Position': {
+      'X': -73.0,
+      'Y': 0.0,
+      'Z': -1.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 347,
+    'Name': 'Linkshell Concierge',
+    'Position': {
+      'X': -71.0,
+      'Y': 0.0,
+      'Z': -48.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 348,
+    'Name': 'Linkshell Concierge',
+    'Position': {
+      'X': -70.0,
+      'Y': 0.0,
+      'Z': -47.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 6,
+    'Name': 'Coderiant',
+    'Position': {
+      'X': -111.0,
+      'Y': 0.0,
+      'Z': 34.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 18,
+    'Name': 'Raimbroy',
+    'Position': {
+      'X': -141.0,
+      'Y': 0.0,
+      'Z': 35.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 20,
+    'Name': 'Leuveret',
+    'Position': {
+      'X': -136.0,
+      'Y': 0.0,
+      'Z': 22.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 21,
+    'Name': 'Benaige',
+    'Position': {
+      'X': -141.0,
+      'Y': 0.0,
+      'Z': 50.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 22,
+    'Name': 'Aveline',
+    'Position': {
+      'X': -139.0,
+      'Y': 0.0,
+      'Z': 49.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 32,
+    'Name': 'Glenne',
+    'Position': {
+      'X': -126.0,
+      'Y': 0.0,
+      'Z': 15.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 33,
+    'Name': 'Luthiaque',
+    'Position': {
+      'X': -86.0,
+      'Y': 0.0,
+      'Z': -22.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 34,
+    'Name': 'Deraquien',
+    'Position': {
+      'X': -99.0,
+      'Y': 0.0,
+      'Z': 32.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 53,
+    'Name': 'Taumila',
+    'Position': {
+      'X': -140.0,
+      'Y': 0.0,
+      'Z': -10.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 54,
+    'Name': 'Lusiane',
+    'Position': {
+      'X': -141.0,
+      'Y': 0.0,
+      'Z': 15.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 55,
+    'Name': 'Ostalie',
+    'Position': {
+      'X': -143.0,
+      'Y': 0.0,
+      'Z': -12.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 56,
+    'Name': 'Capucine',
+    'Position': {
+      'X': -145.0,
+      'Y': 0.0,
+      'Z': -12.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 155,
+    'Name': 'Door:Raimbroy\'s Grocery',
+    'Position': {
+      'X': -145.0,
+      'Y': 0.0,
+      'Z': 27.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 156,
+    'Name': 'Door:Raimbroy\'s Grocery',
+    'Position': {
+      'X': -145.0,
+      'Y': 0.0,
+      'Z': 25.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 157,
+    'Name': 'Door:Taumila\'s Sundries',
+    'Position': {
+      'X': -144.0,
+      'Y': 0.0,
+      'Z': 9.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 158,
+    'Name': 'Door:Taumila\'s Sundries',
+    'Position': {
+      'X': -144.0,
+      'Y': 0.0,
+      'Z': 10.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 159,
+    'Name': 'Door:House',
+    'Position': {
+      'X': -124.0,
+      'Y': 0.0,
+      'Z': 9.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 160,
+    'Name': 'Door:House',
+    'Position': {
+      'X': -124.0,
+      'Y': 0.0,
+      'Z': 10.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 192,
+    'Name': 'Paunelie',
+    'Position': {
+      'X': -145.0,
+      'Y': 0.0,
+      'Z': 1.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 268,
+    'Name': 'Poudoruchant',
+    'Position': {
+      'X': -140.0,
+      'Y': 0.0,
+      'Z': 23.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 338,
+    'Name': 'Atmacite Refiner',
+    'Position': {
+      'X': -102.0,
+      'Y': 0.0,
+      'Z': -16.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 339,
+    'Name': 'Voidwatch Officer',
+    'Position': {
+      'X': -106.0,
+      'Y': 0.0,
+      'Z': -16.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 1,
+    'Name': 'Ceraule',
+    'Position': {
+      'X': -86.0,
+      'Y': 0.0,
+      'Z': -35.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 253,
+    'Name': 'Gizel',
+    'Position': {
+      'X': -34.0,
+      'Y': 0.0,
+      'Z': 33.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 329,
+    'Name': 'Melledanne',
+    'Position': {
+      'X': -33.0,
+      'Y': 0.0,
+      'Z': 35.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 97,
+    'Name': 'Endracion',
+    'Position': {
+      'X': -113.0,
+      'Y': 0.0,
+      'Z': -37.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 342,
+    'Name': 'Rolandienne',
+    'Position': {
+      'X': -85.0,
+      'Y': 0.0,
+      'Z': -51.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 350,
+    'Name': 'Urbiolaine',
+    'Position': {
+      'X': -88.0,
+      'Y': 0.0,
+      'Z': -51.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 344,
+    'Name': 'A.M.A.N. Reclaimer',
+    'Position': {
+      'X': -83.0,
+      'Y': 0.0,
+      'Z': -53.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 11,
+    'Name': 'Violitte',
+    'Position': {
+      'X': -75.0,
+      'Y': 0.0,
+      'Z': -55.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 677,
+    'Name': 'A.M.A.N. Validator',
+    'Position': {
+      'X': -83.0,
+      'Y': 0.0,
+      'Z': -56.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 340,
+    'Name': 'Voidwatch Purveyor',
+    'Position': {
+      'X': -100.0,
+      'Y': 0.0,
+      'Z': -51.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 99,
+    'Name': 'Malecharisant',
+    'Position': {
+      'X': -109.0,
+      'Y': 0.0,
+      'Z': -49.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 101,
+    'Name': 'Aravoge, T.K.',
+    'Position': {
+      'X': -105.0,
+      'Y': 0.0,
+      'Z': -53.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 322,
+    'Name': 'Alaune',
+    'Position': {
+      'X': -93.0,
+      'Y': 0.0,
+      'Z': -58.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 83,
+    'Name': 'Faulpie',
+    'Position': {
+      'X': -179.0,
+      'Y': 0.0,
+      'Z': 10.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 84,
+    'Name': 'Orechiniel',
+    'Position': {
+      'X': -181.0,
+      'Y': 0.0,
+      'Z': 5.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 86,
+    'Name': 'Tek Lengyon',
+    'Position': {
+      'X': -190.0,
+      'Y': 0.0,
+      'Z': 3.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 138,
+    'Name': 'Home Point #4',
+    'Position': {
+      'X': -165.0,
+      'Y': 0.0,
+      'Z': 11.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 199,
+    'Name': 'Parvipon',
+    'Position': {
+      'X': -172.0,
+      'Y': 0.0,
+      'Z': 12.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 252,
+    'Name': 'Alivatand',
+    'Position': {
+      'X': -179.0,
+      'Y': 0.0,
+      'Z': 16.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 673,
+    'Name': 'Ephemeral Moogle',
+    'Position': {
+      'X': -186.0,
+      'Y': 0.0,
+      'Z': -4.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 674,
+    'Name': 'Wolden-Bolden',
+    'Position': {
+      'X': -183.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 15,
+    'Name': 'Well',
+    'Position': {
+      'X': -153.0,
+      'Y': 0.0,
+      'Z': 57.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 63,
+    'Name': 'Balasiel',
+    'Position': {
+      'X': -138.0,
+      'Y': 0.0,
+      'Z': 66.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 66,
+    'Name': 'Chanpau',
+    'Position': {
+      'X': -154.0,
+      'Y': 0.0,
+      'Z': 56.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 87,
+    'Name': 'Cletae',
+    'Position': {
+      'X': -189.0,
+      'Y': 0.0,
+      'Z': 14.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 89,
+    'Name': 'Hanaa Punaa',
+    'Position': {
+      'X': -180.0,
+      'Y': 0.0,
+      'Z': 28.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 153,
+    'Name': 'Door:Tanners\' Guild',
+    'Position': {
+      'X': -188.0,
+      'Y': 0.0,
+      'Z': 18.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 154,
+    'Name': 'Door:Tanners\' Guild',
+    'Position': {
+      'X': -188.0,
+      'Y': 0.0,
+      'Z': 19.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 166,
+    'Name': 'Door:House',
+    'Position': {
+      'X': -86.0,
+      'Y': 0.0,
+      'Z': 66.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 165,
+    'Name': 'Door:House',
+    'Position': {
+      'X': -85.0,
+      'Y': 0.0,
+      'Z': 66.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 134,
+    'Name': 'Diary',
+    'Position': {
+      'X': -73.0,
+      'Y': 0.0,
+      'Z': 66.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 85,
+    'Name': 'Kipopo',
+    'Position': {
+      'X': -191.0,
+      'Y': 0.0,
+      'Z': 12.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 171,
+    'Name': 'Door:Rosel\'s Armour',
+    'Position': {
+      'X': 89.0,
+      'Y': 0.0,
+      'Z': 38.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 172,
+    'Name': 'Door:Rosel\'s Armour',
+    'Position': {
+      'X': 90.0,
+      'Y': 0.0,
+      'Z': 38.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 135,
+    'Name': 'Home Point #1',
+    'Position': {
+      'X': -85.0,
+      'Y': 0.0,
+      'Z': -66.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 88,
+    'Name': 'Kueh Igunahmori',
+    'Position': {
+      'X': -195.0,
+      'Y': 0.0,
+      'Z': 13.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 330,
+    'Name': 'Synergy Engineer',
+    'Position': {
+      'X': -198.0,
+      'Y': 0.0,
+      'Z': 45.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 333,
+    'Name': 'Synergy Furnace',
+    'Position': {
+      'X': -200.0,
+      'Y': 0.0,
+      'Z': 42.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 332,
+    'Name': 'Synergy Furnace',
+    'Position': {
+      'X': -200.0,
+      'Y': 0.0,
+      'Z': 48.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 141,
+    'Name': 'Moogle',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 2.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 146,
+    'Name': 'Symphonic Curator',
+    'Position': {
+      'X': 2.0,
+      'Y': 0.0,
+      'Z': -8.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 2304,
+    'Name': 'Door: Back to Town',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 27,
+    'Name': 'Fulchia',
+    'Position': {
+      'X': 159.0,
+      'Y': 0.0,
+      'Z': 165.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 137,
+    'Name': 'Home Point #3',
+    'Position': {
+      'X': 140.0,
+      'Y': 0.0,
+      'Z': 123.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 240,
+    'Name': 'Trail Markings',
+    'Position': {
+      'X': 137.0,
+      'Y': 0.0,
+      'Z': 122.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 309,
+    'Name': 'Rumoie',
+    'Position': {
+      'X': 150.0,
+      'Y': 0.0,
+      'Z': 152.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 337,
+    'Name': 'Artisan Moogle',
+    'Position': {
+      'X': 153.0,
+      'Y': 0.0,
+      'Z': 106.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 648,
+    'Name': 'Mystic Retriever',
+    'Position': {
+      'X': 122.0,
+      'Y': 0.0,
+      'Z': 94.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 647,
+    'Name': 'Gondebaud',
+    'Position': {
+      'X': 124.0,
+      'Y': 0.0,
+      'Z': 92.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 96,
+    'Name': 'Varchet',
+    'Position': {
+      'X': 116.0,
+      'Y': 0.0,
+      'Z': 92.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 314,
+    'Name': 'Atelloune',
+    'Position': {
+      'X': 123.0,
+      'Y': 0.0,
+      'Z': 85.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 24,
+    'Name': 'Katharina',
+    'Position': {
+      'X': 101.0,
+      'Y': 0.0,
+      'Z': 106.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 273,
+    'Name': 'Amutiyaal',
+    'Position': {
+      'X': 117.0,
+      'Y': 0.0,
+      'Z': 85.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 168,
+    'Name': 'Door:"Lion Springs"',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 117.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 205,
+    'Name': 'Valderotaux',
+    'Position': {
+      'X': 98.0,
+      'Y': 0.0,
+      'Z': 114.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 23,
+    'Name': 'Lotte',
+    'Position': {
+      'X': 97.0,
+      'Y': 0.0,
+      'Z': 117.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 167,
+    'Name': 'Door:"Lion Springs"',
+    'Position': {
+      'X': 97.0,
+      'Y': 0.0,
+      'Z': 107.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 204,
+    'Name': 'Sharzalion',
+    'Position': {
+      'X': 95.0,
+      'Y': 0.0,
+      'Z': 114.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 25,
+    'Name': 'Shilah',
+    'Position': {
+      'X': 93.0,
+      'Y': 0.0,
+      'Z': 117.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 209,
+    'Name': 'Vemalpeau',
+    'Position': {
+      'X': 157.0,
+      'Y': 0.0,
+      'Z': 66.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 222,
+    'Name': 'Najjar',
+    'Position': {
+      'X': 90.0,
+      'Y': 0.0,
+      'Z': 108.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 312,
+    'Name': 'Game Table',
+    'Position': {
+      'X': 91.0,
+      'Y': 0.0,
+      'Z': 110.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 207,
+    'Name': 'Daggao',
+    'Position': {
+      'X': 90.0,
+      'Y': 0.0,
+      'Z': 122.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 203,
+    'Name': 'Namonutice',
+    'Position': {
+      'X': 87.0,
+      'Y': 0.0,
+      'Z': 108.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 173,
+    'Name': 'Door:House',
+    'Position': {
+      'X': 151.0,
+      'Y': 0.0,
+      'Z': 59.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 174,
+    'Name': 'Door:House',
+    'Position': {
+      'X': 150.0,
+      'Y': 0.0,
+      'Z': 58.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 210,
+    'Name': '???',
+    'Position': {
+      'X': 160.0,
+      'Y': 0.0,
+      'Z': 63.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 212,
+    'Name': '???',
+    'Position': {
+      'X': 160.0,
+      'Y': 0.0,
+      'Z': 62.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 211,
+    'Name': '???',
+    'Position': {
+      'X': 161.0,
+      'Y': 0.0,
+      'Z': 62.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 236,
+    'Name': 'Norejaie',
+    'Position': {
+      'X': 84.0,
+      'Y': 0.0,
+      'Z': 111.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 202,
+    'Name': 'Moozo-Koozo',
+    'Position': {
+      'X': 84.0,
+      'Y': 0.0,
+      'Z': 120.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 345,
+    'Name': 'Mystrix',
+    'Position': {
+      'X': 106.0,
+      'Y': 0.0,
+      'Z': 56.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 346,
+    'Name': 'Treasure Coffer',
+    'Position': {
+      'X': 106.0,
+      'Y': 0.0,
+      'Z': 58.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 200,
+    'Name': 'Legata',
+    'Position': {
+      'X': 82.0,
+      'Y': 0.0,
+      'Z': 115.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 170,
+    'Name': 'Door:Helbort\'s Blades',
+    'Position': {
+      'X': 91.0,
+      'Y': 0.0,
+      'Z': 57.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 336,
+    'Name': 'Synergy Enthusiast',
+    'Position': {
+      'X': 143.0,
+      'Y': 0.0,
+      'Z': 47.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 334,
+    'Name': 'Synergy Furnace',
+    'Position': {
+      'X': 144.0,
+      'Y': 0.0,
+      'Z': 45.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 169,
+    'Name': 'Door:Helbort\'s Blades',
+    'Position': {
+      'X': 89.0,
+      'Y': 0.0,
+      'Z': 57.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 331,
+    'Name': 'Synergy Engineer',
+    'Position': {
+      'X': 144.0,
+      'Y': 0.0,
+      'Z': 42.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 335,
+    'Name': 'Synergy Furnace',
+    'Position': {
+      'X': 144.0,
+      'Y': 0.0,
+      'Z': 39.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 59,
+    'Name': 'Thadiene',
+    'Position': {
+      'X': 69.0,
+      'Y': 0.0,
+      'Z': 64.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 60,
+    'Name': 'Exoroche',
+    'Position': {
+      'X': 71.0,
+      'Y': 0.0,
+      'Z': 59.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 58,
+    'Name': 'Ashene',
+    'Position': {
+      'X': 69.0,
+      'Y': 0.0,
+      'Z': 62.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 57,
+    'Name': 'Helbort',
+    'Position': {
+      'X': 67.0,
+      'Y': 0.0,
+      'Z': 66.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 94,
+    'Name': 'Michilca',
+    'Position': {
+      'X': 76.0,
+      'Y': 0.0,
+      'Z': 41.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 2315,
+    'Name': '@¿ˆÉ½?Fð\u0018>•ÝP¿ãC±?Pt\u0012>¾',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 176,
+    'Name': 'Door:House',
+    'Position': {
+      'X': 158.0,
+      'Y': 0.0,
+      'Z': 42.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 175,
+    'Name': 'Door:House',
+    'Position': {
+      'X': 159.0,
+      'Y': 0.0,
+      'Z': 42.0
+    },
+    'MapName': 'Southern_San_dOria'
+  }
+]

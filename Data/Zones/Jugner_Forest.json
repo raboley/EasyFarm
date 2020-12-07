@@ -1,0 +1,22 @@
+{
+  'Name': 'Jugner_Forest',
+  'PointsToExplore': [],
+  'NextPointToExplore': null,
+  'Explored': [],
+  'Boundaries': [
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Jugner_Forest',
+      'FromPosition': {
+        'X': -599.0,
+        'Y': 0.0,
+        'Z': -441.0
+      },
+      'ToPosition': {
+        'X': 795.0,
+        'Y': 0.0,
+        'Z': -35.0
+      }
+    }
+  ]
+}

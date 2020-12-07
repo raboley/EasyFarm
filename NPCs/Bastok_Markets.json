@@ -1,0 +1,722 @@
+[
+  {
+    'Id': 5,
+    'Name': 'Gwill',
+    'Position': {
+      'X': -318.0,
+      'Y': 0.0,
+      'Z': -177.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 22,
+    'Name': 'Zhikkom',
+    'Position': {
+      'X': -289.0,
+      'Y': 0.0,
+      'Z': -135.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 23,
+    'Name': 'Ciqala',
+    'Position': {
+      'X': -283.0,
+      'Y': 0.0,
+      'Z': -144.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 24,
+    'Name': 'Peritrage',
+    'Position': {
+      'X': -287.0,
+      'Y': 0.0,
+      'Z': -143.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 25,
+    'Name': 'Brunhilde',
+    'Position': {
+      'X': -306.0,
+      'Y': 0.0,
+      'Z': -152.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 26,
+    'Name': 'Charging Chocobo',
+    'Position': {
+      'X': -302.0,
+      'Y': 0.0,
+      'Z': -157.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 27,
+    'Name': 'Balthilda',
+    'Position': {
+      'X': -300.0,
+      'Y': 0.0,
+      'Z': -162.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 28,
+    'Name': 'Mjoll',
+    'Position': {
+      'X': -319.0,
+      'Y': 0.0,
+      'Z': -178.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 29,
+    'Name': 'Olwyn',
+    'Position': {
+      'X': -322.0,
+      'Y': 0.0,
+      'Z': -169.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 42,
+    'Name': 'Offa',
+    'Position': {
+      'X': -282.0,
+      'Y': 0.0,
+      'Z': -141.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 44,
+    'Name': 'Michea',
+    'Position': {
+      'X': -298.0,
+      'Y': 0.0,
+      'Z': -157.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 51,
+    'Name': 'Cleades',
+    'Position': {
+      'X': -362.0,
+      'Y': 0.0,
+      'Z': -169.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 52,
+    'Name': 'Rabid Wolf, I.M.',
+    'Position': {
+      'X': -346.0,
+      'Y': 0.0,
+      'Z': -184.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 53,
+    'Name': 'Pavel',
+    'Position': {
+      'X': -350.0,
+      'Y': 0.0,
+      'Z': -181.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 78,
+    'Name': 'Door:"Dragon\'s Claws"',
+    'Position': {
+      'X': -295.0,
+      'Y': 0.0,
+      'Z': -128.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 79,
+    'Name': 'Door:House',
+    'Position': {
+      'X': -290.0,
+      'Y': 0.0,
+      'Z': -144.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 80,
+    'Name': 'Door:Brunhilde Armourer',
+    'Position': {
+      'X': -312.0,
+      'Y': 0.0,
+      'Z': -145.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 81,
+    'Name': 'Door:House',
+    'Position': {
+      'X': -297.0,
+      'Y': 0.0,
+      'Z': -151.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 82,
+    'Name': 'Door:Mjoll\'s Goods',
+    'Position': {
+      'X': -329.0,
+      'Y': 0.0,
+      'Z': -162.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 83,
+    'Name': 'Door:House',
+    'Position': {
+      'X': -314.0,
+      'Y': 0.0,
+      'Z': -168.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 84,
+    'Name': 'Home Point #1',
+    'Position': {
+      'X': -344.0,
+      'Y': 0.0,
+      'Z': -155.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 116,
+    'Name': 'Marin',
+    'Position': {
+      'X': -340.0,
+      'Y': 0.0,
+      'Z': -148.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 117,
+    'Name': 'Ken',
+    'Position': {
+      'X': -341.0,
+      'Y': 0.0,
+      'Z': -149.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 163,
+    'Name': 'Gulldago',
+    'Position': {
+      'X': -364.0,
+      'Y': 0.0,
+      'Z': -167.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 174,
+    'Name': 'Atmacite Refiner',
+    'Position': {
+      'X': -356.0,
+      'Y': 0.0,
+      'Z': -160.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 175,
+    'Name': 'Voidwatch Officer',
+    'Position': {
+      'X': -352.0,
+      'Y': 0.0,
+      'Z': -162.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 176,
+    'Name': 'Voidwatch Purveyor',
+    'Position': {
+      'X': -366.0,
+      'Y': 0.0,
+      'Z': -165.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 177,
+    'Name': 'Isakoth',
+    'Position': {
+      'X': -343.0,
+      'Y': 0.0,
+      'Z': -172.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 179,
+    'Name': 'A.M.A.N. Reclaimer',
+    'Position': {
+      'X': -342.0,
+      'Y': 0.0,
+      'Z': -173.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 182,
+    'Name': 'Linkshell Concierge',
+    'Position': {
+      'X': -310.0,
+      'Y': 0.0,
+      'Z': -119.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 183,
+    'Name': 'Linkshell Concierge',
+    'Position': {
+      'X': -310.0,
+      'Y': 0.0,
+      'Z': -121.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 184,
+    'Name': 'Chat Manual',
+    'Position': {
+      'X': -310.0,
+      'Y': 0.0,
+      'Z': -117.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 185,
+    'Name': 'Igsli',
+    'Position': {
+      'X': -339.0,
+      'Y': 0.0,
+      'Z': -176.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 437,
+    'Name': 'A.M.A.N. Validator',
+    'Position': {
+      'X': -338.0,
+      'Y': 0.0,
+      'Z': -180.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 55,
+    'Name': 'Epione',
+    'Position': {
+      'X': -245.0,
+      'Y': 0.0,
+      'Z': -76.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 113,
+    'Name': 'Zacc',
+    'Position': {
+      'X': -256.0,
+      'Y': 0.0,
+      'Z': -91.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 114,
+    'Name': 'Enu',
+    'Position': {
+      'X': -254.0,
+      'Y': 0.0,
+      'Z': -92.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 150,
+    'Name': 'Shamarhaan',
+    'Position': {
+      'X': -285.0,
+      'Y': 0.0,
+      'Z': -85.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 151,
+    'Name': 'Valkeng',
+    'Position': {
+      'X': -285.0,
+      'Y': 0.0,
+      'Z': -86.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 20,
+    'Name': 'Khonzon',
+    'Position': {
+      'X': -324.0,
+      'Y': 0.0,
+      'Z': -89.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 93,
+    'Name': 'Auction Counter',
+    'Position': {
+      'X': -334.0,
+      'Y': 0.0,
+      'Z': -84.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 41,
+    'Name': 'Lavinia',
+    'Position': {
+      'X': -309.0,
+      'Y': 0.0,
+      'Z': -62.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 45,
+    'Name': 'Biggorf',
+    'Position': {
+      'X': -211.0,
+      'Y': 0.0,
+      'Z': -142.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 48,
+    'Name': 'Karine',
+    'Position': {
+      'X': -221.0,
+      'Y': 0.0,
+      'Z': -94.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 435,
+    'Name': 'Ephemeral Moogle',
+    'Position': {
+      'X': -220.0,
+      'Y': 0.0,
+      'Z': -63.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 60,
+    'Name': 'Reet',
+    'Position': {
+      'X': -238.0,
+      'Y': 0.0,
+      'Z': -41.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 67,
+    'Name': 'Foss',
+    'Position': {
+      'X': -283.0,
+      'Y': 0.0,
+      'Z': -37.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 144,
+    'Name': 'Sinon',
+    'Position': {
+      'X': -213.0,
+      'Y': 0.0,
+      'Z': -90.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 165,
+    'Name': 'Synergy Engineer',
+    'Position': {
+      'X': -266.0,
+      'Y': 0.0,
+      'Z': -33.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 17,
+    'Name': 'Ulrike',
+    'Position': {
+      'X': -218.0,
+      'Y': 0.0,
+      'Z': -56.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 141,
+    'Name': 'Ellard',
+    'Position': {
+      'X': -214.0,
+      'Y': 0.0,
+      'Z': -64.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 436,
+    'Name': 'Puyutete',
+    'Position': {
+      'X': -216.0,
+      'Y': 0.0,
+      'Z': -56.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 168,
+    'Name': 'Synergy Furnace',
+    'Position': {
+      'X': -269.0,
+      'Y': 0.0,
+      'Z': -31.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 169,
+    'Name': 'Synergy Furnace',
+    'Position': {
+      'X': -263.0,
+      'Y': 0.0,
+      'Z': -31.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 170,
+    'Name': 'Synergy Enthusiast',
+    'Position': {
+      'X': -255.0,
+      'Y': 0.0,
+      'Z': -29.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 16,
+    'Name': 'Wulfnoth',
+    'Position': {
+      'X': -212.0,
+      'Y': 0.0,
+      'Z': -56.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 12,
+    'Name': 'Teerth',
+    'Position': {
+      'X': -205.0,
+      'Y': 0.0,
+      'Z': -57.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 13,
+    'Name': 'Visala',
+    'Position': {
+      'X': -202.0,
+      'Y': 0.0,
+      'Z': -57.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 72,
+    'Name': 'Door:Goldsmiths\' Guild',
+    'Position': {
+      'X': -203.0,
+      'Y': 0.0,
+      'Z': -66.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 18,
+    'Name': 'Ardea',
+    'Position': {
+      'X': -198.0,
+      'Y': 0.0,
+      'Z': -69.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 56,
+    'Name': 'Alert Gaze',
+    'Position': {
+      'X': -201.0,
+      'Y': 0.0,
+      'Z': -38.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 171,
+    'Name': 'Artisan Moogle',
+    'Position': {
+      'X': -211.0,
+      'Y': 0.0,
+      'Z': -25.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 15,
+    'Name': 'Fatimah',
+    'Position': {
+      'X': -194.0,
+      'Y': 0.0,
+      'Z': -56.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 87,
+    'Name': 'Home Point #4',
+    'Position': {
+      'X': -191.0,
+      'Y': 0.0,
+      'Z': -69.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 14,
+    'Name': 'Reinberta',
+    'Position': {
+      'X': -191.0,
+      'Y': 0.0,
+      'Z': -59.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 63,
+    'Name': 'Anguysh',
+    'Position': {
+      'X': -189.0,
+      'Y': 0.0,
+      'Z': -90.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 19,
+    'Name': 'Nudara',
+    'Position': {
+      'X': -179.0,
+      'Y': 0.0,
+      'Z': -65.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 46,
+    'Name': 'Somn-Paemn',
+    'Position': {
+      'X': -193.0,
+      'Y': 0.0,
+      'Z': -113.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 172,
+    'Name': 'Porter Moogle',
+    'Position': {
+      'X': -182.0,
+      'Y': 0.0,
+      'Z': -102.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 94,
+    'Name': 'Rock Jaw',
+    'Position': {
+      'X': -321.0,
+      'Y': 0.0,
+      'Z': -68.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 6,
+    'Name': 'Arawn',
+    'Position': {
+      'X': -121.0,
+      'Y': 0.0,
+      'Z': -124.0
+    },
+    'MapName': 'Bastok_Markets'
+  },
+  {
+    'Id': 7,
+    'Name': 'Emrys',
+    'Position': {
+      'X': -123.0,
+      'Y': 0.0,
+      'Z': -124.0
+    },
+    'MapName': 'Bastok_Markets'
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    'Id': 2314,
+    'Name': '\u0003Û4\u0002iØoÞ\u0004Ûè\u0002iØpÞ\u0003Û%\u0002iØqÞ',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 2315,
+    'Name': 'œ=TmJ?âQ¾Ðb_¼¹ŽE>>$ø½I‡',
+    'Position': {
+      'X': -547806.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  },
+  {
+    'Id': 2324,
+    'Name': 'ÿÿ',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Southern_San_dOria'
+  }
+]

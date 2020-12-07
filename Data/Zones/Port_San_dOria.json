@@ -1,0 +1,50 @@
+{
+  'Name': 'Port_San_dOria',
+  'PointsToExplore': [],
+  'NextPointToExplore': null,
+  'Explored': [],
+  'Boundaries': [
+    {
+      'ToZone': 'Northern_San_dOria',
+      'FromZone': 'Port_San_dOria',
+      'FromPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -136.0
+      },
+      'ToPosition': {
+        'X': -125.0,
+        'Y': 0.0,
+        'Z': 269.0
+      }
+    },
+    {
+      'ToZone': 'Northern_San_dOria',
+      'FromZone': 'Port_San_dOria',
+      'FromPosition': {
+        'X': -112.0,
+        'Y': 0.0,
+        'Z': -137.0
+      },
+      'ToPosition': {
+        'X': -125.0,
+        'Y': 0.0,
+        'Z': 268.0
+      }
+    },
+    {
+      'ToZone': 'Northern_San_dOria',
+      'FromZone': 'Port_San_dOria',
+      'FromPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -136.0
+      },
+      'ToPosition': {
+        'X': -125.0,
+        'Y': 0.0,
+        'Z': 268.0
+      }
+    }
+  ]
+}

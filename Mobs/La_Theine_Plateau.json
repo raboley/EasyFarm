@@ -1,0 +1,3512 @@
+[
+  {
+    'Id': 7,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -617.0,
+      'Y': 0.0,
+      'Z': 557.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 43,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -735.0,
+      'Y': 0.0,
+      'Z': 554.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 41,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -683.0,
+      'Y': 0.0,
+      'Z': 470.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 49,
+    'Name': 'Huge Wasp',
+    'Position': {
+      'X': -730.0,
+      'Y': 0.0,
+      'Z': 558.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 46,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': -684.0,
+      'Y': 0.0,
+      'Z': 471.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 52,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': -731.0,
+      'Y': 0.0,
+      'Z': 539.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 42,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -639.0,
+      'Y': 0.0,
+      'Z': 393.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 8,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -649.0,
+      'Y': 0.0,
+      'Z': 537.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 47,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': -608.0,
+      'Y': 0.0,
+      'Z': 380.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 50,
+    'Name': 'Huge Wasp',
+    'Position': {
+      'X': -627.0,
+      'Y': 0.0,
+      'Z': 361.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 45,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': -647.0,
+      'Y': 0.0,
+      'Z': 360.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 38,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': -584.0,
+      'Y': 0.0,
+      'Z': 289.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 68,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -637.0,
+      'Y': 0.0,
+      'Z': 210.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 66,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -666.0,
+      'Y': 0.0,
+      'Z': 203.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 24,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -567.0,
+      'Y': 0.0,
+      'Z': 206.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 25,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -564.0,
+      'Y': 0.0,
+      'Z': 200.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 32,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -524.0,
+      'Y': 0.0,
+      'Z': 303.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 16,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -499.0,
+      'Y': 0.0,
+      'Z': 334.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 18,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -544.0,
+      'Y': 0.0,
+      'Z': 359.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 35,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': -465.0,
+      'Y': 0.0,
+      'Z': 322.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 15,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -456.0,
+      'Y': 0.0,
+      'Z': 339.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 20,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -445.0,
+      'Y': 0.0,
+      'Z': 350.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 12,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -485.0,
+      'Y': 0.0,
+      'Z': 395.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 17,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -434.0,
+      'Y': 0.0,
+      'Z': 364.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 9,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -458.0,
+      'Y': 0.0,
+      'Z': 444.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 14,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -474.0,
+      'Y': 0.0,
+      'Z': 466.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 33,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': -555.0,
+      'Y': 0.0,
+      'Z': 446.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 34,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': -553.0,
+      'Y': 0.0,
+      'Z': 456.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 11,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -552.0,
+      'Y': 0.0,
+      'Z': 411.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 6,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -587.0,
+      'Y': 0.0,
+      'Z': 478.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 10,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -596.0,
+      'Y': 0.0,
+      'Z': 543.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 13,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -608.0,
+      'Y': 0.0,
+      'Z': 556.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 21,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -525.0,
+      'Y': 0.0,
+      'Z': 381.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 37,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': -433.0,
+      'Y': 0.0,
+      'Z': 374.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 23,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -449.0,
+      'Y': 0.0,
+      'Z': 332.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 160,
+    'Name': 'Acro Bat',
+    'Position': {
+      'X': -377.0,
+      'Y': 0.0,
+      'Z': 325.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 152,
+    'Name': 'Huge Wasp',
+    'Position': {
+      'X': -351.0,
+      'Y': 0.0,
+      'Z': 361.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 144,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -331.0,
+      'Y': 0.0,
+      'Z': 351.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 149,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': -396.0,
+      'Y': 0.0,
+      'Z': 305.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 154,
+    'Name': 'Goblin Ambusher',
+    'Position': {
+      'X': -330.0,
+      'Y': 0.0,
+      'Z': 354.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 151,
+    'Name': 'Huge Wasp',
+    'Position': {
+      'X': -276.0,
+      'Y': 0.0,
+      'Z': 324.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 159,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': -286.0,
+      'Y': 0.0,
+      'Z': 441.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 156,
+    'Name': 'Goblin Tinkerer',
+    'Position': {
+      'X': -363.0,
+      'Y': 0.0,
+      'Z': 313.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 19,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -422.0,
+      'Y': 0.0,
+      'Z': 357.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 22,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -427.0,
+      'Y': 0.0,
+      'Z': 349.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 164,
+    'Name': 'Air Elemental',
+    'Position': {
+      'X': -321.0,
+      'Y': 0.0,
+      'Z': 391.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 28,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -487.0,
+      'Y': 0.0,
+      'Z': 252.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 27,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -487.0,
+      'Y': 0.0,
+      'Z': 253.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 145,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -405.0,
+      'Y': 0.0,
+      'Z': 180.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 29,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -499.0,
+      'Y': 0.0,
+      'Z': 275.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 36,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': -584.0,
+      'Y': 0.0,
+      'Z': 463.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 465,
+    'Name': 'Goblin Digger',
+    'Position': {
+      'X': -588.0,
+      'Y': 0.0,
+      'Z': 536.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 26,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -505.0,
+      'Y': 0.0,
+      'Z': 292.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 30,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -486.0,
+      'Y': 0.0,
+      'Z': 208.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 31,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -522.0,
+      'Y': 0.0,
+      'Z': 193.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 89,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': -496.0,
+      'Y': 0.0,
+      'Z': 148.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 72,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -561.0,
+      'Y': 0.0,
+      'Z': 153.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 71,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -522.0,
+      'Y': 0.0,
+      'Z': 120.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 76,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -538.0,
+      'Y': 0.0,
+      'Z': 119.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 73,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -483.0,
+      'Y': 0.0,
+      'Z': 123.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 75,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -520.0,
+      'Y': 0.0,
+      'Z': 63.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 85,
+    'Name': 'Orcish Grunt',
+    'Position': {
+      'X': -462.0,
+      'Y': 0.0,
+      'Z': 110.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 124,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -432.0,
+      'Y': 0.0,
+      'Z': 54.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 123,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -397.0,
+      'Y': 0.0,
+      'Z': 25.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 122,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -398.0,
+      'Y': 0.0,
+      'Z': -13.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 135,
+    'Name': 'Battering Ram',
+    'Position': {
+      'X': -386.0,
+      'Y': 0.0,
+      'Z': 1.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 137,
+    'Name': 'Orcish Stonechucker',
+    'Position': {
+      'X': -394.0,
+      'Y': 0.0,
+      'Z': -26.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 139,
+    'Name': 'Orcish Neckchopper',
+    'Position': {
+      'X': -386.0,
+      'Y': 0.0,
+      'Z': 9.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 120,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -419.0,
+      'Y': 0.0,
+      'Z': 51.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 117,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -348.0,
+      'Y': 0.0,
+      'Z': 34.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 125,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -339.0,
+      'Y': 0.0,
+      'Z': -23.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 118,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -378.0,
+      'Y': 0.0,
+      'Z': 48.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 119,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -344.0,
+      'Y': 0.0,
+      'Z': -16.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 157,
+    'Name': 'Goblin Butcher',
+    'Position': {
+      'X': -398.0,
+      'Y': 0.0,
+      'Z': 210.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 155,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': -386.0,
+      'Y': 0.0,
+      'Z': 139.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 136,
+    'Name': 'Orcish Grunt',
+    'Position': {
+      'X': -414.0,
+      'Y': 0.0,
+      'Z': 84.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 121,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -360.0,
+      'Y': 0.0,
+      'Z': 66.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 147,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -315.0,
+      'Y': 0.0,
+      'Z': 128.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 138,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': -266.0,
+      'Y': 0.0,
+      'Z': 26.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 175,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -201.0,
+      'Y': 0.0,
+      'Z': 125.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 177,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': -165.0,
+      'Y': 0.0,
+      'Z': 117.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 178,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': -122.0,
+      'Y': 0.0,
+      'Z': 79.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 218,
+    'Name': 'Goblin Butcher',
+    'Position': {
+      'X': -104.0,
+      'Y': 0.0,
+      'Z': 121.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 176,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': -109.0,
+      'Y': 0.0,
+      'Z': 77.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 180,
+    'Name': 'Acro Bat',
+    'Position': {
+      'X': -100.0,
+      'Y': 0.0,
+      'Z': 121.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 174,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -96.0,
+      'Y': 0.0,
+      'Z': 103.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 173,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -49.0,
+      'Y': 0.0,
+      'Z': 89.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 207,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': -46.0,
+      'Y': 0.0,
+      'Z': 45.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 189,
+    'Name': 'Thickshell',
+    'Position': {
+      'X': -20.0,
+      'Y': 0.0,
+      'Z': 62.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 172,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -33.0,
+      'Y': 0.0,
+      'Z': 98.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 187,
+    'Name': 'Thickshell',
+    'Position': {
+      'X': -18.0,
+      'Y': 0.0,
+      'Z': 67.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 192,
+    'Name': 'Goblin Fisher',
+    'Position': {
+      'X': -11.0,
+      'Y': 0.0,
+      'Z': 54.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 215,
+    'Name': 'Goblin Ambusher',
+    'Position': {
+      'X': -102.0,
+      'Y': 0.0,
+      'Z': 78.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 191,
+    'Name': 'Thickshell',
+    'Position': {
+      'X': -41.0,
+      'Y': 0.0,
+      'Z': 97.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 186,
+    'Name': 'Thickshell',
+    'Position': {
+      'X': 16.0,
+      'Y': 0.0,
+      'Z': 53.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 203,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 18.0,
+      'Y': 0.0,
+      'Z': 68.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 193,
+    'Name': 'Goblin Fisher',
+    'Position': {
+      'X': 20.0,
+      'Y': 0.0,
+      'Z': 67.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 194,
+    'Name': 'Water Elemental',
+    'Position': {
+      'X': -18.0,
+      'Y': 0.0,
+      'Z': 69.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 208,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 34.0,
+      'Y': 0.0,
+      'Z': 24.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 213,
+    'Name': 'Slumbering Samwell',
+    'Position': {
+      'X': 49.0,
+      'Y': 0.0,
+      'Z': 33.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 315,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': -12.0,
+      'Y': 0.0,
+      'Z': -9.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 216,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': 57.0,
+      'Y': 0.0,
+      'Z': 58.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 293,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -21.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 190,
+    'Name': 'Thickshell',
+    'Position': {
+      'X': 22.0,
+      'Y': 0.0,
+      'Z': 77.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 209,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': -5.0,
+      'Y': 0.0,
+      'Z': 59.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 214,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 40.0,
+      'Y': 0.0,
+      'Z': 37.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 291,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -11.0,
+      'Y': 0.0,
+      'Z': -2.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 349,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 97.0,
+      'Y': 0.0,
+      'Z': -4.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 179,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': -80.0,
+      'Y': 0.0,
+      'Z': 73.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 148,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': -243.0,
+      'Y': 0.0,
+      'Z': 113.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 150,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': -275.0,
+      'Y': 0.0,
+      'Z': 83.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 74,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -464.0,
+      'Y': 0.0,
+      'Z': 103.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 70,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -540.0,
+      'Y': 0.0,
+      'Z': 63.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 95,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -506.0,
+      'Y': 0.0,
+      'Z': -27.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 112,
+    'Name': 'Acro Bat',
+    'Position': {
+      'X': -584.0,
+      'Y': 0.0,
+      'Z': -43.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 104,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': -586.0,
+      'Y': 0.0,
+      'Z': -37.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 94,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -572.0,
+      'Y': 0.0,
+      'Z': -40.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 100,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': -549.0,
+      'Y': 0.0,
+      'Z': -90.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 101,
+    'Name': 'Huge Wasp',
+    'Position': {
+      'X': -565.0,
+      'Y': 0.0,
+      'Z': -71.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 99,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': -553.0,
+      'Y': 0.0,
+      'Z': -78.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 103,
+    'Name': 'Huge Wasp',
+    'Position': {
+      'X': -552.0,
+      'Y': 0.0,
+      'Z': -87.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 140,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': -460.0,
+      'Y': 0.0,
+      'Z': 2.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 97,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -398.0,
+      'Y': 0.0,
+      'Z': -132.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 107,
+    'Name': 'Goblin Tinkerer',
+    'Position': {
+      'X': -407.0,
+      'Y': 0.0,
+      'Z': -233.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 110,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': -354.0,
+      'Y': 0.0,
+      'Z': -204.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 96,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -515.0,
+      'Y': 0.0,
+      'Z': -164.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 102,
+    'Name': 'Huge Wasp',
+    'Position': {
+      'X': -524.0,
+      'Y': 0.0,
+      'Z': -146.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 82,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -595.0,
+      'Y': 0.0,
+      'Z': -147.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 98,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': -525.0,
+      'Y': 0.0,
+      'Z': -129.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 133,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -265.0,
+      'Y': 0.0,
+      'Z': -151.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 130,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -325.0,
+      'Y': 0.0,
+      'Z': -111.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 127,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -359.0,
+      'Y': 0.0,
+      'Z': -116.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 128,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -330.0,
+      'Y': 0.0,
+      'Z': -109.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 69,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -544.0,
+      'Y': 0.0,
+      'Z': 42.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 83,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -628.0,
+      'Y': 0.0,
+      'Z': -65.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 79,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -642.0,
+      'Y': 0.0,
+      'Z': -37.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 90,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': -643.0,
+      'Y': 0.0,
+      'Z': -52.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 80,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -653.0,
+      'Y': 0.0,
+      'Z': -43.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 131,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -316.0,
+      'Y': 0.0,
+      'Z': -87.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 132,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -302.0,
+      'Y': 0.0,
+      'Z': -57.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 126,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -258.0,
+      'Y': 0.0,
+      'Z': -105.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 129,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -267.0,
+      'Y': 0.0,
+      'Z': -127.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 134,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -180.0,
+      'Y': 0.0,
+      'Z': -111.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 292,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -126.0,
+      'Y': 0.0,
+      'Z': -174.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 289,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -85.0,
+      'Y': 0.0,
+      'Z': -190.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 294,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -68.0,
+      'Y': 0.0,
+      'Z': -193.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 301,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -12.0,
+      'Y': 0.0,
+      'Z': -177.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 311,
+    'Name': 'Orcish Grunt',
+    'Position': {
+      'X': -13.0,
+      'Y': 0.0,
+      'Z': -180.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 300,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 1.0,
+      'Y': 0.0,
+      'Z': -218.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 298,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 10.0,
+      'Y': 0.0,
+      'Z': -217.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 296,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 10.0,
+      'Y': 0.0,
+      'Z': -217.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 302,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 11.0,
+      'Y': 0.0,
+      'Z': -145.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 304,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 136.0,
+      'Y': 0.0,
+      'Z': -200.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 307,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 136.0,
+      'Y': 0.0,
+      'Z': -202.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 306,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 137.0,
+      'Y': 0.0,
+      'Z': -213.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 303,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 221.0,
+      'Y': 0.0,
+      'Z': -218.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 382,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 295.0,
+      'Y': 0.0,
+      'Z': -193.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 383,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 275.0,
+      'Y': 0.0,
+      'Z': -134.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 393,
+    'Name': 'Orcish Grunt',
+    'Position': {
+      'X': 282.0,
+      'Y': 0.0,
+      'Z': -109.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 385,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 323.0,
+      'Y': 0.0,
+      'Z': -117.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 386,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 346.0,
+      'Y': 0.0,
+      'Z': -91.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 358,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 277.0,
+      'Y': 0.0,
+      'Z': 6.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 360,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 310.0,
+      'Y': 0.0,
+      'Z': 37.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 359,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 261.0,
+      'Y': 0.0,
+      'Z': 21.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 356,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 275.0,
+      'Y': 0.0,
+      'Z': 33.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 362,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 335.0,
+      'Y': 0.0,
+      'Z': 40.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 355,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 307.0,
+      'Y': 0.0,
+      'Z': 80.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 361,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 321.0,
+      'Y': 0.0,
+      'Z': 85.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 347,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 274.0,
+      'Y': 0.0,
+      'Z': 183.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 283,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': 339.0,
+      'Y': 0.0,
+      'Z': 244.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 234,
+    'Name': 'Poison Bat',
+    'Position': {
+      'X': 271.0,
+      'Y': 0.0,
+      'Z': 258.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 258,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 303.0,
+      'Y': 0.0,
+      'Z': 313.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 282,
+    'Name': 'Goblin Ambusher',
+    'Position': {
+      'X': 326.0,
+      'Y': 0.0,
+      'Z': 339.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 235,
+    'Name': 'Poison Bat',
+    'Position': {
+      'X': 279.0,
+      'Y': 0.0,
+      'Z': 260.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 232,
+    'Name': 'Plague Bats',
+    'Position': {
+      'X': 264.0,
+      'Y': 0.0,
+      'Z': 257.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 233,
+    'Name': 'Plague Bats',
+    'Position': {
+      'X': 264.0,
+      'Y': 0.0,
+      'Z': 257.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 374,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': 423.0,
+      'Y': 0.0,
+      'Z': 116.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 277,
+    'Name': 'Huge Wasp',
+    'Position': {
+      'X': 440.0,
+      'Y': 0.0,
+      'Z': 191.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 275,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 438.0,
+      'Y': 0.0,
+      'Z': 207.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 273,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 505.0,
+      'Y': 0.0,
+      'Z': 209.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 274,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 530.0,
+      'Y': 0.0,
+      'Z': 233.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 276,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 599.0,
+      'Y': 0.0,
+      'Z': 244.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 278,
+    'Name': 'Huge Wasp',
+    'Position': {
+      'X': 640.0,
+      'Y': 0.0,
+      'Z': 311.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 353,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 282.0,
+      'Y': 0.0,
+      'Z': 130.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 199,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 238.0,
+      'Y': 0.0,
+      'Z': 277.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 351,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 235.0,
+      'Y': 0.0,
+      'Z': 215.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 371,
+    'Name': 'Orcish Stonechucker',
+    'Position': {
+      'X': 301.0,
+      'Y': 0.0,
+      'Z': 40.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 366,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 432.0,
+      'Y': 0.0,
+      'Z': 47.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 375,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 486.0,
+      'Y': 0.0,
+      'Z': 60.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 373,
+    'Name': 'Orcish Neckchopper',
+    'Position': {
+      'X': 510.0,
+      'Y': 0.0,
+      'Z': 99.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 372,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 499.0,
+      'Y': 0.0,
+      'Z': 150.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 367,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 528.0,
+      'Y': 0.0,
+      'Z': 96.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 403,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 612.0,
+      'Y': 0.0,
+      'Z': 98.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 405,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 625.0,
+      'Y': 0.0,
+      'Z': 84.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 406,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 634.0,
+      'Y': 0.0,
+      'Z': 122.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 404,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 634.0,
+      'Y': 0.0,
+      'Z': 106.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 370,
+    'Name': 'Orcish Grunt',
+    'Position': {
+      'X': 665.0,
+      'Y': 0.0,
+      'Z': 129.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 363,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 538.0,
+      'Y': 0.0,
+      'Z': 30.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 368,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 523.0,
+      'Y': 0.0,
+      'Z': 28.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 364,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 544.0,
+      'Y': 0.0,
+      'Z': -5.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 369,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 526.0,
+      'Y': 0.0,
+      'Z': -19.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 365,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 435.0,
+      'Y': 0.0,
+      'Z': 11.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 378,
+    'Name': 'Ghost',
+    'Position': {
+      'X': 338.0,
+      'Y': 0.0,
+      'Z': -5.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 357,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 347.0,
+      'Y': 0.0,
+      'Z': -25.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 395,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 312.0,
+      'Y': 0.0,
+      'Z': -146.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 394,
+    'Name': 'Orcish Stonechucker',
+    'Position': {
+      'X': 373.0,
+      'Y': 0.0,
+      'Z': -137.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 401,
+    'Name': 'Ghost',
+    'Position': {
+      'X': 380.0,
+      'Y': 0.0,
+      'Z': -186.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 398,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 395.0,
+      'Y': 0.0,
+      'Z': -140.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 397,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': 513.0,
+      'Y': 0.0,
+      'Z': -282.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 424,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 493.0,
+      'Y': 0.0,
+      'Z': -316.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 431,
+    'Name': 'Acro Bat',
+    'Position': {
+      'X': 519.0,
+      'Y': 0.0,
+      'Z': -303.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 428,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 514.0,
+      'Y': 0.0,
+      'Z': -329.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 429,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 470.0,
+      'Y': 0.0,
+      'Z': -345.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 430,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': 519.0,
+      'Y': 0.0,
+      'Z': -349.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 425,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 415.0,
+      'Y': 0.0,
+      'Z': -390.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 436,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 383.0,
+      'Y': 0.0,
+      'Z': -450.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 427,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 386.0,
+      'Y': 0.0,
+      'Z': -508.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 437,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 336.0,
+      'Y': 0.0,
+      'Z': -487.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 443,
+    'Name': 'Acro Bat',
+    'Position': {
+      'X': 323.0,
+      'Y': 0.0,
+      'Z': -445.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 442,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': 294.0,
+      'Y': 0.0,
+      'Z': -467.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 455,
+    'Name': 'Orcish Neckchopper',
+    'Position': {
+      'X': 298.0,
+      'Y': 0.0,
+      'Z': -490.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 438,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 275.0,
+      'Y': 0.0,
+      'Z': -462.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 454,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 260.0,
+      'Y': 0.0,
+      'Z': -458.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 441,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 267.0,
+      'Y': 0.0,
+      'Z': -504.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 456,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': 242.0,
+      'Y': 0.0,
+      'Z': -481.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 439,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 239.0,
+      'Y': 0.0,
+      'Z': -500.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 440,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 244.0,
+      'Y': 0.0,
+      'Z': -512.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 452,
+    'Name': 'Orcish Grunt',
+    'Position': {
+      'X': 218.0,
+      'Y': 0.0,
+      'Z': -463.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 446,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 216.0,
+      'Y': 0.0,
+      'Z': -461.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 457,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 202.0,
+      'Y': 0.0,
+      'Z': -541.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 444,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 187.0,
+      'Y': 0.0,
+      'Z': -543.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 447,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 180.0,
+      'Y': 0.0,
+      'Z': -569.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 333,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 88.0,
+      'Y': 0.0,
+      'Z': -602.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 342,
+    'Name': 'Goblin Tinkerer',
+    'Position': {
+      'X': 75.0,
+      'Y': 0.0,
+      'Z': -626.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 336,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': 90.0,
+      'Y': 0.0,
+      'Z': -608.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 295,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -118.0,
+      'Y': 0.0,
+      'Z': -234.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 297,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 36.0,
+      'Y': 0.0,
+      'Z': -205.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 299,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 41.0,
+      'Y': 0.0,
+      'Z': -155.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 308,
+    'Name': 'Battering Ram',
+    'Position': {
+      'X': 56.0,
+      'Y': 0.0,
+      'Z': -159.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 87,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': -533.0,
+      'Y': 0.0,
+      'Z': 34.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 314,
+    'Name': 'Orcish Neckchopper',
+    'Position': {
+      'X': -97.0,
+      'Y': 0.0,
+      'Z': -94.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 313,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': -134.0,
+      'Y': 0.0,
+      'Z': -160.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 312,
+    'Name': 'Orcish Stonechucker',
+    'Position': {
+      'X': -98.0,
+      'Y': 0.0,
+      'Z': -198.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 290,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -96.0,
+      'Y': 0.0,
+      'Z': -227.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 305,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 194.0,
+      'Y': 0.0,
+      'Z': -222.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 387,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 421.0,
+      'Y': 0.0,
+      'Z': -167.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 396,
+    'Name': 'Orcish Neckchopper',
+    'Position': {
+      'X': 499.0,
+      'Y': 0.0,
+      'Z': -196.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 384,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 393.0,
+      'Y': 0.0,
+      'Z': -224.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 392,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 523.0,
+      'Y': 0.0,
+      'Z': -260.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 453,
+    'Name': 'Orcish Stonechucker',
+    'Position': {
+      'X': 474.0,
+      'Y': 0.0,
+      'Z': -387.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 426,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 473.0,
+      'Y': 0.0,
+      'Z': -388.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 390,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 525.0,
+      'Y': 0.0,
+      'Z': -280.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 460,
+    'Name': 'Grenade',
+    'Position': {
+      'X': 543.0,
+      'Y': 0.0,
+      'Z': -314.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 420,
+    'Name': 'Thickshell',
+    'Position': {
+      'X': 576.0,
+      'Y': 0.0,
+      'Z': -398.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 415,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 551.0,
+      'Y': 0.0,
+      'Z': -422.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 421,
+    'Name': 'Thickshell',
+    'Position': {
+      'X': 561.0,
+      'Y': 0.0,
+      'Z': -425.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 422,
+    'Name': 'Goblin Fisher',
+    'Position': {
+      'X': 573.0,
+      'Y': 0.0,
+      'Z': -438.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 416,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 581.0,
+      'Y': 0.0,
+      'Z': -455.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 413,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 626.0,
+      'Y': 0.0,
+      'Z': -457.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 414,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 601.0,
+      'Y': 0.0,
+      'Z': -500.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 417,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 601.0,
+      'Y': 0.0,
+      'Z': -499.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 423,
+    'Name': 'Water Elemental',
+    'Position': {
+      'X': 559.0,
+      'Y': 0.0,
+      'Z': -417.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 445,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 178.0,
+      'Y': 0.0,
+      'Z': -478.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 448,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 141.0,
+      'Y': 0.0,
+      'Z': -494.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 44,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -673.0,
+      'Y': 0.0,
+      'Z': 436.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 48,
+    'Name': 'Huge Wasp',
+    'Position': {
+      'X': -669.0,
+      'Y': 0.0,
+      'Z': 308.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 54,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': -639.0,
+      'Y': 0.0,
+      'Z': 415.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 65,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -612.0,
+      'Y': 0.0,
+      'Z': 226.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 61,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -624.0,
+      'Y': 0.0,
+      'Z': 192.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 146,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': -258.0,
+      'Y': 0.0,
+      'Z': 88.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 81,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -603.0,
+      'Y': 0.0,
+      'Z': 32.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 84,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -644.0,
+      'Y': 0.0,
+      'Z': -66.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 78,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -654.0,
+      'Y': 0.0,
+      'Z': -51.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 116,
+    'Name': 'Air Elemental',
+    'Position': {
+      'X': -546.0,
+      'Y': 0.0,
+      'Z': -149.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 77,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -678.0,
+      'Y': 0.0,
+      'Z': 49.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 56,
+    'Name': 'Acro Bat',
+    'Position': {
+      'X': -691.0,
+      'Y': 0.0,
+      'Z': 513.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 60,
+    'Name': 'Air Elemental',
+    'Position': {
+      'X': -604.0,
+      'Y': 0.0,
+      'Z': 363.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 63,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -711.0,
+      'Y': 0.0,
+      'Z': 266.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 62,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': -731.0,
+      'Y': 0.0,
+      'Z': 286.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 64,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': -669.0,
+      'Y': 0.0,
+      'Z': 216.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 205,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 23.0,
+      'Y': 0.0,
+      'Z': 57.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 206,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 50.0,
+      'Y': 0.0,
+      'Z': 101.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 204,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 40.0,
+      'Y': 0.0,
+      'Z': 147.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 222,
+    'Name': 'Goblin Tinkerer',
+    'Position': {
+      'X': 117.0,
+      'Y': 0.0,
+      'Z': 199.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 195,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 138.0,
+      'Y': 0.0,
+      'Z': 248.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 197,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 218.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 230,
+    'Name': 'Poison Bat',
+    'Position': {
+      'X': 177.0,
+      'Y': 0.0,
+      'Z': 314.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 228,
+    'Name': 'Plague Bats',
+    'Position': {
+      'X': 180.0,
+      'Y': 0.0,
+      'Z': 318.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 200,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': 249.0,
+      'Y': 0.0,
+      'Z': 329.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 255,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 313.0,
+      'Y': 0.0,
+      'Z': 331.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 266,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 320.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 268,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 345.0,
+      'Y': 0.0,
+      'Z': 277.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 352,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 284.0,
+      'Y': 0.0,
+      'Z': 141.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 354,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 267.0,
+      'Y': 0.0,
+      'Z': 171.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 348,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 273.0,
+      'Y': 0.0,
+      'Z': 114.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 350,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 284.0,
+      'Y': 0.0,
+      'Z': 156.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 270,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': 319.0,
+      'Y': 0.0,
+      'Z': 210.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 267,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 321.0,
+      'Y': 0.0,
+      'Z': 231.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 264,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 351.0,
+      'Y': 0.0,
+      'Z': 237.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 402,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 573.0,
+      'Y': 0.0,
+      'Z': 97.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 408,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': 562.0,
+      'Y': 0.0,
+      'Z': 109.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 231,
+    'Name': 'Poison Bat',
+    'Position': {
+      'X': 170.0,
+      'Y': 0.0,
+      'Z': 303.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 210,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': 47.0,
+      'Y': 0.0,
+      'Z': 159.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 211,
+    'Name': 'Acro Bat',
+    'Position': {
+      'X': 23.0,
+      'Y': 0.0,
+      'Z': 44.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 51,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': -685.0,
+      'Y': 0.0,
+      'Z': 306.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 67,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': -623.0,
+      'Y': 0.0,
+      'Z': 247.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 188,
+    'Name': 'Thickshell',
+    'Position': {
+      'X': 7.0,
+      'Y': 0.0,
+      'Z': 143.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 226,
+    'Name': 'Huge Wasp',
+    'Position': {
+      'X': 6.0,
+      'Y': 0.0,
+      'Z': 191.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 141,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': -164.0,
+      'Y': 0.0,
+      'Z': -109.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 316,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 173.0,
+      'Y': 0.0,
+      'Z': -236.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 381,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 313.0,
+      'Y': 0.0,
+      'Z': -104.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 380,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 402.0,
+      'Y': 0.0,
+      'Z': -203.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 343,
+    'Name': 'Goblin Butcher',
+    'Position': {
+      'X': 92.0,
+      'Y': 0.0,
+      'Z': -609.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 391,
+    'Name': 'Akbaba',
+    'Position': {
+      'X': 479.0,
+      'Y': 0.0,
+      'Z': -231.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 334,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 100.0,
+      'Y': 0.0,
+      'Z': -642.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 341,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': 105.0,
+      'Y': 0.0,
+      'Z': -644.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 198,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 211.0,
+      'Y': 0.0,
+      'Z': 328.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 229,
+    'Name': 'Plague Bats',
+    'Position': {
+      'X': 186.0,
+      'Y': 0.0,
+      'Z': 333.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 196,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 196.0,
+      'Y': 0.0,
+      'Z': 361.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 260,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': 323.0,
+      'Y': 0.0,
+      'Z': 329.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 254,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 315.0,
+      'Y': 0.0,
+      'Z': 349.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 256,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 341.0,
+      'Y': 0.0,
+      'Z': 358.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 265,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 328.0,
+      'Y': 0.0,
+      'Z': 235.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 106,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': -512.0,
+      'Y': 0.0,
+      'Z': -129.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 212,
+    'Name': 'Wolf Zombie',
+    'Position': {
+      'X': 78.0,
+      'Y': 0.0,
+      'Z': 94.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 285,
+    'Name': 'Goblin Butcher',
+    'Position': {
+      'X': 323.0,
+      'Y': 0.0,
+      'Z': 184.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 389,
+    'Name': 'Strolling Sapling',
+    'Position': {
+      'X': 454.0,
+      'Y': 0.0,
+      'Z': -204.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 432,
+    'Name': 'Thickshell',
+    'Position': {
+      'X': 436.0,
+      'Y': 0.0,
+      'Z': -534.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 449,
+    'Name': 'Grass Funguar',
+    'Position': {
+      'X': 156.0,
+      'Y': 0.0,
+      'Z': -583.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 335,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': 122.0,
+      'Y': 0.0,
+      'Z': -621.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 450,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': 138.0,
+      'Y': 0.0,
+      'Z': -523.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 88,
+    'Name': 'Orcish Neckchopper',
+    'Position': {
+      'X': -539.0,
+      'Y': 0.0,
+      'Z': 106.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 225,
+    'Name': 'Huge Wasp',
+    'Position': {
+      'X': 12.0,
+      'Y': 0.0,
+      'Z': 192.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 399,
+    'Name': 'Skeleton Warrior',
+    'Position': {
+      'X': 294.0,
+      'Y': 0.0,
+      'Z': -116.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 269,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 347.0,
+      'Y': 0.0,
+      'Z': 266.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 281,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 309.0,
+      'Y': 0.0,
+      'Z': 333.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 284,
+    'Name': 'Goblin Tinkerer',
+    'Position': {
+      'X': 317.0,
+      'Y': 0.0,
+      'Z': 328.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 261,
+    'Name': 'Gale Bats',
+    'Position': {
+      'X': 352.0,
+      'Y': 0.0,
+      'Z': 363.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 262,
+    'Name': 'Acro Bat',
+    'Position': {
+      'X': 371.0,
+      'Y': 0.0,
+      'Z': 380.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 477,
+    'Name': 'Chesma',
+    'Position': {
+      'X': -133.0,
+      'Y': 0.0,
+      'Z': 100.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 166,
+    'Name': 'Poison Funguar',
+    'Position': {
+      'X': -263.0,
+      'Y': 0.0,
+      'Z': 133.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 201,
+    'Name': 'Acro Bat',
+    'Position': {
+      'X': 234.0,
+      'Y': 0.0,
+      'Z': 280.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 388,
+    'Name': 'Steppe Hare',
+    'Position': {
+      'X': 454.0,
+      'Y': 0.0,
+      'Z': -229.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 332,
+    'Name': 'Mad Sheep',
+    'Position': {
+      'X': 113.0,
+      'Y': 0.0,
+      'Z': -617.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 451,
+    'Name': 'Acro Bat',
+    'Position': {
+      'X': 152.0,
+      'Y': 0.0,
+      'Z': -566.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 329,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 114.0,
+      'Y': 0.0,
+      'Z': -606.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 339,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 64.0,
+      'Y': 0.0,
+      'Z': -616.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 331,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 118.0,
+      'Y': 0.0,
+      'Z': -642.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 340,
+    'Name': 'Goblin Ambusher',
+    'Position': {
+      'X': 119.0,
+      'Y': 0.0,
+      'Z': -629.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 330,
+    'Name': 'Rock Eater',
+    'Position': {
+      'X': 104.0,
+      'Y': 0.0,
+      'Z': -583.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 337,
+    'Name': 'Acro Bat',
+    'Position': {
+      'X': 109.0,
+      'Y': 0.0,
+      'Z': -596.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  }
+]

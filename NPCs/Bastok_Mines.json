@@ -1,0 +1,472 @@
+[
+  {
+    'Id': 5,
+    'Name': 'Echo Hawk',
+    'Position': {
+      'X': -1.0,
+      'Y': 0.0,
+      'Z': -16.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 8,
+    'Name': 'Deadly Spider',
+    'Position': {
+      'X': -58.0,
+      'Y': 0.0,
+      'Z': -56.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 14,
+    'Name': 'Nangst',
+    'Position': {
+      'X': -44.0,
+      'Y': 0.0,
+      'Z': 17.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 16,
+    'Name': 'Dry Bone',
+    'Position': {
+      'X': -53.0,
+      'Y': 0.0,
+      'Z': -14.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 17,
+    'Name': 'Gray Wolf',
+    'Position': {
+      'X': -6.0,
+      'Y': 0.0,
+      'Z': -18.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 20,
+    'Name': 'Roh Latteh',
+    'Position': {
+      'X': -12.0,
+      'Y': 0.0,
+      'Z': -9.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 24,
+    'Name': 'Auction Counter',
+    'Position': {
+      'X': -16.0,
+      'Y': 0.0,
+      'Z': -48.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 25,
+    'Name': 'Auction Counter',
+    'Position': {
+      'X': -8.0,
+      'Y': 0.0,
+      'Z': -50.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 26,
+    'Name': 'Auction Counter',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': -52.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 36,
+    'Name': 'Gawful',
+    'Position': {
+      'X': -22.0,
+      'Y': 0.0,
+      'Z': -56.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 37,
+    'Name': 'Sodragamm',
+    'Position': {
+      'X': -25.0,
+      'Y': 0.0,
+      'Z': -65.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 42,
+    'Name': 'Deegis',
+    'Position': {
+      'X': -25.0,
+      'Y': 0.0,
+      'Z': 13.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 43,
+    'Name': 'Zemedars',
+    'Position': {
+      'X': -25.0,
+      'Y': 0.0,
+      'Z': 4.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 44,
+    'Name': 'Boytz',
+    'Position': {
+      'X': -28.0,
+      'Y': 0.0,
+      'Z': -7.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 45,
+    'Name': 'Gelzerio',
+    'Position': {
+      'X': -15.0,
+      'Y': 0.0,
+      'Z': -7.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 63,
+    'Name': 'Rodellieux',
+    'Position': {
+      'X': -19.0,
+      'Y': 0.0,
+      'Z': -1.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 67,
+    'Name': 'Aulavia',
+    'Position': {
+      'X': -49.0,
+      'Y': 0.0,
+      'Z': -38.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 73,
+    'Name': 'Arva',
+    'Position': {
+      'X': -40.0,
+      'Y': 0.0,
+      'Z': -8.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 79,
+    'Name': 'Door:Boytz\'s Knickknacks',
+    'Position': {
+      'X': -8.0,
+      'Y': 0.0,
+      'Z': -10.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 80,
+    'Name': 'Door:House',
+    'Position': {
+      'X': -4.0,
+      'Y': 0.0,
+      'Z': -6.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 89,
+    'Name': 'Hound Nose',
+    'Position': {
+      'X': -9.0,
+      'Y': 0.0,
+      'Z': -60.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 184,
+    'Name': 'Synergy Engineer',
+    'Position': {
+      'X': -44.0,
+      'Y': 0.0,
+      'Z': 1.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 186,
+    'Name': 'Synergy Furnace',
+    'Position': {
+      'X': -40.0,
+      'Y': 0.0,
+      'Z': 5.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 187,
+    'Name': 'Synergy Furnace',
+    'Position': {
+      'X': -40.0,
+      'Y': 0.0,
+      'Z': -2.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 27,
+    'Name': 'Auction Counter',
+    'Position': {
+      'X': 8.0,
+      'Y': 0.0,
+      'Z': -51.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 75,
+    'Name': 'Vaghron',
+    'Position': {
+      'X': -39.0,
+      'Y': 0.0,
+      'Z': -92.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 28,
+    'Name': 'Auction Counter',
+    'Position': {
+      'X': 15.0,
+      'Y': 0.0,
+      'Z': -49.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 9,
+    'Name': 'Wyvern Tail',
+    'Position': {
+      'X': -27.0,
+      'Y': 0.0,
+      'Z': -123.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 191,
+    'Name': 'Voidwatch Purveyor',
+    'Position': {
+      'X': -31.0,
+      'Y': 0.0,
+      'Z': -124.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 114,
+    'Name': 'Gorvik',
+    'Position': {
+      'X': 21.0,
+      'Y': 0.0,
+      'Z': -98.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 6,
+    'Name': 'Rashid',
+    'Position': {
+      'X': -8.0,
+      'Y': 0.0,
+      'Z': -124.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 7,
+    'Name': 'Crying Wind, I.M.',
+    'Position': {
+      'X': -3.0,
+      'Y': 0.0,
+      'Z': -124.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 337,
+    'Name': 'Enigmatic Footprints',
+    'Position': {
+      'X': 9.0,
+      'Y': 0.0,
+      'Z': -117.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 19,
+    'Name': 'Wahid',
+    'Position': {
+      'X': 26.0,
+      'Y': 0.0,
+      'Z': -66.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 172,
+    'Name': 'Keturah',
+    'Position': {
+      'X': 27.0,
+      'Y': 0.0,
+      'Z': -90.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 311,
+    'Name': 'Survival Guide',
+    'Position': {
+      'X': 20.0,
+      'Y': 0.0,
+      'Z': -115.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 166,
+    'Name': 'Gonija',
+    'Position': {
+      'X': 28.0,
+      'Y': 0.0,
+      'Z': -105.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 180,
+    'Name': 'Hunt Registry',
+    'Position': {
+      'X': 18.0,
+      'Y': 0.0,
+      'Z': -120.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 133,
+    'Name': 'Wobke',
+    'Position': {
+      'X': 29.0,
+      'Y': 0.0,
+      'Z': -112.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 58,
+    'Name': 'Mariadok',
+    'Position': {
+      'X': 34.0,
+      'Y': 0.0,
+      'Z': -83.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 52,
+    'Name': 'Quelle',
+    'Position': {
+      'X': 34.0,
+      'Y': 0.0,
+      'Z': -109.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 49,
+    'Name': 'Chocobo',
+    'Position': {
+      'X': 36.0,
+      'Y': 0.0,
+      'Z': -111.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 87,
+    'Name': 'Door:Chocobo Stables',
+    'Position': {
+      'X': 40.0,
+      'Y': 0.0,
+      'Z': -99.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 51,
+    'Name': 'Eulaphe',
+    'Position': {
+      'X': 39.0,
+      'Y': 0.0,
+      'Z': -109.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 48,
+    'Name': 'Chocobo',
+    'Position': {
+      'X': 41.0,
+      'Y': 0.0,
+      'Z': -111.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 50,
+    'Name': 'Azette',
+    'Position': {
+      'X': 44.0,
+      'Y': 0.0,
+      'Z': -109.0
+    },
+    'MapName': 'Bastok_Mines'
+  },
+  {
+    'Id': 47,
+    'Name': 'Chocobo',
+    'Position': {
+      'X': 46.0,
+      'Y': 0.0,
+      'Z': -111.0
+    },
+    'MapName': 'Bastok_Mines'
+  }
+]

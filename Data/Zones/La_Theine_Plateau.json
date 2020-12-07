@@ -1,0 +1,876 @@
+{
+  'Name': 'La_Theine_Plateau',
+  'PointsToExplore': [
+    {
+      'X': 1000.0,
+      'Y': 0.0,
+      'Z': -1000.0
+    },
+    {
+      'X': -1000.0,
+      'Y': 0.0,
+      'Z': 1000.0
+    },
+    {
+      'X': 500.0,
+      'Y': 0.0,
+      'Z': 500.0
+    },
+    {
+      'X': -500.0,
+      'Y': 0.0,
+      'Z': -500.0
+    },
+    {
+      'X': 500.0,
+      'Y': 0.0,
+      'Z': -500.0
+    },
+    {
+      'X': -500.0,
+      'Y': 0.0,
+      'Z': 500.0
+    }
+  ],
+  'NextPointToExplore': null,
+  'Explored': [
+    {
+      'X': 1000.0,
+      'Y': 0.0,
+      'Z': 1000.0
+    },
+    {
+      'X': -1000.0,
+      'Y': 0.0,
+      'Z': -1000.0
+    }
+  ],
+  'Boundaries': [
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -562.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -565.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -554.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -560.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -558.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -562.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -551.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -553.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Jugner_Forest',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 800.0,
+        'Y': 0.0,
+        'Z': -35.0
+      },
+      'ToPosition': {
+        'X': -573.0,
+        'Y': 0.0,
+        'Z': -440.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -555.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 164.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 762.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -556.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Jugner_Forest',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 800.0,
+        'Y': 0.0,
+        'Z': -39.0
+      },
+      'ToPosition': {
+        'X': -584.0,
+        'Y': 0.0,
+        'Z': -446.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -558.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -560.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 758.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -558.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -560.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -562.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -553.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -555.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -560.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 761.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 762.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 758.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 758.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 153.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 153.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 153.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 760.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 761.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 153.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 761.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 762.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -562.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 758.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 760.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 761.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -565.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 761.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -553.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 758.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -555.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 758.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -556.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -558.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 761.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -560.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 762.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -562.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 758.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 153.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -565.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    },
+    {
+      'ToZone': 'Valkurm_Dunes',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': 152.0,
+        'Y': 0.0,
+        'Z': -763.0
+      },
+      'ToPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 409.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_West',
+      'FromZone': 'La_Theine_Plateau',
+      'FromPosition': {
+        'X': -560.0,
+        'Y': 0.0,
+        'Z': 687.0
+      },
+      'ToPosition': {
+        'X': -553.0,
+        'Y': 0.0,
+        'Z': -602.0
+      }
+    }
+  ]
+}

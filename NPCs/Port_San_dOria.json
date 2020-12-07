@@ -1,0 +1,212 @@
+[
+  {
+    'Id': 4,
+    'Name': 'Avandale',
+    'Position': {
+      'X': -106.0,
+      'Y': 0.0,
+      'Z': -125.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 5,
+    'Name': 'Callort',
+    'Position': {
+      'X': -1.0,
+      'Y': 0.0,
+      'Z': -65.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 7,
+    'Name': 'Miene',
+    'Position': {
+      'X': 1.0,
+      'Y': 0.0,
+      'Z': -81.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 10,
+    'Name': 'Thierride',
+    'Position': {
+      'X': -67.0,
+      'Y': 0.0,
+      'Z': -29.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 11,
+    'Name': 'Gulemont',
+    'Position': {
+      'X': -68.0,
+      'Y': 0.0,
+      'Z': -39.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 12,
+    'Name': 'Ilgusin',
+    'Position': {
+      'X': -68.0,
+      'Y': 0.0,
+      'Z': -37.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 14,
+    'Name': 'Nogelle',
+    'Position': {
+      'X': -71.0,
+      'Y': 0.0,
+      'Z': -33.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 15,
+    'Name': 'Croumangue',
+    'Position': {
+      'X': -65.0,
+      'Y': 0.0,
+      'Z': -32.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 27,
+    'Name': 'Apstaule',
+    'Position': {
+      'X': -7.0,
+      'Y': 0.0,
+      'Z': -158.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 28,
+    'Name': 'Comittie',
+    'Position': {
+      'X': -7.0,
+      'Y': 0.0,
+      'Z': -148.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 29,
+    'Name': 'Meinemelle',
+    'Position': {
+      'X': -8.0,
+      'Y': 0.0,
+      'Z': -146.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 35,
+    'Name': 'Coullave',
+    'Position': {
+      'X': -95.0,
+      'Y': 0.0,
+      'Z': -127.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 52,
+    'Name': 'Laucimercen',
+    'Position': {
+      'X': -70.0,
+      'Y': 0.0,
+      'Z': -98.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 53,
+    'Name': 'Rielle',
+    'Position': {
+      'X': -70.0,
+      'Y': 0.0,
+      'Z': -112.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 57,
+    'Name': 'Marquie',
+    'Position': {
+      'X': -96.0,
+      'Y': 0.0,
+      'Z': -117.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 67,
+    'Name': 'Teilsa',
+    'Position': {
+      'X': -84.0,
+      'Y': 0.0,
+      'Z': -101.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 86,
+    'Name': 'Home Point #1',
+    'Position': {
+      'X': -38.0,
+      'Y': 0.0,
+      'Z': -63.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 123,
+    'Name': 'Gallijaux',
+    'Position': {
+      'X': -15.0,
+      'Y': 0.0,
+      'Z': -44.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 124,
+    'Name': 'Joulet',
+    'Position': {
+      'X': -17.0,
+      'Y': 0.0,
+      'Z': -44.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 125,
+    'Name': 'Ufanne',
+    'Position': {
+      'X': -16.0,
+      'Y': 0.0,
+      'Z': -48.0
+    },
+    'MapName': 'Port_San_dOria'
+  },
+  {
+    'Id': 174,
+    'Name': 'Iroha',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Port_San_dOria'
+  }
+]

@@ -1,0 +1,1492 @@
+{
+  'Name': 'Ronfaure_West',
+  'PointsToExplore': [],
+  'NextPointToExplore': null,
+  'Explored': [],
+  'Boundaries': [
+    {
+      'ToZone': 'Ronfaure_East',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': 90.0,
+        'Y': 0.0,
+        'Z': -197.0
+      },
+      'ToPosition': {
+        'X': 82.0,
+        'Y': 0.0,
+        'Z': -203.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_East',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': 90.0,
+        'Y': 0.0,
+        'Z': -197.0
+      },
+      'ToPosition': {
+        'X': 82.0,
+        'Y': 0.0,
+        'Z': -202.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_East',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': 91.0,
+        'Y': 0.0,
+        'Z': -199.0
+      },
+      'ToPosition': {
+        'X': 82.0,
+        'Y': 0.0,
+        'Z': -200.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -112.0,
+        'Y': 0.0,
+        'Z': -53.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -123.0,
+        'Y': 0.0,
+        'Z': 279.0
+      },
+      'ToPosition': {
+        'X': -109.0,
+        'Y': 0.0,
+        'Z': -56.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -308.0,
+        'Y': 0.0,
+        'Z': -34.0
+      },
+      'ToPosition': {
+        'X': -560.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_East',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': 91.0,
+        'Y': 0.0,
+        'Z': -197.0
+      },
+      'ToPosition': {
+        'X': 82.0,
+        'Y': 0.0,
+        'Z': -196.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -109.0,
+        'Y': 0.0,
+        'Z': -56.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -109.0,
+        'Y': 0.0,
+        'Z': -56.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -109.0,
+        'Y': 0.0,
+        'Z': -56.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -560.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -559.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -558.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -559.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -564.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -123.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -112.0,
+        'Y': 0.0,
+        'Z': -53.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -109.0,
+        'Y': 0.0,
+        'Z': -56.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -112.0,
+        'Y': 0.0,
+        'Z': -53.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -109.0,
+        'Y': 0.0,
+        'Z': -56.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -109.0,
+        'Y': 0.0,
+        'Z': -56.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_East',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': 91.0,
+        'Y': 0.0,
+        'Z': -197.0
+      },
+      'ToPosition': {
+        'X': 82.0,
+        'Y': 0.0,
+        'Z': -196.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -559.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -562.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -560.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -559.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -562.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -560.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -109.0,
+        'Y': 0.0,
+        'Z': -56.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -121.0,
+        'Y': 0.0,
+        'Z': 276.0
+      },
+      'ToPosition': {
+        'X': -109.0,
+        'Y': 0.0,
+        'Z': -56.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -559.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -558.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -564.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_East',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': 90.0,
+        'Y': 0.0,
+        'Z': -197.0
+      },
+      'ToPosition': {
+        'X': 82.0,
+        'Y': 0.0,
+        'Z': -200.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -564.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -558.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -564.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -109.0,
+        'Y': 0.0,
+        'Z': -56.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -562.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -559.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -558.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -562.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -560.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -559.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -564.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -562.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -561.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -558.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -564.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -563.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -111.0,
+        'Y': 0.0,
+        'Z': -54.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -557.0,
+        'Y': 0.0,
+        'Z': -609.0
+      },
+      'ToPosition': {
+        'X': -562.0,
+        'Y': 0.0,
+        'Z': 681.0
+      }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -122.0,
+        'Y': 0.0,
+        'Z': 278.0
+      },
+      'ToPosition': {
+        'X': -112.0,
+        'Y': 0.0,
+        'Z': -53.0
+      }
+    },
+    {
+      'ToZone': 'Ronfaure_East',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': 91.0,
+        'Y': 0.0,
+        'Z': -197.0
+      },
+      'ToPosition': {
+        'X': 82.0,
+        'Y': 0.0,
+        'Z': -207.0
+      }
+    }
+  ]
+}

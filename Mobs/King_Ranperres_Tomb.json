@@ -1,0 +1,72 @@
+[
+  {
+    'Id': 1,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': -143.0,
+      'Y': 0.0,
+      'Z': 249.0
+    },
+    'MapName': 'King_Ranperres_Tomb'
+  },
+  {
+    'Id': 3,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': -157.0,
+      'Y': 0.0,
+      'Z': 234.0
+    },
+    'MapName': 'King_Ranperres_Tomb'
+  },
+  {
+    'Id': 4,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': -141.0,
+      'Y': 0.0,
+      'Z': 246.0
+    },
+    'MapName': 'King_Ranperres_Tomb'
+  },
+  {
+    'Id': 6,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': -118.0,
+      'Y': 0.0,
+      'Z': 217.0
+    },
+    'MapName': 'King_Ranperres_Tomb'
+  },
+  {
+    'Id': 7,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': -139.0,
+      'Y': 0.0,
+      'Z': 225.0
+    },
+    'MapName': 'King_Ranperres_Tomb'
+  },
+  {
+    'Id': 8,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': -137.0,
+      'Y': 0.0,
+      'Z': 224.0
+    },
+    'MapName': 'King_Ranperres_Tomb'
+  },
+  {
+    'Id': 12,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': -126.0,
+      'Y': 0.0,
+      'Z': 201.0
+    },
+    'MapName': 'King_Ranperres_Tomb'
+  }
+]

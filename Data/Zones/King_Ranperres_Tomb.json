@@ -1,0 +1,22 @@
+{
+  'Name': 'King_Ranperres_Tomb',
+  'PointsToExplore': [],
+  'NextPointToExplore': null,
+  'Explored': [],
+  'Boundaries': [
+    {
+      'ToZone': 'Ronfaure_East',
+      'FromZone': 'King_Ranperres_Tomb',
+      'FromPosition': {
+        'X': -130.0,
+        'Y': 0.0,
+        'Z': 259.0
+      },
+      'ToPosition': {
+        'X': 198.0,
+        'Y': 0.0,
+        'Z': -536.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,522 @@
+[
+  {
+    'Id': 594,
+    'Name': 'Croteillard',
+    'Position': {
+      'X': 87.0,
+      'Y': 0.0,
+      'Z': 267.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 595,
+    'Name': 'Rayochindot',
+    'Position': {
+      'X': 93.0,
+      'Y': 0.0,
+      'Z': 273.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 615,
+    'Name': 'NPC',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 627,
+    'Name': 'Field Manual',
+    'Position': {
+      'X': 85.0,
+      'Y': 0.0,
+      'Z': 240.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 651,
+    'Name': 'Stampeding Bison',
+    'Position': {
+      'X': 80.0,
+      'Y': 0.0,
+      'Z': 237.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2314,
+    'Name': 'D]\u0001',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 598,
+    'Name': 'Signpost',
+    'Position': {
+      'X': 258.0,
+      'Y': 0.0,
+      'Z': 214.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 672,
+    'Name': 'Geomantic Reservoir',
+    'Position': {
+      'X': 380.0,
+      'Y': 0.0,
+      'Z': 58.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 666,
+    'Name': 'Planar Rift',
+    'Position': {
+      'X': 288.0,
+      'Y': 0.0,
+      'Z': 368.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 597,
+    'Name': 'Signpost',
+    'Position': {
+      'X': 441.0,
+      'Y': 0.0,
+      'Z': 142.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 599,
+    'Name': 'Signpost',
+    'Position': {
+      'X': 658.0,
+      'Y': 0.0,
+      'Z': 306.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 630,
+    'Name': 'Ethereal Junction',
+    'Position': {
+      'X': 522.0,
+      'Y': 0.0,
+      'Z': -41.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 600,
+    'Name': 'Signpost',
+    'Position': {
+      'X': 465.0,
+      'Y': 0.0,
+      'Z': -173.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 622,
+    'Name': 'Logging Point',
+    'Position': {
+      'X': 462.0,
+      'Y': 0.0,
+      'Z': -290.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 620,
+    'Name': 'Logging Point',
+    'Position': {
+      'X': 485.0,
+      'Y': 0.0,
+      'Z': -335.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 604,
+    'Name': 'Signpost',
+    'Position': {
+      'X': 231.0,
+      'Y': 0.0,
+      'Z': 63.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 621,
+    'Name': 'Logging Point',
+    'Position': {
+      'X': 350.0,
+      'Y': 0.0,
+      'Z': -47.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 618,
+    'Name': 'Logging Point',
+    'Position': {
+      'X': 350.0,
+      'Y': 0.0,
+      'Z': -205.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 623,
+    'Name': 'Logging Point',
+    'Position': {
+      'X': 430.0,
+      'Y': 0.0,
+      'Z': -134.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 619,
+    'Name': 'Logging Point',
+    'Position': {
+      'X': 458.0,
+      'Y': 0.0,
+      'Z': -425.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 629,
+    'Name': 'Field Parchment',
+    'Position': {
+      'X': 442.0,
+      'Y': 0.0,
+      'Z': -478.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 631,
+    'Name': 'Ethereal Junction',
+    'Position': {
+      'X': 238.0,
+      'Y': 0.0,
+      'Z': -160.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 601,
+    'Name': 'Signpost',
+    'Position': {
+      'X': 538.0,
+      'Y': 0.0,
+      'Z': -384.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1931,
+    'Name': 'Adelheid',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 628,
+    'Name': 'Field Manual',
+    'Position': {
+      'X': 283.0,
+      'Y': 0.0,
+      'Z': -256.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 602,
+    'Name': 'Signpost',
+    'Position': {
+      'X': 279.0,
+      'Y': 0.0,
+      'Z': -258.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1953,
+    'Name': 'Yoran-Oran',
+    'Position': {
+      'X': 97.0,
+      'Y': 0.0,
+      'Z': 265.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1954,
+    'Name': 'ArkEV',
+    'Position': {
+      'X': 96.0,
+      'Y': 0.0,
+      'Z': 264.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1955,
+    'Name': 'Arciela',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 263.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1956,
+    'Name': 'Noillurie',
+    'Position': {
+      'X': 101.0,
+      'Y': 0.0,
+      'Z': 263.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1957,
+    'Name': 'Joachim',
+    'Position': {
+      'X': 104.0,
+      'Y': 0.0,
+      'Z': 262.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1969,
+    'Name': 'Tenzen',
+    'Position': {
+      'X': 494.0,
+      'Y': 0.0,
+      'Z': -274.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1970,
+    'Name': 'Adelheid',
+    'Position': {
+      'X': 490.0,
+      'Y': 0.0,
+      'Z': -272.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1971,
+    'Name': 'Prishe',
+    'Position': {
+      'X': 487.0,
+      'Y': 0.0,
+      'Z': -270.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1972,
+    'Name': 'Lion',
+    'Position': {
+      'X': 487.0,
+      'Y': 0.0,
+      'Z': -269.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1974,
+    'Name': 'Nashmeira',
+    'Position': {
+      'X': 487.0,
+      'Y': 0.0,
+      'Z': -269.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 603,
+    'Name': 'Signpost',
+    'Position': {
+      'X': 296.0,
+      'Y': 0.0,
+      'Z': -457.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 632,
+    'Name': 'Ethereal Junction',
+    'Position': {
+      'X': 565.0,
+      'Y': 0.0,
+      'Z': -378.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2030,
+    'Name': 'Valaineral',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2031,
+    'Name': 'Valaineral',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2032,
+    'Name': 'Valaineral',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2037,
+    'Name': 'Tenzen',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2038,
+    'Name': 'Tenzen',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2039,
+    'Name': 'Tenzen',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2046,
+    'Name': 'Valaineral',
+    'Position': {
+      'X': 115.0,
+      'Y': 0.0,
+      'Z': 233.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2047,
+    'Name': 'MihliAliapoh',
+    'Position': {
+      'X': 116.0,
+      'Y': 0.0,
+      'Z': 232.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2048,
+    'Name': 'Tenzen',
+    'Position': {
+      'X': 116.0,
+      'Y': 0.0,
+      'Z': 235.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2049,
+    'Name': 'Kupipi',
+    'Position': {
+      'X': 112.0,
+      'Y': 0.0,
+      'Z': 234.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1865,
+    'Name': 'Valaineral',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1876,
+    'Name': 'Valaineral',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1877,
+    'Name': 'MihliAliapoh',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 1878,
+    'Name': 'Adelheid',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 261.0
+    },
+    'MapName': 'Ronfaure_East'
+  }
+]

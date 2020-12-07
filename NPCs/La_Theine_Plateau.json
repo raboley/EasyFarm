@@ -1,0 +1,452 @@
+[
+  {
+    'Id': 599,
+    'Name': 'rainbow',
+    'Position': {
+      'X': 520.0,
+      'Y': 0.0,
+      'Z': -166.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 649,
+    'Name': 'Goblin Footprint',
+    'Position': {
+      'X': -546.0,
+      'Y': 0.0,
+      'Z': 652.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 659,
+    'Name': 'Cavernous Maw',
+    'Position': {
+      'X': -558.0,
+      'Y': 0.0,
+      'Z': 638.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 674,
+    'Name': 'Field Manual',
+    'Position': {
+      'X': -577.0,
+      'Y': 0.0,
+      'Z': 661.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 671,
+    'Name': 'Chocobo Tracks',
+    'Position': {
+      'X': -557.0,
+      'Y': 0.0,
+      'Z': 524.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 601,
+    'Name': 'Deaufrain',
+    'Position': {
+      'X': -307.0,
+      'Y': 0.0,
+      'Z': 342.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 607,
+    'Name': 'Galaihaurat',
+    'Position': {
+      'X': -481.0,
+      'Y': 0.0,
+      'Z': 221.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 605,
+    'Name': 'Laurisse',
+    'Position': {
+      'X': -292.0,
+      'Y': 0.0,
+      'Z': 141.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 606,
+    'Name': 'Narvecaint',
+    'Position': {
+      'X': -262.0,
+      'Y': 0.0,
+      'Z': 128.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 678,
+    'Name': 'Ethereal Junction',
+    'Position': {
+      'X': -269.0,
+      'Y': 0.0,
+      'Z': -161.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 679,
+    'Name': 'Ethereal Junction',
+    'Position': {
+      'X': 119.0,
+      'Y': 0.0,
+      'Z': -159.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 612,
+    'Name': 'Shattered Telepoint',
+    'Position': {
+      'X': 340.0,
+      'Y': 0.0,
+      'Z': -60.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 574,
+    'Name': '???',
+    'Position': {
+      'X': 321.0,
+      'Y': 0.0,
+      'Z': -19.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 613,
+    'Name': 'Stone Monument',
+    'Position': {
+      'X': 334.0,
+      'Y': 0.0,
+      'Z': 141.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 724,
+    'Name': 'Survival Guide',
+    'Position': {
+      'X': 775.0,
+      'Y': 0.0,
+      'Z': -18.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 635,
+    'Name': 'Coumaine',
+    'Position': {
+      'X': 454.0,
+      'Y': 0.0,
+      'Z': 20.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 636,
+    'Name': '',
+    'Position': {
+      'X': 452.0,
+      'Y': 0.0,
+      'Z': 20.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 675,
+    'Name': 'Field Manual',
+    'Position': {
+      'X': 438.0,
+      'Y': 0.0,
+      'Z': 3.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 610,
+    'Name': 'Telepoint',
+    'Position': {
+      'X': 420.0,
+      'Y': 0.0,
+      'Z': 20.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 717,
+    'Name': 'Ergon Locus ???',
+    'Position': {
+      'X': 420.0,
+      'Y': 0.0,
+      'Z': 29.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 696,
+    'Name': 'Nickael',
+    'Position': {
+      'X': 401.0,
+      'Y': 0.0,
+      'Z': 10.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 684,
+    'Name': 'Planar Rift',
+    'Position': {
+      'X': 200.0,
+      'Y': 0.0,
+      'Z': -600.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 575,
+    'Name': 'FallenEgg',
+    'Position': {
+      'X': 239.0,
+      'Y': 0.0,
+      'Z': 314.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 683,
+    'Name': 'Planar Rift',
+    'Position': {
+      'X': -440.0,
+      'Y': 0.0,
+      'Z': 440.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2096,
+    'Name': 'Valaineral',
+    'Position': {
+      'X': -410.0,
+      'Y': 0.0,
+      'Z': 215.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2098,
+    'Name': 'Tenzen',
+    'Position': {
+      'X': -417.0,
+      'Y': 0.0,
+      'Z': 215.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2099,
+    'Name': 'Yoran-Oran',
+    'Position': {
+      'X': -422.0,
+      'Y': 0.0,
+      'Z': 214.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2097,
+    'Name': 'Sakura',
+    'Position': {
+      'X': -414.0,
+      'Y': 0.0,
+      'Z': 213.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2059,
+    'Name': 'Drille',
+    'Position': {
+      'X': 420.0,
+      'Y': 0.0,
+      'Z': 20.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2060,
+    'Name': 'Chafouin',
+    'Position': {
+      'X': 420.0,
+      'Y': 0.0,
+      'Z': 20.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2061,
+    'Name': 'Tournefoux',
+    'Position': {
+      'X': 420.0,
+      'Y': 0.0,
+      'Z': 20.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2062,
+    'Name': 'Bougrion',
+    'Position': {
+      'X': 420.0,
+      'Y': 0.0,
+      'Z': 20.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2063,
+    'Name': 'Luron',
+    'Position': {
+      'X': 420.0,
+      'Y': 0.0,
+      'Z': 20.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2057,
+    'Name': 'Comedie',
+    'Position': {
+      'X': 420.0,
+      'Y': 0.0,
+      'Z': 20.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2058,
+    'Name': 'Zero',
+    'Position': {
+      'X': 420.0,
+      'Y': 0.0,
+      'Z': 20.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 611,
+    'Name': 'Dimensional Portal',
+    'Position': {
+      'X': 420.0,
+      'Y': 0.0,
+      'Z': -140.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2314,
+    'Name': 'a',
+    'Position': {
+      'X': 8.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2141,
+    'Name': 'Excenmille',
+    'Position': {
+      'X': -275.0,
+      'Y': 0.0,
+      'Z': 139.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2142,
+    'Name': 'Qultada',
+    'Position': {
+      'X': -275.0,
+      'Y': 0.0,
+      'Z': 139.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2143,
+    'Name': 'Adelheid',
+    'Position': {
+      'X': -276.0,
+      'Y': 0.0,
+      'Z': 139.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2144,
+    'Name': 'Excenmille',
+    'Position': {
+      'X': 134.0,
+      'Y': 0.0,
+      'Z': -528.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2145,
+    'Name': 'Qultada',
+    'Position': {
+      'X': 134.0,
+      'Y': 0.0,
+      'Z': -528.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2146,
+    'Name': 'Adelheid',
+    'Position': {
+      'X': 134.0,
+      'Y': 0.0,
+      'Z': -526.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2195,
+    'Name': 'Garuda',
+    'Position': {
+      'X': -560.0,
+      'Y': 0.0,
+      'Z': 640.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  },
+  {
+    'Id': 2222,
+    'Name': 'Ifrit',
+    'Position': {
+      'X': -560.0,
+      'Y': 0.0,
+      'Z': 640.0
+    },
+    'MapName': 'La_Theine_Plateau'
+  }
+]

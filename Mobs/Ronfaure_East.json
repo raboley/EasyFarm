@@ -1,0 +1,2872 @@
+[
+  {
+    'Id': 34,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 157.0,
+      'Y': 0.0,
+      'Z': 244.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 47,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 92.0,
+      'Y': 0.0,
+      'Z': 215.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 27,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 143.0,
+      'Y': 0.0,
+      'Z': 201.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 48,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 203.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 46,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 99.0,
+      'Y': 0.0,
+      'Z': 203.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 29,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 153.0,
+      'Y': 0.0,
+      'Z': 237.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 32,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 154.0,
+      'Y': 0.0,
+      'Z': 260.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 33,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 151.0,
+      'Y': 0.0,
+      'Z': 249.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 30,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 148.0,
+      'Y': 0.0,
+      'Z': 225.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 26,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 161.0,
+      'Y': 0.0,
+      'Z': 219.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 35,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 176.0,
+      'Y': 0.0,
+      'Z': 186.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 37,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 193.0,
+      'Y': 0.0,
+      'Z': 201.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 36,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 184.0,
+      'Y': 0.0,
+      'Z': 280.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 55,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 146.0,
+      'Y': 0.0,
+      'Z': 296.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 50,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 219.0,
+      'Y': 0.0,
+      'Z': 170.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 70,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 201.0,
+      'Y': 0.0,
+      'Z': 152.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 51,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 237.0,
+      'Y': 0.0,
+      'Z': 139.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 75,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 242.0,
+      'Y': 0.0,
+      'Z': 132.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 66,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 240.0,
+      'Y': 0.0,
+      'Z': 120.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 15,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 134.0,
+      'Y': 0.0,
+      'Z': 160.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 9,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 132.0,
+      'Y': 0.0,
+      'Z': 169.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 17,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 153.0,
+      'Y': 0.0,
+      'Z': 146.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 68,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 162.0,
+      'Y': 0.0,
+      'Z': 35.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 71,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 156.0,
+      'Y': 0.0,
+      'Z': 30.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 74,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 158.0,
+      'Y': 0.0,
+      'Z': 13.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 76,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 172.0,
+      'Y': 0.0,
+      'Z': 13.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 73,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 127.0,
+      'Y': 0.0,
+      'Z': -26.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 124,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 202.0,
+      'Y': 0.0,
+      'Z': -122.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 112,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 182.0,
+      'Y': 0.0,
+      'Z': -92.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 128,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 164.0,
+      'Y': 0.0,
+      'Z': -84.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 122,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 201.0,
+      'Y': 0.0,
+      'Z': -126.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 119,
+    'Name': 'Forest Funguar',
+    'Position': {
+      'X': 185.0,
+      'Y': 0.0,
+      'Z': -94.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 123,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 227.0,
+      'Y': 0.0,
+      'Z': -121.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 126,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 216.0,
+      'Y': 0.0,
+      'Z': -60.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 31,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 176.0,
+      'Y': 0.0,
+      'Z': 231.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 16,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 147.0,
+      'Y': 0.0,
+      'Z': 168.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 7,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 141.0,
+      'Y': 0.0,
+      'Z': 165.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 40,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 192.0,
+      'Y': 0.0,
+      'Z': 187.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 38,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 231.0,
+      'Y': 0.0,
+      'Z': 207.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 39,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 251.0,
+      'Y': 0.0,
+      'Z': 185.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 6,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 163.0,
+      'Y': 0.0,
+      'Z': 131.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 11,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 121.0,
+      'Y': 0.0,
+      'Z': 98.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 63,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 159.0,
+      'Y': 0.0,
+      'Z': 61.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 14,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 79.0,
+      'Y': 0.0,
+      'Z': 122.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 12,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 94.0,
+      'Y': 0.0,
+      'Z': 115.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 25,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 104.0,
+      'Y': 0.0,
+      'Z': 107.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 20,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 78.0,
+      'Y': 0.0,
+      'Z': 116.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 19,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 77.0,
+      'Y': 0.0,
+      'Z': 117.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 69,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 118.0,
+      'Y': 0.0,
+      'Z': 79.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 13,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 119.0,
+      'Y': 0.0,
+      'Z': 82.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 18,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 51.0,
+      'Y': 0.0,
+      'Z': 110.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 8,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 83.0,
+      'Y': 0.0,
+      'Z': 119.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 10,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 100.0,
+      'Y': 0.0,
+      'Z': 111.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 24,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 94.0,
+      'Y': 0.0,
+      'Z': 78.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 28,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 178.0,
+      'Y': 0.0,
+      'Z': 255.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 45,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 150.0,
+      'Y': 0.0,
+      'Z': 238.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 44,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 260.0,
+      'Y': 0.0,
+      'Z': 222.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 100,
+    'Name': 'Mouse Bat',
+    'Position': {
+      'X': 301.0,
+      'Y': 0.0,
+      'Z': 193.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 86,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 325.0,
+      'Y': 0.0,
+      'Z': 201.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 95,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 354.0,
+      'Y': 0.0,
+      'Z': 165.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 87,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 394.0,
+      'Y': 0.0,
+      'Z': 156.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 208,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 380.0,
+      'Y': 0.0,
+      'Z': 86.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 93,
+    'Name': 'Forest Funguar',
+    'Position': {
+      'X': 369.0,
+      'Y': 0.0,
+      'Z': 79.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 220,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 414.0,
+      'Y': 0.0,
+      'Z': 91.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 206,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 417.0,
+      'Y': 0.0,
+      'Z': 148.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 103,
+    'Name': 'Goblin Fisher',
+    'Position': {
+      'X': 385.0,
+      'Y': 0.0,
+      'Z': 62.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 232,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 407.0,
+      'Y': 0.0,
+      'Z': 65.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 215,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 449.0,
+      'Y': 0.0,
+      'Z': 99.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 234,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 429.0,
+      'Y': 0.0,
+      'Z': 53.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 227,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 452.0,
+      'Y': 0.0,
+      'Z': 67.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 216,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 458.0,
+      'Y': 0.0,
+      'Z': 71.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 242,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': 441.0,
+      'Y': 0.0,
+      'Z': 50.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 238,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 460.0,
+      'Y': 0.0,
+      'Z': 74.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 101,
+    'Name': 'Goblin Fisher',
+    'Position': {
+      'X': 386.0,
+      'Y': 0.0,
+      'Z': 49.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 210,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 459.0,
+      'Y': 0.0,
+      'Z': 73.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 209,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 455.0,
+      'Y': 0.0,
+      'Z': 119.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 241,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 448.0,
+      'Y': 0.0,
+      'Z': 55.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 96,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 363.0,
+      'Y': 0.0,
+      'Z': 84.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 94,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 363.0,
+      'Y': 0.0,
+      'Z': 89.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 235,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 420.0,
+      'Y': 0.0,
+      'Z': 42.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 83,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 365.0,
+      'Y': 0.0,
+      'Z': 75.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 239,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 415.0,
+      'Y': 0.0,
+      'Z': 42.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 85,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 375.0,
+      'Y': 0.0,
+      'Z': 125.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 217,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 447.0,
+      'Y': 0.0,
+      'Z': 128.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 212,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 454.0,
+      'Y': 0.0,
+      'Z': 64.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 226,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 400.0,
+      'Y': 0.0,
+      'Z': 43.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 229,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 458.0,
+      'Y': 0.0,
+      'Z': 70.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 231,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 443.0,
+      'Y': 0.0,
+      'Z': 56.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 228,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 416.0,
+      'Y': 0.0,
+      'Z': 42.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 211,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 457.0,
+      'Y': 0.0,
+      'Z': 114.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 236,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 440.0,
+      'Y': 0.0,
+      'Z': 49.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 230,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 444.0,
+      'Y': 0.0,
+      'Z': 55.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 84,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 375.0,
+      'Y': 0.0,
+      'Z': 124.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 213,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 461.0,
+      'Y': 0.0,
+      'Z': 97.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 219,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 462.0,
+      'Y': 0.0,
+      'Z': 86.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 218,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 447.0,
+      'Y': 0.0,
+      'Z': 128.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 89,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 371.0,
+      'Y': 0.0,
+      'Z': 100.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 91,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 400.0,
+      'Y': 0.0,
+      'Z': 131.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 98,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 363.0,
+      'Y': 0.0,
+      'Z': 100.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 233,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 447.0,
+      'Y': 0.0,
+      'Z': 56.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 88,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 364.0,
+      'Y': 0.0,
+      'Z': 81.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 56,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 246.0,
+      'Y': 0.0,
+      'Z': 341.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 139,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 270.0,
+      'Y': 0.0,
+      'Z': 363.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 140,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 264.0,
+      'Y': 0.0,
+      'Z': 368.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2314,
+    'Name': '\u0003Û4\u0002iØoÞ\u0004Ûè\u0002iØpÞ\u0003Û%\u0002iØqÞ',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 136,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 238.0,
+      'Y': 0.0,
+      'Z': 375.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 52,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 226.0,
+      'Y': 0.0,
+      'Z': 373.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 53,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 206.0,
+      'Y': 0.0,
+      'Z': 356.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 135,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 242.0,
+      'Y': 0.0,
+      'Z': 383.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 138,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 251.0,
+      'Y': 0.0,
+      'Z': 383.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 141,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 256.0,
+      'Y': 0.0,
+      'Z': 388.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 145,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 284.0,
+      'Y': 0.0,
+      'Z': 371.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 223,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': 431.0,
+      'Y': 0.0,
+      'Z': 160.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 104,
+    'Name': 'Goblin Fisher',
+    'Position': {
+      'X': 399.0,
+      'Y': 0.0,
+      'Z': 107.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 92,
+    'Name': 'Forest Funguar',
+    'Position': {
+      'X': 397.0,
+      'Y': 0.0,
+      'Z': 115.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 207,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 415.0,
+      'Y': 0.0,
+      'Z': 109.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 67,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 172.0,
+      'Y': 0.0,
+      'Z': 111.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 64,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 168.0,
+      'Y': 0.0,
+      'Z': 88.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 65,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 132.0,
+      'Y': 0.0,
+      'Z': 39.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 125,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': 168.0,
+      'Y': 0.0,
+      'Z': -90.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 117,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 211.0,
+      'Y': 0.0,
+      'Z': -76.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 72,
+    'Name': 'Forest Funguar',
+    'Position': {
+      'X': 215.0,
+      'Y': 0.0,
+      'Z': 148.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 49,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 226.0,
+      'Y': 0.0,
+      'Z': 147.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 214,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 501.0,
+      'Y': 0.0,
+      'Z': 193.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 157,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 484.0,
+      'Y': 0.0,
+      'Z': 274.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 156,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 509.0,
+      'Y': 0.0,
+      'Z': 270.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 164,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 485.0,
+      'Y': 0.0,
+      'Z': 316.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 155,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 584.0,
+      'Y': 0.0,
+      'Z': 279.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 185,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 620.0,
+      'Y': 0.0,
+      'Z': 266.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 190,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 620.0,
+      'Y': 0.0,
+      'Z': 251.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 191,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': 624.0,
+      'Y': 0.0,
+      'Z': 255.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 175,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 662.0,
+      'Y': 0.0,
+      'Z': 308.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 282,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 481.0,
+      'Y': 0.0,
+      'Z': -136.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 279,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 456.0,
+      'Y': 0.0,
+      'Z': -130.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 285,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 467.0,
+      'Y': 0.0,
+      'Z': -137.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 278,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 441.0,
+      'Y': 0.0,
+      'Z': -137.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 291,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': 518.0,
+      'Y': 0.0,
+      'Z': -209.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 298,
+    'Name': 'Mouse Bat',
+    'Position': {
+      'X': 460.0,
+      'Y': 0.0,
+      'Z': -214.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 290,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': 518.0,
+      'Y': 0.0,
+      'Z': -214.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 288,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 452.0,
+      'Y': 0.0,
+      'Z': -218.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 281,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 499.0,
+      'Y': 0.0,
+      'Z': -241.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 283,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 461.0,
+      'Y': 0.0,
+      'Z': -230.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 286,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 506.0,
+      'Y': 0.0,
+      'Z': -255.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 289,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 536.0,
+      'Y': 0.0,
+      'Z': -330.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 373,
+    'Name': 'Goblin Fisher',
+    'Position': {
+      'X': 476.0,
+      'Y': 0.0,
+      'Z': -314.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 374,
+    'Name': 'Goblin Fisher',
+    'Position': {
+      'X': 449.0,
+      'Y': 0.0,
+      'Z': -340.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 375,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 431.0,
+      'Y': 0.0,
+      'Z': -298.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 376,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 423.0,
+      'Y': 0.0,
+      'Z': -270.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 362,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': 422.0,
+      'Y': 0.0,
+      'Z': -317.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 372,
+    'Name': 'Goblin Fisher',
+    'Position': {
+      'X': 476.0,
+      'Y': 0.0,
+      'Z': -343.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 351,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 426.0,
+      'Y': 0.0,
+      'Z': -328.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 80,
+    'Name': 'Mouse Bat',
+    'Position': {
+      'X': 216.0,
+      'Y': 0.0,
+      'Z': 23.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 115,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 280.0,
+      'Y': 0.0,
+      'Z': 3.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 120,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 311.0,
+      'Y': 0.0,
+      'Z': -33.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 111,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 257.0,
+      'Y': 0.0,
+      'Z': -70.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 116,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 319.0,
+      'Y': 0.0,
+      'Z': -9.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 130,
+    'Name': 'Mouse Bat',
+    'Position': {
+      'X': 298.0,
+      'Y': 0.0,
+      'Z': -67.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 121,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 286.0,
+      'Y': 0.0,
+      'Z': -77.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 132,
+    'Name': 'Rambukk',
+    'Position': {
+      'X': 277.0,
+      'Y': 0.0,
+      'Z': -87.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 113,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 358.0,
+      'Y': 0.0,
+      'Z': -69.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 110,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 345.0,
+      'Y': 0.0,
+      'Z': -141.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 274,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 380.0,
+      'Y': 0.0,
+      'Z': -185.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 251,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 390.0,
+      'Y': 0.0,
+      'Z': -185.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 272,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 383.0,
+      'Y': 0.0,
+      'Z': -188.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 260,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 403.0,
+      'Y': 0.0,
+      'Z': -183.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 261,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 393.0,
+      'Y': 0.0,
+      'Z': -199.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 257,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 410.0,
+      'Y': 0.0,
+      'Z': -220.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 78,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 213.0,
+      'Y': 0.0,
+      'Z': -12.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 114,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 346.0,
+      'Y': 0.0,
+      'Z': -141.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 118,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 331.0,
+      'Y': 0.0,
+      'Z': -147.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 263,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': 412.0,
+      'Y': 0.0,
+      'Z': -215.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 287,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 433.0,
+      'Y': 0.0,
+      'Z': -171.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 107,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 312.0,
+      'Y': 0.0,
+      'Z': 20.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 253,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 369.0,
+      'Y': 0.0,
+      'Z': -200.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 252,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 350.0,
+      'Y': 0.0,
+      'Z': -199.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 294,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 490.0,
+      'Y': 0.0,
+      'Z': -271.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 280,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 474.0,
+      'Y': 0.0,
+      'Z': -225.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 77,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 244.0,
+      'Y': 0.0,
+      'Z': 107.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 109,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 290.0,
+      'Y': 0.0,
+      'Z': 21.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 249,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 378.0,
+      'Y': 0.0,
+      'Z': -231.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 106,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 284.0,
+      'Y': 0.0,
+      'Z': 36.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 256,
+    'Name': 'Forest Funguar',
+    'Position': {
+      'X': 403.0,
+      'Y': 0.0,
+      'Z': -269.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 353,
+    'Name': 'Forest Funguar',
+    'Position': {
+      'X': 424.0,
+      'Y': 0.0,
+      'Z': -315.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 363,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 434.0,
+      'Y': 0.0,
+      'Z': -318.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 254,
+    'Name': 'Forest Funguar',
+    'Position': {
+      'X': 378.0,
+      'Y': 0.0,
+      'Z': -204.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 259,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 358.0,
+      'Y': 0.0,
+      'Z': -242.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 355,
+    'Name': 'Forest Funguar',
+    'Position': {
+      'X': 425.0,
+      'Y': 0.0,
+      'Z': -313.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 352,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 424.0,
+      'Y': 0.0,
+      'Z': -318.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 404,
+    'Name': 'Goblin Digger',
+    'Position': {
+      'X': 387.0,
+      'Y': 0.0,
+      'Z': -251.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 354,
+    'Name': 'Forest Funguar',
+    'Position': {
+      'X': 424.0,
+      'Y': 0.0,
+      'Z': -333.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 82,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 224.0,
+      'Y': 0.0,
+      'Z': 16.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 277,
+    'Name': 'Swamfisk',
+    'Position': {
+      'X': 393.0,
+      'Y': 0.0,
+      'Z': -148.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 273,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': 383.0,
+      'Y': 0.0,
+      'Z': -183.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 262,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 385.0,
+      'Y': 0.0,
+      'Z': -278.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 378,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 461.0,
+      'Y': 0.0,
+      'Z': -360.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 381,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 496.0,
+      'Y': 0.0,
+      'Z': -368.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 387,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 530.0,
+      'Y': 0.0,
+      'Z': -342.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 384,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 517.0,
+      'Y': 0.0,
+      'Z': -378.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 296,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 457.0,
+      'Y': 0.0,
+      'Z': -155.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 275,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 379.0,
+      'Y': 0.0,
+      'Z': -74.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 248,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 351.0,
+      'Y': 0.0,
+      'Z': -264.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 250,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 345.0,
+      'Y': 0.0,
+      'Z': -229.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 102,
+    'Name': 'Goblin Fisher',
+    'Position': {
+      'X': 365.0,
+      'Y': 0.0,
+      'Z': -22.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 108,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 325.0,
+      'Y': 0.0,
+      'Z': 21.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 90,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 302.0,
+      'Y': 0.0,
+      'Z': 155.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 21,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 142.0,
+      'Y': 0.0,
+      'Z': 134.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 386,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 525.0,
+      'Y': 0.0,
+      'Z': -335.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 258,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 407.0,
+      'Y': 0.0,
+      'Z': -291.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 358,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 419.0,
+      'Y': 0.0,
+      'Z': -316.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 255,
+    'Name': 'Forest Funguar',
+    'Position': {
+      'X': 387.0,
+      'Y': 0.0,
+      'Z': -159.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 268,
+    'Name': 'Mouse Bat',
+    'Position': {
+      'X': 377.0,
+      'Y': 0.0,
+      'Z': -179.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 266,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 383.0,
+      'Y': 0.0,
+      'Z': -208.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 264,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 361.0,
+      'Y': 0.0,
+      'Z': -240.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 356,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 417.0,
+      'Y': 0.0,
+      'Z': -324.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 385,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 515.0,
+      'Y': 0.0,
+      'Z': -347.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 361,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 417.0,
+      'Y': 0.0,
+      'Z': -311.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 366,
+    'Name': 'Mouse Bat',
+    'Position': {
+      'X': 424.0,
+      'Y': 0.0,
+      'Z': -324.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 393,
+    'Name': 'Mouse Bat',
+    'Position': {
+      'X': 480.0,
+      'Y': 0.0,
+      'Z': -342.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 350,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 421.0,
+      'Y': 0.0,
+      'Z': -317.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 365,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 435.0,
+      'Y': 0.0,
+      'Z': -334.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 389,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 490.0,
+      'Y': 0.0,
+      'Z': -337.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 390,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': 481.0,
+      'Y': 0.0,
+      'Z': -341.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 382,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 486.0,
+      'Y': 0.0,
+      'Z': -339.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 357,
+    'Name': 'Scarab Beetle',
+    'Position': {
+      'X': 420.0,
+      'Y': 0.0,
+      'Z': -315.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 2315,
+    'Name': 'Oï\u00146',
+    'Position': {
+      'X': -14.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 221,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 430.0,
+      'Y': 0.0,
+      'Z': 119.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 237,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 404.0,
+      'Y': 0.0,
+      'Z': 13.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 97,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 333.0,
+      'Y': 0.0,
+      'Z': 102.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 276,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 389.0,
+      'Y': 0.0,
+      'Z': -137.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 59,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 155.0,
+      'Y': 0.0,
+      'Z': 294.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 293,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': 519.0,
+      'Y': 0.0,
+      'Z': -278.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 297,
+    'Name': 'Mouse Bat',
+    'Position': {
+      'X': 480.0,
+      'Y': 0.0,
+      'Z': -144.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 222,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 536.0,
+      'Y': 0.0,
+      'Z': 170.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 105,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 260.0,
+      'Y': 0.0,
+      'Z': 84.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 380,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 478.0,
+      'Y': 0.0,
+      'Z': -388.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 359,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 388.0,
+      'Y': 0.0,
+      'Z': -350.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 271,
+    'Name': 'Enchanted Bones',
+    'Position': {
+      'X': 354.0,
+      'Y': 0.0,
+      'Z': -196.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 270,
+    'Name': 'Enchanted Bones',
+    'Position': {
+      'X': 342.0,
+      'Y': 0.0,
+      'Z': -226.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 392,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 518.0,
+      'Y': 0.0,
+      'Z': -371.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 243,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 394.0,
+      'Y': 0.0,
+      'Z': -11.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 360,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 410.0,
+      'Y': 0.0,
+      'Z': -348.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 292,
+    'Name': 'Orcish Fodder',
+    'Position': {
+      'X': 427.0,
+      'Y': 0.0,
+      'Z': -125.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 240,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': 432.0,
+      'Y': 0.0,
+      'Z': -44.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 300,
+    'Name': 'Enchanted Bones',
+    'Position': {
+      'X': 469.0,
+      'Y': 0.0,
+      'Z': -163.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 182,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 621.0,
+      'Y': 0.0,
+      'Z': 224.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 383,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 504.0,
+      'Y': 0.0,
+      'Z': -345.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 371,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': 445.0,
+      'Y': 0.0,
+      'Z': -467.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 370,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': 438.0,
+      'Y': 0.0,
+      'Z': -454.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 369,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 450.0,
+      'Y': 0.0,
+      'Z': -474.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 391,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 491.0,
+      'Y': 0.0,
+      'Z': -359.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 388,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 479.0,
+      'Y': 0.0,
+      'Z': -339.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 81,
+    'Name': 'Orcish Mesmerizer',
+    'Position': {
+      'X': 219.0,
+      'Y': 0.0,
+      'Z': 16.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 284,
+    'Name': 'Bigmouth Billy',
+    'Position': {
+      'X': 503.0,
+      'Y': 0.0,
+      'Z': -250.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 301,
+    'Name': 'Enchanted Bones',
+    'Position': {
+      'X': 434.0,
+      'Y': 0.0,
+      'Z': -248.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 368,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 472.0,
+      'Y': 0.0,
+      'Z': -456.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 377,
+    'Name': 'Pugil',
+    'Position': {
+      'X': 482.0,
+      'Y': 0.0,
+      'Z': -424.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 379,
+    'Name': 'Swamfisk',
+    'Position': {
+      'X': 456.0,
+      'Y': 0.0,
+      'Z': -371.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 314,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 240.0,
+      'Y': 0.0,
+      'Z': -320.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 322,
+    'Name': 'Mouse Bat',
+    'Position': {
+      'X': 297.0,
+      'Y': 0.0,
+      'Z': -412.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 313,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 287.0,
+      'Y': 0.0,
+      'Z': -359.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 304,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 280.0,
+      'Y': 0.0,
+      'Z': -364.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 318,
+    'Name': 'Orcish Grappler',
+    'Position': {
+      'X': 316.0,
+      'Y': 0.0,
+      'Z': -373.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 305,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 229.0,
+      'Y': 0.0,
+      'Z': -311.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 367,
+    'Name': 'Enchanted Bones',
+    'Position': {
+      'X': 419.0,
+      'Y': 0.0,
+      'Z': -346.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 42,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 195.0,
+      'Y': 0.0,
+      'Z': 192.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 58,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 162.0,
+      'Y': 0.0,
+      'Z': 284.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 310,
+    'Name': 'Forest Funguar',
+    'Position': {
+      'X': 275.0,
+      'Y': 0.0,
+      'Z': -363.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 334,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 263.0,
+      'Y': 0.0,
+      'Z': -445.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 338,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 288.0,
+      'Y': 0.0,
+      'Z': -484.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 335,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 252.0,
+      'Y': 0.0,
+      'Z': -469.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 349,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': 297.0,
+      'Y': 0.0,
+      'Z': -493.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 340,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 315.0,
+      'Y': 0.0,
+      'Z': -494.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 337,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 240.0,
+      'Y': 0.0,
+      'Z': -491.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 339,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 241.0,
+      'Y': 0.0,
+      'Z': -501.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 344,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 286.0,
+      'Y': 0.0,
+      'Z': -514.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 326,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 164.0,
+      'Y': 0.0,
+      'Z': -526.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 330,
+    'Name': 'Goblin Weaver',
+    'Position': {
+      'X': 171.0,
+      'Y': 0.0,
+      'Z': -528.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 329,
+    'Name': 'Goblin Thug',
+    'Position': {
+      'X': 162.0,
+      'Y': 0.0,
+      'Z': -507.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 187,
+    'Name': 'Mouse Bat',
+    'Position': {
+      'X': 627.0,
+      'Y': 0.0,
+      'Z': 198.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 173,
+    'Name': 'Forest Hare',
+    'Position': {
+      'X': 619.0,
+      'Y': 0.0,
+      'Z': 217.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 127,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 307.0,
+      'Y': 0.0,
+      'Z': -41.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 54,
+    'Name': 'Wild Rabbit',
+    'Position': {
+      'X': 158.0,
+      'Y': 0.0,
+      'Z': 308.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 62,
+    'Name': 'Ding Bats',
+    'Position': {
+      'X': 173.0,
+      'Y': 0.0,
+      'Z': 307.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 57,
+    'Name': 'Tunnel Worm',
+    'Position': {
+      'X': 172.0,
+      'Y': 0.0,
+      'Z': 316.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 144,
+    'Name': 'Carrion Worm',
+    'Position': {
+      'X': 279.0,
+      'Y': 0.0,
+      'Z': 366.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 309,
+    'Name': 'Forest Funguar',
+    'Position': {
+      'X': 313.0,
+      'Y': 0.0,
+      'Z': -369.0
+    },
+    'MapName': 'Ronfaure_East'
+  },
+  {
+    'Id': 400,
+    'Name': 'Wild Sheep',
+    'Position': {
+      'X': 593.0,
+      'Y': 0.0,
+      'Z': -485.0
+    },
+    'MapName': 'Ronfaure_East'
+  }
+]

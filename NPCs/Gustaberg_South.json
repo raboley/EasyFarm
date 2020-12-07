@@ -1,0 +1,32 @@
+[
+  {
+    'Id': 687,
+    'Name': 'NPC',
+    'Position': {
+      'X': 0.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Gustaberg_South'
+  },
+  {
+    'Id': 693,
+    'Name': 'Goblin Footprint',
+    'Position': {
+      'X': 274.0,
+      'Y': 0.0,
+      'Z': -192.0
+    },
+    'MapName': 'Gustaberg_South'
+  },
+  {
+    'Id': 707,
+    'Name': 'Planar Rift',
+    'Position': {
+      'X': 400.0,
+      'Y': 0.0,
+      'Z': -240.0
+    },
+    'MapName': 'Gustaberg_South'
+  }
+]

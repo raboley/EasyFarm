@@ -1,0 +1,32 @@
+[
+  {
+    'Id': 678,
+    'Name': 'Goblin Footprint',
+    'Position': {
+      'X': -574.0,
+      'Y': 0.0,
+      'Z': -438.0
+    },
+    'MapName': 'Jugner_Forest'
+  },
+  {
+    'Id': 688,
+    'Name': 'Field Manual',
+    'Position': {
+      'X': -561.0,
+      'Y': 0.0,
+      'Z': -445.0
+    },
+    'MapName': 'Jugner_Forest'
+  },
+  {
+    'Id': 611,
+    'Name': 'Signpost',
+    'Position': {
+      'X': -458.0,
+      'Y': 0.0,
+      'Z': -416.0
+    },
+    'MapName': 'Jugner_Forest'
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    'Id': 15,
+    'Name': 'Night Bats',
+    'Position': {
+      'X': 802.0,
+      'Y': 0.0,
+      'Z': 348.0
+    },
+    'MapName': 'Valkurm_Dunes'
+  },
+  {
+    'Id': 7,
+    'Name': 'Sand Hare',
+    'Position': {
+      'X': 811.0,
+      'Y': 0.0,
+      'Z': 353.0
+    },
+    'MapName': 'Valkurm_Dunes'
+  },
+  {
+    'Id': 12,
+    'Name': 'Goblin Butcher',
+    'Position': {
+      'X': 796.0,
+      'Y': 0.0,
+      'Z': 341.0
+    },
+    'MapName': 'Valkurm_Dunes'
+  },
+  {
+    'Id': 10,
+    'Name': 'Goblin Ambusher',
+    'Position': {
+      'X': 820.0,
+      'Y': 0.0,
+      'Z': 360.0
+    },
+    'MapName': 'Valkurm_Dunes'
+  },
+  {
+    'Id': 9,
+    'Name': 'Sand Hare',
+    'Position': {
+      'X': 821.0,
+      'Y': 0.0,
+      'Z': 360.0
+    },
+    'MapName': 'Valkurm_Dunes'
+  },
+  {
+    'Id': 8,
+    'Name': 'Sand Hare',
+    'Position': {
+      'X': 803.0,
+      'Y': 0.0,
+      'Z': 335.0
+    },
+    'MapName': 'Valkurm_Dunes'
+  },
+  {
+    'Id': 11,
+    'Name': 'Goblin Ambusher',
+    'Position': {
+      'X': 813.0,
+      'Y': 0.0,
+      'Z': 338.0
+    },
+    'MapName': 'Valkurm_Dunes'
+  },
+  {
+    'Id': 6,
+    'Name': 'Sand Hare',
+    'Position': {
+      'X': 847.0,
+      'Y': 0.0,
+      'Z': 319.0
+    },
+    'MapName': 'Valkurm_Dunes'
+  },
+  {
+    'Id': 16,
+    'Name': 'Star Bat',
+    'Position': {
+      'X': 842.0,
+      'Y': 0.0,
+      'Z': 324.0
+    },
+    'MapName': 'Valkurm_Dunes'
+  },
+  {
+    'Id': 13,
+    'Name': 'Night Bats',
+    'Position': {
+      'X': 826.0,
+      'Y': 0.0,
+      'Z': 334.0
+    },
+    'MapName': 'Valkurm_Dunes'
+  },
+  {
+    'Id': 14,
+    'Name': 'Night Bats',
+    'Position': {
+      'X': 820.0,
+      'Y': 0.0,
+      'Z': 361.0
+    },
+    'MapName': 'Valkurm_Dunes'
+  }
+]

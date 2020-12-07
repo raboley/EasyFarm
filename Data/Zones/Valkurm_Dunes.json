@@ -1,0 +1,330 @@
+{
+  'Name': 'Valkurm_Dunes',
+  'PointsToExplore': [],
+  'NextPointToExplore': null,
+  'Explored': [],
+  'Boundaries': [
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 166.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 754.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 164.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 751.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 163.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 750.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 161.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 750.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 160.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 751.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 158.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 751.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 157.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 752.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 155.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 753.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 166.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 164.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 163.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 160.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 158.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 157.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 155.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 166.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 164.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 163.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 161.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 160.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 158.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 758.0,
+        'Y': 0.0,
+        'Z': 412.0
+      },
+      'ToPosition': {
+        'X': 157.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    },
+    {
+      'ToZone': 'La_Theine_Plateau',
+      'FromZone': 'Valkurm_Dunes',
+      'FromPosition': {
+        'X': 759.0,
+        'Y': 0.0,
+        'Z': 411.0
+      },
+      'ToPosition': {
+        'X': 155.0,
+        'Y': 0.0,
+        'Z': -760.0
+      }
+    }
+  ]
+}

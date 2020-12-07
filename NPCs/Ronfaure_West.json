@@ -1,0 +1,522 @@
+[
+  {
+    'Id': 697,
+    'Name': 'Stone Monument',
+    'Position': {
+      'X': -184.0,
+      'Y': 0.0,
+      'Z': -396.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 739,
+    'Name': 'Planar Rift',
+    'Position': {
+      'X': -320.0,
+      'Y': 0.0,
+      'Z': -360.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 692,
+    'Name': 'Signpost',
+    'Position': {
+      'X': -464.0,
+      'Y': 0.0,
+      'Z': -376.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 676,
+    'Name': 'Zovriace',
+    'Position': {
+      'X': -512.0,
+      'Y': 0.0,
+      'Z': -451.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 695,
+    'Name': '???',
+    'Position': {
+      'X': -552.0,
+      'Y': 0.0,
+      'Z': -542.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 716,
+    'Name': 'Ballie, R.K.',
+    'Position': {
+      'X': -560.0,
+      'Y': 0.0,
+      'Z': -577.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 720,
+    'Name': '',
+    'Position': {
+      'X': -561.0,
+      'Y': 0.0,
+      'Z': -576.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 696,
+    'Name': '???',
+    'Position': {
+      'X': -399.0,
+      'Y': 0.0,
+      'Z': -439.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 699,
+    'Name': 'Knightwell',
+    'Position': {
+      'X': -369.0,
+      'Y': 0.0,
+      'Z': -453.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 694,
+    'Name': '???',
+    'Position': {
+      'X': -455.0,
+      'Y': 0.0,
+      'Z': -232.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 734,
+    'Name': 'Field Manual',
+    'Position': {
+      'X': -451.0,
+      'Y': 0.0,
+      'Z': -223.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 712,
+    'Name': '',
+    'Position': {
+      'X': -450.0,
+      'Y': 0.0,
+      'Z': -222.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 709,
+    'Name': 'Doladepaiton, R.K.',
+    'Position': {
+      'X': -451.0,
+      'Y': 0.0,
+      'Z': -220.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 745,
+    'Name': 'Survival Guide',
+    'Position': {
+      'X': -453.0,
+      'Y': 0.0,
+      'Z': -218.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 719,
+    'Name': 'Harvetour',
+    'Position': {
+      'X': -451.0,
+      'Y': 0.0,
+      'Z': -213.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 740,
+    'Name': 'Planar Rift',
+    'Position': {
+      'X': -340.0,
+      'Y': 0.0,
+      'Z': -40.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 680,
+    'Name': 'Colmaie',
+    'Position': {
+      'X': -134.0,
+      'Y': 0.0,
+      'Z': 272.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 733,
+    'Name': 'Field Manual',
+    'Position': {
+      'X': -164.0,
+      'Y': 0.0,
+      'Z': 296.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 681,
+    'Name': 'Laillera',
+    'Position': {
+      'X': -127.0,
+      'Y': 0.0,
+      'Z': 267.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 729,
+    'Name': 'Goblin Footprint',
+    'Position': {
+      'X': -117.0,
+      'Y': 0.0,
+      'Z': 251.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 689,
+    'Name': 'Signpost',
+    'Position': {
+      'X': -382.0,
+      'Y': 0.0,
+      'Z': 139.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 693,
+    'Name': 'Signpost',
+    'Position': {
+      'X': -262.0,
+      'Y': 0.0,
+      'Z': -301.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 735,
+    'Name': 'Field Parchment',
+    'Position': {
+      'X': -76.0,
+      'Y': 0.0,
+      'Z': -160.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 2248,
+    'Name': 'Valaineral',
+    'Position': {
+      'X': -238.0,
+      'Y': 0.0,
+      'Z': -156.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 2249,
+    'Name': 'Tenzen',
+    'Position': {
+      'X': -239.0,
+      'Y': 0.0,
+      'Z': -154.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 2250,
+    'Name': 'MihliAliapoh',
+    'Position': {
+      'X': -242.0,
+      'Y': 0.0,
+      'Z': -153.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 2279,
+    'Name': 'Amchuchu',
+    'Position': {
+      'X': -241.0,
+      'Y': 0.0,
+      'Z': -250.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 2280,
+    'Name': 'Joachim',
+    'Position': {
+      'X': -240.0,
+      'Y': 0.0,
+      'Z': -250.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 2281,
+    'Name': 'Tenzen',
+    'Position': {
+      'X': -243.0,
+      'Y': 0.0,
+      'Z': -250.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 2282,
+    'Name': 'Koru-Moru',
+    'Position': {
+      'X': -241.0,
+      'Y': 0.0,
+      'Z': -251.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 2283,
+    'Name': 'Yoran-Oran',
+    'Position': {
+      'X': -242.0,
+      'Y': 0.0,
+      'Z': -251.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 2302,
+    'Name': 'Apururu',
+    'Position': {
+      'X': -201.0,
+      'Y': 0.0,
+      'Z': 258.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 2303,
+    'Name': 'Ajido-Marujido',
+    'Position': {
+      'X': -201.0,
+      'Y': 0.0,
+      'Z': 260.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1792,
+    'Name': 'Lilisette',
+    'Position': {
+      'X': -205.0,
+      'Y': 0.0,
+      'Z': 263.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1793,
+    'Name': 'Trion',
+    'Position': {
+      'X': -205.0,
+      'Y': 0.0,
+      'Z': 263.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1795,
+    'Name': 'Apururu',
+    'Position': {
+      'X': -278.0,
+      'Y': 0.0,
+      'Z': 170.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1796,
+    'Name': 'Ajido-Marujido',
+    'Position': {
+      'X': -278.0,
+      'Y': 0.0,
+      'Z': 170.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1797,
+    'Name': 'Tenzen',
+    'Position': {
+      'X': -292.0,
+      'Y': 0.0,
+      'Z': 133.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1798,
+    'Name': 'Lilisette',
+    'Position': {
+      'X': -302.0,
+      'Y': 0.0,
+      'Z': 124.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1799,
+    'Name': 'Trion',
+    'Position': {
+      'X': -304.0,
+      'Y': 0.0,
+      'Z': 127.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1840,
+    'Name': 'Excenmille',
+    'Position': {
+      'X': -17.0,
+      'Y': 0.0,
+      'Z': -224.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1841,
+    'Name': 'Diabolos',
+    'Position': {
+      'X': -136.0,
+      'Y': 0.0,
+      'Z': 263.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 690,
+    'Name': 'Signpost',
+    'Position': {
+      'X': -501.0,
+      'Y': 0.0,
+      'Z': 378.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 675,
+    'Name': 'Palcomondau',
+    'Position': {
+      'X': -541.0,
+      'Y': 0.0,
+      'Z': 482.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1863,
+    'Name': 'MihliAliapoh',
+    'Position': {
+      'X': -260.0,
+      'Y': 0.0,
+      'Z': 112.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1864,
+    'Name': 'Tenzen',
+    'Position': {
+      'X': -261.0,
+      'Y': 0.0,
+      'Z': 112.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1862,
+    'Name': 'Valaineral',
+    'Position': {
+      'X': -260.0,
+      'Y': 0.0,
+      'Z': 111.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 2314,
+    'Name': 'a',
+    'Position': {
+      'X': 8.0,
+      'Y': 0.0,
+      'Z': 0.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1935,
+    'Name': 'Cid',
+    'Position': {
+      'X': -546.0,
+      'Y': 0.0,
+      'Z': -555.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1936,
+    'Name': 'Tenzen',
+    'Position': {
+      'X': -546.0,
+      'Y': 0.0,
+      'Z': -557.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1937,
+    'Name': 'Joachim',
+    'Position': {
+      'X': -544.0,
+      'Y': 0.0,
+      'Z': -555.0
+    },
+    'MapName': 'Ronfaure_West'
+  },
+  {
+    'Id': 1999,
+    'Name': 'Carbuncle',
+    'Position': {
+      'X': -222.0,
+      'Y': 0.0,
+      'Z': -14.0
+    },
+    'MapName': 'Ronfaure_West'
+  }
+]
