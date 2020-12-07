@@ -1487,6 +1487,20 @@
         'Y': 0.0,
         'Z': -207.0
       }
+    },
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Ronfaure_West',
+      'FromPosition': {
+        'X': -121.0,
+        'Y': 0.0,
+        'Z': 277.0
+      },
+      'ToPosition': {
+        'X': -110.0,
+        'Y': 0.0,
+        'Z': -55.0
+      }
     }
   ]
 }

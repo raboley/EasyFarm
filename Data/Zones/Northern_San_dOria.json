@@ -1,1 +1,22 @@
-230
+{
+  'Name': 'Northern_San_dOria',
+  'PointsToExplore': [],
+  'NextPointToExplore': null,
+  'Explored': [],
+  'Boundaries': [
+    {
+      'ToZone': 'Southern_San_dOria',
+      'FromZone': 'Northern_San_dOria',
+      'FromPosition': {
+        'X': -1.0,
+        'Y': 0.0,
+        'Z': -35.0
+      },
+      'ToPosition': {
+        'X': 1.0,
+        'Y': 0.0,
+        'Z': 54.0
+      }
+    }
+  ]
+}
