@@ -17,7 +17,10 @@
 // ///////////////////////////////////////////////////////////////////
 
 using System;
+using System.Diagnostics;
+using System.IO;
 using EasyFarm.Classes;
+using EasyFarm.ffxi.MeshWalker;
 using EasyFarm.Logging;
 using EasyFarm.Persistence;
 using EasyFarm.UserSettings;
@@ -44,6 +47,10 @@ namespace EasyFarm.Infrastructure
             LogViewModel.Write("Resources loaded");
             LogViewModel.Write("Application starting");
             Logger.Log(new LogEntry(LoggingEventType.Information, "EasyFarm Started ..."));
+            Logger.Log(new LogEntry(LoggingEventType.Information, "Setting up FFXINav"));
+            
+
+            
         }
 
         public void Navigate<TViewModel>()

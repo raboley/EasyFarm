@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyFarm.Tests", "EasyFarm.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pathfinder", "..\Pathfinder\Pathfinder\Pathfinder.csproj", "{8AE72A1D-6503-4464-873D-C30A67D99C8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{A34CD6E0-A85F-4311-8D59-5A400C2310A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{43285FC5-222E-4828-B8F2-396FF628553D}.Release|Any CPU.Build.0 = Debug|x86
 		{8AE72A1D-6503-4464-873D-C30A67D99C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8AE72A1D-6503-4464-873D-C30A67D99C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34CD6E0-A85F-4311-8D59-5A400C2310A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34CD6E0-A85F-4311-8D59-5A400C2310A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34CD6E0-A85F-4311-8D59-5A400C2310A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34CD6E0-A85F-4311-8D59-5A400C2310A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

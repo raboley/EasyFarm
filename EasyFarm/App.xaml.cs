@@ -39,6 +39,7 @@ namespace EasyFarm
             _appBoot = new AppBoot(app);
             _appBoot.Initialize();
             _appBoot.Navigate<MasterViewModel>();
+            
             _appBoot.Show();
         }
 

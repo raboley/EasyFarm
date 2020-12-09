@@ -19,8 +19,12 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using EasyFarm.Classes;
+using EasyFarm.ffxi.MeshWalker;
+using EasyFarm.Logging;
 using EasyFarm.Soul;
 using EasyFarm.States;
 using EasyFarm.UserSettings;
@@ -54,6 +58,24 @@ namespace EasyFarm.Context
             Craft = new Craft(api);
             Shop = new Shop(api);
             Trade = new TradeMenu(api);
+            XNav = NewXNav();
+        }
+
+        public FFXINAV XNav { get; set; }
+
+        private FFXINAV NewXNav()
+        {
+            if (File.Exists("FFXINAV.dll"))
+            {
+                FileVersionInfo ffxinaVversion = FileVersionInfo.GetVersionInfo("FFXINAV.dll");
+                Logger.Log(new LogEntry(LoggingEventType.Information,string.Format(@"FFXINAV.dll Found: Version: ({0})", ffxinaVversion.FileVersion)));
+            }
+            else if (!File.Exists("FFXINAV.dll"))
+            {
+                Logger.Log(new LogEntry(LoggingEventType.Error, @"FFXINAV.dll is missing"));
+            }
+
+            return new FFXINAV();
         }
 
         public ITradeMenu Trade { get; set; }

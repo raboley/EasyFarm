@@ -18,12 +18,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using EasyFarm.Classes;
 using EasyFarm.Context;
+using EasyFarm.ffxi.MeshWalker;
 using EasyFarm.Logging;
 using EasyFarm.Parsing;
 using EasyFarm.Pathfinding;
@@ -55,6 +57,7 @@ namespace EasyFarm.States
             _fface = fface;
             _context = gameContext;
             _calling = new Calling(_context);
+
 
             //Create the states
             AddState(new ManualOverrideState() {Priority = 9999});
@@ -94,7 +97,7 @@ namespace EasyFarm.States
 
             // The Finer Things
             AddState(new NeedSignet() {Priority = 21});
-            // AddState(new CraftSomething() {Priority = 20});
+            AddState(new CraftSomething() {Priority = 20});
             AddState(new SellSomeJunk() {Priority = 119});
             // AddState(new DoQuest() {Priority = 0});
 
@@ -105,7 +108,7 @@ namespace EasyFarm.States
             // AddState(new EquipBestGear() {Priority = 118});
 
 
-            // AddState(new TestState() {Priority = 999});
+            AddState(new TestState() {Priority = 999});
 
             // Inventory Is Full
             // Have some ingredients to craft
@@ -252,25 +255,67 @@ namespace EasyFarm.States
                 // context.Craft.GetSynthesisSupport(context, StatusEffect.Woodworking_Imagery);
                 // context.Craft.EatCraftSkillUpFood(context);
 
+                var navMeshPath = "C:\\Users\\Russell\\source\\repos\\raboley\\EasyFarm\\EasyFarm\\Dependencies\\navmeshes\\Ronfaure_East.nav";
+
+                var exists = File.Exists(navMeshPath);
+                var curdir = Directory.GetCurrentDirectory();
+                
+                context.XNav.Load(navMeshPath);
+                var loaded = context.XNav.IsNavMeshEnabled();
+                var start = new position_t();
+                var pos = context.API.Player;
+                start.X = pos.PosX;
+                start.Y = pos.PosY;
+                start.Z = pos.PosZ;
+
+                while (context.Traveler?.CurrentZone == null)
+                    Thread.Sleep(100);
+
+                var zone = context.Traveler.CurrentZone.Boundaries.FirstOrDefault(x =>
+                    x.ToZone == "Southern_San_dOria");
+                if (zone == null) return;
+
+                var toPos = zone.FromPosition;
+                var end = new position_t();
+                end.X = toPos.X;
+                end.Y = toPos.Y;
+                end.Z = toPos.Z;
+
+                context.XNav.FindPathToPosi(start, end, false);
+                context.XNav.GetWaypoints();
+                context.XNav.findClosestPath(start, end, false);
+                context.XNav.GetWaypoints();
+                var waypoint = context.XNav.Waypoints;
 
                 // Skill is the weapon type :) 
                 // EquipmentManager.EquipBestGear(context); 
 
+                ///
+                /// start = position_t
+                // Moving = {ushort} 0
+                // Rotation = {sbyte} 0
+                // X = {float} 407.847076
+                // Y = {float} -21.7234039
+                // Z = {float} -104.65155
+                // ///Moving = {ushort} 0
+                // Rotation = {sbyte} 0
+                // X = {float} 79
+                // Y = {float} 0
+                // Z = {float} 275
+                /// 
                 //////////////////////////////
                 //Open Doors
                 // if within 10 m of a door
                 // and headed toward it
                 //target it
                 // and open it
-                if (context.Traveler == null)
-                    return;
-                
-                // TODO: Integrate into walker so it opens doors when close by.
-                context.Navigator.OpenDoor(context, context.API);
+                // if (context.Traveler == null)
+                //     return;
+                //
+                // // TODO: Integrate into walker so it opens doors when close by.
+                // context.Navigator.OpenDoor(context, context.API);
             }
         }
-
-
     }
 
     public class EquipBestGear : BaseState

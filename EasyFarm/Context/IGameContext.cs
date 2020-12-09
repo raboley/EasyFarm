@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using EasyFarm.Classes;
+using EasyFarm.ffxi.MeshWalker;
 using EasyFarm.Soul;
 using EasyFarm.States;
 using EasyFarm.UserSettings;
@@ -54,6 +55,7 @@ namespace EasyFarm.Context
         Craft Craft { get; set; }
         IShop Shop { get; set; }
         ITradeMenu Trade { get; set; }
+        FFXINAV XNav { get; set; }
     }
 
 
