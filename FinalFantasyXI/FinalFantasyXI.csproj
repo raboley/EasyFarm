@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{44A2CB0B-ABCA-48DF-AF7D-9626928FF995}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>FinalFantasyXI</RootNamespace>
+        <AssemblyName>FinalFantasyXI</AssemblyName>
+        <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="EliteMMO.API, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>Dependencies\EliteMMO.API.dll</HintPath>
+        </Reference>
+        <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616">
+          <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=669f0b5e8f868abf">
+          <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=5f873c45e98af8a1">
+          <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+          <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+          <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c">
+          <HintPath>..\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+          <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="System.Xml" />
+        <Reference Include="WindowsBase" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Classes\AbilityUtils.cs" />
+        <Compile Include="Classes\ActionFilters.cs" />
+        <Compile Include="Classes\BattleAbility.cs" />
+        <Compile Include="Classes\BattleList.cs" />
+        <Compile Include="Classes\BattleLists.cs" />
+        <Compile Include="Classes\Dialog.cs" />
+        <Compile Include="Classes\EventMessenger.cs" />
+        <Compile Include="Classes\Executor.cs" />
+        <Compile Include="Classes\IDialog.cs" />
+        <Compile Include="Classes\IInventory.cs" />
+        <Compile Include="Classes\IMenu.cs" />
+        <Compile Include="Classes\IMonitor.cs" />
+        <Compile Include="Classes\INavigator.cs" />
+        <Compile Include="Classes\Inventory.cs" />
+        <Compile Include="Classes\ISystemTray.cs" />
+        <Compile Include="Classes\IUnit.cs" />
+        <Compile Include="Classes\IUnitFilters.cs" />
+        <Compile Include="Classes\IUnitService.cs" />
+        <Compile Include="Classes\LibraryUpdater.cs" />
+        <Compile Include="Classes\LinqExtensions.cs" />
+        <Compile Include="Classes\LogEntries.cs" />
+        <Compile Include="Classes\Menu.cs" />
+        <Compile Include="Classes\Navigator.cs" />
+        <Compile Include="Classes\NullUnit.cs" />
+        <Compile Include="Classes\PathRecorder.cs" />
+        <Compile Include="Classes\Player.cs" />
+        <Compile Include="Classes\PlayerMonitor.cs" />
+        <Compile Include="Classes\ProhibitEffects.cs" />
+        <Compile Include="Classes\Range.cs" />
+        <Compile Include="Classes\Result.cs" />
+        <Compile Include="Classes\SystemTray.cs" />
+        <Compile Include="Classes\TargetPriority.cs" />
+        <Compile Include="Classes\TimeWaiter.cs" />
+        <Compile Include="Classes\TreeNode.cs" />
+        <Compile Include="Classes\Unit.cs" />
+        <Compile Include="Classes\UnitFilters.cs" />
+        <Compile Include="Classes\UnitService.cs" />
+        <Compile Include="Context\Craft.cs" />
+        <Compile Include="Context\CraftingRecipe.cs" />
+        <Compile Include="Context\GameContext.cs" />
+        <Compile Include="Context\IGameContext.cs" />
+        <Compile Include="Context\IPlayer.cs" />
+        <Compile Include="Context\IShop.cs" />
+        <Compile Include="Context\Item.cs" />
+        <Compile Include="Context\ITradeMenu.cs" />
+        <Compile Include="Context\MenuBase.cs" />
+        <Compile Include="Context\Player.cs" />
+        <Compile Include="Context\Shop.cs" />
+        <Compile Include="Context\TradeItem.cs" />
+        <Compile Include="Context\TradeMenu.cs" />
+        <Compile Include="Context\WoodChopper.cs" />
+        <Compile Include="ffxi\Mover.cs" />
+        <Compile Include="ffxi\MoverSetup.cs" />
+        <Compile Include="Mapping\GraphConverter.cs" />
+        <Compile Include="Mapping\ISpot.cs" />
+        <Compile Include="Mapping\IZoneMap.cs" />
+        <Compile Include="Mapping\Spot.cs" />
+        <Compile Include="Mapping\SpotFactory.cs" />
+        <Compile Include="Mapping\ZoneMap.cs" />
+        <Compile Include="Mapping\ZoneMapFactory.cs" />
+        <Compile Include="Mapping\ZoneMapView.xaml.cs">
+          <DependentUpon>ZoneMapView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Mapping\ZoneMapViewModel.cs" />
+        <Compile Include="Missions\BaseQuestStep.cs" />
+        <Compile Include="Missions\Completed.cs" />
+        <Compile Include="Missions\ICompleteRightNowCondition.cs" />
+        <Compile Include="Missions\IQuest.cs" />
+        <Compile Include="Missions\IQuestStep.cs" />
+        <Compile Include="Missions\NoInstantCompletion.cs" />
+        <Compile Include="Missions\Quest.cs" />
+        <Compile Include="Missions\SandOria\MissionFactory.cs" />
+        <Compile Include="Missions\SandOria\QuestFactory.cs" />
+        <Compile Include="Missions\SandOria\SandOneOne.cs" />
+        <Compile Include="Missions\SandOria\TheMerchantsBidding.cs" />
+        <Compile Include="Monitors\CallingMonitor.cs" />
+        <Compile Include="Monitors\MobMonitor.cs" />
+        <Compile Include="Monitors\MobPersister.cs" />
+        <Compile Include="Monitors\NPCMonitor.cs" />
+        <Compile Include="Monitors\NpcPersister.cs" />
+        <Compile Include="Monitors\TravelerMonitor.cs" />
+        <Compile Include="Monitors\TravelerSetup.cs" />
+        <Compile Include="Monitors\ZoneMapMonitor.cs" />
+        <Compile Include="Monitors\ZoneMapPersister.cs" />
+        <Compile Include="Parsing\Ability.cs" />
+        <Compile Include="Parsing\AbilityMapper.cs" />
+        <Compile Include="Parsing\AbilityService.cs" />
+        <Compile Include="Parsing\AbilityType.cs" />
+        <Compile Include="Parsing\CategoryType.cs" />
+        <Compile Include="Parsing\ElementType.cs" />
+        <Compile Include="Parsing\ItemMapper.cs" />
+        <Compile Include="Parsing\Resource.cs" />
+        <Compile Include="Parsing\ResourceHelper.cs" />
+        <Compile Include="Parsing\ResourceMapper.cs" />
+        <Compile Include="Parsing\Resources.cs" />
+        <Compile Include="Parsing\SkillType.cs" />
+        <Compile Include="Parsing\SpellMapper.cs" />
+        <Compile Include="Parsing\TargetType.cs" />
+        <Compile Include="Pathfinding\Grid.cs" />
+        <Compile Include="Pathfinding\Heap.cs" />
+        <Compile Include="Pathfinding\MappingConversion.cs" />
+        <Compile Include="Pathfinding\Node.cs" />
+        <Compile Include="Persistence\IPersister.cs" />
+        <Compile Include="Persistence\JsonPersister.cs" />
+        <Compile Include="Persistence\Persister.cs" />
+        <Compile Include="Persistence\Serialization.cs" />
+        <Compile Include="Persistence\SettingsManager.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Soul\Calling.cs" />
+        <Compile Include="Soul\CallingFactory.cs" />
+        <Compile Include="Soul\ICalling.cs" />
+        <Compile Include="States\ApproachState.cs" />
+        <Compile Include="States\BaseState.cs" />
+        <Compile Include="States\BattleState.cs" />
+        <Compile Include="States\CraftSomething.cs" />
+        <Compile Include="States\DeadState.cs" />
+        <Compile Include="States\DoMyCurrentGoalState.cs" />
+        <Compile Include="States\DoQuest.cs" />
+        <Compile Include="States\DumpTreasureState.cs" />
+        <Compile Include="States\EndState.cs" />
+        <Compile Include="States\EquipmentManager.cs" />
+        <Compile Include="States\ExploreZone.cs" />
+        <Compile Include="States\FiniteStateMachine.cs" />
+        <Compile Include="States\FollowState.cs" />
+        <Compile Include="States\GameEngine.cs" />
+        <Compile Include="States\GoChopWood.cs" />
+        <Compile Include="States\GoFight.cs" />
+        <Compile Include="States\HealingState.cs" />
+        <Compile Include="States\HuntNotoriusMonster.cs" />
+        <Compile Include="States\IState.cs" />
+        <Compile Include="States\MapState.cs" />
+        <Compile Include="States\NeedSignet.cs" />
+        <Compile Include="States\PlayerMovementTracker.cs" />
+        <Compile Include="States\PullState.cs" />
+        <Compile Include="States\RestState.cs" />
+        <Compile Include="States\Route.cs" />
+        <Compile Include="States\SellSomeJunk.cs" />
+        <Compile Include="States\SetFightingState.cs" />
+        <Compile Include="States\SetSearchNpcState.cs" />
+        <Compile Include="States\SetTargetState.cs" />
+        <Compile Include="States\StartEngineState.cs" />
+        <Compile Include="States\StartState.cs" />
+        <Compile Include="States\StateHistory.cs" />
+        <Compile Include="States\StateLog.cs" />
+        <Compile Include="States\StateMemory.cs" />
+        <Compile Include="States\StateStatus.cs" />
+        <Compile Include="States\SummonTrustsState.cs" />
+        <Compile Include="States\TravelState.cs" />
+        <Compile Include="States\TypeCache.cs" />
+        <Compile Include="States\WeaponskillState.cs" />
+        <Compile Include="States\ZoneState.cs" />
+        <Compile Include="UserSettings\Config.cs" />
+        <Compile Include="UserSettings\Constants.cs" />
+        <Compile Include="UserSettings\IConfig.cs" />
+        <Compile Include="UserSettings\ProxyConfig.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Dependencies\EliteAPI.dll" />
+      <Content Include="Dependencies\EliteMMO.API.dll" />
+    </ItemGroup>
+    <ItemGroup>
+      <Page Include="Mapping\ZoneMapView.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\Pathfinder\Pathfinder\Pathfinder.csproj">
+        <Project>{8ae72a1d-6503-4464-873d-c30a67d99c8a}</Project>
+        <Name>Pathfinder</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\MemoryAPI\MemoryAPI.csproj">
+        <Project>{cc6cc9be-32f0-4b8a-a1ad-6c7c744e2fad}</Project>
+        <Name>MemoryAPI</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
