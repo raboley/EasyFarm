@@ -16,6 +16,7 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 using System.Collections.ObjectModel;
+using FinalFantasyXI.UserSettings;
 
 namespace EasyFarm.ViewModels
 {

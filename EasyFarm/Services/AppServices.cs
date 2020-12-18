@@ -17,6 +17,7 @@
 // ///////////////////////////////////////////////////////////////////
 
 using System;
+using EasyFarm.Infrastructure;
 using GalaSoft.MvvmLight.Messaging;
 
 namespace EasyFarm.Services

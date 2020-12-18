@@ -1,4 +1,8 @@
 using System.Collections.Generic;
+using FinalFantasyXI.Classes;
+using FinalFantasyXI.Context;
+using MemoryAPI;
+using Pathfinder.People;
 
 namespace FinalFantasyXI.Monitors
 {

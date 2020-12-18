@@ -17,6 +17,8 @@
 // ///////////////////////////////////////////////////////////////////
 using System.Windows.Input;
 using EasyFarm.Infrastructure;
+using EasyFarm.Services;
+using FinalFantasyXI.UserSettings;
 using GalaSoft.MvvmLight.Command;
 
 namespace EasyFarm.ViewModels

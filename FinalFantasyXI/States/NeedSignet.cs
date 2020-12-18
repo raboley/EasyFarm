@@ -16,8 +16,15 @@
 // If not, see <http://www.gnu.org/licenses/>.
 // ///////////////////////////////////////////////////////////////////
 
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
+using FinalFantasyXI.Classes;
+using FinalFantasyXI.Context;
+using MemoryAPI;
+using Pathfinder;
+using Pathfinder.People;
 using StatusEffect = MemoryAPI.StatusEffect;
 
 namespace FinalFantasyXI.States

@@ -20,6 +20,8 @@ using System;
 using EasyFarm.Logging;
 using EasyFarm.ViewModels;
 using EasyFarm.Views;
+using FinalFantasyXI.Classes;
+using FinalFantasyXI.UserSettings;
 
 namespace EasyFarm.Infrastructure
 {

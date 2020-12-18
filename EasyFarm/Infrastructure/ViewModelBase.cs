@@ -17,6 +17,13 @@
 // ///////////////////////////////////////////////////////////////////
 using System;
 using System.IO;
+using EasyFarm.Services;
+using FinalFantasyXI.Classes;
+using FinalFantasyXI.Monitors;
+using FinalFantasyXI.Parsing;
+using FinalFantasyXI.Persistence;
+using FinalFantasyXI.States;
+using FinalFantasyXI.UserSettings;
 using MemoryAPI;
 
 namespace EasyFarm.Infrastructure

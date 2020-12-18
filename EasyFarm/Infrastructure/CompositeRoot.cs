@@ -23,6 +23,9 @@ using EasyFarm.Handlers;
 using EasyFarm.Mapping;
 using EasyFarm.ViewModels;
 using EasyFarm.Views;
+using FinalFantasyXI.Classes;
+using FinalFantasyXI.Mapping;
+using FinalFantasyXI.Persistence;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 

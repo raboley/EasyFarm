@@ -17,6 +17,8 @@
 // ///////////////////////////////////////////////////////////////////
 
 using EasyFarm.Infrastructure;
+using EasyFarm.Services;
+using FinalFantasyXI.UserSettings;
 
 namespace EasyFarm.ViewModels
 {

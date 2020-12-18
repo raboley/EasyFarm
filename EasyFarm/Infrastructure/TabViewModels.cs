@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Linq;
 using EasyFarm.Mapping;
 using EasyFarm.ViewModels;
+using FinalFantasyXI.Mapping;
 
 namespace EasyFarm.Infrastructure
 {

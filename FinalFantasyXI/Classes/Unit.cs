@@ -18,6 +18,9 @@
 
 using System;
 using System.Linq;
+using FinalFantasyXI.UserSettings;
+using MemoryAPI;
+using MemoryAPI.Navigation;
 
 namespace FinalFantasyXI.Classes
 {

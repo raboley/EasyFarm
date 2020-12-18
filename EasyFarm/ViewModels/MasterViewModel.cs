@@ -22,6 +22,10 @@ using GalaSoft.MvvmLight.Command;
 using System;
 using System.Windows.Input;
 using EasyFarm.Handlers;
+using EasyFarm.Services;
+using FinalFantasyXI.Classes;
+using FinalFantasyXI.Persistence;
+using FinalFantasyXI.UserSettings;
 using Application = System.Windows.Application;
 
 namespace EasyFarm.ViewModels
