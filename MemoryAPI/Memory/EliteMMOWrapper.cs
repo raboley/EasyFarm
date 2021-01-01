@@ -673,7 +673,6 @@ namespace MemoryAPI.Memory
                     {
                         var item = _api.Inventory.GetEquippedItem(i);
                         var equipmentItem = _api.Resources.GetItem(item.Id);
-
                         equips.Add(equipmentItem);
                     }
 

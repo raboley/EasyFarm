@@ -1,14 +1,13 @@
 using System.Threading;
 using EliteMMO.API;
-using MemoryAPI;
 
 namespace EasyFarm.Context
 {
     public class MenuBase
     {
-        private protected IMemoryAPI _context;
+        private protected EliteAPI _context;
 
-        public MenuBase(IMemoryAPI context)
+        public MenuBase(IMemoryAPI context, IKeyboard keyboard)
         {
             _context = context;
         }
